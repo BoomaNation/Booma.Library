@@ -1,20 +1,13 @@
-# GladLive.Common
+# Booma.Stats.Common
 
-GladLive is network session service comparable to Xboxlive or Stream. 
+Booma is the code name for a networked ORPG/MMORPG being developed by the BoomaNation organization.
 
-GladLive.Common is shared code between GladLive network services on both client and server.
-
-## GladLive Services
-
-GladLive.ProxyLoadBalancer: https://github.com/GladLive/GladLive.ProxyLoadBalancer
-
-GladLive.AuthenticationService: TBA
+Booma.Stats.Common is shared stats and stats math between client and server.
 
 ## Setup
 
 To use this project you'll first need a couple of things:
   - Visual Studio 2015
-  - Add Nuget Feed https://www.myget.org/F/hellokitty/api/v2 in VS (Options -> NuGet -> Package Sources)
 
 ## Builds
 
@@ -25,8 +18,8 @@ Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokit
 #### Linux/Mono - Unit Tests
 ||Debug x86|Debug x64|Release x86|Release x64|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/GladLive/GladLive.Common.svg?branch=master)](https://travis-ci.org/HelloKitty/GladLive/GladLive.Common) |
-|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/GladLive/GladLive.Common.svg?branch=dev)](https://travis-ci.org/GladLive/GladLive.Common)|
+|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Stats.Common?branch=master)](https://travis-ci.org/HelloKitty/BoomaNation/Booma.Stats.Common) |
+|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Stats.Common.svg?branch=dev)](https://travis-ci.org/HelloKitty/BoomaNation/Booma.Stats.Common)|
 
 #### Windows - Unit Tests
 
@@ -34,4 +27,4 @@ Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokit
 
 ##Licensing
 
-This project is licensed under the MIT license with the additional requirement of adding the GladLive splashscreen to your product.
+This project is licensed under the GPL license which will be actively enforced.
