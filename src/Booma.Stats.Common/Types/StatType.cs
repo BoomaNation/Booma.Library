@@ -8,7 +8,7 @@ namespace Booma.Stats.Common
 	/// <summary>
 	/// Enumeration of all potential stat types.
 	/// </summary>
-	public enum StatType : int //int prevents boxing in dictionaries and such but increased bandwidth usage
+	public enum StatType : int //int prevents boxing in dictionaries and such but increases bandwidth usage
 	{
 		/// <summary>
 		/// ATP - Attack Power
