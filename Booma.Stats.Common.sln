@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25029.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1535067C-783A-4E3E-9C94-8D984CC6A087}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{62886E21-58E3-4BAE-8A5F-00436A0B0522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Stats.Common", "src\Booma.Stats.Common\Booma.Stats.Common.csproj", "{B9838908-0A73-4A49-BDA7-D7088BDED89E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9838908-0A73-4A49-BDA7-D7088BDED89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9838908-0A73-4A49-BDA7-D7088BDED89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9838908-0A73-4A49-BDA7-D7088BDED89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9838908-0A73-4A49-BDA7-D7088BDED89E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9838908-0A73-4A49-BDA7-D7088BDED89E} = {1535067C-783A-4E3E-9C94-8D984CC6A087}
+	EndGlobalSection
+EndGlobal
