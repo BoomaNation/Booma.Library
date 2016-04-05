@@ -60,6 +60,18 @@ namespace Booma.Stats.Common.Tests.UnitTests
 			Assert.IsNull(value);
 		}
 
+		[Test]
+		[TestCase(-1)]
+		[TestCase(int.MaxValue)]
+		public void Default_Ctor_Should_Not_Throw_On_Invalid_Values_For_Contains_Method(TStatType stat)
+		{
+			//arrange
+			TImmutableContainerType container = Activator.CreateInstance<TImmutableContainerType>();
+
+			//assert
+			Assert.False(container.Contains(stat));
+		}
+
 		public static IEnumerable<TStatType> CombatEnumValues()
 		{
 			return Enum.GetValues(typeof(TStatType)).Cast<TStatType>();
