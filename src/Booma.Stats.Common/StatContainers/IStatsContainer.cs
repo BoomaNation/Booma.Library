@@ -27,7 +27,7 @@ namespace Booma.Stats.Common
 		/// </summary>
 		/// <param name="statIndex">The state type to query the container for.</param>
 		/// <returns>The corresponding value for the <paramref name="statIndex"/> or null if the container doesn't contain it.</returns>
-		Nullable<int> this[TStatType statIndex]
+		int? this[TStatType statIndex]
 		{
 			get;
 		}
