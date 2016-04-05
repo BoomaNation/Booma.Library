@@ -10,6 +10,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 	[TestFixture]
 	public class ImmutableCombatStateContainerTests
 	{
+		[Test]
 		public static void Ctor_Doesnt_throw()
 		{
 			//assert: doesn't throw
