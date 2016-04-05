@@ -7,6 +7,9 @@ namespace Booma.Stats.Common
 {
 	public static class ResistanceStateTypeExtensions
 	{
-
+		public static int ToKey(this ResistanceStatType stat)
+		{
+			return (int)stat;
+		}
 	}
 }
