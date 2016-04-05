@@ -46,6 +46,9 @@
     <Compile Include="StatContainers\Combat\ImmutableCombatStatsContainer.cs" />
     <Compile Include="StatContainers\ImmutableStatsContainer.cs" />
     <Compile Include="StatContainers\IStatsContainer.cs" />
+    <Compile Include="StatContainers\Resist\IResistanceStatsContainer.cs" />
+    <Compile Include="StatContainers\Resist\ImmutableResistanceStatsContainer.cs" />
+    <Compile Include="StatContainers\StatPair.cs" />
     <Compile Include="Types\ResistanceStateType.cs" />
     <Compile Include="Types\CombatStatType.cs" />
   </ItemGroup>
