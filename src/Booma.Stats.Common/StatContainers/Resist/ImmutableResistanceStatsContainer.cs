@@ -6,15 +6,15 @@ using System.Text;
 namespace Booma.Stats.Common
 {
 	//The reason this class isn't generic, and trust me I have the wizard skills to create such an amalgation,
-	//is because I expect the ICombatStatsContainer to eventually have functionality different from resistence
+	//is because I expect the IResistanceStatsContainer to eventually have functionality different from resistence
 	//Either explictly or maybe through extensions (though this could be supported without the marker interface)
 	/// <summary>
-	/// Immutable, readonly implementation of the <see cref="ICombatStatsContainer"/> interface/contract.
+	/// Immutable, readonly implementation of the <see cref="IResistanceStatsContainer"/> interface/contract.
 	/// </summary>
 	public class ImmutableResistanceStatsContainer : ImmutableStatsContainer<ResistanceStatType>, IResistanceStatsContainer
 	{
 		/// <summary>
-		/// Readonly index accessor that takes in <see cref="CombatStatType"/>
+		/// Readonly index accessor that takes in <see cref="ResistanceStatType"/>
 		/// and returns the contained value. Does not throw if the container doesn't contain
 		/// <paramref name="statIndex"/>; returns null instead.
 		/// </summary>
@@ -34,7 +34,7 @@ namespace Booma.Stats.Common
 		}
 
 		/// <summary>
-		/// Indicates if the container has a value for the given <see cref="CombatStatType"/>
+		/// Indicates if the container has a value for the given <see cref="ResistanceStatType"/>
 		/// </summary>
 		/// <param name="statType">The <typeparamref name="TStatType"/> to check the contained status of.</param>
 		/// <returns>True if the stat is in the container.</returns>
