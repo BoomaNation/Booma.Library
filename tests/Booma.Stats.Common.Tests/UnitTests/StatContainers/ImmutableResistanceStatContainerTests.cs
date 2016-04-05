@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 namespace Booma.Stats.Common.Tests.UnitTests
 {
 	[TestFixture]
-	public class ImmutableCombatStateContainerTests
+	public class ImmutableResistanceStatContainerTests : ImmutableGenericContainerTests<ImmutableResistanceStatsContainer, ResistanceStatType> //the basic tests are handled in a generic base class
 	{
-		public static void Ctor_Doesnt_throw()
-		{
-			//assert: doesn't throw
-			Assert.DoesNotThrow(() => new ImmutableCombatStatsContainer());
-		}
+
 	}
 }
