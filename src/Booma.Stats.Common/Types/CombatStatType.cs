@@ -6,9 +6,9 @@ using System.Text;
 namespace Booma.Stats.Common
 {
 	/// <summary>
-	/// Enumeration of all potential stat types.
+	/// Enumeration of all potential combat stat types.
 	/// </summary>
-	public enum StatType : int //int prevents boxing in dictionaries and such but increases bandwidth usage
+	public enum CombatStatType : int //int prevents boxing in dictionaries and such but increases bandwidth usage
 	{
 		/// <summary>
 		/// ATP - Attack Power

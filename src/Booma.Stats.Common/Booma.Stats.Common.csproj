@@ -38,9 +38,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CombatStatTypeExtensions.cs" />
+    <Compile Include="Extensions\IStatsContainerExtensions.cs" />
+    <Compile Include="Extensions\ResistanceStateTypeExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatType.cs" />
+    <Compile Include="StatContainers\Combat\ICombatStatsContainer.cs" />
+    <Compile Include="StatContainers\Combat\ImmutableCombatStatsContainer.cs" />
+    <Compile Include="StatContainers\IStatsContainer.cs" />
+    <Compile Include="Types\ResistanceStateType.cs" />
+    <Compile Include="Types\CombatStatType.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
