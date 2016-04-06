@@ -8,12 +8,13 @@ namespace Booma.Stats.Common
 	/// <summary>
 	/// Base-class type for Immutable stats container types.
 	/// </summary>
-	/// <typeparam name="TStatType"></typeparam>
+	/// <typeparam name="TStatType">The stat type the container is tracking</typeparam>
 	public abstract class ImmutableStatsContainer<TStatType> : IStatsContainer<TStatType>
 		where TStatType : struct, IConvertible
 	{
 		//Not really how I wanted to compute the value/store the value... But it's the most efficient and thread safe way.
-		protected static readonly int maxMapSize = IStatsContainerExtensions.GetMapSize<TStatType>();
+		//This value represents the maximum key value that the enum contains. This can help create a properly sized array for the container
+		protected static readonly int maxMapKeyValue = IStatsContainerExtensions.GetMaxMapKeyValue<TStatType>();
 
 		//for better caching we don't use a dictionary; use a flat array.
 		//Hopefully this doesn't cause GC pressure casting enum to int... I should read the language specs
@@ -39,14 +40,21 @@ namespace Booma.Stats.Common
 				return;
 			}
 			else
-				_statsMap = new int?[maxMapSize];
+				_statsMap = new int?[maxMapKeyValue + 1];
 
 
 			//Set each keypair to be in the flat cache-quick array of nullable ints
 			foreach (var kvp in values.AsEnumerable())
 			{
-				//map to the enum int codes
-				_statsMap[ConvertStatToKey(kvp.Key)] = kvp.Value;
+				try
+				{
+					//map to the enum int codes
+					_statsMap[ConvertStatToKey(kvp.Key)] = kvp.Value;
+				}
+				catch(IndexOutOfRangeException e)
+				{
+					throw new IndexOutOfRangeException($"Index {kvp.Key} value: {ConvertStatToKey(kvp.Key)} current array size: {_statsMap.Count()} failed", e);
+				}
 			}
 		}
 
@@ -56,7 +64,7 @@ namespace Booma.Stats.Common
 		public ImmutableStatsContainer()
 		{
 			//We need a new array of atleast the size of the largest value in CombatStatType
-			_statsMap = new int?[maxMapSize];
+			_statsMap = new int?[maxMapKeyValue + 1];
 		}
 
 		//the reason we don't implement this generically is because this would cause boxing due to the inability to simply cast from enum to int

@@ -13,6 +13,18 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public class ImmutableCombatStatsContainer : ImmutableStatsContainer<CombatStatType>, ICombatStatsContainer
 	{
+		public ImmutableCombatStatsContainer(IDictionary<CombatStatType, int> values)
+			: base(values)
+		{
+
+		}
+
+		public ImmutableCombatStatsContainer()
+			: base()
+		{
+
+		}
+
 		protected override int ConvertStatToKey(CombatStatType statType)
 		{
 			return statType.ToKey();

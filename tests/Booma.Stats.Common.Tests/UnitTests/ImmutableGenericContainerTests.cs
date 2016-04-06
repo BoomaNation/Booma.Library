@@ -10,18 +10,20 @@ namespace Booma.Stats.Common.Tests.UnitTests
 	//This is a generic test class that'll test the expected implementation of the container type
 	//This helps consolidate code between combat and resist state containers
 	[TestFixture]
-	public class ImmutableGenericContainerTests<TImmutableContainerType, TStatType>
+	public abstract class ImmutableGenericContainerTests<TImmutableContainerType, TStatType>
 		where TImmutableContainerType : ImmutableStatsContainer<TStatType> where TStatType : struct, IConvertible
 	{
+		#region Default Ctor (empty) tests
+
 		[Test]
-		public void Ctor_Doesnt_throw()
+		public void Default_Ctor_Doesnt_throw()
 		{
 			//assert: doesn't throw
 			Assert.DoesNotThrow(() => Activator.CreateInstance<TImmutableContainerType>());
 		}
 
 		[Test]
-		[TestCaseSource(nameof(CombatEnumValues))]
+		[TestCaseSource(nameof(StatEnumValues))]
 		public void Default_Ctor_Should_Not_Have_Contained_Values(TStatType stat)
 		{
 			//arrange
@@ -32,7 +34,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		}
 
 		[Test]
-		[TestCaseSource(nameof(CombatEnumValues))]
+		[TestCaseSource(nameof(StatEnumValues))]
 		public void Default_Ctor_Should_Provide_Null_On_Access(TStatType stat)
 		{
 			//arrange
@@ -72,7 +74,18 @@ namespace Booma.Stats.Common.Tests.UnitTests
 			Assert.False(container.Contains(stat));
 		}
 
-		public static IEnumerable<TStatType> CombatEnumValues()
+		#endregion
+
+		[Test]
+		public void Initialization_Ctor_Doesnt_throw()
+		{
+			//assert: doesn't throw
+			Assert.DoesNotThrow(() => Activator.CreateInstance(typeof(TImmutableContainerType), StatEnumTestInitValues()));
+		}
+
+		protected abstract IDictionary<TStatType, int> StatEnumTestInitValues();
+
+		public static IEnumerable<TStatType> StatEnumValues()
 		{
 			return Enum.GetValues(typeof(TStatType)).Cast<TStatType>();
 		}

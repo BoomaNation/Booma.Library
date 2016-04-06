@@ -13,6 +13,18 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public class ImmutableResistanceStatsContainer : ImmutableStatsContainer<ResistanceStatType>, IResistanceStatsContainer
 	{
+		public ImmutableResistanceStatsContainer(IDictionary<ResistanceStatType, int> values)
+			: base(values)
+		{
+
+		}
+
+		public ImmutableResistanceStatsContainer()
+			: base()
+		{
+
+		}
+
 		protected override int ConvertStatToKey(ResistanceStatType statType)
 		{
 			return statType.ToKey();

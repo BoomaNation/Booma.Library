@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Booma.Stats.Common
 {
-	internal static class IStatsContainerExtensions
+	public static class IStatsContainerExtensions
 	{
-		internal static int GetMapSize<TStatType>(this IStatsContainer<TStatType> statsContainer)
+		public static int GetMaxMapKeyValue<TStatType>(this IStatsContainer<TStatType> statsContainer)
 			where TStatType : struct, IConvertible
 		{
-			return GetMapSize<TStatType>();
+			return GetMaxMapKeyValue<TStatType>();
 		}
 
-		internal static int GetMapSize<TStatType>()
+		internal static int GetMaxMapKeyValue<TStatType>()
 			where TStatType : struct, IConvertible
 		{
 			//Gets the values of the enum in the container, casts them to int and then finds the max value
