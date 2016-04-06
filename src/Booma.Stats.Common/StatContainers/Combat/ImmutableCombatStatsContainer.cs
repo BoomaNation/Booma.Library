@@ -13,18 +13,30 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public class ImmutableCombatStatsContainer : ImmutableStatsContainer<CombatStatType>, ICombatStatsContainer
 	{
+		/// <summary>
+		/// Creates a partially initialized immutable container for stats.
+		/// </summary>
+		/// <param name="values">Values key-store for <see cref="CombatStatType"/>.</param>
 		public ImmutableCombatStatsContainer(IDictionary<CombatStatType, int> values)
 			: base(values)
 		{
 
 		}
 
+		/// <summary>
+		/// Creates an empty-immutable container for stats.
+		/// </summary>
 		public ImmutableCombatStatsContainer()
 			: base()
 		{
 
 		}
 
+		/// <summary>
+		/// Converts a <see cref="ResistanceStatType"/> value to an int key value.
+		/// </summary>
+		/// <param name="statType">The stat type to convert to int.</param>
+		/// <returns>A key value for the given <paramref name="statType"/>.</returns>
 		protected override int ConvertStatToKey(CombatStatType statType)
 		{
 			return statType.ToKey();
