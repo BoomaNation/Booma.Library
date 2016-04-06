@@ -26,7 +26,7 @@ namespace Booma.Stats.Common
 			public LinearResistanceMultiplierProvider(int resistValue)
 			{
 				//If we have a value we should compute the multiplier from it described by the 1 - (RES / 100) formula
-				Multiplier = Math.Max(DEFAULT_MULTIPLIER - resistValue * 0.01f, 0); //make sure to clamp the value so that nobody is using a negative value to calculate damage
+				Multiplier = Math.Max(DEFAULT_MULTIPLIER - (resistValue / 100.0f), 0); //make sure to clamp the value so that nobody is using a negative value to calculate damage
 			}
 
 			/// <summary>
