@@ -10,6 +10,10 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public interface IResistanceMultiplierStrategy
 	{
+		//You might be wondering why we use signed values but that's just .NET
+		//Unsigned values and odd types like ushort and sbyte and others aren't fully supported
+		//accross all languages that use the CLR. Though, I could be presuaded to utilize them 
+
 		/// <summary>
 		/// Generates a resistance multiplier for <paramref name="resistType"/>.
 		/// </summary>
