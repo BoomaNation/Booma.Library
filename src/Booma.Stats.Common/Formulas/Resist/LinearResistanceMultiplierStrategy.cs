@@ -11,6 +11,33 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public class LinearResistanceMultiplierStrategy : IResistanceMultiplierStrategy
 	{
+		/// <summary>
+		/// Private <see cref="IMultiplierProvider"/> type that computes the resistance values
+		/// and helps keep a common interface between all multiplier values.
+		/// </summary>
+		private class LinearResistanceMultiplierProvider : IMultiplierProvider
+		{
+			public float Multiplier { get; }
+
+			/// <summary>
+			/// Computes the resistance multiplier that scales linearlly.
+			/// </summary>
+			/// <param name="resistValue">Resistance value.</param>
+			public LinearResistanceMultiplierProvider(int resistValue)
+			{
+				//If we have a value we should compute the multiplier from it described by the 1 - (RES / 100) formula
+				Multiplier = Math.Max(DEFAULT_MULTIPLIER - resistValue * 0.01f, 0); //make sure to clamp the value so that nobody is using a negative value to calculate damage
+			}
+
+			/// <summary>
+			/// Default resistance multiplier.
+			/// </summary>
+			public LinearResistanceMultiplierProvider()
+			{
+				Multiplier = DEFAULT_MULTIPLIER;
+			}
+		}
+
 		private IStatsContainer<ResistanceStatType> resistanceContainer { get; }
 
 		//For the time being default will be strat specific but it may be moved into a seperate const class later
@@ -31,7 +58,7 @@ namespace Booma.Stats.Common
 		/// </summary>
 		/// <param name="resistType">Type of resistance.</param>
 		/// <returns>Float values (1.0 if no resist) that acts as a multiplier for resistance.</returns>
-		public float ResistanceMultiplier(ResistanceStatType resistType)
+		public IMultiplierProvider ResistanceMultiplier(ResistanceStatType resistType)
 		{
 			//This is a simple linear multiplier increase based on resistance value.
 			//As far as I know this is the default behaviour and can be seen described: http://azurepso.webs.com/psostatistics.htm
@@ -41,10 +68,10 @@ namespace Booma.Stats.Common
 			int? value = resistanceContainer[resistType];
 
 			if (!value.HasValue)
-				return DEFAULT_MULTIPLIER;
+				return new LinearResistanceMultiplierProvider(); //return default provider
 
 			//If we have a value we should compute the multiplier from it described by the 1 - (RES / 100) formula
-			return Math.Max(DEFAULT_MULTIPLIER - value.Value * 0.01f, 0); //make sure to clamp the value so that nobody is using a negative value to calculate damage
+			return new LinearResistanceMultiplierProvider(value.Value);
 		}
 	}
 }

@@ -41,6 +41,9 @@
     <Compile Include="Extensions\CombatStatTypeExtensions.cs" />
     <Compile Include="Extensions\IStatsContainerExtensions.cs" />
     <Compile Include="Extensions\ResistanceStateTypeExtensions.cs" />
+    <Compile Include="Formulas\IMultiplierProvider.cs" />
+    <Compile Include="Formulas\Resist\IResistanceMultiplierStrategy.cs" />
+    <Compile Include="Formulas\Resist\LinearResistanceMultiplierStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatContainers\Combat\ICombatStatsContainer.cs" />
     <Compile Include="StatContainers\Combat\ImmutableCombatStatsContainer.cs" />

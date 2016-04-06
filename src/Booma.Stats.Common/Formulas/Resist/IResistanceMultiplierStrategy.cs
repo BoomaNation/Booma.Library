@@ -10,15 +10,15 @@ namespace Booma.Stats.Common
 	/// </summary>
 	public interface IResistanceMultiplierStrategy
 	{
-		//You might be wondering why we use signed values but that's just .NET
-		//Unsigned values and odd types like ushort and sbyte and others aren't fully supported
-		//accross all languages that use the CLR. Though, I could be presuaded to utilize them 
+		//The reason we return an IMultiplierProvider is because all multipliers fit this interface
+		//However, not all strategies that produce multipliers can fit the same interface because sometimes they require
+		//stat type data and etc, like this case, so we return a multiplier provider that contains the value.
 
 		/// <summary>
 		/// Generates a resistance multiplier for <paramref name="resistType"/>.
 		/// </summary>
 		/// <param name="resistType">Type of resistance.</param>
 		/// <returns>Float values (1.0 if no resist) that acts as a multiplier for resistance.</returns>
-		float ResistanceMultiplier(ResistanceStatType resistType);
+		IMultiplierProvider ResistanceMultiplier(ResistanceStatType resistType);
 	}
 }
