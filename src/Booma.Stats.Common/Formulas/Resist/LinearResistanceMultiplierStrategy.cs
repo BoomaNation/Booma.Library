@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Booma.Stats.Common
 {
+	//The reason this is in Common and not Server is because we may want to show the effect of resistances on the client some day
 	/// <summary>
 	/// Linear resistance strategy that computed resistance multipliers
 	/// this decreases linearlly as resistance increases and is the default implementation.
