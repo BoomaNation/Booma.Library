@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25029.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Combat.Formula.Server", "src\Booma.Combat.Formula.Server\Booma.Combat.Formula.Server.csproj", "{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BA129B9-410B-4DF6-B75F-CD08BC2D956F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F9B5698-1DEB-44C2-A257-73104E2507B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Combat.Formula.Server.Tests", "tests\Booma.Combat.Formula.Server.Tests\Booma.Combat.Formula.Server.Tests.csproj", "{76C34CDC-D245-487D-924C-372CEBB0F592}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C34CDC-D245-487D-924C-372CEBB0F592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C34CDC-D245-487D-924C-372CEBB0F592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C34CDC-D245-487D-924C-372CEBB0F592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C34CDC-D245-487D-924C-372CEBB0F592}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06B2C6C2-32B7-46D0-BAFD-FFD6F0516CC8} = {9BA129B9-410B-4DF6-B75F-CD08BC2D956F}
+		{76C34CDC-D245-487D-924C-372CEBB0F592} = {4F9B5698-1DEB-44C2-A257-73104E2507B8}
+	EndGlobalSection
+EndGlobal
