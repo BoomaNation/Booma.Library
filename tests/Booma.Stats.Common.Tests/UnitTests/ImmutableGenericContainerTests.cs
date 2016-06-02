@@ -41,7 +41,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 			TImmutableContainerType container = Activator.CreateInstance<TImmutableContainerType>();
 
 			//act
-			int? value = container[stat];
+			IStatProvider<TStatType> value = container[stat];
 
 			//assert
 			Assert.IsNull(value);
@@ -56,7 +56,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 			TImmutableContainerType container = Activator.CreateInstance<TImmutableContainerType>();
 
 			//act
-			int? value = container[stat];
+			IStatProvider<TStatType> value = container[stat];
 
 			//assert
 			Assert.IsNull(value);

@@ -22,12 +22,12 @@ namespace Booma.Stats.Common
 
 		/// <summary>
 		/// Readonly index accessor that takes in <typeparamref name="TStateType"/>s
-		/// and returns the contained value. Does not throw if the container doesn't contain
+		/// and returns the contained value with proper units. Does not throw if the container doesn't contain
 		/// <paramref name="statIndex"/>; returns null instead.
 		/// </summary>
 		/// <param name="statIndex">The state type to query the container for.</param>
-		/// <returns>The corresponding value for the <paramref name="statIndex"/> or null if the container doesn't contain it.</returns>
-		int? this[TStatType statIndex]
+		/// <returns>The corresponding value with units for the <paramref name="statIndex"/> or null if the container doesn't contain it.</returns>
+		IStatProvider<TStatType> this[TStatType statIndex]
 		{
 			get;
 		}

@@ -12,16 +12,35 @@ namespace Booma.Stats.Common
 	public abstract class ImmutableStatsContainer<TStatType> : IStatsContainer<TStatType>
 		where TStatType : struct, IConvertible
 	{
+
+		//This allows this class not to depend on external stat provider implementations
+		//We can make assumptions and optimize if needed (though that's not occuring here yet)
+		/// <summary>
+		/// Default provider we use if the internal container isn't provided with only int values.
+		/// </summary>
+		protected class ImmutableStatsContainerDefaultStatProvider : IStatProvider<TStatType>
+		{
+			public TStatType StatType { get; }
+
+			public int Value { get; }
+
+			public ImmutableStatsContainerDefaultStatProvider(TStatType statType, int val)
+			{
+				StatType = statType;
+				Value = val;
+			}
+		}
+
 		//Not really how I wanted to compute the value/store the value... But it's the most efficient and thread safe way.
 		//This value represents the maximum key value that the enum contains. This can help create a properly sized array for the container
 		protected static readonly int maxMapKeyValue = IStatsContainerExtensions.GetMaxMapKeyValue<TStatType>();
 
 		//for better caching we don't use a dictionary; use a flat array.
 		//Hopefully this doesn't cause GC pressure casting enum to int... I should read the language specs
-		private readonly int?[] _statsMap;
+		private readonly IStatProvider<TStatType>[] _statsMap;
 		
 		//We can use an IEnumerable because O(1) for arrays (since array implements IList magically)
-		protected IEnumerable<int?> statsMap
+		protected IEnumerable<IStatProvider<TStatType>> statsMap
 		{
 			get { return _statsMap; }
 		}
@@ -36,11 +55,11 @@ namespace Booma.Stats.Common
 			if (values.Count <= 0)
 			{
 				//empty container
-				_statsMap = new int?[0];
+				_statsMap = new IStatProvider<TStatType>[0];
 				return;
 			}
 			else
-				_statsMap = new int?[maxMapKeyValue + 1];
+				_statsMap = new IStatProvider<TStatType>[maxMapKeyValue + 1];
 
 
 			//Set each keypair to be in the flat cache-quick array of nullable ints
@@ -49,7 +68,7 @@ namespace Booma.Stats.Common
 				try
 				{
 					//map to the enum int codes
-					_statsMap[ConvertStatToKey(kvp.Key)] = kvp.Value;
+					_statsMap[ConvertStatToKey(kvp.Key)] = new ImmutableStatsContainerDefaultStatProvider(kvp.Key, kvp.Value);
 				}
 				catch(IndexOutOfRangeException e)
 				{
@@ -64,27 +83,25 @@ namespace Booma.Stats.Common
 		public ImmutableStatsContainer()
 		{
 			//We need a new array of atleast the size of the largest value in CombatStatType
-			_statsMap = new int?[maxMapKeyValue + 1];
+			_statsMap = new ImmutableStatsContainerDefaultStatProvider[maxMapKeyValue + 1];
 		}
 
 		//the reason we don't implement this generically is because this would cause boxing due to the inability to simply cast from enum to int
 		/// <summary>
 		/// Readonly index accessor that takes in <typeparamref name="TStateType"/>s
-		/// and returns the contained value. Does not throw if the container doesn't contain
+		/// and returns the contained value with proper units. Does not throw if the container doesn't contain
 		/// <paramref name="statIndex"/>; returns null instead.
 		/// </summary>
 		/// <param name="statIndex">The state type to query the container for.</param>
-		/// <returns>The corresponding value for the <paramref name="statIndex"/> or null if the container doesn't contain it.</returns>
-		public int? this[TStatType statIndex]
+		/// <returns>The corresponding value with units for the <paramref name="statIndex"/> or null if the container doesn't contain it.</returns>
+		public IStatProvider<TStatType> this[TStatType statIndex]
 		{
 			get
 			{
 				//An ugly nested ternary but basically if it's within bounds we'll check to see if there is a value
 				//If there is then we provide it otherwise we provide null
 				//This is as expected, it's not in the collection then the caller recieves null.
-				return isWithinBounds(statIndex) ?
-					(_statsMap[ConvertStatToKey(statIndex)].HasValue ? (int?)_statsMap[ConvertStatToKey(statIndex)].Value : null)
-					: null;
+				return isWithinBounds(statIndex) ? _statsMap[ConvertStatToKey(statIndex)] : null;
 			}
 		}
 
@@ -97,7 +114,7 @@ namespace Booma.Stats.Common
 		public bool Contains(TStatType statType)
 		{
 			//Gets the key value (int) and checks the length and if there is a value in the map
-			return isWithinBounds(statType) && _statsMap[ConvertStatToKey(statType)].HasValue;
+			return isWithinBounds(statType) && _statsMap[ConvertStatToKey(statType)] != null;
 		}
 
 		/// <summary>

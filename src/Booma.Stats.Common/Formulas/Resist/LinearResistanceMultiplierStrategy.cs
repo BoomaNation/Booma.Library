@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Booma.Stats.Common
 {
+	//The reason this is in Common and not Server is because we may want to show the effect of resistances on the client some day
 	/// <summary>
 	/// Linear resistance strategy that computed resistance multipliers
 	/// this decreases linearlly as resistance increases and is the default implementation.
@@ -65,13 +66,14 @@ namespace Booma.Stats.Common
 			//Where tech damage is: Damage x (1 - RES)
 
 			//Check the resist container for resist values
-			int? value = resistanceContainer[resistType];
+			IStatProvider<ResistanceStatType> valueProvider = resistanceContainer[resistType];
 
-			if (!value.HasValue)
+			//If there is no provider then we need to provide a default resist provider
+			if (valueProvider == null)
 				return new LinearResistanceMultiplierProvider(); //return default provider
 
 			//If we have a value we should compute the multiplier from it described by the 1 - (RES / 100) formula
-			return new LinearResistanceMultiplierProvider(value.Value);
+			return new LinearResistanceMultiplierProvider(valueProvider.Value);
 		}
 	}
 }
