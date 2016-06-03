@@ -34,10 +34,6 @@ namespace Booma.Combat.Formula.Server
 				throw new ArgumentException($"Target DFP must have DFP units in {nameof(CombatStatType.DefensivePower)} but had {targetDFP.StatType} instead",
 					nameof(targetDFP));
 
-			if (weaponRangeBonus.StatType != CombatStatType.AttackPower)
-				throw new ArgumentException($"Weapons range bonus must have ATP units in {nameof(CombatStatType.AttackPower)} but had {weaponRangeBonus.StatType} instead",
-					nameof(baseATP));
-
 			//CombatDamage = ((UserATP - TargetDEF) / 5) * AttackTypeMultiplier
 			//http://www.freewebs.com/azurepso/psostatistics.htm
 			Value = (int)(((finalATP.Value - targetDFP.Value) / 5.0f) * attackMultiplier.Multiplier);
