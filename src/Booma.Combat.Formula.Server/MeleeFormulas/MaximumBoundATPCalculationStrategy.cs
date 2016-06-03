@@ -10,7 +10,7 @@ namespace Booma.Combat.Formula.Server
 	/// A <see cref="IStatProvider{TStatType}"/> that computes and provides a value for the minimum bound ATP
 	/// for combat calculation.
 	/// </summary>
-	public class MinimumBoundATPCalculationStrategy : IStatProvider<CombatStatType>
+	public class MaximumBoundATPCalculationStrategy : IStatProvider<CombatStatType>
 	{
 		/// <summary>
 		/// Provides the units for the <see cref="Value"/> integer.
@@ -23,18 +23,23 @@ namespace Booma.Combat.Formula.Server
 		/// </summary>
 		public int Value { get; }
 
-		public MinimumBoundATPCalculationStrategy(IStatProvider<CombatStatType> baseATP, IStatProvider<CombatStatType> minimumWeaponBoundATP)
+		public MaximumBoundATPCalculationStrategy(IStatProvider<CombatStatType> baseATP, IStatProvider<CombatStatType> maximumWeaponBoundATP, IStatProvider<CombatStatType> weaponRangeBonus)
 		{
 			if (baseATP.StatType != CombatStatType.AttackPower)
 				throw new ArgumentException($"Base ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {baseATP.StatType} instead",
 					nameof(baseATP));
 
-			if (minimumWeaponBoundATP.StatType != CombatStatType.AttackPower)
-				throw new ArgumentException($"Minimum weapon bound ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {minimumWeaponBoundATP.StatType} instead",
+			if (maximumWeaponBoundATP.StatType != CombatStatType.AttackPower)
+				throw new ArgumentException($"Maximum weapon bound ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {maximumWeaponBoundATP.StatType} instead",
 					nameof(baseATP));
 
-			//CombatATP = BaseATP + MaximumWeaponATP + (Grind x 2)
-			Value = baseATP.Value + minimumWeaponBoundATP.Value;
+			if (weaponRangeBonus.StatType != CombatStatType.AttackPower)
+				throw new ArgumentException($"Weapons range bonus must have ATP units in {nameof(CombatStatType.AttackPower)} but had {weaponRangeBonus.StatType} instead",
+					nameof(baseATP));
+
+			//CombatATP = BaseATP + MaximumWeaponATP
+			//Can be seen here: http://www.freewebs.com/azurepso/psostatistics.htm
+			Value = baseATP.Value + maximumWeaponBoundATP.Value + weaponRangeBonus.Value;
 		}
 	}
 }

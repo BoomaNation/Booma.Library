@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinimumBoundATPCalculationStrategy.cs" />
+    <Compile Include="MeleeFormulas\MaximumBoundATPCalculationStrategy.cs" />
+    <Compile Include="MeleeFormulas\MinimumBoundATPCalculationStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
