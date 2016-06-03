@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MeleeFormulas\MaximumBoundATPCalculationStrategy.cs" />
+    <Compile Include="MeleeFormulas\MeleeDamageResultStrategy.cs" />
     <Compile Include="MeleeFormulas\MinimumBoundATPCalculationStrategy.cs" />
+    <Compile Include="MeleeFormulas\Multipliers\CombatMeleeAttackTypeMultiplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
