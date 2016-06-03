@@ -31,11 +31,11 @@ namespace Booma.Combat.Formula.Server
 
 			if (maximumWeaponBoundATP.StatType != CombatStatType.AttackPower)
 				throw new ArgumentException($"Maximum weapon bound ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {maximumWeaponBoundATP.StatType} instead",
-					nameof(baseATP));
+					nameof(maximumWeaponBoundATP));
 
 			if (weaponRangeBonus.StatType != CombatStatType.AttackPower)
 				throw new ArgumentException($"Weapons range bonus must have ATP units in {nameof(CombatStatType.AttackPower)} but had {weaponRangeBonus.StatType} instead",
-					nameof(baseATP));
+					nameof(weaponRangeBonus));
 
 			//CombatATP = BaseATP + MaximumWeaponATP
 			//Can be seen here: http://www.freewebs.com/azurepso/psostatistics.htm
