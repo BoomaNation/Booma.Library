@@ -12,7 +12,7 @@ namespace Booma.Combat.Formula.Server
 	/// </summary>
 	public static class CombatMeleeAttackTypeMultiplier
 	{
-		protected class CombatAttackTypeMultiplier : IMultiplierProvider
+		private class CombatAttackTypeMultiplier : IMultiplierProvider
 		{
 			public float Multiplier { get; }
 
