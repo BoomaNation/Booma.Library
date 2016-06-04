@@ -48,8 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\Extensions\IStatsContainerExtensionsTests.cs" />
     <Compile Include="UnitTests\Formulas\Resist\LinearResistanceMultiplierStrategyTests.cs" />
-    <Compile Include="UnitTests\StatContainers\ImmutableResistanceStatContainerTests.cs" />
     <Compile Include="UnitTests\StatContainers\ImmutableCombatStatContainerTests.cs" />
+    <Compile Include="UnitTests\StatContainers\ImmutableResistanceStatContainerTests.cs" />
+    <Compile Include="UnitTests\StatContainers\ImmutableTransientStatContainerTests.cs" />
     <Compile Include="UnitTests\ImmutableGenericContainerTests.cs" />
   </ItemGroup>
   <ItemGroup />

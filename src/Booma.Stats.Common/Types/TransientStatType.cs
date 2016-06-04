@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Stats.Common.Types
+namespace Booma.Stats.Common
 {
 	/// <summary>
 	/// Enumeration of all potential transient stats.
