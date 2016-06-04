@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TransientStatTypeExtensions.cs" />
     <Compile Include="Extensions\CombatStatTypeExtensions.cs" />
     <Compile Include="Extensions\IStatsContainerExtensions.cs" />
     <Compile Include="Extensions\ResistanceStateTypeExtensions.cs" />
@@ -52,8 +53,11 @@
     <Compile Include="StatContainers\IStatsContainer.cs" />
     <Compile Include="StatContainers\Resist\IResistanceStatsContainer.cs" />
     <Compile Include="StatContainers\Resist\ImmutableResistanceStatsContainer.cs" />
+    <Compile Include="StatContainers\Transient\ImmutableTransientStatsContainer.cs" />
+    <Compile Include="StatContainers\Transient\ITransientStatsContainer.cs" />
     <Compile Include="Types\ResistanceStateType.cs" />
     <Compile Include="Types\CombatStatType.cs" />
+    <Compile Include="Types\TransientStatType.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
