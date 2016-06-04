@@ -47,6 +47,7 @@
     <Compile Include="Formulas\Resist\IResistanceMultiplierStrategy.cs" />
     <Compile Include="Formulas\Resist\LinearResistanceMultiplierStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatContainers\Builders\ImmutableStatsContainerBuilder.cs" />
     <Compile Include="StatContainers\Combat\ICombatStatsContainer.cs" />
     <Compile Include="StatContainers\Combat\ImmutableCombatStatsContainer.cs" />
     <Compile Include="StatContainers\ImmutableStatsContainer.cs" />
