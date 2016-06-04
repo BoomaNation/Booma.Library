@@ -12,8 +12,13 @@ namespace Booma.Combat.Formula.Server.Tests
 	public static class MeleeDamageAcceptanceTests
 	{
 		[Test]
+		[TestCase(52, 0, 0, 0, 8)]
+		[TestCase(52, 0, 0, 0, 9)]//bare handed
+		[TestCase(52, 55, 40, 5, 14)]
 		[TestCase(52, 55, 40, 5, 17)] //gobooma
 		[TestCase(52, 55, 40, 5, 15)] //gobooma
+		[TestCase(52, 55, 40, 25, 14)]
+		[TestCase(52, 55, 40, 25, 13)]
 		[TestCase(52, 55, 40, 25, 12)]
 		[TestCase(45, 55, 40, 25, 10)]
 		[TestCase(45, 55, 40, 25, 11)]
@@ -61,8 +66,8 @@ namespace Booma.Combat.Formula.Server.Tests
 			targetDFPProvider.SetupGet(p => p.Value).Returns(TargetDFP);
 			
 			//act
-			MeleeDamageResultStrategy meleeDamageStratMax = new MeleeDamageResultStrategy(finalATPMax, targetDFPProvider.Object, CombatMeleeAttackTypeMultiplier.Base);
-			MeleeDamageResultStrategy meleeDamageStratMin = new MeleeDamageResultStrategy(finalATPMin, targetDFPProvider.Object, CombatMeleeAttackTypeMultiplier.Base);
+			MeleeDamageResultStrategy meleeDamageStratMax = new MeleeDamageResultStrategy(finalATPMax, targetDFPProvider.Object, CombatMeleeAttackTypeMultiplier.BaseMax);
+			MeleeDamageResultStrategy meleeDamageStratMin = new MeleeDamageResultStrategy(finalATPMin, targetDFPProvider.Object, CombatMeleeAttackTypeMultiplier.BaseMin);
 
 
 			//assert
