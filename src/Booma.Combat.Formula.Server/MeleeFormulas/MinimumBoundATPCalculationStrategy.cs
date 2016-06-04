@@ -23,19 +23,19 @@ namespace Booma.Combat.Formula.Server
 		/// </summary>
 		public int Value { get; }
 
-		public MinimumBoundATPCalculationStrategy(IStatProvider<CombatStatType> baseATP, IStatProvider<CombatStatType> maximumWeaponBoundATP)
+		public MinimumBoundATPCalculationStrategy(IStatProvider<CombatStatType> baseATP, IStatProvider<CombatStatType> minimumWeaponBoundATP)
 		{
 			if (baseATP.StatType != CombatStatType.AttackPower)
 				throw new ArgumentException($"Base ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {baseATP.StatType} instead",
 					nameof(baseATP));
 
-			if (maximumWeaponBoundATP.StatType != CombatStatType.AttackPower)
-				throw new ArgumentException($"Maximum weapon bound ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {maximumWeaponBoundATP.StatType} instead",
+			if (minimumWeaponBoundATP.StatType != CombatStatType.AttackPower)
+				throw new ArgumentException($"Minimum weapon bound ATP must have ATP units in {nameof(CombatStatType.AttackPower)} but had {minimumWeaponBoundATP.StatType} instead",
 					nameof(baseATP));
 
-			//CombatATP = BaseATP + MaximumWeaponATP
+			//CombatATP = BaseATP + MimWeaponATP
 			//Can be seen here: http://www.freewebs.com/azurepso/psostatistics.htm
-			Value = baseATP.Value + maximumWeaponBoundATP.Value;
+			Value = baseATP.Value + minimumWeaponBoundATP.Value;
 		}
 	}
 }
