@@ -17,6 +17,8 @@ namespace Booma.Stats.Common
 		{
 			//We need a setter like this to build the API
 			int this[TStatType stat] { set; }
+
+			Dictionary<TStatType, int> BuilderDictionary { get; }
 		}
 
 		/// <summary>
