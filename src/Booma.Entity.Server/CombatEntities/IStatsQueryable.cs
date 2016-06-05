@@ -12,13 +12,13 @@ namespace Booma.Entity.Server
 	public interface IStatsQueryable
 	{
 		/// <summary>
-		/// Immutable container for entity's combat stats.
+		/// Immutable container for entity's base combat stats.
 		/// </summary>
-		ImmutableStatsContainer<CombatStatType> CombatStats { get; }
+		ImmutableStatsContainer<CombatStatType> BaseCombatStats { get; }
 
 		/// <summary>
-		/// Immutable container for entity's resistance stats.
+		/// Immutable container for entity's base resistance stats.
 		/// </summary>
-		ImmutableStatsContainer<ResistanceStatType> ResistanceStats { get; }
+		ImmutableStatsContainer<ResistanceStatType> BaseResistanceStats { get; }
 	}
 }
