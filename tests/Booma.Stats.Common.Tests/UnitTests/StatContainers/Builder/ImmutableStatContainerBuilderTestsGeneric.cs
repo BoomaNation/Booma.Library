@@ -11,6 +11,11 @@ namespace Booma.Stats.Common
 	public abstract class ImmutableStatContainerBuilderTestsGeneric<TStatType>
 		where TStatType : struct, IConvertible
 	{
+		protected static ImmutableStatsContainerBuilder<TStatType>.IBuilder GetNewBuilder()
+		{
+			return ImmutableStatsContainerBuilder<TStatType>.Factory.Create();
+		}
+
 		[Test]
 		public void Test_Builder_Doesnt_Throw_On_Build()
 		{
