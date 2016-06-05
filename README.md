@@ -11,7 +11,7 @@ To use this project you'll first need a couple of things:
 
 ## Builds
 
-Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokitty MyGet Build Status](https://www.myget.org/BuildSource/Badge/hellokitty?identifier=803ea136-5799-45fa-abeb-6c5f5f3eb963)](https://www.myget.org/gallery/hellokitty)
+Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokitty MyGet Build Status](https://www.myget.org/BuildSource/Badge/hellokitty?identifier=83762030-a9e4-4429-b738-9b850213d029)](https://www.myget.org/)
 
 ##Tests
 
