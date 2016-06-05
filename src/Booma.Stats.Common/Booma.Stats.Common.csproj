@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\StatContainerBuilder\ImmutableStatsContainerBuilderCarryObjectExtensions.cs" />
     <Compile Include="Extensions\TransientStatTypeExtensions.cs" />
     <Compile Include="Extensions\CombatStatTypeExtensions.cs" />
     <Compile Include="Extensions\IStatsContainerExtensions.cs" />
