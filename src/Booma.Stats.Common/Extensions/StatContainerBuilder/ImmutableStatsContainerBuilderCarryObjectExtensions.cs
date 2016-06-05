@@ -38,13 +38,46 @@ namespace Booma.Stats.Common
 		}
 
 		//ResistStatType Extensions
-		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithFireResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int resistValue)
+		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithFireResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int statValue)
 		{
-			builder[ResistanceStatType.ElementalFire] = resistValue;
+			builder.WithStat(ResistanceStatType.ElementalFire, statValue);
 
 			//fluent return
 			return builder;
 		}
+
+		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithDarkResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(ResistanceStatType.ElementalDark, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithIceResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(ResistanceStatType.ElementalIce, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithLightResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(ResistanceStatType.ElementalLight, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder WithThunderResist(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(ResistanceStatType.ElementalThunder, statValue);
+
+			//fluent return
+			return builder;
+		}
+
 
 		//Build methods
 		public static ImmutableStatsContainer<ResistanceStatType> Build(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder)
