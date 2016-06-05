@@ -143,6 +143,31 @@ namespace Booma.Stats.Common
 			return builder;
 		}
 
+		//TransientStatType Extensions
+		public static ImmutableStatsContainerBuilder<TransientStatType>.IBuilder WithHitPoints(this ImmutableStatsContainerBuilder<TransientStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(TransientStatType.HitPoints, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<TransientStatType>.IBuilder WithPhotonBlastCharge(this ImmutableStatsContainerBuilder<TransientStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(TransientStatType.PhotonBlastCharge, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<TransientStatType>.IBuilder WithTechniquePoints(this ImmutableStatsContainerBuilder<TransientStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(TransientStatType.TechniquePoints, statValue);
+
+			//fluent return
+			return builder;
+		}
+
 		//Build methods
 		public static ImmutableStatsContainer<ResistanceStatType> Build(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder)
 		{
@@ -154,6 +179,12 @@ namespace Booma.Stats.Common
 		{
 			//create a new combat container
 			return new ImmutableCombatStatsContainer(builder.BuilderDictionary);
+		}
+
+		public static ImmutableStatsContainer<TransientStatType> Build(this ImmutableStatsContainerBuilder<TransientStatType>.IBuilder builder)
+		{
+			//create a new combat container
+			return new ImmutableTransientStatsContainer(builder.BuilderDictionary);
 		}
 	}
 }
