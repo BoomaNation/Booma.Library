@@ -78,12 +78,82 @@ namespace Booma.Stats.Common
 			return builder;
 		}
 
+		//CombatStatType Extensions
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithAttackAccuracy(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.AttackAccuracy, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithAttackPower(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.AttackPower, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithDefensivePower(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.DefensivePower, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithEvasivePower(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.EvasivePower, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithHitPoints(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.HitPoints, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithLuck(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.Luck, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithMentalStrength(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.MentalStrength, statValue);
+
+			//fluent return
+			return builder;
+		}
+
+		public static ImmutableStatsContainerBuilder<CombatStatType>.IBuilder WithTechniquePoints(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder, int statValue)
+		{
+			builder.WithStat(CombatStatType.TechniquePoints, statValue);
+
+			//fluent return
+			return builder;
+		}
 
 		//Build methods
 		public static ImmutableStatsContainer<ResistanceStatType> Build(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder)
 		{
 			//create a new resistance container
 			return new ImmutableResistanceStatsContainer(builder.BuilderDictionary);
+		}
+
+		public static ImmutableStatsContainer<CombatStatType> Build(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder)
+		{
+			//create a new combat container
+			return new ImmutableCombatStatsContainer(builder.BuilderDictionary);
 		}
 	}
 }
