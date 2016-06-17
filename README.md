@@ -1,8 +1,8 @@
-# Booma.Client.Titlescreen
+# Booma.Client.ServerSelection
 
 Booma is the code name for a networked ORPG/MMORPG being developed by the BoomaNation organization.
 
-Booma.Client.Titlescreen is scene specific components for the client's Titlescreen scene.
+Booma.Client.ServerSelection is scene specific components for the client's Server Selection scene.
 
 ## Setup
 
@@ -15,11 +15,13 @@ Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokit
 
 ##Tests
 
+Testing of external Unity3D libraries is generally not possible. Refer to: https://github.com/HelloKitty/Testity as an incomplete solution to this important problem.
+
 #### Linux/Mono - Unit Tests
 ||Debug x86|Debug x64|Release x86|Release x64|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen) |
-|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=dev)](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen)|
+|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Client.ServerSelection) |
+|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=dev)](https://travis-ci.org/BoomaNation/Booma.Client.ServerSelection)|
 
 #### Windows - Unit Tests
 
