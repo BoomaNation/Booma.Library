@@ -91,6 +91,8 @@
     <Compile Include="Peer\BoomaNetworkClientPeer.cs" />
     <Compile Include="Peer\PeerEndpointDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnityEvent\NetworkStatusUnityEvent.cs" />
+    <Compile Include="UnityEvent\NetworkUnityEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

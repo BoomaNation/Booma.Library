@@ -44,6 +44,9 @@ namespace Booma.Client.Network.Common
 				throw new InvalidOperationException($"Created invalid closed generic {nameof(BoomaNetworkClientPeer<TInheritingType>)} due to {typeof(TInheritingType)} not being the true subtype of this object.");
 		}
 
+		/// <summary>
+		/// Details about the remote application to be connected to.
+		/// </summary>
 		[Tooltip("Initilize these fields so that you can connect to a remote application.")]
 		[SerializeField]
 		private PeerEndpointDetails peerConnectDetails;
