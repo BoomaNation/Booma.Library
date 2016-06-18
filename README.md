@@ -1,8 +1,8 @@
-# Booma.Client.Titlescreen
+# Booma.Client.Network.Common
 
 Booma is the code name for a networked ORPG/MMORPG being developed by the BoomaNation organization.
 
-Booma.Client.Titlescreen is scene specific components for the client's Titlescreen scene.
+Booma.Client.Network.Common is library for shared network code between all client libraries.
 
 ## Setup
 
@@ -18,8 +18,8 @@ Available on a Nuget Feed: https://www.myget.org/F/hellokitty/api/v2 [![hellokit
 #### Linux/Mono - Unit Tests
 ||Debug x86|Debug x64|Release x86|Release x64|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen) |
-|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen.svg?branch=dev)](https://travis-ci.org/BoomaNation/Booma.Client.Titlescreen)|
+|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Network.Common.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Client.Network.Common) |
+|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/BoomaNation/Booma.Client.Network.Common.svg?branch=dev)](https://travis-ci.org/BoomaNation/Booma.Client.Network.Common)|
 
 #### Windows - Unit Tests
 
