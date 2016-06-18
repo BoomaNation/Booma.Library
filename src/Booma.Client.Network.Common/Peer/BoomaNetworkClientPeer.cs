@@ -37,7 +37,7 @@ namespace Booma.Client.Network.Common
 		private IResponsePayloadHandlerService<TInheritingType> responseHandler { get; }
 
 		/// <summary>
-		/// Handler service that will deal with dispatching <see cref="ResponseMessage"/> payloads that are of 
+		/// Handler service that will deal with dispatching <see cref="EventMessage"/> payloads that are of 
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
