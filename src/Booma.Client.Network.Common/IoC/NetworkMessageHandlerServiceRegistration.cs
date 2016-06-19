@@ -18,7 +18,7 @@ namespace Booma.Client.Network.Common
 	public abstract class NetworkMessageHandlerServiceRegistration<TPeerType, TNetworkHandlerType, THandlerServiceTypeConcrete, THandlerServiceTypeServiceInterface> : NonBehaviourDependency
 		where TPeerType : INetPeer 
 		where TNetworkHandlerType : IPayloadHandler<TPeerType>
-		where THandlerServiceTypeConcrete : class, IPayloadHandler<TPeerType>, THandlerServiceTypeServiceInterface //there is no interface for handler services so we must contrain against payloadhandler
+		where THandlerServiceTypeConcrete : class, TNetworkHandlerType, IPayloadHandler<TPeerType>, THandlerServiceTypeServiceInterface //there is no interface for handler services so we must contrain against payloadhandler
 		where THandlerServiceTypeServiceInterface : IPayloadHandler<TPeerType>
 	{
 		public override void Register(IServiceRegister register)
@@ -55,7 +55,7 @@ namespace Booma.Client.Network.Common
 				return
 #endif
 			Resources.FindObjectsOfTypeAll<MonoBehaviour>()
-				.Where(mb => mb.GetType().GetInterfaces().Where(t => typeof(IPayloadHandler<TPeerType>).IsAssignableFrom(t)).Count() != 0 ) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
+				.Where(mb => mb.GetType().GetInterfaces().Where(t => typeof(TNetworkHandlerType).IsAssignableFrom(t)).Count() != 0 ) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
 				.Cast<IPayloadHandler<TPeerType>>();
 
 #if DEBUG || DEBUG_BUILD || DEBUGBUILD

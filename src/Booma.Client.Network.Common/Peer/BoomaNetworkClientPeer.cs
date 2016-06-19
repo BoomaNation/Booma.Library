@@ -25,14 +25,14 @@ namespace Booma.Client.Network.Common
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IResponsePayloadHandlerService<TInheritingType> responseHandler { get; }
+		private IResponsePayloadHandlerService<TInheritingType> responseHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Handler service that will deal with dispatching <see cref="EventMessage"/> payloads that are of 
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IEventPayloadHandlerService<TInheritingType> eventHandler { get; }
+		private IEventPayloadHandlerService<TInheritingType> eventHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Assets that the generic arg <typeparamref name="TInheritingType"/> is the subtype.
