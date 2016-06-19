@@ -33,10 +33,23 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private NetworkStatusUnityEvent OnEncryptionEstablished;
 
+		/// <summary>
+		/// Called when the peer's <see cref="NetStatus"/> changed.
+		/// </summary>
+		[Tooltip("Called when the peer's NetStatus changed.")]
+		[SerializeField]
+		private NetworkStatusUnityEvent OnStatusChangedEvent;
+
+		/// <summary>
+		/// Called internally when the client peer recieves a notice of change in <see cref="NetStatus"/>.
+		/// </summary>
+		/// <param name="status">The new current status/event.</param>
 		public override void OnStatusChanged(NetStatus status)
 		{
 			switch(status)
 			{
+				//We just invoke unity events passing in information
+				//this allows designers to rig up listeners or preform actions in the inspector when certain things happen.
 				case NetStatus.Connected:
 					if(OnConnectionEstablished != null)
 						OnConnectionEstablished.Invoke(this, status);
