@@ -10,10 +10,15 @@ using UnityEngine;
 namespace Booma.Client.ServerSelection.Authentication
 {
 	/// <summary>
-	/// The login network client for the Boom project
+	/// The login network client for the Booma project.
 	/// </summary>
 	public class LoginNetworkClient : BoomaNetworkClientPeer<LoginNetworkClient>
 	{
+		//Note to future users. Assuming the API/Design has not changed.
+		//You should use SceneJect, or some sort of DI lib, to inject
+		//the response and event handlers which are properties in the base class.
+		//If you don't there is no mechanism for getting info about them or handling them exposed.
+
 		/// <summary>
 		/// Called when the peer enters a connected state
 		/// </summary>
