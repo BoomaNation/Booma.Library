@@ -13,6 +13,7 @@ namespace Booma.Client.Network.Common
 	[Serializable]
 	public class PeerEndpointDetails
 	{
+		//TODO: Add pragmas
 		/// <summary>
 		/// The endpoint to connect to with this peer.
 		/// </summary>
