@@ -34,8 +34,8 @@
       <HintPath>..\..\packages\SceneJect.Autofac.1.0.13\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Client.Network.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.3\lib\net35\Booma.Client.Network.Common.dll</HintPath>
+    <Reference Include="Booma.Client.Network.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.4\lib\net35\Booma.Client.Network.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
