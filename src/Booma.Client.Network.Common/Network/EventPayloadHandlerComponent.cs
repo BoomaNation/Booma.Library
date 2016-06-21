@@ -1,5 +1,6 @@
 ﻿using GladLive.Common;
 using GladNet.Common;
+using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,12 @@ namespace Booma.Client.Network.Common
 		where TPayloadType : PacketPayload
 		where TPeerType : INetPeer
 	{
+		/// <summary>
+		/// Internal class logging service for handlers.
+		/// </summary>
+		[Inject]
+		protected IClassLogger loggingService { get; private set; }
+
 		/// <summary>
 		/// Attempts to handle the loosely-typed payload.
 		/// Will return false if <see cref="PacketPayload"/> isn't a <typeparamref name="TPayloadType"/>.
