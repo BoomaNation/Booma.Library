@@ -50,6 +50,10 @@
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GladBehaviour.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladBehaviour.Common.1.0.2\lib\net35\GladBehaviour.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GladLive.Common, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladLive.Common.1.0.10\lib\net35\GladLive.Common.dll</HintPath>
       <Private>True</Private>
@@ -114,8 +118,10 @@
   <ItemGroup>
     <Compile Include="IoC Modules\LoginNetworkResponseHandlerServiceRegisteration.cs" />
     <Compile Include="IoC Modules\LoginNetworkRequestHandlerServiceRegisteration.cs" />
+    <Compile Include="Networking\RequestGenerators\GameServerListRequestGenerator.cs" />
     <Compile Include="Networking\Handlers\LoginNetworkHandlers\ResponseHandlers\LoginResponseHandler.cs" />
     <Compile Include="Networking\LoginNetworkClient.cs" />
+    <Compile Include="Networking\RequestGenerators\IRequestSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
