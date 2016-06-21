@@ -34,8 +34,8 @@
       <HintPath>..\..\packages\SceneJect.Autofac.1.0.13\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Client.Network.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.4\lib\net35\Booma.Client.Network.Common.dll</HintPath>
+    <Reference Include="Booma.Client.Network.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.6\lib\net35\Booma.Client.Network.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -52,6 +52,10 @@
     </Reference>
     <Reference Include="GladLive.Common, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladLive.Common.1.0.10\lib\net35\GladLive.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladLive.Common.Payloads, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladLive.Common.Payloads.1.0.10\lib\net35\GladLive.Common.Payloads.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
@@ -110,8 +114,8 @@
   <ItemGroup>
     <Compile Include="IoC Modules\LoginNetworkResponseHandlerServiceRegisteration.cs" />
     <Compile Include="IoC Modules\LoginNetworkRequestHandlerServiceRegisteration.cs" />
+    <Compile Include="Networking\Handlers\LoginNetworkHandlers\ResponseHandlers\LoginResponseHandler.cs" />
     <Compile Include="Networking\LoginNetworkClient.cs" />
-    <Compile Include="Networking\TestRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
