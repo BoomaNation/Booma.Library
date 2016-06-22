@@ -1,4 +1,5 @@
-﻿using GladLive.Common;
+﻿using Common.Logging;
+using GladLive.Common;
 using GladNet.Common;
 using SceneJect.Common;
 using System;
@@ -14,15 +15,15 @@ namespace Booma.Client.Network.Common
 	/// </summary>
 	/// <typeparam name="TPeerType">Type of peer this response was recieved on.</typeparam>
 	/// <typeparam name="TPayloadType">Type of payload that this handler can handle.</typeparam>
-	public abstract class ResponsePayloadHandlerComponent<TPeerType, TPayloadType> : MonoBehaviour, IResponsePayloadHandler<TPeerType, TPayloadType>
+	public abstract class ResponsePayloadHandlerComponent<TPeerType, TPayloadType> : MonoBehaviour, IResponsePayloadHandler<TPeerType, TPayloadType>, IClassLogger
 		where TPayloadType : PacketPayload
 		where TPeerType : INetPeer
 	{
 		/// <summary>
-		/// Internal class logging service for handlers.
+		/// Logging service for handlers.
 		/// </summary>
 		[Inject]
-		protected IClassLogger loggingService { get; private set; }
+		public ILog Logger { get; private set; }
 
 		/// <summary>
 		/// Attempts to handle the loosely-typed payload.
