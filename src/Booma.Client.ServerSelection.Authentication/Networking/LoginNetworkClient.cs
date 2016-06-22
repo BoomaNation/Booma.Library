@@ -6,6 +6,7 @@ using System.Text;
 using GladNet.Common;
 using UnityEngine.Events;
 using UnityEngine;
+using GladLive.Common.Payloads;
 
 namespace Booma.Client.ServerSelection.Authentication
 {
@@ -40,6 +41,14 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private NetworkStatusUnityEvent OnStatusChangedEvent;
 
+		public void Start()
+		{
+			//Register types
+			GladNet.Serializer.Protobuf.ProtobufnetRegistry registry = new GladNet.Serializer.Protobuf.ProtobufnetRegistry();
+
+			registry.Register(typeof(LoginRequest));
+		}
+
 		/// <summary>
 		/// Called internally when the client peer recieves a notice of change in <see cref="NetStatus"/>.
 		/// </summary>
@@ -51,11 +60,13 @@ namespace Booma.Client.ServerSelection.Authentication
 				//We just invoke unity events passing in information
 				//this allows designers to rig up listeners or preform actions in the inspector when certain things happen.
 				case NetStatus.Connected:
-					if(OnConnectionEstablished != null)
+					Debug.Log("NetStatus changed to Connected.");
+					if (OnConnectionEstablished != null)
 						OnConnectionEstablished.Invoke(this, status);
 					break;
 				case NetStatus.EncryptionEstablished:
-					if(OnConnectionEstablished != null)
+					Debug.Log("NetStatus changed to EncryptionEstablished.");
+					if(OnEncryptionEstablished != null)
 						OnEncryptionEstablished.Invoke(this, status);
 					break;
 			}

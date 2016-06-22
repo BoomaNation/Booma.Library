@@ -39,7 +39,7 @@ namespace Booma.Client.ServerSelection.Authentication
 		protected override void HandleNonNullStronglyTypedPayload(LoginResponse payload, IMessageParameters parameters, LoginNetworkClient peer)
 		{
 			//Log out the response first
-			loggingService.Logger.Debug($"Recieved response code: {payload.Code}");
+			Logger.Debug($"Recieved response code: {payload.Code}");
 
 
 			switch (payload.Code)

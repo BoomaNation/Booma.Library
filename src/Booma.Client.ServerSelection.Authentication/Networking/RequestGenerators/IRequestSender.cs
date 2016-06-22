@@ -14,8 +14,14 @@ namespace Booma.Client.ServerSelection.Authentication
 	{
 		/// <summary>
 		/// Attempts to send a request.
+		/// Includes <see cref="SendResult"/> as a return value.
 		/// </summary>
 		/// <returns>Returns the <see cref="SendResult"/> of the request sending operation.</returns>
-		SendResult SendRequest();
+		SendResult SendRequestWithResult();
+
+		/// <summary>
+		/// Attempts to send a request.
+		/// </summary>
+		void SendRequest();
 	}
 }

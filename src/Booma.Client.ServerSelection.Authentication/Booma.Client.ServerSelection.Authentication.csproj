@@ -34,8 +34,12 @@
       <HintPath>..\..\packages\SceneJect.Autofac.1.0.13\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Client.Network.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.6\lib\net35\Booma.Client.Network.Common.dll</HintPath>
+    <Reference Include="Booma.Client.Logging, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Logging.1.0.2\lib\net35\Booma.Client.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Client.Network.Common, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Network.Common.1.0.7\lib\net35\Booma.Client.Network.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -54,6 +58,10 @@
       <HintPath>..\..\packages\GladBehaviour.Common.1.0.2\lib\net35\GladBehaviour.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GladBehaviour.Editor, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladBehaviour.Editor.1.0.2\lib\net35\GladBehaviour.Editor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GladLive.Common, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladLive.Common.1.0.10\lib\net35\GladLive.Common.dll</HintPath>
       <Private>True</Private>
@@ -66,12 +74,12 @@
       <HintPath>..\..\packages\GladNet.Common.1.0.5\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.12\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
+    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.13\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.PhotonServer.Common, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Common.1.0.12\lib\net35\GladNet.PhotonServer.Common.dll</HintPath>
+    <Reference Include="GladNet.PhotonServer.Common, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.PhotonServer.Common.1.0.13\lib\net35\GladNet.PhotonServer.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
@@ -117,11 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IoC Modules\LoginNetworkResponseHandlerServiceRegisteration.cs" />
-    <Compile Include="IoC Modules\LoginNetworkRequestHandlerServiceRegisteration.cs" />
+    <Compile Include="IoC Modules\LoginNetworkEventHandlerServiceRegisteration.cs" />
     <Compile Include="Networking\RequestGenerators\GameServerListRequestGenerator.cs" />
     <Compile Include="Networking\Handlers\LoginNetworkHandlers\ResponseHandlers\LoginResponseHandler.cs" />
     <Compile Include="Networking\LoginNetworkClient.cs" />
     <Compile Include="Networking\RequestGenerators\IRequestSender.cs" />
+    <Compile Include="Networking\RequestGenerators\LoginRequestGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

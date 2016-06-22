@@ -18,7 +18,12 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private IClientPeerNetworkMessageSender messageSender;
 
-		public SendResult SendRequest()
+		public void SendRequest()
+		{
+			SendRequestWithResult();
+		}
+
+		public SendResult SendRequestWithResult()
 		{
 			//TODO: Send shiplist request when the payload exists.
 			return SendResult.Invalid;
