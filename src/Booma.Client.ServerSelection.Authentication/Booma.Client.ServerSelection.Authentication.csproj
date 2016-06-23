@@ -70,6 +70,10 @@
       <HintPath>..\..\packages\GladLive.Common.Payloads.1.0.10\lib\net35\GladLive.Common.Payloads.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GladLive.Security.Common, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladLive.Security.Common.1.0.12\lib\net35\GladLive.Security.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GladNet.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Common.1.0.5\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
@@ -124,11 +128,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoC Modules\LoginDetailsRegisteration.cs" />
     <Compile Include="IoC Modules\LoginNetworkResponseHandlerServiceRegisteration.cs" />
     <Compile Include="IoC Modules\LoginNetworkEventHandlerServiceRegisteration.cs" />
+    <Compile Include="IoC Modules\RSAServiceRegisteration.cs" />
+    <Compile Include="Networking\Login\ILoginDetails.cs" />
+    <Compile Include="Networking\Login\LoginDetailsSceneData.cs" />
     <Compile Include="Networking\RequestGenerators\GameServerListRequestGenerator.cs" />
     <Compile Include="Networking\Handlers\LoginNetworkHandlers\ResponseHandlers\LoginResponseHandler.cs" />
-    <Compile Include="Networking\LoginNetworkClient.cs" />
+    <Compile Include="Networking\Login\LoginNetworkClient.cs" />
     <Compile Include="Networking\RequestGenerators\IRequestSender.cs" />
     <Compile Include="Networking\RequestGenerators\LoginRequestGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

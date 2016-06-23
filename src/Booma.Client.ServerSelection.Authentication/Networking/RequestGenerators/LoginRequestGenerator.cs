@@ -8,6 +8,7 @@ using GladBehaviour.Common;
 using GladLive.Common.Payloads;
 using SceneJect.Common;
 using System.Security.Cryptography;
+using GladLive.Security.Common;
 
 namespace Booma.Client.ServerSelection.Authentication
 {
@@ -15,6 +16,7 @@ namespace Booma.Client.ServerSelection.Authentication
 	/// Component that can implements <see cref="IRequestSender"/> which can be used
 	/// to send requests to a <see cref="IClientPeerNetworkMessageSender"/>.
 	/// </summary>
+	[Injectee]
 	public class LoginRequestGenerator : GladMonoBehaviour, IRequestSender
 	{
 		//TODO: Put this in a base class.
@@ -25,9 +27,13 @@ namespace Booma.Client.ServerSelection.Authentication
 		/// RSA Cryptoservice for encrypting passwords before sending them.
 		/// </summary>
 		[Inject]
-		private RSACryptoServiceProvider cryptoService;
+		private ICryptoService cryptoService;
 
+		/// <summary>
+		/// User provided login details for the attempted login.
+		/// </summary>
 		[Inject]
+		private ILoginDetails loginDetails;
 
 		public void SendRequest()
 		{
@@ -36,7 +42,12 @@ namespace Booma.Client.ServerSelection.Authentication
 
 		public SendResult SendRequestWithResult()
 		{
-			return messageSender.SendRequest(new LoginRequest("Test", new byte[0]), DeliveryMethod.ReliableUnordered, true);
+			SendResult result = messageSender.SendRequest(new LoginRequest(loginDetails.LoginString, cryptoService.Encrypt(loginDetails.Password)), DeliveryMethod.ReliableUnordered, true);
+
+			//We don't need the login object anymore
+			Destroy(loginDetails as UnityEngine.Object);
+
+			return result;
 		}
 	}
 }
