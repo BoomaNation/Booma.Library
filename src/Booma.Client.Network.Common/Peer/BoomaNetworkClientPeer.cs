@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using GladNet.Common;
 using UnityEngine;
+using GladNet.Message.Handlers;
+using GladNet.Message;
+using Easyception;
 
 namespace Booma.Client.Network.Common
 {
@@ -25,14 +28,14 @@ namespace Booma.Client.Network.Common
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IResponsePayloadHandlerService<TInheritingType> responseHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
+		private IResponseMessageHandlerService<TInheritingType> responseHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Handler service that will deal with dispatching <see cref="EventMessage"/> payloads that are of 
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IEventPayloadHandlerService<TInheritingType> eventHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
+		private IEventMessageHandlerService<TInheritingType> eventHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Assets that the generic arg <typeparamref name="TInheritingType"/> is the subtype.
@@ -61,20 +64,16 @@ namespace Booma.Client.Network.Common
 			Connect(peerConnectDetails.ComputeServerAddress(), peerConnectDetails.ApplicationName);
 		}
 
-		public sealed override void OnReceiveEvent(PacketPayload payload)
+		public sealed override void OnReceiveEvent(IEventMessage message, IMessageParameters parameters)
 		{
-			if (payload == null)
-				throw new ArgumentNullException(nameof(payload), $"Cannot have a null {nameof(PacketPayload)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
-
-			eventHandler.TryProcessPayload(payload, null, this as TInheritingType);
+			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IEventMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
+			eventHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 
-		public sealed override void OnReceiveResponse(PacketPayload payload)
+		public sealed override void OnReceiveResponse(IResponseMessage message, IMessageParameters parameters)
 		{
-			if (payload == null)
-				throw new ArgumentNullException(nameof(payload), $"Cannot have a null {nameof(PacketPayload)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
-
-			responseHandler.TryProcessPayload(payload, null, this as TInheritingType);
+			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IResponseMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
+			responseHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 	}
 }

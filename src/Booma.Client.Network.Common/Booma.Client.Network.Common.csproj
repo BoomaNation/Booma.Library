@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Booma.Client.Logging, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Client.Logging.1.0.1\lib\net35\Booma.Client.Logging.dll</HintPath>
+    <Reference Include="Booma.Client.Logging, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Logging.1.0.2\lib\net35\Booma.Client.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -42,28 +42,52 @@
       <HintPath>..\..\packages\Common.Logging.Core.3.3.1\lib\net35\Common.Logging.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Easyception, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Easyception.2.0.0\lib\net35\Easyception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladLive.Common, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladLive.Common.1.0.10\lib\net35\GladLive.Common.dll</HintPath>
+    <Reference Include="GladLive.Common, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladLive.Common.1.0.14\lib\net35\GladLive.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.1.0.5\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.2.0.15\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.12\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
+    <Reference Include="GladNet.Encryption, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Encryption.2.0.15\lib\net35\GladNet.Encryption.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Serializer, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.1.0.5\lib\net35\GladNet.Serializer.dll</HintPath>
+    <Reference Include="GladNet.Engine.Common, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.15\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Message, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.2.0.15\lib\net35\GladNet.Message.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Message.Handlers, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.15\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Payload, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.15\lib\net35\GladNet.Payload.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.18\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Serializer, Version=2.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.15\lib\net35\GladNet.Serializer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.1\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.8\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -77,8 +101,8 @@
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.13\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.14\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
