@@ -9,6 +9,7 @@ using GladLive.Common.Payloads;
 using SceneJect.Common;
 using System.Security.Cryptography;
 using GladLive.Security.Common;
+using GladNet.Engine.Common;
 
 namespace Booma.Client.ServerSelection.Authentication
 {
@@ -21,7 +22,7 @@ namespace Booma.Client.ServerSelection.Authentication
 	{
 		//TODO: Put this in a base class.
 		[SerializeField]
-		private IClientPeerNetworkMessageSender messageSender;
+		private IClientPeerPayloadSender messageSender;
 
 		/// <summary>
 		/// RSA Cryptoservice for encrypting passwords before sending them.

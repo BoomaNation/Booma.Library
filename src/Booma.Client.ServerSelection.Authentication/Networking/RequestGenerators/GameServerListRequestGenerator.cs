@@ -1,5 +1,6 @@
 ﻿using GladBehaviour.Common;
 using GladNet.Common;
+using GladNet.Engine.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Booma.Client.ServerSelection.Authentication
 	{
 		//TODO: Put this in a base class.
 		[SerializeField]
-		private IClientPeerNetworkMessageSender messageSender;
+		private IClientPeerPayloadSender messageSender;
 
 		public void SendRequest()
 		{

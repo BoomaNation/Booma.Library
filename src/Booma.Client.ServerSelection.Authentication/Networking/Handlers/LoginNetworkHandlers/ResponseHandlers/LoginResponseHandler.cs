@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Common;
-using GladLive.Common.Payloads.Payloads;
 using UnityEngine;
 using Booma.Client.Network.Common;
 using SceneJect.Common;
 using GladLive.Common.Payloads;
 using UnityEngine.Events;
+using GladNet.Message;
 
 namespace Booma.Client.ServerSelection.Authentication
 {
@@ -36,7 +36,7 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private Event OnSuccess;
 
-		protected override void HandleNonNullStronglyTypedPayload(LoginResponse payload, IMessageParameters parameters, LoginNetworkClient peer)
+		protected override void OnIncomingHandlableMessage(IResponseMessage message, LoginResponse payload, IMessageParameters parameters, LoginNetworkClient peer)
 		{
 			//Log out the response first
 			Logger.Debug($"Recieved response code: {payload.Code}");
@@ -45,14 +45,14 @@ namespace Booma.Client.ServerSelection.Authentication
 			switch (payload.Code)
 			{
 				case LoginResponseCode.Success:
-					if(OnSuccess != null)
+					if (OnSuccess != null)
 						OnSuccess.Invoke(payload.Code);
 					break;
 				case LoginResponseCode.Banned:
 				case LoginResponseCode.Locked:
 				case LoginResponseCode.Failed:
 				case LoginResponseCode.AuthServerUnavailable:
-					if(OnFailure != null)
+					if (OnFailure != null)
 						OnFailure.Invoke(payload.Code);
 					break;
 				default:

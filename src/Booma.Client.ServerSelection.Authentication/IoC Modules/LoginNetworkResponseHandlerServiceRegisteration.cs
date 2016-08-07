@@ -1,5 +1,7 @@
 ﻿using Booma.Client.Network.Common;
 using GladLive.Common;
+using GladNet.Message;
+using GladNet.Message.Handlers;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -11,20 +13,20 @@ using UnityEngine;
 namespace Booma.Client.ServerSelection.Authentication
 {
 	/// <summary>
-	/// Scene component that allows for the registeration of a <see cref="RequestPayloadHandlerService{TSessionType}"/> for <see cref="LoginNetworkClient"/> peer types.
+	/// Scene component that allows for the registeration of a <see cref="ResponseMessageHandlerService{TSessionType}"/> for <see cref="LoginNetworkClient"/> peer types.
 	/// </summary>
 	public class LoginNetworkResponseHandlerServiceRegisteration :
-		NetworkMessageHandlerServiceRegistration<LoginNetworkClient, IResponsePayloadHandler<LoginNetworkClient>, ResponsePayloadHandlerService<LoginNetworkClient>, IResponsePayloadHandlerService<LoginNetworkClient>>
+		NetworkMessageHandlerServiceRegistration<LoginNetworkClient, IResponseMessage, IResponseMessageHandler<LoginNetworkClient>, ResponseMessageHandlerService<LoginNetworkClient>, IResponseMessageHandlerService<LoginNetworkClient>>
 	{
 		/// <summary>
-		/// As specified by the base class documentation it generates a valid non-null <see cref="RequestPayloadHandlerService{TSessionType}"/> instance.
+		/// As specified by the base class documentation it generates a valid non-null <see cref="ResponseMessageHandlerService{TSessionType}"/> instance.
 		/// </summary>
 		/// <param name="strat">Strategy the base class decided to use.</param>
-		/// <returns>Non-null instance of <see cref="RequestPayloadHandlerService{TSessionType}"/> or throws instead.</returns>
-		protected override ResponsePayloadHandlerService<LoginNetworkClient> CreateConcreteService(IPayloadHandlerStrategy<LoginNetworkClient> strat)
+		/// <returns>Non-null instance of <see cref="ResponseMessageHandlerService{TSessionType}"/> or throws instead.</returns>
+		protected override ResponseMessageHandlerService<LoginNetworkClient> CreateConcreteService(IMessageHandlerStrategy<LoginNetworkClient, IResponseMessage> strat)
 		{
 			//just create and return the handler as expected with the provided strat
-			return new ResponsePayloadHandlerService<LoginNetworkClient>(strat);
+			return new ResponseMessageHandlerService<LoginNetworkClient>(strat);
 		}
 	}
 }
