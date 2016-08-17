@@ -51,5 +51,13 @@ namespace Booma.Payloads.ServerSelection
 			ServerPort = port;
 			Region = region;
 		}
+
+		/// <summary>
+		/// Serializer ctor
+		/// </summary>
+		protected SimpleGameServerDetailsModel()
+		{
+
+		}
 	}
 }
