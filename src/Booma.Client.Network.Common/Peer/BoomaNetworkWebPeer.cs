@@ -34,10 +34,10 @@ namespace Booma.Client.Network.Common
 		protected IWebRequestEnqueueStrategy enqueuStrat { get; private set; }
 
 		[Inject]
-		private readonly ISerializerStrategy serializer;
+		protected readonly ISerializerStrategy serializer;
 
 		[Inject]
-		private readonly IDeserializerStrategy deserializer;
+		protected readonly IDeserializerStrategy deserializer;
 
 		[Inject]
 		protected readonly ILog classLogger;
