@@ -1,0 +1,17 @@
+﻿{
+  "version": "1.0.0-*",
+
+	"dependencies": {
+					"GladNet.Serializer": "2.0.32",
+					"GladNet.Payload": "2.0.32"
+	},
+
+	"frameworks": {
+		"net35": {
+
+		},
+		"net451": {
+
+		}
+	}
+}
