@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Common
+namespace Booma.Payloads.ServerSelection
 {
 	/// <summary>
 	/// Indicates the status of the <see cref="BoomaPayloadMessageType.GetGameServerListRequest"/>.

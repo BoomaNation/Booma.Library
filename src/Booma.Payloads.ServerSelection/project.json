@@ -4,7 +4,8 @@
 	"dependencies": {
 		"GladNet.Serializer": "2.0.32",
 		"GladNet.Payload": "2.0.32",
-		"Booma.Payloads.Common": "1.0.0-*"
+		"Booma.Payloads.Common": "1.0.0-*",
+		"Booma.Common.ServerSelection": "1.0.0"
 	},
 
 	"frameworks": {
