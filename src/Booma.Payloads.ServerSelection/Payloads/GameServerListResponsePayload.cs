@@ -20,7 +20,7 @@ namespace Booma.Payloads.ServerSelection
 
 		//private and hidden. For serializer.
 		[GladNetMember(GladNetDataIndex.Index2)]
-		private List<SimpleGameServerDetailsModel> gameServerDetails;
+		private SimpleGameServerDetailsModel[] gameServerDetails;
 
 		/// <summary>
 		/// Collection of available gameservers.
@@ -44,9 +44,9 @@ namespace Booma.Payloads.ServerSelection
 		public GameServerListResponsePayload(GameServerListResponseCode code, IEnumerable<SimpleGameServerDetailsModel> details)
 		{
 			ResponseCode = code;
-			
+
 			//set to internal field
-			gameServerDetails = details.ToList();
+			gameServerDetails = details.ToArray();
 		}
 
 		/// <summary>
