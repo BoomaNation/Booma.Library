@@ -43,5 +43,13 @@ namespace Booma.Payloads.ServerSelection
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index4)]
 		public ServerRegion Region { get; private set; }
+
+		public SimpleGameServerDetailsModel(string name, IPAddress address, int port, ServerRegion region)
+		{
+			Name = name;
+			serverIPBytes = address.GetAddressBytes();
+			ServerPort = port;
+			Region = region;
+		}
 	}
 }
