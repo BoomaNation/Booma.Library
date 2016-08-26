@@ -66,44 +66,44 @@
       <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.Middleware.Authentication.1.0.10\lib\net35\GladNet.ASP.Client.RestSharp.Middleware.Authentication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Common, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.2.0.32\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.2.0.33\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Encryption, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.2.0.32\lib\net35\GladNet.Encryption.dll</HintPath>
+    <Reference Include="GladNet.Encryption, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Encryption.2.0.33\lib\net35\GladNet.Encryption.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Engine.Common, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.32\lib\net35\GladNet.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Engine.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.33\lib\net35\GladNet.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Message, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.2.0.32\lib\net35\GladNet.Message.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Client.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.1.0.0\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Message.Handlers, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.32\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+    <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.2.0.33\lib\net35\GladNet.Message.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Payload, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.2.0.32\lib\net35\GladNet.Payload.dll</HintPath>
+    <Reference Include="GladNet.Message.Handlers, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.33\lib\net35\GladNet.Message.Handlers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Payload.Authentication, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.Authentication.2.0.32\lib\net35\GladNet.Payload.Authentication.dll</HintPath>
+    <Reference Include="GladNet.Payload, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.33\lib\net35\GladNet.Payload.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.20\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
+    <Reference Include="GladNet.Payload.Authentication, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.Authentication.2.0.33\lib\net35\GladNet.Payload.Authentication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Serializer, Version=2.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.2.0.32\lib\net35\GladNet.Serializer.dll</HintPath>
+    <Reference Include="GladNet.Serializer, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.33\lib\net35\GladNet.Serializer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.11\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.12\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

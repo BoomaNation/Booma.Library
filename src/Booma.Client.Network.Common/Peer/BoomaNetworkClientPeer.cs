@@ -1,5 +1,4 @@
 ﻿using GladLive.Common;
-using GladNet.PhotonServer.Client;
 using GladNet.Serializer.Protobuf;
 using SceneJect.Common;
 using System;
@@ -11,6 +10,7 @@ using UnityEngine;
 using GladNet.Message.Handlers;
 using GladNet.Message;
 using Easyception;
+using GladNet.Lidgren.Client.Unity;
 
 namespace Booma.Client.Network.Common
 {
@@ -40,28 +40,11 @@ namespace Booma.Client.Network.Common
 		/// <summary>
 		/// Assets that the generic arg <typeparamref name="TInheritingType"/> is the subtype.
 		/// </summary>
-		private void Awake()
+		protected virtual void OnLevelLoaded()
 		{
 			//What a hack
 			if (GetType() != typeof(TInheritingType))
 				throw new InvalidOperationException($"Created invalid closed generic {nameof(BoomaNetworkClientPeer<TInheritingType>)} due to {typeof(TInheritingType)} not being the true subtype of this object.");
-		}
-
-		/// <summary>
-		/// Details about the remote application to be connected to.
-		/// </summary>
-		[Tooltip("Initilize these fields so that you can connect to a remote application.")]
-		[SerializeField]
-		private PeerEndpointDetails peerConnectDetails;
-
-		/// <summary>
-		/// Simplifies connecting and exposes connecting to <see cref="UnityEvent"/>s for use in the inspector
-		/// Call to connect with the provided <see cref="PeerEndpointDetails"/>.
-		/// </summary>
-		public void Connect()
-		{
-			//Simply call the full parametered connection method.
-			Connect(peerConnectDetails.ComputeServerAddress(), peerConnectDetails.ApplicationName);
 		}
 
 		public sealed override void OnReceiveEvent(IEventMessage message, IMessageParameters parameters)
