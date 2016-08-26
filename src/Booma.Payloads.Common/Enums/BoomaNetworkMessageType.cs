@@ -19,6 +19,16 @@ namespace Booma.Payloads.Common
 		/// <summary>
 		/// A response containing the list of available gameservers/ships
 		/// </summary>
-		GetGameServerListResponse = GladNetIncludeIndex.Index20
+		GetGameServerListResponse = GladNetIncludeIndex.Index20,
+
+		/// <summary>
+		/// An event that contains information about an entity that should be spawned.
+		/// </summary>
+		EntitySpawnEvent = GladNetIncludeIndex.Index21,
+
+		/// <summary>
+		/// An event that contains information about an entity that should be despawned.
+		/// </summary>
+		EntityDespawnEvent = GladNetIncludeIndex.Index22,
 	}
 }

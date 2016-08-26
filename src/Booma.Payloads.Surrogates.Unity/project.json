@@ -2,7 +2,6 @@
   "version": "1.0.0-*",
 
 	"dependencies": {
-		"GladNet.Payload": "2.0.33",
 		"GladNet.Serializer": "2.0.33"
 	},
 

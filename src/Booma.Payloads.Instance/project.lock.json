@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v3.5": {
+      "Booma.Common.Instance/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Booma.Common.Instance.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Booma.Common.Instance.dll": {}
+        }
+      },
       "Easyception/2.0.0": {
         "type": "package",
         "compile": {
@@ -35,10 +44,46 @@
         },
         "runtime": {
           "lib/net35/GladNet.Serializer.dll": {}
+        }
+      },
+      "Booma.Payloads.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "GladNet.Payload": "2.0.33",
+          "GladNet.Serializer": "2.0.33"
+        },
+        "compile": {
+          "net35/Booma.Payloads.Common.dll": {}
+        },
+        "runtime": {
+          "net35/Booma.Payloads.Common.dll": {}
+        }
+      },
+      "Booma.Payloads.Surrogates.Unity/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
+        "compile": {
+          "net35/Booma.Payloads.Surrogates.Unity.dll": {}
+        },
+        "runtime": {
+          "net35/Booma.Payloads.Surrogates.Unity.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.5.1": {
+      "Booma.Common.Instance/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net451/Booma.Common.Instance.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Booma.Common.Instance.dll": {}
+        }
+      },
       "Easyception/2.0.0": {
         "type": "package",
         "compile": {
@@ -71,11 +116,49 @@
         },
         "runtime": {
           "lib/net35/GladNet.Serializer.dll": {}
+        }
+      },
+      "Booma.Payloads.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "GladNet.Payload": "2.0.33",
+          "GladNet.Serializer": "2.0.33"
+        },
+        "compile": {
+          "net451/Booma.Payloads.Common.dll": {}
+        },
+        "runtime": {
+          "net451/Booma.Payloads.Common.dll": {}
+        }
+      },
+      "Booma.Payloads.Surrogates.Unity/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
+        "compile": {
+          "net451/Booma.Payloads.Surrogates.Unity.dll": {}
+        },
+        "runtime": {
+          "net451/Booma.Payloads.Surrogates.Unity.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "Booma.Common.Instance/1.0.1": {
+      "sha512": "nZR1+XY4bf1A+8diH802UXKvN5p81z1R56ub0XACUwmQYm0ugKMha2qCmk1wxzghtlaW78wZN8Wx8PPVSumjxA==",
+      "type": "package",
+      "path": "Booma.Common.Instance/1.0.1",
+      "files": [
+        "Booma.Common.Instance.1.0.1.nupkg.sha512",
+        "Booma.Common.Instance.nuspec",
+        "lib/net35/Booma.Common.Instance.dll",
+        "lib/net451/Booma.Common.Instance.dll"
+      ]
+    },
     "Easyception/2.0.0": {
       "sha512": "46cHaDQ8kcTikcceMxkKHHQ6RghJkI1FEQ4occoX5TAU7aFktObWldaKmu9BjItlpl0twiA26+pJ2pSlSnpStw==",
       "type": "package",
@@ -107,10 +190,23 @@
         "lib/net35/GladNet.Serializer.XML",
         "lib/net35/GladNet.Serializer.dll"
       ]
+    },
+    "Booma.Payloads.Common/1.0.0": {
+      "type": "project",
+      "path": "../Booma.Payloads.Common/project.json",
+      "msbuildProject": "../Booma.Payloads.Common/Booma.Payloads.Common.xproj"
+    },
+    "Booma.Payloads.Surrogates.Unity/1.0.0": {
+      "type": "project",
+      "path": "../Booma.Payloads.Surrogates.Unity/project.json",
+      "msbuildProject": "../Booma.Payloads.Surrogates.Unity/Booma.Payloads.Surrogates.Unity.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "Booma.Common.Instance >= 1.0.1",
+      "Booma.Payloads.Common >= 1.0.0-*",
+      "Booma.Payloads.Surrogates.Unity >= 1.0.0-*",
       "GladNet.Payload >= 2.0.33",
       "GladNet.Serializer >= 2.0.33"
     ],

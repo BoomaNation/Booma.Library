@@ -12,19 +12,6 @@
           "lib/net35/Easyception.dll": {}
         }
       },
-      "GladNet.Payload/2.0.33": {
-        "type": "package",
-        "dependencies": {
-          "Easyception": "2.0.0",
-          "GladNet.Serializer": "2.0.33"
-        },
-        "compile": {
-          "lib/net35/GladNet.Payload.dll": {}
-        },
-        "runtime": {
-          "lib/net35/GladNet.Payload.dll": {}
-        }
-      },
       "GladNet.Serializer/2.0.33": {
         "type": "package",
         "dependencies": {
@@ -46,19 +33,6 @@
         },
         "runtime": {
           "lib/net35/Easyception.dll": {}
-        }
-      },
-      "GladNet.Payload/2.0.33": {
-        "type": "package",
-        "dependencies": {
-          "Easyception": "2.0.0",
-          "GladNet.Serializer": "2.0.33"
-        },
-        "compile": {
-          "lib/net35/GladNet.Payload.dll": {}
-        },
-        "runtime": {
-          "lib/net35/GladNet.Payload.dll": {}
         }
       },
       "GladNet.Serializer/2.0.33": {
@@ -86,17 +60,6 @@
         "lib/net35/Easyception.dll"
       ]
     },
-    "GladNet.Payload/2.0.33": {
-      "sha512": "PtIqkdmgcRUPThrLcRbXo1GP/2s9JpN4X966pFicSX7HQ7vJGdszsN+dfjoMY3xwTcBvWxzvOQ1UfIjJq6OHAQ==",
-      "type": "package",
-      "path": "GladNet.Payload/2.0.33",
-      "files": [
-        "GladNet.Payload.2.0.33.nupkg.sha512",
-        "GladNet.Payload.nuspec",
-        "lib/net35/GladNet.Payload.XML",
-        "lib/net35/GladNet.Payload.dll"
-      ]
-    },
     "GladNet.Serializer/2.0.33": {
       "sha512": "1uzL4qJP6ZRaUx2b+MzS0K8P0qn/vrXs4NEiWQnPzcpglZ354VLNEztFQfNnHPGMtHYVdu69h9P4fOHPUDDajA==",
       "type": "package",
@@ -111,7 +74,6 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "GladNet.Payload >= 2.0.33",
       "GladNet.Serializer >= 2.0.33"
     ],
     ".NETFramework,Version=v3.5": [],
