@@ -145,6 +145,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ServerEntityFactory.cs" />
     <Compile Include="Networking\BoomaInstanceServerApplicationBase.cs" />
     <Compile Include="Networking\Events\OnSessionDisconnectedEvent .cs" />
     <Compile Include="Networking\Events\OnNewSessionCreatedEvent.cs" />
@@ -154,8 +155,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Entity\" />
+    <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
+      <Project>{5a959423-5523-4ff5-9667-963bf97f2879}</Project>
+      <Name>Booma.Instance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.Data\Booma.Instance.Data.csproj">
+      <Project>{d370bea9-2457-4fe3-a5c0-84b4689328bc}</Project>
+      <Name>Booma.Instance.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

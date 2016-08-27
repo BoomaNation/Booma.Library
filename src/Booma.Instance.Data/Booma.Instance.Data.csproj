@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A959423-5523-4FF5-9667-963BF97F2879}</ProjectGuid>
+    <ProjectGuid>{D370BEA9-2457-4FE3-A5C0-84B4689328BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Instance.Common</RootNamespace>
-    <AssemblyName>Booma.Instance.Common</AssemblyName>
+    <RootNamespace>Booma.Instance.Data</RootNamespace>
+    <AssemblyName>Booma.Instance.Data</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,21 +37,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
+      <HintPath>..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Components\EntityIdentifier.cs" />
-    <Compile Include="Entity\IEntityCollection.cs" />
-    <Compile Include="Entity\IEntityFactory.cs" />
-    <Compile Include="Entity\PlayerEntityCollection.cs" />
+    <Compile Include="Entity\EntityType.cs" />
+    <Compile Include="Entity\IEntityIdentifiable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Booma.Instance.Data\Booma.Instance.Data.csproj">
-      <Project>{d370bea9-2457-4fe3-a5c0-84b4689328bc}</Project>
-      <Name>Booma.Instance.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
