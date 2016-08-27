@@ -1,8 +1,8 @@
-# Booma.Client.Network.Common
+# Booma.Instance
 
 Booma is the code name for a networked ORPG/MMORPG being developed by the BoomaNation organization.
 
-Booma.Client.Network.Common is library for shared network code between all client libraries.
+Booma.Instance is collection of libraries related to network instance/region code for client, server and common purposes.
 
 ## Setup
 
