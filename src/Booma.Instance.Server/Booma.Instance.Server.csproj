@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{538D0F6A-EBFF-42F3-B701-614FAA390E7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Booma.Instance.Server</RootNamespace>
+    <AssemblyName>Booma.Instance.Server</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Booma.Client.Logging, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Client.Logging.1.0.3\lib\net35\Booma.Client.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Common.Instance, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Common.Instance.1.0.1\lib\net35\Booma.Common.Instance.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Payloads.Common, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.7\lib\net35\Booma.Payloads.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Payloads.Instance, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.7\lib\net35\Booma.Payloads.Instance.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.7\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Booma.Server.Network.Unity.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Server.Network.Unity.Common.1.0.0\lib\net35\Booma.Server.Network.Unity.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Common.Logging.3.3.1\lib\net35\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Common.Logging.Core.3.3.1\lib\net35\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Easyception, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Easyception.2.0.0\lib\net35\Easyception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.2.0.33\lib\net35\GladNet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Encryption, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Encryption.2.0.33\lib\net35\GladNet.Encryption.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Engine.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.33\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Engine.Server, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Server.2.0.33\lib\net35\GladNet.Engine.Server.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.2\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.2\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Server, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.2\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.2\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.2.0.33\lib\net35\GladNet.Message.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Message.Handlers, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.33\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Payload, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.33\lib\net35\GladNet.Payload.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Serializer, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.33\lib\net35\GladNet.Serializer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.12\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lidgren.Network, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Lidgren.Network.1.0.3\lib\net35\Lidgren.Network.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SceneJect.Common, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.14\lib\net35\SceneJect.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Networking\BoomaInstanceServerApplicationBase.cs" />
+    <Compile Include="Networking\Events\OnSessionDisconnectedEvent .cs" />
+    <Compile Include="Networking\Events\OnNewSessionCreatedEvent.cs" />
+    <Compile Include="Networking\Peers\InstanceClientSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
