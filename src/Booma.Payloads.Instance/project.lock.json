@@ -3,13 +3,13 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v3.5": {
-      "Booma.Common.Instance/1.0.1": {
+      "Booma.Instance.Data/1.0.1": {
         "type": "package",
         "compile": {
-          "lib/net35/Booma.Common.Instance.dll": {}
+          "lib/net35/Booma.Instance.Data.dll": {}
         },
         "runtime": {
-          "lib/net35/Booma.Common.Instance.dll": {}
+          "lib/net35/Booma.Instance.Data.dll": {}
         }
       },
       "Easyception/2.0.0": {
@@ -75,13 +75,13 @@
       }
     },
     ".NETFramework,Version=v4.5.1": {
-      "Booma.Common.Instance/1.0.1": {
+      "Booma.Instance.Data/1.0.1": {
         "type": "package",
         "compile": {
-          "lib/net451/Booma.Common.Instance.dll": {}
+          "lib/net35/Booma.Instance.Data.dll": {}
         },
         "runtime": {
-          "lib/net451/Booma.Common.Instance.dll": {}
+          "lib/net35/Booma.Instance.Data.dll": {}
         }
       },
       "Easyception/2.0.0": {
@@ -148,15 +148,14 @@
     }
   },
   "libraries": {
-    "Booma.Common.Instance/1.0.1": {
-      "sha512": "nZR1+XY4bf1A+8diH802UXKvN5p81z1R56ub0XACUwmQYm0ugKMha2qCmk1wxzghtlaW78wZN8Wx8PPVSumjxA==",
+    "Booma.Instance.Data/1.0.1": {
+      "sha512": "P7JAKOMf7vDJAhWAk+2ZPrXTKHHbEKC7+/s9LRsidA+fTB9ln8uLYRYcptQwK2ZJ5G2qlZeyoSrDJP9XE6HNiQ==",
       "type": "package",
-      "path": "Booma.Common.Instance/1.0.1",
+      "path": "Booma.Instance.Data/1.0.1",
       "files": [
-        "Booma.Common.Instance.1.0.1.nupkg.sha512",
-        "Booma.Common.Instance.nuspec",
-        "lib/net35/Booma.Common.Instance.dll",
-        "lib/net451/Booma.Common.Instance.dll"
+        "Booma.Instance.Data.1.0.1.nupkg.sha512",
+        "Booma.Instance.Data.nuspec",
+        "lib/net35/Booma.Instance.Data.dll"
       ]
     },
     "Easyception/2.0.0": {
@@ -204,7 +203,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Booma.Common.Instance >= 1.0.1",
+      "Booma.Instance.Data >= 1.0.1",
       "Booma.Payloads.Common >= 1.0.0-*",
       "Booma.Payloads.Surrogates.Unity >= 1.0.0-*",
       "GladNet.Payload >= 2.0.33",

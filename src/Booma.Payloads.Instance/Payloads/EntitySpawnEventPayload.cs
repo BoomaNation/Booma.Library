@@ -1,4 +1,4 @@
-﻿using Booma.Common.Instance;
+﻿using Booma.Instance.Common;
 using Booma.Payloads.Common;
 using Booma.Payloads.Surrogates.Unity;
 using GladNet.Payload;
@@ -13,7 +13,7 @@ namespace Booma.Payloads.Instance
 	/// An event that contains information about an entity that should be spawned.
 	/// </summary>
 	[GladNetSerializationContract]
-	[GladLivePayload(BoomaPayloadMessageType.EntitySpawnEvent)]
+	[BoomaPayload(BoomaPayloadMessageType.EntitySpawnEvent)]
 	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(PlayerSpawnEventPayload), true)]
 	public abstract class EntitySpawnEventPayload : PacketPayload, IEntityIdentifiable
 	{

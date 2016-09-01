@@ -30,5 +30,10 @@ namespace Booma.Payloads.Common
 		/// An event that contains information about an entity that should be despawned.
 		/// </summary>
 		EntityDespawnEvent = GladNetIncludeIndex.Index22,
+
+		/// <summary>
+		/// Request sent by players who want to spawn in an instance.
+		/// </summary>
+		PlayerSpawnRequest = GladNetIncludeIndex.Index23,
 	}
 }

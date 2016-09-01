@@ -9,7 +9,7 @@ namespace Booma.Payloads.ServerSelection
 {
 	//TODO: Debate on authorized request
 	[GladNetSerializationContract]
-	[GladLivePayload(BoomaPayloadMessageType.GetGameServerListResponse)]
+	[BoomaPayload(BoomaPayloadMessageType.GetGameServerListResponse)]
 	public class GameServerListResponsePayload : PacketPayload, IResponseStatus<GameServerListResponseCode>
 	{
 		/// <summary>

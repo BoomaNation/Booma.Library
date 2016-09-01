@@ -2,9 +2,9 @@
   "version": "1.0.0-*",
 
     "dependencies": {
+        "Booma.Instance.Data": "1.0.1",
         "Booma.Payloads.Common": "1.0.0-*",
-		"Booma.Payloads.Surrogates.Unity": "1.0.0-*",
-		"Booma.Common.Instance": "1.0.1",
+        "Booma.Payloads.Surrogates.Unity": "1.0.0-*",
         "GladNet.Payload": "2.0.33",
         "GladNet.Serializer": "2.0.33"
     },
