@@ -66,24 +66,28 @@
       <HintPath>..\..\packages\GladNet.Engine.Server.2.0.33\lib\net35\GladNet.Engine.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.2\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.3\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.2\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.3\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Server, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.2\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Server, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.3\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.2\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.3\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Message.2.0.33\lib\net35\GladNet.Message.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladNet.Message.Handlers, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.33\lib\net35\GladNet.Message.Handlers.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Payload, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
@@ -106,6 +110,10 @@
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SceneJect.Common, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.14\lib\net35\SceneJect.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -118,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoomaServerApplicationBase.cs" />
+    <Compile Include="Handlers\RequestPayloadHandlerComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
