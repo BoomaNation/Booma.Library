@@ -11,5 +11,6 @@ namespace Booma.Instance.Server
 	/// <summary>
 	/// Event for new session creation.
 	/// </summary>
+	[Serializable]
 	public class OnNewSessionCreatedEvent : UnityEvent<ClientPeerSession> { }
 }

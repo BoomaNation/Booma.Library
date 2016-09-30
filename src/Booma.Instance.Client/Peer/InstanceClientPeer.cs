@@ -7,6 +7,7 @@ using GladNet.Common;
 using GladNet.Serializer;
 using GladNet.Message;
 using Booma.Payloads.Instance;
+using UnityEngine;
 
 namespace Booma.Instance.Client
 {
@@ -15,6 +16,18 @@ namespace Booma.Instance.Client
 		public override void OnStatusChanged(NetStatus status)
 		{
 			//TODO: Implement status handling
+			Debug.Log(status);
+		}
+
+		//For testing
+		public void Update()
+		{
+			Poll();
+		}
+
+		public void ConnectToServer()
+		{
+			Connect();
 		}
 
 		public override void RegisterPayloadTypes(ISerializerRegistry registry)

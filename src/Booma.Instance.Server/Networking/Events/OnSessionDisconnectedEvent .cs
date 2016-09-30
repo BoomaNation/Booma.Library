@@ -11,5 +11,6 @@ namespace Booma.Instance.Server
 	/// <summary>
 	/// Event for new session disconnection
 	/// </summary>
+	[Serializable]
 	public class OnSessionDisconnectedEvent : UnityEvent<ClientPeerSession> { }
 }

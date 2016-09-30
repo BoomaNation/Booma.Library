@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace Booma.Instance.Common
 {
-	public class PlayerEntityCollection : Dictionary<int, GameObject>, IEntityCollection<GameObject>
+	/// <summary>
+	/// Contract for player entity collections.
+	/// </summary>
+	public interface IPlayerEntityCollection : IEntityCollection<GameObject>
 	{
-		/// <summary>
-		/// Indicates the type of entity this collection manages.
-		/// </summary>
-		public EntityType CollectionType { get; } = EntityType.Player;
+
 	}
 }

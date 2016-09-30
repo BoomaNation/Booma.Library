@@ -35,6 +35,12 @@ namespace Booma.Instance.Server
 		[SerializeField]
 		private OnSessionDisconnectedEvent OnSessionDisconnected;
 
+		//For testing
+		public void Update()
+		{
+			Poll();
+		}
+
 		/// <summary>
 		/// Called internally by GladNet.
 		/// </summary>
@@ -50,7 +56,7 @@ namespace Booma.Instance.Server
 		{
 			//For now we assume that any connection is valid.
 			//In the future we might filter out some IPs but most validation will be post-connection from a signed message.
-			ClientPeerSession session = new InstanceClientSession(Logger, sender, details, subService, disconnectHandler, routebackService, null);
+			ClientPeerSession session = new InstanceClientSession(Logger, sender, details, subService, disconnectHandler, routebackService, instanceSessionRequestMessageHandlerService);
 
 			//Register the OnDisconnect UnityEvent for when the session disconnects
 			disconnectHandler.DisconnectionEventHandler += () => OnSessionDisconnected?.Invoke(session);

@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Entity\Components\EntityIdentifier.cs" />
     <Compile Include="Entity\IEntityCollection.cs" />
-    <Compile Include="Entity\IEntityFactory.cs" />
+    <Compile Include="Entity\IPlayerEntityFactory.cs" />
     <Compile Include="Entity\PlayerEntityCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
