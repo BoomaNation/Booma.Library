@@ -182,6 +182,7 @@
     <Compile Include="Entity\IEntityPrefabProvider.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
     <Compile Include="Entity\ISpawnPointStrategy.cs" />
+    <Compile Include="Entity\ServerPlayerEntityCollection.cs" />
     <Compile Include="Entity\ServerPlayerEntityFactory .cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
     <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />

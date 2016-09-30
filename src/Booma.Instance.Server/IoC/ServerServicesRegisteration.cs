@@ -11,12 +11,10 @@ namespace Booma.Instance.Server
 	{
 		public override void Register(IServiceRegister register)
 		{
-			IPlayerEntityCollection playerCollection = new IPlayerEntityCollection();
+			//Just create a new collection and register it
+		    IPlayerEntityCollection playerCollection = new ServerPlayerEntityCollection();
 
-			//Test
-			playerCollection.Add(55, null);
-
-			register.Register<IPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance); //for testing
+			register.Register<IPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance);
 		}
 	}
 }
