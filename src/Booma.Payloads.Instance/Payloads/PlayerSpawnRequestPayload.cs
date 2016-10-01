@@ -17,7 +17,7 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/> payload.
 		/// </summary>
-		protected PlayerSpawnRequestPayload()
+		public PlayerSpawnRequestPayload()
 		{
 			//We don't need anything in this payload yet
 			//Future may have a signed message.
