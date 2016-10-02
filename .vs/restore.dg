@@ -1,6 +1,5 @@
-#:D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Instance.Tests\Booma.Payloads.Instance.Tests.xproj
-D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Instance.Tests\Booma.Payloads.Instance.Tests.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Common.Tests\Booma.Payloads.Common.Tests.xproj
-D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Instance.Tests\Booma.Payloads.Instance.Tests.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Instance\Booma.Payloads.Instance.xproj
+#:D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.ServerSelection.Tests\Booma.Payloads.ServerSelection.Tests.xproj
+D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.ServerSelection.Tests\Booma.Payloads.ServerSelection.Tests.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Common.Tests\Booma.Payloads.Common.Tests.xproj
+D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.ServerSelection.Tests\Booma.Payloads.ServerSelection.Tests.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.ServerSelection\Booma.Payloads.ServerSelection.xproj
 D:\Users\Glader\Documents\GitHub\Booma.Payloads\tests\Booma.Payloads.Common.Tests\Booma.Payloads.Common.Tests.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Common\Booma.Payloads.Common.xproj
-D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Instance\Booma.Payloads.Instance.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Common\Booma.Payloads.Common.xproj
-D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Instance\Booma.Payloads.Instance.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Surrogates.Unity\Booma.Payloads.Surrogates.Unity.xproj
+D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.ServerSelection\Booma.Payloads.ServerSelection.xproj|D:\Users\Glader\Documents\GitHub\Booma.Payloads\src\Booma.Payloads.Common\Booma.Payloads.Common.xproj
