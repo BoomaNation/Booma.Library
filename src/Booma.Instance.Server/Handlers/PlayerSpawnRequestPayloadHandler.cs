@@ -31,7 +31,7 @@ namespace Booma.Instance.Server
 			}
 
 			//rely on the factory implementation to handle placement details such as position and rotation
-			playerEntityFactory.CreatePlayerEntity(peer.PeerDetails.ConnectionID);
+			playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
 
 			//TODO: Broadcast the new player to all clients
 		}

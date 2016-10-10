@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Entity\Components\EntityIdentifier.cs" />
     <Compile Include="Entity\IEntityCollection.cs" />
-    <Compile Include="Entity\IPlayerEntityFactory.cs" />
+    <Compile Include="Entity\Spawn\DefaultEntitySpawnDetails.cs" />
+    <Compile Include="Entity\Spawn\IPlayerEntityFactory.cs" />
     <Compile Include="Entity\IPlayerEntityCollection.cs" />
+    <Compile Include="Entity\Spawn\IEntitySpawnDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

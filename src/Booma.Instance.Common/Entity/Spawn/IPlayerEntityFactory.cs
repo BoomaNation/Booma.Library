@@ -16,7 +16,7 @@ namespace Booma.Instance.Common
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
 		/// <returns>A gameobject that represents the base player entity.</returns>
-		GameObject CreatePlayerEntity(int id, Vector3 position, Quaternion rotation);
+		IEntitySpawnDetails SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation);
 
 		/// <summary>
 		/// Creates a player entity in the instance world.
@@ -25,6 +25,6 @@ namespace Booma.Instance.Common
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
 		/// <returns>A gameobject that represents the base player entity.</returns>
-		GameObject CreatePlayerEntity(int id);
+		IEntitySpawnDetails SpawnPlayerEntity(int id);
 	}
 }

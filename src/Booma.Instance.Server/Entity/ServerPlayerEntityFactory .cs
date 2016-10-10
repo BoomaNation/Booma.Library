@@ -26,11 +26,11 @@ namespace Booma.Instance.Server
 				throw new InvalidOperationException($"Set {nameof(prefabProvider)} in the inspector with the player entity prefab.");
 		}
 
-		public GameObject CreatePlayerEntity(int id, Vector3 position, Quaternion rotation)
+		public IEntitySpawnDetails SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation)
 		{
 			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(EntityType.Player), position, rotation) as GameObject;
 
-			return PostProcessEntityGameObject(playerGo, id, EntityType.Player);
+			return new DefaultEntitySpawnDetails(id, position, rotation, PostProcessEntityGameObject(playerGo, id, EntityType.Player));
 		}
 
 		public GameObject PostProcessEntityGameObject(GameObject playerGameObject, int id, EntityType type)
@@ -43,14 +43,14 @@ namespace Booma.Instance.Server
 			return playerGameObject;
 		}
 
-		public GameObject CreatePlayerEntity(int id)
+		public IEntitySpawnDetails SpawnPlayerEntity(int id)
 		{
 			Transform spawnTransform = playerSpawnStrategy.GetSpawnpoint();
 
 			if (spawnTransform == null)
 				throw new InvalidOperationException($"Unable to produce {nameof(Transform)} from {nameof(ISpawnPointStrategy)}.");
 
-			return CreatePlayerEntity(id, spawnTransform.position, spawnTransform.rotation);
+			return SpawnPlayerEntity(id, spawnTransform.position, spawnTransform.rotation);
 		}
 	}
 }
