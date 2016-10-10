@@ -7,6 +7,8 @@ using System.Text;
 using GladNet.Message;
 using SceneJect.Common;
 using Booma.Instance.Common;
+using GladNet.Engine.Common;
+using Booma.Payloads.Surrogates.Unity;
 
 namespace Booma.Instance.Server
 {
@@ -16,7 +18,7 @@ namespace Booma.Instance.Server
 		private readonly IPlayerEntityFactory playerEntityFactory;
 
 		[Inject]
-		private readonly IPlayerEntityCollection playerEntityCollection;
+		private readonly IServerPlayerEntityCollection playerEntityCollection;
 
 		protected override void OnIncomingHandlableMessage(IRequestMessage message, PlayerSpawnRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
@@ -31,9 +33,18 @@ namespace Booma.Instance.Server
 			}
 
 			//rely on the factory implementation to handle placement details such as position and rotation
-			playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
+			IEntitySpawnDetails details = playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
 
-			//TODO: Broadcast the new player to all clients
+			foreach (INetPeer p in playerEntityCollection.AllPeers())
+			{
+				//Check that we don't send spawn event to the original requester
+				if (p.PeerDetails.ConnectionID != peer.PeerDetails.ConnectionID)
+					//Send the player spawn event
+					p.TrySendMessage(GladNet.Common.OperationType.Event, new PlayerSpawnEventPayload(details.EntityId, new Vector3Surrogate(details.Position.x, details.Position.y, details.Position.z),
+						new QuaternionSurrogate(details.Rotation.x, details.Rotation.y, details.Rotation.z, details.Rotation.w), "NoneRightNow"), GladNet.Common.DeliveryMethod.ReliableUnordered, true, 0);
+			}
+
+			//TODO: Tell the player that requested that they can spawn
 		}
 	}
 }
