@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5.1": {
-      "Booma.Common.ServerSelection/1.0.0": {
+      "Booma.Common.ServerSelection/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net451/Booma.Common.ServerSelection.dll": {}
@@ -462,7 +462,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Common.ServerSelection": "1.0.0",
+          "Booma.Common.ServerSelection": "1.0.1",
           "Booma.Payloads.Common": "1.0.0",
           "GladNet.Payload": "2.0.33",
           "GladNet.Serializer": "2.0.33"
@@ -476,7 +476,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2": {
-      "Booma.Common.ServerSelection/1.0.0": {
+      "Booma.Common.ServerSelection/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net451/Booma.Common.ServerSelection.dll": {}
@@ -935,7 +935,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Common.ServerSelection": "1.0.0",
+          "Booma.Common.ServerSelection": "1.0.1",
           "Booma.Payloads.Common": "1.0.0",
           "GladNet.Payload": "2.0.33",
           "GladNet.Serializer": "2.0.33"
@@ -949,7 +949,7 @@
       }
     },
     ".NETFramework,Version=v4.6": {
-      "Booma.Common.ServerSelection/1.0.0": {
+      "Booma.Common.ServerSelection/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net451/Booma.Common.ServerSelection.dll": {}
@@ -1408,7 +1408,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Common.ServerSelection": "1.0.0",
+          "Booma.Common.ServerSelection": "1.0.1",
           "Booma.Payloads.Common": "1.0.0",
           "GladNet.Payload": "2.0.33",
           "GladNet.Serializer": "2.0.33"
@@ -1422,7 +1422,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1": {
-      "Booma.Common.ServerSelection/1.0.0": {
+      "Booma.Common.ServerSelection/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net451/Booma.Common.ServerSelection.dll": {}
@@ -1881,7 +1881,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Common.ServerSelection": "1.0.0",
+          "Booma.Common.ServerSelection": "1.0.1",
           "Booma.Payloads.Common": "1.0.0",
           "GladNet.Payload": "2.0.33",
           "GladNet.Serializer": "2.0.33"
@@ -1896,12 +1896,12 @@
     }
   },
   "libraries": {
-    "Booma.Common.ServerSelection/1.0.0": {
-      "sha512": "YD5R/ZKZlOotWXvx7W/dSPEtRgm/2VhXZma9vkEp0lgcZkTPk+EmduULt40oklE4sX+voClk+s4YcCneuz/mtA==",
+    "Booma.Common.ServerSelection/1.0.1": {
+      "sha512": "fCqG6p2eBqMaM42CJKuLdjSIbP5S3FgYxcQIiIBRhaLtOu1Yfn6scQmkmxN7KT5KGFcHZYXmjBemIQtu33iqbg==",
       "type": "package",
-      "path": "Booma.Common.ServerSelection/1.0.0",
+      "path": "Booma.Common.ServerSelection/1.0.1",
       "files": [
-        "Booma.Common.ServerSelection.1.0.0.nupkg.sha512",
+        "Booma.Common.ServerSelection.1.0.1.nupkg.sha512",
         "Booma.Common.ServerSelection.nuspec",
         "lib/net35/Booma.Common.ServerSelection.dll",
         "lib/net451/Booma.Common.ServerSelection.dll"

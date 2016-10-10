@@ -1,4 +1,5 @@
 ﻿using Booma.Payloads.Common;
+using Booma.Payloads.Surrogates.Unity;
 using GladNet.Payload;
 using GladNet.Serializer;
 using System;
@@ -21,11 +22,28 @@ namespace Booma.Payloads.Instance
 		public PlayerSpawnResponseCode ResponseCode { get; }
 
 		/// <summary>
+		/// Represents the position of the Entity.
+		/// </summary>
+		[GladNetMember(GladNetDataIndex.Index2)]
+		public Vector3Surrogate Position { get; private set; }
+
+		/// <summary>
+		/// Represents the rotation of the Entity
+		/// </summary>
+		[GladNetMember(GladNetDataIndex.Index3)]
+		public QuaternionSurrogate Rotation { get; private set; }
+
+		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerSpawnResponse"/> payload.
 		/// </summary>
-		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code)
+		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation)
 		{
+			//TODO: Check refs
+
 			ResponseCode = code;
+
+			Position = position;
+			Rotation = rotation;
 		}
 
 		/// <summary>

@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v3.5": {
-      "Booma.Instance.Data/1.0.1": {
+      "Booma.Instance.Data/1.0.5": {
         "type": "package",
         "compile": {
           "lib/net35/Booma.Instance.Data.dll": {}
@@ -75,7 +75,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1": {
-      "Booma.Instance.Data/1.0.1": {
+      "Booma.Instance.Data/1.0.5": {
         "type": "package",
         "compile": {
           "lib/net35/Booma.Instance.Data.dll": {}
@@ -148,12 +148,12 @@
     }
   },
   "libraries": {
-    "Booma.Instance.Data/1.0.1": {
-      "sha512": "P7JAKOMf7vDJAhWAk+2ZPrXTKHHbEKC7+/s9LRsidA+fTB9ln8uLYRYcptQwK2ZJ5G2qlZeyoSrDJP9XE6HNiQ==",
+    "Booma.Instance.Data/1.0.5": {
+      "sha512": "hHC1pabVi4qp+5JbVUhv9Uj7JS1SDpIf4K+w2ae6MFUUCwnH75Lhi+JLu5loAgARfU4yqOJQR/1KPO/PmjsMNw==",
       "type": "package",
-      "path": "Booma.Instance.Data/1.0.1",
+      "path": "Booma.Instance.Data/1.0.5",
       "files": [
-        "Booma.Instance.Data.1.0.1.nupkg.sha512",
+        "Booma.Instance.Data.1.0.5.nupkg.sha512",
         "Booma.Instance.Data.nuspec",
         "lib/net35/Booma.Instance.Data.dll"
       ]
@@ -203,7 +203,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Booma.Instance.Data >= 1.0.1",
+      "Booma.Instance.Data >= 1.0.5",
       "Booma.Payloads.Common >= 1.0.0-*",
       "Booma.Payloads.Surrogates.Unity >= 1.0.0-*",
       "GladNet.Payload >= 2.0.33",
