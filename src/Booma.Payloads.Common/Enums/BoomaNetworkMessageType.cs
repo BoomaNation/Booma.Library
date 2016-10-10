@@ -35,5 +35,10 @@ namespace Booma.Payloads.Common
 		/// Request sent by players who want to spawn in an instance.
 		/// </summary>
 		PlayerSpawnRequest = GladNetIncludeIndex.Index23,
+
+		/// <summary>
+		/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/>.
+		/// </summary>
+		PlayerSpawnResponse = GladNetIncludeIndex.Index24,
 	}
 }
