@@ -193,6 +193,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\PlayerSpawnResponseHandler.cs" />
     <Compile Include="Handlers\PlayerEntitySpawnEventHandler.cs" />
     <Compile Include="IoC\InstanceClientResponseHandlerRegisteration.cs" />
     <Compile Include="IoC\InstanceClientEventHandlerRegisteration.cs" />
