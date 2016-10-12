@@ -9,6 +9,7 @@ using SceneJect.Common;
 using Booma.Instance.Common;
 using GladNet.Engine.Common;
 using Booma.Payloads.Surrogates.Unity;
+using GladNet.Common;
 
 namespace Booma.Instance.Server
 {
@@ -28,6 +29,8 @@ namespace Booma.Instance.Server
 				if (Logger.IsWarnEnabled)
 					Logger.Warn($"Session with ID: {peer.PeerDetails.ConnectionID} of Type: {peer.GetType().Name} tried to spawn a player but a player has already been spawned for this session.");
 
+				//TODO: Send error response
+
 				//Don't continue. Something is broken, if in development, or if deployed a malicious broomop
 				return;
 			}
@@ -37,14 +40,18 @@ namespace Booma.Instance.Server
 
 			foreach (INetPeer p in playerEntityCollection.AllPeers())
 			{
+				Vector3Surrogate pos = new Vector3Surrogate(details.Position.x, details.Position.y, details.Position.z);
+
+				QuaternionSurrogate rot = new QuaternionSurrogate(details.Rotation.x, details.Rotation.y, details.Rotation.z, details.Rotation.w);
+
 				//Check that we don't send spawn event to the original requester
 				if (p.PeerDetails.ConnectionID != peer.PeerDetails.ConnectionID)
 					//Send the player spawn event
-					p.TrySendMessage(GladNet.Common.OperationType.Event, new PlayerSpawnEventPayload(details.EntityId, new Vector3Surrogate(details.Position.x, details.Position.y, details.Position.z),
-						new QuaternionSurrogate(details.Rotation.x, details.Rotation.y, details.Rotation.z, details.Rotation.w), "NoneRightNow"), GladNet.Common.DeliveryMethod.ReliableUnordered, true, 0);
+					p.TrySendMessage(OperationType.Event, new PlayerSpawnEventPayload(details.EntityId, pos, rot, "NoneRightNow"), DeliveryMethod.ReliableUnordered, true, 0);
+				else
+					//Send the response to the player who requested to spawn
+					p.TrySendMessage(OperationType.Response, new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot), DeliveryMethod.ReliableUnordered, true, 0);
 			}
-
-			//TODO: Tell the player that requested that they can spawn
 		}
 	}
 }

@@ -46,20 +46,20 @@
       <HintPath>..\..\packages\Booma.Common.Instance.1.0.1\lib\net35\Booma.Common.Instance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Instance.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Instance.Data.1.0.1\lib\net35\Booma.Instance.Data.dll</HintPath>
+    <Reference Include="Booma.Instance.Data, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Instance.Data.1.0.5\lib\net35\Booma.Instance.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.8\lib\net35\Booma.Payloads.Common.dll</HintPath>
+    <Reference Include="Booma.Payloads.Common, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.12\lib\net35\Booma.Payloads.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Instance, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.8\lib\net35\Booma.Payloads.Instance.dll</HintPath>
+    <Reference Include="Booma.Payloads.Instance, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.12\lib\net35\Booma.Payloads.Instance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.8\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
+    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.12\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Server.Network.Unity.Common, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
