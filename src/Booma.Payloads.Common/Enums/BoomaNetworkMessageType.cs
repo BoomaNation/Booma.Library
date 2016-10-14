@@ -40,5 +40,15 @@ namespace Booma.Payloads.Common
 		/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/>.
 		/// </summary>
 		PlayerSpawnResponse = GladNetIncludeIndex.Index24,
+
+		/// <summary>
+		/// Request sent by the client's to request movement.
+		/// </summary>
+		PlayerMoveRequest = GladNetIncludeIndex.Index25,
+
+		/// <summary>
+		/// Event sent by the server about position updates of an entity.
+		/// </summary>
+		EntityPositionUpdateEvent = GladNetIncludeIndex.Index26,
 	}
 }
