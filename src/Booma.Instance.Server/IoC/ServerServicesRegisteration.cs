@@ -12,8 +12,10 @@ namespace Booma.Instance.Server
 		public override void Register(IServiceRegister register)
 		{
 			//Just create a new collection and register it
-		    IPlayerEntityCollection playerCollection = new ServerPlayerEntityCollection();
+			IServerPlayerEntityCollection playerCollection = new ServerPlayerEntityCollection();
 
+			//Register as both for now
+			register.Register<IServerPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance);
 			register.Register<IPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance);
 		}
 	}

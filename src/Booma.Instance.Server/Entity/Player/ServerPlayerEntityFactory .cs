@@ -20,7 +20,7 @@ namespace Booma.Instance.Server
 		[SerializeField]
 		private readonly ISpawnPointStrategy playerSpawnStrategy;
 
-		[SerializeField]
+		[Inject]
 		private readonly IServerPlayerEntityCollection playerEntityCollection;
 
 		private void Start()

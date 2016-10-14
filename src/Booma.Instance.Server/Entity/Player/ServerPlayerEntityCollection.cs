@@ -26,7 +26,7 @@ namespace Booma.Instance.Server
 		/// <summary>
 		/// Indicates if the collection has been made dirty.
 		/// </summary>
-		private bool isDirty { get; set; } = false;
+		private bool isDirty { get; set; } = true;
 
 		//TODO: Implement enum flag system for determining dirty-ness for future features.
 

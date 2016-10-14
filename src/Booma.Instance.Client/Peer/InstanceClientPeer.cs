@@ -17,6 +17,24 @@ namespace Booma.Instance.Client
 		{
 			//TODO: Implement status handling
 			Debug.Log(status);
+
+			switch (status)
+			{
+				case NetStatus.Connecting:
+					break;
+				case NetStatus.Connected:
+					//On connect request a spawn in the world
+					this.SendRequest(new PlayerSpawnRequestPayload(), DeliveryMethod.ReliableOrdered);
+					break;
+				case NetStatus.EncryptionEstablished:
+					break;
+				case NetStatus.Disconnecting:
+					break;
+				case NetStatus.Disconnected:
+					break;
+				default:
+					break;
+			}
 		}
 
 		//For testing
@@ -34,6 +52,9 @@ namespace Booma.Instance.Client
 		{
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(EntitySpawnEventPayload));
+			registry.Register(typeof(PlayerSpawnEventPayload));
+			registry.Register(typeof(PlayerSpawnResponsePayload));
+			registry.Register(typeof(PlayerSpawnRequestPayload));
 		}
 	}
 }

@@ -45,8 +45,13 @@ namespace Booma.Instance.Server
 			//rely on the factory implementation to handle placement details such as position and rotation
 			IEntitySpawnDetails details = playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
 
+			//Add the network tag
+			details.EntityGameObject.AddComponent<PlayerNetworkEntity>().Initialize(peer); //initialize it with the peer context
+
 			foreach (INetPeer p in playerEntityCollection.AllPeers())
 			{
+				Logger.Debug("In Loop!");
+
 				Vector3Surrogate pos = new Vector3Surrogate(details.Position.x, details.Position.y, details.Position.z);
 
 				QuaternionSurrogate rot = new QuaternionSurrogate(details.Rotation.x, details.Rotation.y, details.Rotation.z, details.Rotation.w);

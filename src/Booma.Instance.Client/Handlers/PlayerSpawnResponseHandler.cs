@@ -21,7 +21,7 @@ namespace Booma.Instance.Client
 		protected override void OnIncomingHandlableMessage(IResponseMessage message, PlayerSpawnResponsePayload payload, IMessageParameters parameters, InstanceClientPeer peer)
 		{
 			//TODO: Implement spawning
-			logger.Info($"Recieved player spawn response.");
+			logger.Info($"Recieved player spawn response. {payload.ResponseCode} {payload.Position} {payload.Rotation}");
 		}
 	}
 }
