@@ -19,7 +19,7 @@ namespace Booma.Payloads.Instance
 		/// Response status; the response code of the request.
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index1)]
-		public PlayerSpawnResponseCode ResponseCode { get; }
+		public PlayerSpawnResponseCode ResponseCode { get; private set; } //no readonly props until new protobuf-net
 
 		/// <summary>
 		/// Represents the position of the Entity.

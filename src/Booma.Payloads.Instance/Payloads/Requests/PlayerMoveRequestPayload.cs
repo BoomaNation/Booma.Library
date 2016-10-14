@@ -16,7 +16,7 @@ namespace Booma.Payloads.Instance
 	public class PlayerMoveRequestPayload : PacketPayload
 	{
 		/// <summary>
-		/// Represents the position of the Entity.
+		/// Represents the direction the player wants to move in (may be non-normalized).
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index1)]
 		public Vector3Surrogate Direction { get; private set; }
@@ -29,6 +29,7 @@ namespace Booma.Payloads.Instance
 			//TODO: Check refs
 
 			//Do not normalize on client. No point. Server will need to renormalize anyway
+			//Malicious clients could send non-normalized directions
 			Direction = direction;
 		}
 
