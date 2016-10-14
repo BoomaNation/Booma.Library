@@ -20,6 +20,9 @@ namespace Booma.Instance.Server
 		[SerializeField]
 		private readonly ISpawnPointStrategy playerSpawnStrategy;
 
+		[SerializeField]
+		private readonly IServerPlayerEntityCollection playerEntityCollection;
+
 		private void Start()
 		{
 			if (prefabProvider == null)
@@ -29,6 +32,9 @@ namespace Booma.Instance.Server
 		public IEntitySpawnDetails SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation)
 		{
 			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(EntityType.Player), position, rotation) as GameObject;
+
+			//Once created we should add the entity to the server player entity collection.
+			playerEntityCollection.Add(id, playerGo);
 
 			return new DefaultEntitySpawnDetails(id, position, rotation, PostProcessEntityGameObject(playerGo, id, EntityType.Player));
 		}

@@ -13,11 +13,18 @@ using GladNet.Common;
 
 namespace Booma.Instance.Server
 {
+	[Injectee]
 	public class PlayerSpawnRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, PlayerSpawnRequestPayload>
 	{
+		/// <summary>
+		/// Factory service for the player entities.
+		/// </summary>
 		[Inject]
 		private readonly IPlayerEntityFactory playerEntityFactory;
 
+		/// <summary>
+		/// Player entity collection.
+		/// </summary>
 		[Inject]
 		private readonly IServerPlayerEntityCollection playerEntityCollection;
 
@@ -31,7 +38,7 @@ namespace Booma.Instance.Server
 
 				//TODO: Send error response
 
-				//Don't continue. Something is broken, if in development, or if deployed a malicious broomop
+				//Don't continue. Something is broken, if in development, or if deployed a malicious actor
 				return;
 			}
 
