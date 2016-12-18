@@ -1,4 +1,5 @@
-﻿using Booma.Payloads.Common;
+﻿using Booma.Instance.Data;
+using Booma.Payloads.Common;
 using Booma.Payloads.Surrogates.Unity;
 using GladNet.Payload;
 using GladNet.Serializer;
@@ -13,8 +14,15 @@ namespace Booma.Payloads.Instance
 	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.PlayerSpawnResponse)]
-	public class PlayerSpawnResponsePayload : PacketPayload, IResponseStatus<PlayerSpawnResponseCode>
+	public class PlayerSpawnResponsePayload : PacketPayload, IResponseStatus<PlayerSpawnResponseCode>, IEntityIdentifiable
 	{
+		/// <summary>
+		/// Represents the unique entity integer indentifier.
+		/// (This will indicate what our ID is on the server)
+		/// </summary>
+		[GladNetMember(GladNetDataIndex.Index4)]
+		public int EntityId { get; private set; }
+
 		/// <summary>
 		/// Response status; the response code of the request.
 		/// </summary>
@@ -36,12 +44,12 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerSpawnResponse"/> payload.
 		/// </summary>
-		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation)
+		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation, int entityId)
 		{
 			//TODO: Check refs
 
 			ResponseCode = code;
-
+			EntityId = entityId;
 			Position = position;
 			Rotation = rotation;
 		}

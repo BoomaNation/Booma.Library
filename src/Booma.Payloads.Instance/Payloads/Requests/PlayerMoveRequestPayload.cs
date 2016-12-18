@@ -22,22 +22,24 @@ namespace Booma.Payloads.Instance
 		public Vector3Surrogate Direction { get; private set; }
 
 		/// <summary>
-		/// Represents the position that the requestee thinks it is in. It may have mispredicted this position so it could be wrong.
+		/// Represents the time delta since the client start.
+		/// Consider this to be a timestamp that is unique to the client that is connected.
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index2)]
-		public Vector3Surrogate CurrentPosition { get; private set; }
+		public float TimeSinceStart { get; private set; }
 
 		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerMoveRequestPayload"/> payload.
 		/// </summary>
-		public PlayerMoveRequestPayload(Vector3Surrogate direction, Vector3Surrogate currentPosition)
+		public PlayerMoveRequestPayload(Vector3Surrogate direction, float timeStamp)
 		{
 			//TODO: Check refs
 
 			//Do not normalize on client. No point. Server will need to renormalize anyway
 			//Malicious clients could send non-normalized directions
 			Direction = direction;
-			CurrentPosition = currentPosition;
+
+			TimeSinceStart = timeStamp;
 		}
 
 		/// <summary>
