@@ -55,13 +55,6 @@
   <ItemGroup>
     <Compile Include="Entity\Components\EntityIdentifier.cs" />
     <Compile Include="Entity\IEntityCollection.cs" />
-    <Compile Include="Entity\Movement\Input\NetworkedEntityMovementDataProvider.cs" />
-    <Compile Include="Entity\Movement\NetworkedCharacterControllerDriver.cs" />
-    <Compile Include="Entity\Movement\IEntityMotor.cs" />
-    <Compile Include="Entity\Movement\Input\IMovementInput.cs" />
-    <Compile Include="Entity\Movement\Input\IMovementParameters.cs" />
-    <Compile Include="Entity\Movement\MovementTimeSliceData.cs" />
-    <Compile Include="Entity\Movement\CharacterControllerMotor.cs" />
     <Compile Include="Entity\Spawn\DefaultEntitySpawnDetails.cs" />
     <Compile Include="Entity\Spawn\IPlayerEntityFactory.cs" />
     <Compile Include="Entity\IPlayerEntityCollection.cs" />
