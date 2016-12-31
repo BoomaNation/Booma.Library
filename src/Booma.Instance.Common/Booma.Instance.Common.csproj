@@ -30,6 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladBehaviour.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladBehaviour.Common.1.0.3\lib\net35\GladBehaviour.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Net35Essentials.1.0.2\lib\net35\Net35Essentials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +55,13 @@
   <ItemGroup>
     <Compile Include="Entity\Components\EntityIdentifier.cs" />
     <Compile Include="Entity\IEntityCollection.cs" />
+    <Compile Include="Entity\Movement\Input\NetworkedEntityMovementDataProvider.cs" />
+    <Compile Include="Entity\Movement\NetworkedCharacterControllerDriver.cs" />
+    <Compile Include="Entity\Movement\IEntityMotor.cs" />
+    <Compile Include="Entity\Movement\Input\IMovementInput.cs" />
+    <Compile Include="Entity\Movement\Input\IMovementParameters.cs" />
+    <Compile Include="Entity\Movement\MovementTimeSliceData.cs" />
+    <Compile Include="Entity\Movement\CharacterControllerMotor.cs" />
     <Compile Include="Entity\Spawn\DefaultEntitySpawnDetails.cs" />
     <Compile Include="Entity\Spawn\IPlayerEntityFactory.cs" />
     <Compile Include="Entity\IPlayerEntityCollection.cs" />
@@ -54,6 +73,9 @@
       <Project>{d370bea9-2457-4fe3-a5c0-84b4689328bc}</Project>
       <Name>Booma.Instance.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

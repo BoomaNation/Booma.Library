@@ -55,6 +55,8 @@ namespace Booma.Instance.Client
 			registry.Register(typeof(PlayerSpawnEventPayload));
 			registry.Register(typeof(PlayerSpawnResponsePayload));
 			registry.Register(typeof(PlayerSpawnRequestPayload));
+			registry.Register(typeof(PlayerSpawnRequestPayload));
+			registry.Register(typeof(PlayerSpawnRequestPayload));
 		}
 	}
 }

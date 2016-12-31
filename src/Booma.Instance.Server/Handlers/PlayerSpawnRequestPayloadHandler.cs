@@ -46,8 +46,10 @@ namespace Booma.Instance.Server
 			IEntitySpawnDetails details = playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
 
 			//Add the network tag
+			//TODO: This is not really good design
 			details.EntityGameObject.AddComponent<PlayerNetworkEntity>().Initialize(peer); //initialize it with the peer context
 
+			//TODO: Use broadcasting functionality whenever it's implemented
 			foreach (INetPeer p in playerEntityCollection.AllPeers())
 			{
 				Logger.Debug("In Loop!");
@@ -62,7 +64,7 @@ namespace Booma.Instance.Server
 					p.TrySendMessage(OperationType.Event, new PlayerSpawnEventPayload(details.EntityId, pos, rot, "NoneRightNow"), DeliveryMethod.ReliableUnordered, true, 0);
 				else
 					//Send the response to the player who requested to spawn
-					p.TrySendMessage(OperationType.Response, new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot), DeliveryMethod.ReliableUnordered, true, 0);
+					p.TrySendMessage(OperationType.Response, new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, details.EntityId), DeliveryMethod.ReliableUnordered, true, 0);
 			}
 		}
 	}
