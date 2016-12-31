@@ -28,12 +28,6 @@ namespace Booma.Payloads.Instance
 		[GladNetMember(GladNetDataIndex.Index2)]
 		public Vector3Surrogate Position { get; private set; }
 
-		/// <summary>
-		/// Normalized Vector3 that represents the direction that the entity is heading in.
-		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
-		public Vector3Surrogate Direction { get; private set; }
-
 		//WARNING: Send the server timestamp. Not the unique player timestamp. The less info malicious actors have to spoof other player's
 		//packets the better
 		/// <summary>
@@ -42,13 +36,12 @@ namespace Booma.Payloads.Instance
 		[GladNetMember(GladNetDataIndex.Index4)]
 		public float CurrentTimeStamp { get; private set; }
 
-		public EntityPositionUpdateEvent(Vector3Surrogate position, Vector3Surrogate direction, int entityId, float timeStamp)
+		public EntityPositionUpdateEvent(Vector3Surrogate position, int entityId, float timeStamp)
 		{
 			//TODO: Check refs
 			//TODO: Verify args
 			EntityId = entityId;
 			Position = position;
-			Direction = direction;
 			CurrentTimeStamp = timeStamp;
 		}
 
