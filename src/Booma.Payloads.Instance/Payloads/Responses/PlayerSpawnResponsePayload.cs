@@ -61,7 +61,5 @@ namespace Booma.Payloads.Instance
 		{
 
 		}
-
-		
 	}
 }

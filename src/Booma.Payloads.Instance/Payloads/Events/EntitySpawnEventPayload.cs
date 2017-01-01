@@ -14,6 +14,7 @@ namespace Booma.Payloads.Instance
 	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.EntitySpawnEvent)]
+	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(PlayerSpawnEventPayload))]
 	public abstract class EntitySpawnEventPayload : PacketPayload, IEntityIdentifiable
 	{
 		/// <summary>
