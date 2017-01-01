@@ -46,6 +46,15 @@
           "lib/net35/GladNet.Serializer.dll": {}
         }
       },
+      "UnityEngine/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/UnityEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net35/UnityEngine.dll": {}
+        }
+      },
       "Booma.Payloads.Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
@@ -64,7 +73,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
         "dependencies": {
-          "GladNet.Serializer": "2.0.33"
+          "GladNet.Serializer": "2.0.33",
+          "UnityEngine": "1.0.0"
         },
         "compile": {
           "net35/Booma.Payloads.Surrogates.Unity.dll": {}
@@ -118,6 +128,15 @@
           "lib/net35/GladNet.Serializer.dll": {}
         }
       },
+      "UnityEngine/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/UnityEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net35/UnityEngine.dll": {}
+        }
+      },
       "Booma.Payloads.Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
@@ -136,7 +155,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "GladNet.Serializer": "2.0.33"
+          "GladNet.Serializer": "2.0.33",
+          "UnityEngine": "1.0.0"
         },
         "compile": {
           "net451/Booma.Payloads.Surrogates.Unity.dll": {}
@@ -188,6 +208,20 @@
         "GladNet.Serializer.nuspec",
         "lib/net35/GladNet.Serializer.XML",
         "lib/net35/GladNet.Serializer.dll"
+      ]
+    },
+    "UnityEngine/1.0.0": {
+      "sha512": "eMLOIC+fyKzPHfK5s3WN05gShuSD+uj6ytcQuR84wsCH4X5wMDvfefI46uMFgeG8ji/hYYbNOss5hhaaMMY70A==",
+      "type": "package",
+      "path": "UnityEngine/1.0.0",
+      "files": [
+        "Myget.bat",
+        "NuGet.config",
+        "NuGet.exe",
+        "README.md",
+        "UnityEngine.1.0.0.nupkg.sha512",
+        "UnityEngine.nuspec",
+        "lib/net35/UnityEngine.dll"
       ]
     },
     "Booma.Payloads.Common/1.0.0": {

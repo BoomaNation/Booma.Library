@@ -9,17 +9,17 @@ using System.Linq;
 namespace Booma.Payloads.Instance
 {
 	/// <summary>
-	/// Payload sent by players who want to move in a direction.
+	/// Payload sent by players who want to move to a new position.
 	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.PlayerMoveRequest)]
 	public class PlayerMoveRequestPayload : PacketPayload
 	{
 		/// <summary>
-		/// Represents the direction the player wants to move in (may be non-normalized).
+		/// Represents the new position the player wants to move to.
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index1)]
-		public Vector3Surrogate Direction { get; private set; }
+		public Vector3Surrogate Position { get; private set; }
 
 		/// <summary>
 		/// Represents the time delta since the client start.
@@ -31,13 +31,10 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerMoveRequestPayload"/> payload.
 		/// </summary>
-		public PlayerMoveRequestPayload(Vector3Surrogate direction, float timeStamp)
+		public PlayerMoveRequestPayload(Vector3Surrogate position, float timeStamp)
 		{
 			//TODO: Check refs
-
-			//Do not normalize on client. No point. Server will need to renormalize anyway
-			//Malicious clients could send non-normalized directions
-			Direction = direction;
+			Position = position;
 
 			TimeSinceStart = timeStamp;
 		}
