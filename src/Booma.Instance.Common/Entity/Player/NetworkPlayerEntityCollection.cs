@@ -8,10 +8,10 @@ using UnityEngine;
 using GladNet.Engine.Common;
 using System.Collections;
 
-namespace Booma.Instance.Server
+namespace Booma.Instance.Common
 {
 	//TODO: Thread safety
-	public class ServerPlayerEntityCollection : IServerPlayerEntityCollection
+	public class NetworkPlayerEntityCollection : INetworkPlayerEntityCollection
 	{
 		/// <summary>
 		/// Dictionary that is managed internally. We don't expose a dictionary directly so that we can extend the behavior.
@@ -105,7 +105,7 @@ namespace Booma.Instance.Server
 
 				foreach (GameObject go in this.internallyManagedPlayerGameobjectCollection.Values)
 				{
-					PlayerNetworkEntity networkTag = go.GetComponent<PlayerNetworkEntity>();
+					NetworkPeerEntityTag networkTag = go.GetComponent<NetworkPeerEntityTag>();
 
 					internalManagedPeerCollection.Add(networkTag.Peer);
 				}

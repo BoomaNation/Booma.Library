@@ -10,7 +10,7 @@ namespace Booma.Instance.Common
 	/// <summary>
 	/// Component for indentifying entities.
 	/// </summary>
-	public class EntityIdentifier : MonoBehaviour, IEntityIdentifiable
+	public class NetworkEntityIdentifierTag : MonoBehaviour, IEntityIdentifiable
 	{
 		/// <summary>
 		/// Represents the unique entity integer indentifier.
@@ -30,7 +30,7 @@ namespace Booma.Instance.Common
 		public void Initialize(int id, EntityType type)
 		{
 			if (isInitialized)
-				throw new InvalidOperationException($"Cannot initialize the {nameof(EntityIdentifier)} multiple times.");
+				throw new InvalidOperationException($"Cannot initialize the {nameof(NetworkEntityIdentifierTag)} multiple times.");
 
 			EntityId = id;
 			EntityType = type;

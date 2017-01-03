@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.Server
+namespace Booma.Instance.Client
 {
-	public class ServerServicesRegisteration : NonBehaviourDependency
+	public class ClientServicesRegisteration : NonBehaviourDependency
 	{
 		public override void Register(IServiceRegister register)
 		{

@@ -1,7 +1,6 @@
 ﻿using Booma.Instance.Common;
 using Booma.Instance.Data;
 using GladBehaviour.Common;
-using GladNet.Engine.Server;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -9,19 +8,16 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma.Instance.Client
 {
 	[Injectee]
-	public class ServerPlayerEntityFactory : GladMonoBehaviour, IPlayerEntityFactory
+	public class ClientNetworkPlayerEntityFactory : GladMonoBehaviour, IPlayerEntityFactory
 	{
 		[SerializeField]
 		private IEntityPrefabProvider prefabProvider;
 
-		[SerializeField]
-		private readonly ISpawnPointStrategy playerSpawnStrategy;
-
 		[Inject]
-		private readonly IServerPlayerEntityCollection playerEntityCollection;
+		private readonly INetworkPlayerEntityCollection playerEntityCollection;
 
 		private void Start()
 		{
@@ -33,7 +29,7 @@ namespace Booma.Instance.Server
 		{
 			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(EntityType.Player), position, rotation) as GameObject;
 
-			//Once created we should add the entity to the server player entity collection.
+			//Once created we should add the entity to player collection
 			playerEntityCollection.Add(id, playerGo);
 
 			return new DefaultEntitySpawnDetails(id, position, rotation, PostProcessEntityGameObject(playerGo, id, EntityType.Player));
@@ -41,7 +37,7 @@ namespace Booma.Instance.Server
 
 		public GameObject PostProcessEntityGameObject(GameObject playerGameObject, int id, EntityType type)
 		{
-			EntityIdentifier identifierComponent = playerGameObject.GetComponent<EntityIdentifier>();
+			NetworkEntityIdentifierTag identifierComponent = playerGameObject.GetComponent<NetworkEntityIdentifierTag>();
 
 			//Initialize the component that contains the info about the entity.
 			identifierComponent.Initialize(id, type);
@@ -51,12 +47,8 @@ namespace Booma.Instance.Server
 
 		public IEntitySpawnDetails SpawnPlayerEntity(int id)
 		{
-			Transform spawnTransform = playerSpawnStrategy.GetSpawnpoint();
-
-			if (spawnTransform == null)
-				throw new InvalidOperationException($"Unable to produce {nameof(Transform)} from {nameof(ISpawnPointStrategy)}.");
-
-			return SpawnPlayerEntity(id, spawnTransform.position, spawnTransform.rotation);
+			//We don't have spawn points so if a spawn is requested with just ID use defaults
+			return SpawnPlayerEntity(id, Vector3.zero, Quaternion.identity);
 		}
 	}
 }

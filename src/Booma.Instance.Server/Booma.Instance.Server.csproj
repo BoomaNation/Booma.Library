@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.14\lib\net35\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.18\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Client.Common.IoCModules, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -50,16 +50,16 @@
       <HintPath>..\..\packages\Booma.Instance.Data.1.0.8\lib\net35\Booma.Instance.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Common, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.17\lib\net35\Booma.Payloads.Common.dll</HintPath>
+    <Reference Include="Booma.Payloads.Common, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.20\lib\net35\Booma.Payloads.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Instance, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.17\lib\net35\Booma.Payloads.Instance.dll</HintPath>
+    <Reference Include="Booma.Payloads.Instance, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.20\lib\net35\Booma.Payloads.Instance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.17\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
+    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.20\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Server.Network.Unity.Common, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -154,16 +154,16 @@
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Autofac, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.14\lib\net35\SceneJect.Autofac.dll</HintPath>
+    <Reference Include="SceneJect.Autofac, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.18\lib\net35\SceneJect.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.14\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.18\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Editor, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Editor.1.0.14\lib\net35\SceneJect.Editor.dll</HintPath>
+    <Reference Include="SceneJect.Editor, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Editor.1.0.18\lib\net35\SceneJect.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -172,20 +172,16 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\UnityEngine.1.0.0\lib\net35\UnityEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\EntityPrefabProvider.cs" />
-    <Compile Include="Entity\IEntityPrefabProvider.cs" />
-    <Compile Include="Entity\Player\Components\PlayerNetworkEntity.cs" />
-    <Compile Include="Entity\Player\IPlayerPeerProvider.cs" />
-    <Compile Include="Entity\Player\IServerPlayerEntityCollection.cs" />
+    <Compile Include="Entity\Common\NetworkTransformBroadcaster.cs" />
+    <Compile Include="Entity\Player\NetworkPlayerEntityFactory.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
     <Compile Include="Entity\ISpawnPointStrategy.cs" />
-    <Compile Include="Entity\Player\ServerPlayerEntityCollection.cs" />
-    <Compile Include="Entity\Player\ServerPlayerEntityFactory .cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
     <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />
     <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />

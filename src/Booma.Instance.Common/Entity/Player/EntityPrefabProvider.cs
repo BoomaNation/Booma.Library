@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using Booma.Instance.Data;
 
-namespace Booma.Instance.Server
+namespace Booma.Instance.Common
 {
 	public class EntityPrefabProvider : ScriptableObject, IEntityPrefabProvider
 	{

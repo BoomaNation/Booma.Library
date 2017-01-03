@@ -53,6 +53,7 @@ namespace Booma.Instance.Server
 			registry.Register(typeof(PlayerSpawnEventPayload));
 			registry.Register(typeof(PlayerSpawnResponsePayload));
 			registry.Register(typeof(PlayerSpawnRequestPayload));
+			
 		}
 
 		protected override ClientPeerSession CreateIncomingPeerSession(INetworkMessageRouterService sender, IConnectionDetails details, INetworkMessageSubscriptionService subService, IDisconnectionServiceHandler disconnectHandler, INetworkMessageRouteBackService routebackService)

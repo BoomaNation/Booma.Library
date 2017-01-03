@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.Server
+namespace Booma.Instance.Common
 {
-	public interface IServerPlayerEntityCollection : IPlayerEntityCollection, IPlayerPeerProvider
+	public interface INetworkPlayerEntityCollection : IPlayerEntityCollection, IPlayerPeerProvider
 	{
 
 	}
