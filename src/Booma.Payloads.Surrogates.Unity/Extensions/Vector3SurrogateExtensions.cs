@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Booma.Payloads.Surrogates.Unity
+namespace UnityEngine
 {
 	public static class Vector3ToSurrogateExtensions
 	{
@@ -18,13 +18,7 @@ namespace Booma.Payloads.Surrogates.Unity
 			//Just map the vector3 to the surrogate
 			return new Vector3Surrogate(vector.x, vector.y, vector.z);
 		}
-	}
-}
 
-namespace UnityEngine
-{
-	public static class SurrogateToVector3Extensions
-	{
 		/// <summary>
 		/// Converts a provided <see cref="Vector3"/> to the network surrogate.
 		/// </summary>

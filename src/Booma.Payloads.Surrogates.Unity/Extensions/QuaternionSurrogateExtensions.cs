@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Booma.Payloads.Surrogates.Unity
+namespace UnityEngine
 {
 	public static class QuaternionToSurrogateExtensions
 	{
@@ -18,13 +18,7 @@ namespace Booma.Payloads.Surrogates.Unity
 			//Just map the Quaternion to the surrogate
 			return new QuaternionSurrogate(quat.x, quat.y, quat.z, quat.w);
 		}
-	}
-}
 
-namespace UnityEngine
-{
-	public static class SurrogateToQuaternionExtensions
-	{
 		/// <summary>
 		/// Converts a provided <see cref="Quaternion"/> to the network surrogate.
 		/// </summary>
