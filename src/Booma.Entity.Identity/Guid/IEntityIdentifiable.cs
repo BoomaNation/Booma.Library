@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GladNet.Serializer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Booma.Entity.Identity
 	/// <summary>
 	/// Contract for types that can indentify a Entity.
 	/// </summary>
+	[GladNetSerializationContract]
+	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(NetworkEntityGuid))]
 	public interface IEntityIdentifiable
 	{
 		/// <summary>
