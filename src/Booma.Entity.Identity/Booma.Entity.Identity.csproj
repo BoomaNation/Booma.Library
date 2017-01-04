@@ -49,6 +49,7 @@
     <Compile Include="Guid\EntityType.cs" />
     <Compile Include="Guid\IEntityIdentifiable.cs" />
     <Compile Include="Guid\NetworkEntityGuid.cs" />
+    <Compile Include="Guid\NetworkEntityGuidBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

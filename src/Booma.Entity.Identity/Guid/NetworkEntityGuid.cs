@@ -25,14 +25,25 @@ namespace Booma.Entity.Identity
 		public static NetworkEntityGuid Empty { get; } = new NetworkEntityGuid(0);
 
 		/// <summary>
+		/// Creates a <see cref="NetworkEntityGuid"/> building service.
+		/// </summary>
+		/// <returns>A non-null <see cref="NetworkEntityGuidBuilder"/> service.</returns>
+		public NetworkEntityGuidBuilder CreateBuilder()
+		{
+			return new NetworkEntityGuidBuilder();
+		}
+
+		//Sent over the network.
+		/// <summary>
 		/// Raw 64bit numerical representation of the GUID.
 		/// </summary>
+		[GladNetMember(GladNetDataIndex.Index1, IsRequired = true)]
 		private ulong rawGuidValue { get; }
 
 		/// <summary>
 		/// Indicates the <see cref="EntityType"/> that this <see cref="NetworkEntityGuid"/> is for.
 		/// </summary>
-		public EntityType EntityType { get { return (EntityType)(byte)((rawGuidValue & 0x00FF000000000000) << 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
+		public EntityType EntityType { get { return (EntityType)(byte)((rawGuidValue & 0x00FF000000000000) >> 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
 
 		/// <summary>
 		/// Indiciates the current GUID of the entity. This is the last chunk represents the actual ID without any type or identifying information.
