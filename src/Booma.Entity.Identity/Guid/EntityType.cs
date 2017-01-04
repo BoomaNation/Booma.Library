@@ -11,14 +11,19 @@ namespace Booma.Entity.Identity
 	public enum EntityType : byte
 	{
 		/// <summary>
+		/// Represents a typeless entity.
+		/// </summary>
+		None = 0,
+
+		/// <summary>
 		/// Player entity.
 		/// </summary>
-		Player = 0,
+		Player = 1,
 
 		/// <summary>
 		/// GameObject entity.
 		/// (Such as a Door or a Button)
 		/// </summary>
-		GameObject = 1,
+		GameObject = 2,
 	}
 }

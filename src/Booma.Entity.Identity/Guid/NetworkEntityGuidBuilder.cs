@@ -22,7 +22,7 @@ namespace Booma.Entity.Identity
 		/// <returns></returns>
 		public NetworkEntityGuidBuilder WithId(int id)
 		{
-			RawGuid &= 0xFFFFFFFF00000000; //remove current ID
+			RawGuid = 0xFFFFFFFF00000000 & RawGuid; //remove current ID
 
 			RawGuid |= ((ulong)(Int64)id); //bitwise or the ID into the raw guid value.
 
@@ -31,9 +31,9 @@ namespace Booma.Entity.Identity
 
 		public NetworkEntityGuidBuilder WithType(EntityType type)
 		{
-			RawGuid &= 0xFF00FFFFFFFFFFFF; //remove current entity type.
+			RawGuid = 0xFF00FFFFFFFFFFFF & RawGuid; //remove current entity type.
 
-			RawGuid |= (ulong)(Int64)(((byte)type) << 48);
+			RawGuid |= (((ulong)(byte)type) << 48);
 
 			return this;
 		}

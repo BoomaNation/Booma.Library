@@ -19,20 +19,6 @@ namespace Booma.Entity.Identity
 	[GladNetSerializationContract]
 	public class NetworkEntityGuid : IEntityIdentifiable
 	{
-		/// <summary>
-		/// Represents an Empty or uninitialized <see cref="NetworkEntityGuid"/>.
-		/// </summary>
-		public static NetworkEntityGuid Empty { get; } = new NetworkEntityGuid(0);
-
-		/// <summary>
-		/// Creates a <see cref="NetworkEntityGuid"/> building service.
-		/// </summary>
-		/// <returns>A non-null <see cref="NetworkEntityGuidBuilder"/> service.</returns>
-		public NetworkEntityGuidBuilder CreateBuilder()
-		{
-			return new NetworkEntityGuidBuilder();
-		}
-
 		//Sent over the network.
 		/// <summary>
 		/// Raw 64bit numerical representation of the GUID.
@@ -41,9 +27,20 @@ namespace Booma.Entity.Identity
 		private ulong rawGuidValue { get; }
 
 		/// <summary>
+		/// Represents an Empty or uninitialized <see cref="NetworkEntityGuid"/>.
+		/// </summary>
+		public static NetworkEntityGuid Empty { get; } = new NetworkEntityGuid(0);
+
+		/// <summary>
 		/// Indicates the <see cref="EntityType"/> that this <see cref="NetworkEntityGuid"/> is for.
 		/// </summary>
 		public EntityType EntityType { get { return (EntityType)(byte)((rawGuidValue & 0x00FF000000000000) >> 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
+
+		/// <summary>
+		/// Indiciates if the GUID is an empty or unitialized GUID.
+		/// </summary>
+		/// <returns></returns>
+		public bool isEmpty { get { return rawGuidValue == 0; } }
 
 		/// <summary>
 		/// Indiciates the current GUID of the entity. This is the last chunk represents the actual ID without any type or identifying information.
@@ -53,6 +50,15 @@ namespace Booma.Entity.Identity
 		public NetworkEntityGuid(ulong guidValue)
 		{
 			rawGuidValue = guidValue;
+		}
+
+		/// <summary>
+		/// Creates a <see cref="NetworkEntityGuid"/> building service.
+		/// </summary>
+		/// <returns>A non-null <see cref="NetworkEntityGuidBuilder"/> service.</returns>
+		public NetworkEntityGuidBuilder CreateBuilder()
+		{
+			return new NetworkEntityGuidBuilder();
 		}
 	}
 }
