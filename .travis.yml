@@ -1,9 +1,9 @@
 language: csharp
-solution: ./Booma.Entity.Server.sln
+solution: ./Booma.Entity.sln
 
 install:
   - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory tests/testrunner
-  - nuget restore Booma.Entity.Server.sln -ConfigFile NuGet.config
+  - nuget restore Booma.Entity.sln -ConfigFile NuGet.config
 
 notifications:
   slack: boomanationteam:sPQHUqEWA3wTaB9IKOSxe2f1
