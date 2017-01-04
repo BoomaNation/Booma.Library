@@ -2,7 +2,7 @@
 
 Booma is the code name for a networked ORPG/MMORPG being developed by the BoomaNation organization.
 
-Booma.Entity are interfaces and objects for entities.
+Booma.Entity is a library of interfaces, classes, contracts and objects for entities.
 
 ## Setup
 
