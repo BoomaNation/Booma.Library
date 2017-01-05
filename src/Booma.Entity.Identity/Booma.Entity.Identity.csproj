@@ -46,15 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\EntityGuidDictionary.cs" />
     <Compile Include="Guid\EntityType.cs" />
     <Compile Include="Guid\IEntityIdentifiable.cs" />
     <Compile Include="Guid\NetworkEntityGuid.cs" />
     <Compile Include="Guid\NetworkEntityGuidBuilder.cs" />
+    <Compile Include="Guid\NetworkGuidEqualityComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
