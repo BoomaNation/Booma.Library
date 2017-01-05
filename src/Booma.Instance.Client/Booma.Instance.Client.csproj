@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.18\lib\net35\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.19\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Client.Common.IoCModules, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -106,20 +106,20 @@
       <HintPath>..\packages\GladNet.Engine.Common.2.0.33\lib\net35\GladNet.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Client, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Client.1.0.3\lib\net35\GladNet.Lidgren.Client.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Client, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.1.0.4\lib\net35\GladNet.Lidgren.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Client.Unity, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.1.0.3\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Client.Unity, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.1.0.4\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.3\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.4\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.3\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.4\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
@@ -162,16 +162,16 @@
       <HintPath>..\..\packages\RestSharp.105.2.3\lib\net35\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Autofac, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.18\lib\net35\SceneJect.Autofac.dll</HintPath>
+    <Reference Include="SceneJect.Autofac, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.19\lib\net35\SceneJect.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.18\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.19\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Editor, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Editor.1.0.18\lib\net35\SceneJect.Editor.dll</HintPath>
+    <Reference Include="SceneJect.Editor, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Editor.1.0.19\lib\net35\SceneJect.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

@@ -1,5 +1,4 @@
-﻿using Booma.Common.Instance;
-using Booma.Instance.Common;
+﻿using Booma.Instance.Common;
 using Booma.Payloads.Instance;
 using GladBehaviour.Common;
 using GladNet.Common;
@@ -11,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Booma.Instance.Data;
 
 namespace Booma.Instance.Server
 {
@@ -48,7 +48,7 @@ namespace Booma.Instance.Server
 		/// Tag/metdata that contains UID information.
 		/// </summary>
 		[SerializeField]
-		private readonly NetworkEntityIdentifierTag identifierTag;
+		public IEntityIdentifiable identifierTag;
 
 		//TODO: Interest management
 		//In the future we'll probably broadcast only to interested recievers (interest management)
@@ -103,6 +103,14 @@ namespace Booma.Instance.Server
 			//TODO: Handle all states
 			while(CurrentState == State.Running)
 			{
+				if (playerCollection == null)
+				{
+					Debug.Log("Player collection was null.");
+
+					yield return null;
+					continue;
+				}
+
 				//TODO: Handle time
 				EntityPositionUpdateEvent positionPacket = new EntityPositionUpdateEvent(entityTransform.position.ToSurrogate(), identifierTag.EntityId, 0);
 

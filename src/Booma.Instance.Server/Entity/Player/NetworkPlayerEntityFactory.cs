@@ -23,6 +23,9 @@ namespace Booma.Instance.Server
 		[Inject]
 		private readonly INetworkPlayerEntityCollection playerEntityCollection;
 
+		[Inject]
+		private readonly IGameObjectFactory gameobjectFactory;
+
 		private void Start()
 		{
 			if (prefabProvider == null)
@@ -31,7 +34,7 @@ namespace Booma.Instance.Server
 
 		public IEntitySpawnDetails SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation)
 		{
-			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(EntityType.Player), position, rotation) as GameObject;
+			GameObject playerGo = gameobjectFactory.Create(prefabProvider.GetPrefab(EntityType.Player), position, rotation);
 
 			//Once created we should add the entity to the server player entity collection.
 			playerEntityCollection.Add(id, playerGo);

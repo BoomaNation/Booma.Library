@@ -23,6 +23,7 @@ namespace Booma.Instance.Client
 				case NetStatus.Connecting:
 					break;
 				case NetStatus.Connected:
+					Debug.Log("Sending spawn request.");
 					//On connect request a spawn in the world
 					this.SendRequest(new PlayerSpawnRequestPayload(), DeliveryMethod.ReliableOrdered);
 					break;
