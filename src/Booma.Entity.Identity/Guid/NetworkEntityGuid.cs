@@ -17,14 +17,14 @@ namespace Booma.Entity.Identity
 	/// See: http://wowwiki.wikia.com/wiki/API_UnitGUID
 	/// </summary>
 	[GladNetSerializationContract]
-	public class NetworkEntityGuid : IEntityIdentifiable
+	public class NetworkEntityGuid : IEntityIdentifiable, IEquatable<NetworkEntityGuid>
 	{
 		//Sent over the network.
 		/// <summary>
 		/// Raw 64bit numerical representation of the GUID.
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index1, IsRequired = true)]
-		private ulong rawGuidValue { get; }
+		public ulong RawGuidValue { get; }
 
 		/// <summary>
 		/// Represents an Empty or uninitialized <see cref="NetworkEntityGuid"/>.
@@ -34,22 +34,22 @@ namespace Booma.Entity.Identity
 		/// <summary>
 		/// Indicates the <see cref="EntityType"/> that this <see cref="NetworkEntityGuid"/> is for.
 		/// </summary>
-		public EntityType EntityType { get { return (EntityType)(byte)((rawGuidValue & 0x00FF000000000000) >> 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
+		public EntityType EntityType { get { return (EntityType)(byte)((RawGuidValue & 0x00FF000000000000) >> 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
 
 		/// <summary>
 		/// Indiciates if the GUID is an empty or unitialized GUID.
 		/// </summary>
 		/// <returns></returns>
-		public bool isEmpty { get { return rawGuidValue == 0; } }
+		public bool isEmpty { get { return RawGuidValue == 0; } }
 
 		/// <summary>
 		/// Indiciates the current GUID of the entity. This is the last chunk represents the actual ID without any type or identifying information.
 		/// </summary>
-		public int EntityId { get { return (int)(rawGuidValue & 0x00000000FFFFFFFF); } } //FFFF FFFF masks out everything but an unsigned integer. Casts to int. We waste bits this way but we gain considerable perf.
+		public int EntityId { get { return (int)(RawGuidValue & 0x00000000FFFFFFFF); } } //FFFF FFFF masks out everything but an unsigned integer. Casts to int. We waste bits this way but we gain considerable perf.
 
 		public NetworkEntityGuid(ulong guidValue)
 		{
-			rawGuidValue = guidValue;
+			RawGuidValue = guidValue;
 		}
 
 		/// <summary>
@@ -59,6 +59,45 @@ namespace Booma.Entity.Identity
 		public NetworkEntityGuidBuilder CreateBuilder()
 		{
 			return new NetworkEntityGuidBuilder();
+		}
+
+		public static bool operator ==(NetworkEntityGuid guid1, NetworkEntityGuid guid2)
+		{
+			if (guid1 == null)
+			{
+				if (guid2 == null)
+					return true;
+				else
+					return false;
+			}
+
+			return guid1.RawGuidValue == guid2.RawGuidValue;
+		}
+
+		public static bool operator !=(NetworkEntityGuid guid1, NetworkEntityGuid guid2)
+		{
+			if (guid1 == null)
+			{
+				if (guid2 == null)
+					return false;
+				else
+					return true;
+			}
+
+			return guid1.RawGuidValue != guid2.RawGuidValue;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (!(obj is NetworkEntityGuid))
+				return false;
+
+			return this.Equals(obj as NetworkEntityGuid);
+		}
+
+		public bool Equals(NetworkEntityGuid other)
+		{
+			return other == this;
 		}
 	}
 }

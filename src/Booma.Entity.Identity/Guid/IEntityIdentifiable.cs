@@ -14,6 +14,11 @@ namespace Booma.Entity.Identity
 	public interface IEntityIdentifiable
 	{
 		/// <summary>
+		/// Represents the type of the entity.
+		/// </summary>
+		EntityType EntityType { get; }
+
+		/// <summary>
 		/// Represents the unique entity integer indentifier.
 		/// </summary>
 		int EntityId { get; }
