@@ -1,4 +1,4 @@
-﻿using Booma.Instance.Data;
+﻿using Booma.Entity.Identity;
 using Booma.Payloads.Common;
 using Booma.Payloads.Surrogates.Unity;
 using GladNet.Payload;
@@ -14,14 +14,13 @@ namespace Booma.Payloads.Instance
 	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.EntitySpawnEvent)]
-	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(PlayerSpawnEventPayload))]
-	public abstract class EntitySpawnEventPayload : PacketPayload, IEntityIdentifiable
+	public class EntitySpawnEventPayload : PacketPayload
 	{
 		/// <summary>
-		/// Represents the unique entity integer indentifier.
+		/// Represents the unique entity indentifier.
 		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index2)] //use higher index so we don't overlap with the include
-		public int EntityId { get; private set; }
+		public NetworkEntityGuid EntityGuid { get; private set; }
 
 		/// <summary>
 		/// Represents the position of the Entity.
@@ -38,10 +37,10 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Creates a new payload for the <see cref="BoomaPayloadMessageType.EntitySpawnEvent"/> packet.
 		/// </summary>
-		/// <param name="entityId">The entity's ID.</param>
+		/// <param name="entityGuid">The entity's GUID.</param>
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
-		public EntitySpawnEventPayload(int entityId, Vector3Surrogate position, QuaternionSurrogate rotation)
+		public EntitySpawnEventPayload(NetworkEntityGuid entityGuid, Vector3Surrogate position, QuaternionSurrogate rotation)
 		{
 			if (position == null)
 				throw new ArgumentNullException(nameof(position), $"Provided {nameof(Vector3Surrogate)} must not be null.");
@@ -49,7 +48,7 @@ namespace Booma.Payloads.Instance
 			if (rotation == null)
 				throw new ArgumentNullException(nameof(rotation), $"Provided {nameof(QuaternionSurrogate)} must not be null.");
 
-			EntityId = entityId;
+			EntityGuid = entityGuid;
 			Position = position;
 			Rotation = rotation;
 		}

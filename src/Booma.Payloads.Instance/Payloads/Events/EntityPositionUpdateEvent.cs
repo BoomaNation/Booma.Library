@@ -1,4 +1,4 @@
-﻿using Booma.Instance.Data;
+﻿using Booma.Entity.Identity;
 using Booma.Payloads.Common;
 using Booma.Payloads.Surrogates.Unity;
 using GladNet.Payload;
@@ -14,13 +14,13 @@ namespace Booma.Payloads.Instance
 	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.EntityPositionUpdateEvent)]
-	public class EntityPositionUpdateEvent : PacketPayload, IEntityIdentifiable
+	public class EntityPositionUpdateEvent : PacketPayload
 	{
 		/// <summary>
-		/// Represents the unique entity integer indentifier.
+		/// Represents the unique entity indentifier.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)] //use higher index so we don't overlap with the include
-		public int EntityId { get; private set; }
+		[GladNetMember(GladNetDataIndex.Index1)]
+		public NetworkEntityGuid EntityGuid { get; private set; }
 
 		/// <summary>
 		/// Represents the current known position of the entity.
@@ -36,11 +36,11 @@ namespace Booma.Payloads.Instance
 		[GladNetMember(GladNetDataIndex.Index4)]
 		public float CurrentTimeStamp { get; private set; }
 
-		public EntityPositionUpdateEvent(Vector3Surrogate position, int entityId, float timeStamp)
+		public EntityPositionUpdateEvent(Vector3Surrogate position, NetworkEntityGuid entityGuid, float timeStamp)
 		{
 			//TODO: Check refs
 			//TODO: Verify args
-			EntityId = entityId;
+			EntityGuid = entityGuid;
 			Position = position;
 			CurrentTimeStamp = timeStamp;
 		}

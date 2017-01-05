@@ -3,13 +3,16 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5.1": {
-      "Booma.Instance.Data/1.0.5": {
+      "Booma.Entity.Identity/1.0.2": {
         "type": "package",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
         "compile": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         },
         "runtime": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         }
       },
       "dotnet-test-xunit/2.2.0-preview2-build1029": {
@@ -471,7 +474,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Instance.Data": "1.0.5",
+          "Booma.Entity.Identity": "1.0.2",
           "Booma.Payloads.Common": "1.0.0",
           "Booma.Payloads.Surrogates.Unity": "1.0.0",
           "GladNet.Payload": "2.0.33",
@@ -500,13 +503,16 @@
       }
     },
     ".NETFramework,Version=v4.5.2": {
-      "Booma.Instance.Data/1.0.5": {
+      "Booma.Entity.Identity/1.0.2": {
         "type": "package",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
         "compile": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         },
         "runtime": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         }
       },
       "dotnet-test-xunit/2.2.0-preview2-build1029": {
@@ -968,7 +974,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Instance.Data": "1.0.5",
+          "Booma.Entity.Identity": "1.0.2",
           "Booma.Payloads.Common": "1.0.0",
           "Booma.Payloads.Surrogates.Unity": "1.0.0",
           "GladNet.Payload": "2.0.33",
@@ -997,13 +1003,16 @@
       }
     },
     ".NETFramework,Version=v4.6": {
-      "Booma.Instance.Data/1.0.5": {
+      "Booma.Entity.Identity/1.0.2": {
         "type": "package",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
         "compile": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         },
         "runtime": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         }
       },
       "dotnet-test-xunit/2.2.0-preview2-build1029": {
@@ -1465,7 +1474,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Instance.Data": "1.0.5",
+          "Booma.Entity.Identity": "1.0.2",
           "Booma.Payloads.Common": "1.0.0",
           "Booma.Payloads.Surrogates.Unity": "1.0.0",
           "GladNet.Payload": "2.0.33",
@@ -1494,13 +1503,16 @@
       }
     },
     ".NETFramework,Version=v4.6.1": {
-      "Booma.Instance.Data/1.0.5": {
+      "Booma.Entity.Identity/1.0.2": {
         "type": "package",
+        "dependencies": {
+          "GladNet.Serializer": "2.0.33"
+        },
         "compile": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         },
         "runtime": {
-          "lib/net35/Booma.Instance.Data.dll": {}
+          "lib/net35/Booma.Entity.Identity.dll": {}
         }
       },
       "dotnet-test-xunit/2.2.0-preview2-build1029": {
@@ -1962,7 +1974,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Booma.Instance.Data": "1.0.5",
+          "Booma.Entity.Identity": "1.0.2",
           "Booma.Payloads.Common": "1.0.0",
           "Booma.Payloads.Surrogates.Unity": "1.0.0",
           "GladNet.Payload": "2.0.33",
@@ -1992,14 +2004,14 @@
     }
   },
   "libraries": {
-    "Booma.Instance.Data/1.0.5": {
-      "sha512": "hHC1pabVi4qp+5JbVUhv9Uj7JS1SDpIf4K+w2ae6MFUUCwnH75Lhi+JLu5loAgARfU4yqOJQR/1KPO/PmjsMNw==",
+    "Booma.Entity.Identity/1.0.2": {
+      "sha512": "fSKbRAtMV4tDO+BrPfQwuNBg2wTkOvne2mkUSA2kItfEYoxhqgCrn0beoVoriCoY/eXQR/nDpwhaTFmV9czQlA==",
       "type": "package",
-      "path": "Booma.Instance.Data/1.0.5",
+      "path": "Booma.Entity.Identity/1.0.2",
       "files": [
-        "Booma.Instance.Data.1.0.5.nupkg.sha512",
-        "Booma.Instance.Data.nuspec",
-        "lib/net35/Booma.Instance.Data.dll"
+        "Booma.Entity.Identity.1.0.2.nupkg.sha512",
+        "Booma.Entity.Identity.nuspec",
+        "lib/net35/Booma.Entity.Identity.dll"
       ]
     },
     "dotnet-test-xunit/2.2.0-preview2-build1029": {

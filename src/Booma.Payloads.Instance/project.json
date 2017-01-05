@@ -2,7 +2,7 @@
   "version": "1.0.0-*",
 
     "dependencies": {
-        "Booma.Instance.Data": "1.0.5",
+        "Booma.Entity.Identity": "1.0.2",
         "Booma.Payloads.Common": "1.0.0-*",
         "Booma.Payloads.Surrogates.Unity": "1.0.0-*",
         "GladNet.Payload": "2.0.33",
