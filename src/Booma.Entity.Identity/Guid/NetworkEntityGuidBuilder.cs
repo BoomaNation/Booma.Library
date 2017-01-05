@@ -11,6 +11,16 @@ namespace Booma.Entity.Identity
 	public class NetworkEntityGuidBuilder
 	{
 		/// <summary>
+		/// Creates a new <see cref="NetworkEntityGuidBuilder"/> object that allows
+		/// for a more fluent building.
+		/// </summary>
+		/// <returns></returns>
+		public static NetworkEntityGuidBuilder New()
+		{
+			return new NetworkEntityGuidBuilder();
+		}
+
+		/// <summary>
 		/// The raw 64bit guid value.
 		/// </summary>
 		public ulong RawGuid { get; set; }
