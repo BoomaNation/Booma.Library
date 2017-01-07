@@ -52,6 +52,12 @@ namespace Booma.Entity.Identity
 			RawGuidValue = guidValue;
 		}
 
+		//For serializers
+		protected NetworkEntityGuid()
+		{
+
+		}
+
 		/// <summary>
 		/// Creates a <see cref="NetworkEntityGuid"/> building service.
 		/// </summary>
