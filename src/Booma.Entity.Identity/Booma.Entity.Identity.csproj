@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Collections\EntityGuidDictionary.cs" />
     <Compile Include="Guid\EntityType.cs" />
+    <Compile Include="Guid\IEntityGuidContainer.cs" />
     <Compile Include="Guid\IEntityIdentifiable.cs" />
     <Compile Include="Guid\NetworkEntityGuid.cs" />
     <Compile Include="Guid\NetworkEntityGuidBuilder.cs" />
