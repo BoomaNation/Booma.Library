@@ -69,9 +69,9 @@ namespace Booma.Entity.Identity
 
 		public static bool operator ==(NetworkEntityGuid guid1, NetworkEntityGuid guid2)
 		{
-			if (guid1 == null)
+			if (Object.ReferenceEquals(guid1, null))
 			{
-				if (guid2 == null)
+				if (Object.ReferenceEquals(guid2, null))
 					return true;
 				else
 					return false;
@@ -82,9 +82,9 @@ namespace Booma.Entity.Identity
 
 		public static bool operator !=(NetworkEntityGuid guid1, NetworkEntityGuid guid2)
 		{
-			if (guid1 == null)
+			if (Object.ReferenceEquals(guid1, null))
 			{
-				if (guid2 == null)
+				if (Object.ReferenceEquals(guid2,null))
 					return false;
 				else
 					return true;
