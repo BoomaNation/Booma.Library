@@ -13,6 +13,7 @@ namespace Booma.Payloads.Instance
 	/// An event that contains information about an entity that should be spawned.
 	/// </summary>
 	[GladNetSerializationContract]
+	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(PlayerEntitySpawnEventPayload))]
 	[BoomaPayload(BoomaPayloadMessageType.EntitySpawnEvent)]
 	public class EntitySpawnEventPayload : PacketPayload
 	{
