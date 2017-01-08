@@ -53,7 +53,7 @@ namespace Booma.Entity.Identity
 		}
 
 		//For serializers
-		protected NetworkEntityGuid()
+		public NetworkEntityGuid()
 		{
 
 		}
