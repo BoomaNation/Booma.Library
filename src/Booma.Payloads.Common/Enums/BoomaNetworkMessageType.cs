@@ -50,5 +50,10 @@ namespace Booma.Payloads.Common
 		/// Event sent by the server about position updates of an entity.
 		/// </summary>
 		EntityPositionUpdateEvent = GladNetIncludeIndex.Index26,
+
+		/// <summary>
+		/// Event sent by server when an entity's state has changed.
+		/// </summary>
+		EntityStateChangedEvent = GladNetIncludeIndex.Index27
 	}
 }
