@@ -50,7 +50,6 @@ namespace Booma.Instance.Server
 			//Register the payloads.
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(EntitySpawnEventPayload));
-			registry.Register(typeof(PlayerSpawnEventPayload));
 			registry.Register(typeof(PlayerSpawnResponsePayload));
 			registry.Register(typeof(PlayerSpawnRequestPayload));
 			

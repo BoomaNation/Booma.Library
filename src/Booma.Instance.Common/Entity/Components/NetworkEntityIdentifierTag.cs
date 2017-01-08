@@ -1,4 +1,5 @@
-﻿using Booma.Instance.Data;
+﻿using Booma.Entity.Identity;
+using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,32 +11,23 @@ namespace Booma.Instance.Common
 	/// <summary>
 	/// Component for indentifying entities.
 	/// </summary>
-	public class NetworkEntityIdentifierTag : MonoBehaviour, IEntityIdentifiable
+	[Injectee]
+	public class NetworkEntityIdentifierTag : MonoBehaviour, IEntityIdentifiable, IEntityGuidContainer
 	{
 		/// <summary>
 		/// Represents the unique entity integer indentifier.
 		/// </summary>
-		public int EntityId { get; private set; }
+		public int EntityId { get { return NetworkGuid.EntityId; } }
 
 		/// <summary>
 		/// Indicates the Entity's Type.
 		/// </summary>
-		public EntityType EntityType { get; private set; }
+		public EntityType EntityType { get { return NetworkGuid.EntityType; } }
 
 		/// <summary>
-		/// Indicates if the component has been initialized.
+		/// Network GUID.
 		/// </summary>
-		private bool isInitialized = false;
-
-		public void Initialize(int id, EntityType type)
-		{
-			if (isInitialized)
-				throw new InvalidOperationException($"Cannot initialize the {nameof(NetworkEntityIdentifierTag)} multiple times.");
-
-			EntityId = id;
-			EntityType = type;
-
-			isInitialized = true;
-		}
+		[Inject]
+		public NetworkEntityGuid NetworkGuid { get; private set; }
 	}
 }

@@ -9,22 +9,9 @@ namespace Booma.Instance.Common
 	/// <summary>
 	/// Contract for details of a spawn.
 	/// </summary>
-	public interface IEntitySpawnDetails
+	public interface IEntitySpawnResults
 	{
-		/// <summary>
-		/// Unique Identifier of the Entity.
-		/// </summary>
-		int EntityId { get; }
-
-		/// <summary>
-		/// Position the Entity was spawned at.
-		/// </summary>
-		Vector3 Position { get; }
-
-		/// <summary>
-		/// Rotation the Entity was spawned at.
-		/// </summary>
-		Quaternion Rotation { get; }
+		SpawnResult Result { get; }
 
 		/// <summary>
 		/// The <see cref="GameObject"/> that represents the Entity in the engine.

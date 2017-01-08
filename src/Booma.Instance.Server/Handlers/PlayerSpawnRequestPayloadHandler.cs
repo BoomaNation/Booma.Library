@@ -11,6 +11,7 @@ using GladNet.Engine.Common;
 using Booma.Payloads.Surrogates.Unity;
 using GladNet.Common;
 using UnityEngine;
+using Booma.Entity.Identity;
 
 namespace Booma.Instance.Server
 {
@@ -27,54 +28,34 @@ namespace Booma.Instance.Server
 		/// Player entity collection.
 		/// </summary>
 		[Inject]
-		private readonly INetworkPlayerEntityCollection playerEntityCollection;
+		private readonly NetworkEntityCollection entityCollection;
+
+		//TODO: This is temporary. We don't need this service once full handshake is implemented. For demo we need it though
+		[Inject]
+		private readonly INetworkGuidFactory entityGuidFactory;
 
 		protected override void OnIncomingHandlableMessage(IRequestMessage message, PlayerSpawnRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
+			//TODO: Right now we don't have a full handshake for entering an instance. So we need to make up a GUID for the entering player
 			//Important to check if we've actually already created an entity for this connection
-			if(playerEntityCollection.ContainsKey(peer.PeerDetails.ConnectionID))
-			{
-				if (Logger.IsWarnEnabled)
-					Logger.Warn($"Session with ID: {peer.PeerDetails.ConnectionID} of Type: {peer.GetType().Name} tried to spawn a player but a player has already been spawned for this session.");
-
-				//TODO: Send error response
-
-				//Don't continue. Something is broken, if in development, or if deployed a malicious actor
-				return;
-			}
+			//We don't have that implemenented though for the demo
 
 			//rely on the factory implementation to handle placement details such as position and rotation
-			IEntitySpawnDetails details = playerEntityFactory.SpawnPlayerEntity(peer.PeerDetails.ConnectionID);
+			NetworkEntityGuid guid = entityGuidFactory.Create(EntityType.Player);
+			IEntitySpawnResults details = playerEntityFactory.SpawnPlayerEntity(new NetworkPlayerSpawnContext(guid, peer));
 
-			//Add the network tag
-			//TODO: This is not really good design
-			details.EntityGameObject.AddComponent<NetworkPeerEntityTag>().Initialize(peer); //initialize it with the peer context
+			if (details.Result != SpawnResult.Success)
+				throw new InvalidOperationException($"Failed to create Entity for {peer.ToString()}. Failure: {details.Result.ToString()}");
+
+			entityCollection.Add(guid, details.EntityGameObject);
 
 			//TODO: Clean this up
-			Vector3Surrogate pos = details.Position.ToSurrogate();
+			Vector3Surrogate pos = details.EntityGameObject.transform.rotation.ToSurrogate();
 
-			QuaternionSurrogate rot = details.Rotation.ToSurrogate();
+			QuaternionSurrogate rot = details.EntityGameObject.transform.rotation.ToSurrogate();
 
 			//Send the response to the player who requested to spawn
-			peer.SendResponse(new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, details.EntityId), DeliveryMethod.ReliableUnordered, true, 0);
-
-			//broadcast the spawn to all other players and spawn every other player on the connecting peer.
-			//TODO: Use broadcasting functionality whenever it's implemented
-			foreach (INetPeer p in playerEntityCollection.AllPeers())
-			{
-				Logger.Debug("In Loop!");
-
-				//Check that we don't send spawn event to the original requester
-				if (p.PeerDetails.ConnectionID != peer.PeerDetails.ConnectionID)
-				{
-					//Send the player spawn event
-					p.TrySendMessage(OperationType.Event, new PlayerSpawnEventPayload(details.EntityId, pos, rot, "NoneRightNow"), DeliveryMethod.ReliableUnordered, true, 0);
-
-					//Send a spawn event of this peer/player too to the player who requested to spawn
-					peer.SendEvent(new PlayerSpawnEventPayload(p.PeerDetails.ConnectionID, playerEntityCollection[p.PeerDetails.ConnectionID].transform.position.ToSurrogate(), playerEntityCollection[p.PeerDetails.ConnectionID].transform.rotation.ToSurrogate(), "No Name"),
-						DeliveryMethod.ReliableUnordered, true, 0);
-				}
-			}
+			peer.SendResponse(new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, guid), DeliveryMethod.ReliableUnordered, true, 0);
 		}
 	}
 }

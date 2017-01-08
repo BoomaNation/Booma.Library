@@ -1,5 +1,5 @@
-﻿using Booma.Instance.Common;
-using Booma.Instance.Data;
+﻿using Booma.Entity.Identity;
+using Booma.Instance.Common;
 using GladBehaviour.Common;
 using SceneJect.Common;
 using System;
@@ -17,7 +17,7 @@ namespace Booma.Instance.Client
 		private IEntityPrefabProvider prefabProvider;
 
 		[Inject]
-		private readonly INetworkPlayerEntityCollection playerEntityCollection;
+		private readonly IGameObjectFactory gameobjectFactory;
 
 		private void Start()
 		{
@@ -25,30 +25,26 @@ namespace Booma.Instance.Client
 				throw new InvalidOperationException($"Set {nameof(prefabProvider)} in the inspector with the player entity prefab.");
 		}
 
-		public IEntitySpawnDetails SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation)
+		public IEntitySpawnResults SpawnPlayerEntity(int id, Vector3 position, Quaternion rotation)
 		{
-			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(EntityType.Player), position, rotation) as GameObject;
+			GameObject playerGo = GameObject.Instantiate(prefabProvider.GetPrefab(PrefabType.NetworkPlayer), position, rotation) as GameObject;
 
-			//Once created we should add the entity to player collection
-			playerEntityCollection.Add(id, playerGo);
-
-			return new DefaultEntitySpawnDetails(id, position, rotation, PostProcessEntityGameObject(playerGo, id, EntityType.Player));
+			return new DefaultEntitySpawnDetails(playerGo);
 		}
 
-		public GameObject PostProcessEntityGameObject(GameObject playerGameObject, int id, EntityType type)
+		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, Vector3 position, Quaternion rotation, ISpawnContext context)
 		{
-			NetworkEntityIdentifierTag identifierComponent = playerGameObject.GetComponent<NetworkEntityIdentifierTag>();
+			GameObject playerGo = gameobjectFactory.CreateBuilder()
+				.With(context)
+				.Create(prefabProvider.GetPrefab(PrefabType.NetworkPlayer), position, rotation) as GameObject;
 
-			//Initialize the component that contains the info about the entity.
-			identifierComponent.Initialize(id, type);
-
-			return playerGameObject;
+			return new DefaultEntitySpawnDetails(playerGo);
 		}
 
-		public IEntitySpawnDetails SpawnPlayerEntity(int id)
+		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, ISpawnContext context)
 		{
 			//We don't have spawn points so if a spawn is requested with just ID use defaults
-			return SpawnPlayerEntity(id, Vector3.zero, Quaternion.identity);
+			return TrySpawnEntity(entityType, Vector3.zero, Quaternion.identity, context);
 		}
 	}
 }

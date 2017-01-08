@@ -8,6 +8,7 @@ using GladNet.Serializer;
 using GladNet.Message;
 using Booma.Payloads.Instance;
 using UnityEngine;
+using System.Collections;
 
 namespace Booma.Instance.Client
 {
@@ -39,21 +40,29 @@ namespace Booma.Instance.Client
 		}
 
 		//For testing
-		public void Update()
+		public IEnumerator PollNetwork()
 		{
-			Poll();
+			yield return new WaitForSeconds(0.1f);
+
+			while(true)
+			{
+				yield return new WaitForSeconds(0.1f);
+				Poll();
+			}
 		}
 
 		public void ConnectToServer()
 		{
-			Connect();
+			if (Connect())
+				StartCoroutine(PollNetwork());
+			else
+				throw new InvalidOperationException($"Failed to connect.");
 		}
 
 		public override void RegisterPayloadTypes(ISerializerRegistry registry)
 		{
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(EntitySpawnEventPayload));
-			registry.Register(typeof(PlayerSpawnEventPayload));
 			registry.Register(typeof(PlayerSpawnResponsePayload));
 			registry.Register(typeof(PlayerSpawnRequestPayload));
 		}

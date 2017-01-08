@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.19\lib\net35\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Client.Common.IoCModules, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -42,20 +42,20 @@
       <HintPath>..\..\packages\Booma.Client.Logging.1.0.3\lib\net35\Booma.Client.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Instance.Data, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Instance.Data.1.0.8\lib\net35\Booma.Instance.Data.dll</HintPath>
+    <Reference Include="Booma.Entity.Identity, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Entity.Identity.1.0.9\lib\net35\Booma.Entity.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Common, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.20\lib\net35\Booma.Payloads.Common.dll</HintPath>
+    <Reference Include="Booma.Payloads.Common, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Common.1.0.21\lib\net35\Booma.Payloads.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Instance, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.20\lib\net35\Booma.Payloads.Instance.dll</HintPath>
+    <Reference Include="Booma.Payloads.Instance, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Instance.1.0.21\lib\net35\Booma.Payloads.Instance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.20\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
+    <Reference Include="Booma.Payloads.Surrogates.Unity, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Payloads.Surrogates.Unity.1.0.21\lib\net35\Booma.Payloads.Surrogates.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Server.Network.Unity.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -86,52 +86,52 @@
       <HintPath>..\..\packages\GladBehaviour.Editor.1.0.3\lib\net35\GladBehaviour.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.2.0.33\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.2.0.34\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Encryption, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.2.0.33\lib\net35\GladNet.Encryption.dll</HintPath>
+    <Reference Include="GladNet.Encryption, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Encryption.2.0.34\lib\net35\GladNet.Encryption.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Engine.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.33\lib\net35\GladNet.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Engine.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.34\lib\net35\GladNet.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Engine.Server, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Server.2.0.33\lib\net35\GladNet.Engine.Server.dll</HintPath>
+    <Reference Include="GladNet.Engine.Server, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Server.2.0.34\lib\net35\GladNet.Engine.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.4\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.5\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.4\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.5\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Server, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.4\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Server, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.5\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.4\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.5\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.2.0.33\lib\net35\GladNet.Message.dll</HintPath>
+    <Reference Include="GladNet.Message, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.2.0.34\lib\net35\GladNet.Message.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Message.Handlers, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.33\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+    <Reference Include="GladNet.Message.Handlers, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.2.0.34\lib\net35\GladNet.Message.Handlers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Payload, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.2.0.33\lib\net35\GladNet.Payload.dll</HintPath>
+    <Reference Include="GladNet.Payload, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.34\lib\net35\GladNet.Payload.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Serializer, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.2.0.33\lib\net35\GladNet.Serializer.dll</HintPath>
+    <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -150,16 +150,16 @@
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Autofac, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.19\lib\net35\SceneJect.Autofac.dll</HintPath>
+    <Reference Include="SceneJect.Autofac, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\SceneJect.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.19\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.25\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Editor, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Editor.1.0.19\lib\net35\SceneJect.Editor.dll</HintPath>
+    <Reference Include="SceneJect.Editor, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Editor.1.0.25\lib\net35\SceneJect.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -175,9 +175,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Common\NetworkTransformBroadcaster.cs" />
-    <Compile Include="Entity\Player\NetworkPlayerEntityFactory.cs" />
+    <Compile Include="Entity\Components\Broadcasting\AllPeerMessageBroadcastingStrategy.cs" />
+    <Compile Include="Entity\Components\Broadcasting\IgnoreOwnerPeerMessageBroadcastingStrategy.cs" />
+    <Compile Include="Entity\Components\Broadcasting\IMessageBroadcastingService.cs" />
+    <Compile Include="Entity\Components\Broadcasting\NetworkMessageBroadcaster.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
-    <Compile Include="Entity\ISpawnPointStrategy.cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
     <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />
     <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />
@@ -187,11 +189,15 @@
     <Compile Include="Networking\Events\OnNewSessionCreatedEvent.cs" />
     <Compile Include="Networking\Peers\InstanceClientSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IncrementalNetworkGuidFactory.cs" />
+    <Compile Include="Services\INetworkGuidFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entity\Player\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
       <Project>{5a959423-5523-4ff5-9667-963bf97f2879}</Project>

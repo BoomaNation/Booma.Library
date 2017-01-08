@@ -12,11 +12,9 @@ namespace Booma.Instance.Client
 		public override void Register(IServiceRegister register)
 		{
 			//Just create a new collection and register it
-			INetworkPlayerEntityCollection playerCollection = new NetworkPlayerEntityCollection();
+			NetworkEntityCollection entityCollection = new NetworkEntityCollection();
 
-			//Register as both for now
-			register.Register<INetworkPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance);
-			register.Register<IPlayerEntityCollection>(playerCollection, RegistrationType.SingleInstance);
+			register.Register(entityCollection, this.getFlags());
 		}
 	}
 }

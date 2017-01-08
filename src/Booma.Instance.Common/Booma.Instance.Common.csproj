@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Booma.Entity.Identity, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Booma.Entity.Identity.1.0.9\lib\net35\Booma.Entity.Identity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Common.Logging.3.3.1\lib\net35\Common.Logging.dll</HintPath>
       <Private>True</Private>
@@ -50,32 +54,36 @@
       <HintPath>..\..\packages\GladBehaviour.Common.1.0.3\lib\net35\GladBehaviour.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.2.0.33\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.2.0.34\lib\net35\GladNet.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Encryption, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.2.0.33\lib\net35\GladNet.Encryption.dll</HintPath>
+    <Reference Include="GladNet.Encryption, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Encryption.2.0.34\lib\net35\GladNet.Encryption.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Engine.Common, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.33\lib\net35\GladNet.Engine.Common.dll</HintPath>
+    <Reference Include="GladNet.Engine.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Engine.Common.2.0.34\lib\net35\GladNet.Engine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Message, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.2.0.33\lib\net35\GladNet.Message.dll</HintPath>
+    <Reference Include="GladNet.Message, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.2.0.34\lib\net35\GladNet.Message.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Payload, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.2.0.33\lib\net35\GladNet.Payload.dll</HintPath>
+    <Reference Include="GladNet.Payload, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.34\lib\net35\GladNet.Payload.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.Serializer, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.2.0.33\lib\net35\GladNet.Serializer.dll</HintPath>
+    <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Net35Essentials.1.0.2\lib\net35\Net35Essentials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SceneJect.Common, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.25\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -89,29 +97,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Collections\NetworkEntityCollection.cs" />
+    <Compile Include="Entity\Components\INetworkOwnable.cs" />
     <Compile Include="Entity\Components\NetworkEntityIdentifierTag.cs" />
-    <Compile Include="Entity\IEntityCollection.cs" />
-    <Compile Include="Entity\Player\EntityPrefabProvider.cs" />
-    <Compile Include="Entity\Player\IEntityPrefabProvider.cs" />
-    <Compile Include="Entity\Player\IPlayerPeerProvider.cs" />
-    <Compile Include="Entity\Player\INetworkPlayerEntityCollection.cs" />
-    <Compile Include="Entity\Components\NetworkPeerEntityTag.cs" />
-    <Compile Include="Entity\Player\NetworkPlayerEntityCollection.cs" />
+    <Compile Include="Entity\Prefab\EntityPrefabProvider.cs" />
+    <Compile Include="Entity\Prefab\IEntityPrefabProvider.cs" />
+    <Compile Include="Entity\Components\NetworkOwnerPeerTag.cs" />
+    <Compile Include="Entity\Prefab\PrefabType.cs" />
+    <Compile Include="Entity\Spawn\Context\IEntitySpawnContext.cs" />
+    <Compile Include="Entity\Spawn\Context\IPlayerSpawnContext.cs" />
+    <Compile Include="Entity\Spawn\Context\ISpawnContext.cs" />
+    <Compile Include="Entity\Spawn\Context\NetworkPlayerSpawnContext.cs" />
+    <Compile Include="Entity\Spawn\ISpawnPointStrategy.cs" />
+    <Compile Include="Entity\Spawn\Player\IEntityFactory.cs" />
+    <Compile Include="Entity\Spawn\Player\IPlayerEntityFactory.cs" />
     <Compile Include="Entity\Spawn\DefaultEntitySpawnDetails.cs" />
-    <Compile Include="Entity\Spawn\IPlayerEntityFactory.cs" />
-    <Compile Include="Entity\IPlayerEntityCollection.cs" />
-    <Compile Include="Entity\Spawn\IEntitySpawnDetails.cs" />
+    <Compile Include="Entity\Spawn\IEntitySpawnResults.cs" />
+    <Compile Include="Entity\Spawn\Context\IPeerOwnedSpawnContext.cs" />
+    <Compile Include="Entity\Spawn\Player\NetworkPlayerEntityFactory.cs" />
+    <Compile Include="Entity\Spawn\SpawnResult.cs" />
+    <Compile Include="Extensions\IGameObjectContextualBuilderExtensions.cs" />
+    <Compile Include="Extensions\IPlayerEntityFactoryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Booma.Instance.Data\Booma.Instance.Data.csproj">
-      <Project>{d370bea9-2457-4fe3-a5c0-84b4689328bc}</Project>
-      <Name>Booma.Instance.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
