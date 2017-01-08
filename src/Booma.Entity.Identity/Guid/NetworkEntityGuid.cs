@@ -77,20 +77,12 @@ namespace Booma.Entity.Identity
 					return false;
 			}
 
-			return guid1.RawGuidValue == guid2.RawGuidValue;
+			return guid1.Equals(guid2);
 		}
 
 		public static bool operator !=(NetworkEntityGuid guid1, NetworkEntityGuid guid2)
 		{
-			if (Object.ReferenceEquals(guid1, null))
-			{
-				if (Object.ReferenceEquals(guid2,null))
-					return false;
-				else
-					return true;
-			}
-
-			return guid1.RawGuidValue != guid2.RawGuidValue;
+			return !(guid1 == guid2);
 		}
 
 		public override bool Equals(object obj)
@@ -103,7 +95,10 @@ namespace Booma.Entity.Identity
 
 		public bool Equals(NetworkEntityGuid other)
 		{
-			return other == this;
+			if (Object.ReferenceEquals(other, null))
+				return false;
+			else
+				return other.RawGuidValue == this.RawGuidValue;
 		}
 	}
 }
