@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Instance.Payloads.Events
+namespace Booma.Payloads.Instance
 {
 	/// <summary>
 	/// An event that contains information about a position update for an entity.

@@ -14,25 +14,26 @@ namespace Booma.Payloads.Instance
 	/// </summary>
 	[GladNetSerializationContract]
 	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(PlayerEntitySpawnEventPayload))]
+	[GladNetSerializationInclude(GladNetIncludeIndex.Index2, typeof(GameObjectEntitySpawnEventPayload))]
 	[BoomaPayload(BoomaPayloadMessageType.EntitySpawnEvent)]
 	public class EntitySpawnEventPayload : PacketPayload
 	{
 		/// <summary>
 		/// Represents the unique entity indentifier.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)] //use higher index so we don't overlap with the include
+		[GladNetMember(GladNetDataIndex.Index3)] //use higher index so we don't overlap with the include
 		public NetworkEntityGuid EntityGuid { get; private set; }
 
 		/// <summary>
 		/// Represents the position of the Entity.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
+		[GladNetMember(GladNetDataIndex.Index4)]
 		public Vector3Surrogate Position { get; private set; }
 
 		/// <summary>
 		/// Represents the rotation of the Entity
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index4)]
+		[GladNetMember(GladNetDataIndex.Index5)]
 		public QuaternionSurrogate Rotation { get; private set; }
 
 		/// <summary>
