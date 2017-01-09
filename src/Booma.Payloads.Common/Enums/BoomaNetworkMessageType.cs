@@ -54,6 +54,11 @@ namespace Booma.Payloads.Common
 		/// <summary>
 		/// Event sent by server when an entity's state has changed.
 		/// </summary>
-		EntityStateChangedEvent = GladNetIncludeIndex.Index27
+		EntityStateChangedEvent = GladNetIncludeIndex.Index27,
+
+		/// <summary>
+		/// Request sent by client when the client attempts to interact with an entity.
+		/// </summary>
+		EntityInteractionRequest = GladNetDataIndex.Index28
 	}
 }
