@@ -17,7 +17,7 @@ namespace Booma.Instance.Common
 		/// <returns>A gameobject that represents the base player entity.</returns>
 		public static IEntitySpawnResults SpawnPlayerEntity(this IPlayerEntityFactory factory, Vector3 position, Quaternion rotation, ISpawnContext context)
 		{
-			return factory.TrySpawnEntity(EntityType.Player, position, rotation, context);
+			return factory.TrySpawnEntity(position, rotation, context);
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace Booma.Instance.Common
 		/// <returns>A gameobject that represents the base player entity.</returns>
 		public static IEntitySpawnResults SpawnPlayerEntity(this IPlayerEntityFactory factory, ISpawnContext context)
 		{
-			return factory.TrySpawnEntity(EntityType.Player, context);
+			return factory.TrySpawnEntity(context);
 		}
 	}
 }

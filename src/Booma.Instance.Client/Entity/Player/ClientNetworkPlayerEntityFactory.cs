@@ -32,7 +32,7 @@ namespace Booma.Instance.Client
 			return new DefaultEntitySpawnDetails(playerGo);
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, Vector3 position, Quaternion rotation, ISpawnContext context)
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, ISpawnContext context)
 		{
 			GameObject playerGo = gameobjectFactory.CreateBuilder()
 				.With(context)
@@ -41,10 +41,20 @@ namespace Booma.Instance.Client
 			return new DefaultEntitySpawnDetails(playerGo);
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, ISpawnContext context)
+		public IEntitySpawnResults TrySpawnEntity(ISpawnContext context)
 		{
 			//We don't have spawn points so if a spawn is requested with just ID use defaults
-			return TrySpawnEntity(entityType, Vector3.zero, Quaternion.identity, context);
+			return TrySpawnEntity(Vector3.zero, Quaternion.identity, context);
+		}
+
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, Vector3 scale, ISpawnContext context)
+		{
+			IEntitySpawnResults results = TrySpawnEntity(position, rotation, context);
+
+			if (results.Result == SpawnResult.Success)
+				results.EntityGameObject.transform.localScale = scale;
+
+			return results;
 		}
 	}
 }

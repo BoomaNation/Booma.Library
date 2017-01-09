@@ -12,6 +12,7 @@ using Booma.Payloads.Surrogates.Unity;
 using GladNet.Common;
 using UnityEngine;
 using Booma.Entity.Identity;
+using Booma.Entity.Prefab;
 
 namespace Booma.Instance.Server
 {
@@ -30,9 +31,15 @@ namespace Booma.Instance.Server
 		[Inject]
 		private readonly NetworkEntityCollection entityCollection;
 
+		[Inject]
+		private readonly IPeerCollection peerCollection;
+
 		//TODO: This is temporary. We don't need this service once full handshake is implemented. For demo we need it though
 		[Inject]
 		private readonly INetworkGuidFactory entityGuidFactory;
+
+		[Inject]
+		private readonly IConnectionToGuidRegistry connectionRegistry;
 
 		protected override void OnIncomingHandlableMessage(IRequestMessage message, PlayerSpawnRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
@@ -47,15 +54,28 @@ namespace Booma.Instance.Server
 			if (details.Result != SpawnResult.Success)
 				throw new InvalidOperationException($"Failed to create Entity for {peer.ToString()}. Failure: {details.Result.ToString()}");
 
-			entityCollection.Add(guid, details.EntityGameObject);
+			//TODO: This is temporary stuff for demo
+			entityCollection.Add(guid, new EntityContainer(guid, details.EntityGameObject));
+			peerCollection.Add(peer);
+			connectionRegistry.Register(peer.PeerDetails.ConnectionID, guid);
 
 			//TODO: Clean this up
-			Vector3Surrogate pos = details.EntityGameObject.transform.rotation.ToSurrogate();
+			Vector3Surrogate pos = details.EntityGameObject.transform.position.ToSurrogate();
 
 			QuaternionSurrogate rot = details.EntityGameObject.transform.rotation.ToSurrogate();
 
 			//Send the response to the player who requested to spawn
 			peer.SendResponse(new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, guid), DeliveryMethod.ReliableUnordered, true, 0);
+
+			//TODO: Remove this. This is demo code.
+			foreach(var entity in entityCollection.Values.Where(e => e.NetworkGuid.EntityType == EntityType.GameObject))
+			{
+				ITagProvider<GameObjectPrefab> prefabTag = entity.WorldObject.GetComponent<ITagProvider<GameObjectPrefab>>();
+
+				peer.SendEvent(new GameObjectEntitySpawnEventPayload(entity.NetworkGuid, entity.WorldObject.transform.position.ToSurrogate(),
+					entity.WorldObject.transform.rotation.ToSurrogate(), entity.WorldObject.transform.localScale.ToSurrogate(), prefabTag.Tag, 0),
+					DeliveryMethod.ReliableOrdered, false, 0);
+			}
 		}
 	}
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Booma.Instance.Common
 {
-	public interface IPlayerEntityFactory : IEntityFactory
+	public interface IPlayerEntityFactory : IEntityFactory<ISpawnContext>
 	{
 		//Methods were moved to extension methods so implementing types don't need to implemt them every time
 	}

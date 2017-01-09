@@ -7,7 +7,8 @@ using UnityEngine;
 
 namespace Booma.Instance.Common
 {
-	public interface IEntityFactory
+	public interface IEntityFactory<TContextType>
+		where TContextType : ISpawnContext
 	{
 		/// <summary>
 		/// Creates an entity in the world.
@@ -15,12 +16,20 @@ namespace Booma.Instance.Common
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
 		/// <returns>Details that represents the spawn result.</returns>
-		IEntitySpawnResults TrySpawnEntity(EntityType entityType, Vector3 position, Quaternion rotation, ISpawnContext context);
+		IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, TContextType context);
+
+		/// <summary>
+		/// Creates an entity in the world.
+		/// </summary>
+		/// <param name="position">Position of the entity.</param>
+		/// <param name="rotation">Rotation of the entity.</param>
+		/// <returns>Details that represents the spawn result.</returns>
+		IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, Vector3 scale, TContextType context);
 
 		/// <summary>
 		/// Creates a entity in the world.
 		/// </summary>
 		/// <returns>Details that represents the spawn result.</returns>
-		IEntitySpawnResults TrySpawnEntity(EntityType entityType, ISpawnContext context);
+		IEntitySpawnResults TrySpawnEntity(TContextType context);
 	}
 }

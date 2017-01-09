@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Common", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Client", "src\Booma.Instance.Client\Booma.Instance.Client.csproj", "{E058C29B-70EE-4DCA-8065-CDF3DB355175}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Anim", "src\Booma.Instance.Anim\Booma.Instance.Anim.csproj", "{16BB43AD-C8E3-4BCF-9610-89830EF09524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{538D0F6A-EBFF-42F3-B701-614FAA390E7B} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 		{5A959423-5523-4FF5-9667-963BF97F2879} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 		{E058C29B-70EE-4DCA-8065-CDF3DB355175} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 	EndGlobalSection
 EndGlobal

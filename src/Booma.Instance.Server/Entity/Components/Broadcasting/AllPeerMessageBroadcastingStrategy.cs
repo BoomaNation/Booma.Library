@@ -15,7 +15,7 @@ namespace Booma.Instance.Server
 	public class AllPeerMessageBroadcastingStrategy : MonoBehaviour, IMessageBroadcastingService
 	{
 		[Inject]
-		private readonly IEnumerable<INetPeer> peers;
+		private readonly IReadonlyPeerCollection peers;
 
 		public SendResult SendEvent(PacketPayload payload, DeliveryMethod deliveryMethod, bool encrypt = false, byte channel = 0)
 		{

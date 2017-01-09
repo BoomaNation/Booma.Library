@@ -40,12 +40,8 @@ namespace Booma.Instance.Common
 				throw new InvalidOperationException($"Set {nameof(prefabProvider)} in the inspector with the player entity prefab.");
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, Vector3 position, Quaternion rotation, ISpawnContext context)
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, ISpawnContext context)
 		{
-			//We can only handle players
-			if (entityType != EntityType.Player)
-				return DefaultEntitySpawnDetails.Fail(SpawnResult.PrefabUnavailable);
-
 			GameObject entityObject = gameobjectFactory.CreateBuilder()
 				.With(context)
 				.Create(prefabProvider.GetPrefab(PrefabType.NetworkPlayer), position, rotation);
@@ -53,12 +49,22 @@ namespace Booma.Instance.Common
 			return new DefaultEntitySpawnDetails(entityObject);
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(EntityType entityType, ISpawnContext context)
+		public IEntitySpawnResults TrySpawnEntity(ISpawnContext context)
 		{
 			//Grabs a spawn point from the spawn point service.
 			Transform spawnTransform = playerSpawnStrategy.GetSpawnpoint();
 
-			return this.TrySpawnEntity(entityType, spawnTransform.position, spawnTransform.rotation, context);
+			return this.TrySpawnEntity(spawnTransform.position, spawnTransform.rotation, context);
+		}
+
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, Vector3 scale, ISpawnContext context)
+		{
+			IEntitySpawnResults results = TrySpawnEntity(position, rotation, context);
+
+			if (results.Result == SpawnResult.Success)
+				results.EntityGameObject.transform.localScale = scale;
+
+			return results;
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace Booma.Instance.Client
 {
 	//TODO: Generalize for all entities. Not just players.
 	[Injectee]
-	public class PlayerEntitySpawnEventHandler : EventPayloadHandlerComponent<InstanceClientPeer, EntitySpawnEventPayload>
+	public class PlayerEntitySpawnEventHandler : EventPayloadHandlerComponent<InstanceClientPeer, PlayerEntitySpawnEventPayload>
 	{
 		[Inject]
 		private readonly IPlayerEntityFactory playerFactory;
@@ -23,11 +23,21 @@ namespace Booma.Instance.Client
 		[Inject]
 		private readonly ILog logger;
 
-		protected override void OnIncomingHandlableMessage(IEventMessage message, EntitySpawnEventPayload payload, IMessageParameters parameters, InstanceClientPeer peer)
+		[Inject]
+		private readonly NetworkEntityCollection entityCollection;
+
+		protected override void OnIncomingHandlableMessage(IEventMessage message, PlayerEntitySpawnEventPayload payload, IMessageParameters parameters, InstanceClientPeer peer)
 		{
 			logger.Info($"Recieved spawn event for ID: {payload.EntityGuid.EntityId}.");
 
-			playerFactory.SpawnPlayerEntity(payload.Position.ToVector3(), payload.Rotation.ToQuaternion(), new NetworkPlayerSpawnContext(payload.EntityGuid, peer));
+			IEntitySpawnResults details = playerFactory.SpawnPlayerEntity(payload.Position.ToVector3(), payload.Rotation.ToQuaternion(), new NetworkPlayerSpawnContext(payload.EntityGuid, peer));
+
+			if (details.Result != SpawnResult.Success)
+				throw new InvalidOperationException($"Failed to spawn entity with Type: {payload.EntityGuid.EntityType} Id: {payload.EntityGuid.EntityId}.");
+
+			//TODO: Should we do this in the factory?
+			//Add to collection
+			entityCollection.Add(payload.EntityGuid, new EntityContainer(payload.EntityGuid, details.EntityGameObject));
 		}
 	}
 }

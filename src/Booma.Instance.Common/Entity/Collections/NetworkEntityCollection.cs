@@ -10,7 +10,7 @@ namespace Booma.Instance.Common
 	/// <summary>
 	/// Dictionary/map of <see cref="NetworkEntityGuid"/>s and their corressponding <see cref="GameObject"/>.
 	/// </summary>
-	public class NetworkEntityCollection : EntityGuidDictionary<NetworkEntityGuid, GameObject>
+	public class NetworkEntityCollection : EntityGuidDictionary<NetworkEntityGuid, EntityContainer>
 	{
 
 	}
