@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObject\Door\DefaultButtonAnimationTrigger.cs" />
     <Compile Include="GameObject\Door\DefaultDoorAnimationTrigger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

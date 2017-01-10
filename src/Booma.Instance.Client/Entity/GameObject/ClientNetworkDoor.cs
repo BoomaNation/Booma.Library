@@ -8,10 +8,12 @@ using UnityEngine;
 
 namespace Booma.Instance.Client
 {
+	[RequireComponent(typeof(DoorEntityStateTag))]
 	public class ClientNetworkDoor : NetworkDoor, IPhysicsTriggerable
 	{
+		//TODO: Implement a better animation system
 		[SerializeField]
-		private Animator animationController;
+		private Animator[] animationControllers;
 
 		int entityOccuptance = 0;
 
@@ -22,7 +24,8 @@ namespace Booma.Instance.Client
 				return;
 
 			entityOccuptance++;
-			animationController.SetTrigger(DefaultDoorAnimationTrigger.Open.ToString());
+			foreach(Animator a in animationControllers)
+				a.SetTrigger(DefaultDoorAnimationTrigger.Open.ToString());
 		}
 
 		public void OnTriggerExit(Collider other)
@@ -35,7 +38,8 @@ namespace Booma.Instance.Client
 			entityOccuptance--;
 
 			if (entityOccuptance == 0)
-				animationController.SetTrigger(DefaultDoorAnimationTrigger.Close.ToString());
+				foreach (Animator a in animationControllers)
+					a.SetTrigger(DefaultDoorAnimationTrigger.Close.ToString());
 		}
 
 		protected override void HandleInitialState(DoorState state)
@@ -45,10 +49,12 @@ namespace Booma.Instance.Client
 			{
 				case DoorState.Unlocked:
 					this.OnDoorUnlocked?.Invoke();
-					animationController.SetTrigger(DefaultDoorAnimationTrigger.Unlock.ToString());
+					foreach (Animator a in animationControllers)
+						a.SetTrigger(DefaultDoorAnimationTrigger.Unlock.ToString());
 					break;
 				case DoorState.Locked:
-					animationController.SetTrigger(DefaultDoorAnimationTrigger.Lock.ToString());
+					foreach (Animator a in animationControllers)
+						a.SetTrigger(DefaultDoorAnimationTrigger.Lock.ToString());
 					break;
 				default:
 					break;

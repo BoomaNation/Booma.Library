@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.27\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Client.Common.IoCModules, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -154,16 +154,16 @@
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Autofac, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\SceneJect.Autofac.dll</HintPath>
+    <Reference Include="SceneJect.Autofac, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.27\lib\net35\SceneJect.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.25\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.27\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Editor, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Editor.1.0.25\lib\net35\SceneJect.Editor.dll</HintPath>
+    <Reference Include="SceneJect.Editor, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Editor.1.0.27\lib\net35\SceneJect.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -188,6 +188,7 @@
     <Compile Include="Entity\Components\Tags\GameObjectEntityPrefabTag.cs" />
     <Compile Include="Entity\Components\Tags\ITagProvider.cs" />
     <Compile Include="Entity\Components\Tags\ServerGameObjectEntityIdentityTag.cs" />
+    <Compile Include="Entity\GameObject\ServerNetworkButton.cs" />
     <Compile Include="Entity\GameObject\ServerNetworkDoor.cs" />
     <Compile Include="Entity\NetworkEntitySceneCollector.cs" />
     <Compile Include="Entity\Player\ConnectionToPlayerGuidLookupService.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Entity\Player\IConnectionToGuidRegistry.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
+    <Compile Include="Handlers\EntityInteractionRequestPayloadHandler.cs" />
     <Compile Include="Handlers\PlayerMoveRequestPayloadHandler.cs" />
     <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />
     <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />

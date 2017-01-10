@@ -24,5 +24,11 @@ namespace Booma.Instance.Client
 
 			return true;
 		}
+
+		//TODO: Demo code
+		void OnMouseDown()
+		{
+			TryInteract(null);
+		}
 	}
 }

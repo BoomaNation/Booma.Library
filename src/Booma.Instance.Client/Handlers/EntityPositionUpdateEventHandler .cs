@@ -25,7 +25,7 @@ namespace Booma.Instance.Client
 
 		protected override void OnIncomingHandlableMessage(IEventMessage message, EntityPositionUpdateEvent payload, IMessageParameters parameters, InstanceClientPeer peer)
 		{
-			logger.Info($"Recieved position event for ID: {payload.EntityGuid.EntityId}.");
+			//logger.Info($"Recieved position event for ID: {payload.EntityGuid.EntityId}.");
 
 			if (entityCollection.ContainsKey(payload.EntityGuid))
 			{

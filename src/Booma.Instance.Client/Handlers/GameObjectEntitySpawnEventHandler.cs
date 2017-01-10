@@ -30,7 +30,7 @@ namespace Booma.Instance.Client.Handlers
 			logger.Debug($"Recieved GameObject spawn event with Id: {payload.EntityGuid.EntityId} and Type: {payload.PrefabId}.");
 
 			IEntitySpawnResults details = objectFactory.TrySpawnEntity(payload.Position.ToVector3(), payload.Rotation.ToQuaternion(),
-				payload.Scale.ToVector3(), new NetworkGameObjectPrefabSpawnContext(payload.EntityGuid, payload.PrefabId));
+				payload.Scale.ToVector3(), new NetworkGameObjectPrefabSpawnContext(payload.EntityGuid, payload.PrefabId, peer));
 
 			if (details.Result != SpawnResult.Success)
 			{
@@ -41,6 +41,12 @@ namespace Booma.Instance.Client.Handlers
 			entityCollection.Add(payload.EntityGuid, new EntityContainer(payload.EntityGuid, details.EntityGameObject));
 
 			//TODO: Set default state.
+			IEntityState state = details.EntityGameObject.GetComponentInChildren<IEntityState>();
+
+			if (state == null)
+				return;
+
+			state.State = payload.CurrentState;
 		}
 	}
 }

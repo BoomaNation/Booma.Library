@@ -13,7 +13,7 @@ namespace Booma.Instance.Common
 		byte DefaultState { get; }
 	}
 
-	public interface IDefaultStateProvider<TNetworkStateType>
+	public interface IDefaultStateProvider<TNetworkStateType> : IDefaultStateProvider
 		where TNetworkStateType : struct, IConvertible
 	{
 		/// <summary>

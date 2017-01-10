@@ -86,8 +86,8 @@
       <HintPath>..\..\packages\Net35Essentials.1.0.2\lib\net35\Net35Essentials.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.25\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.27\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -106,11 +106,14 @@
     <Compile Include="Entity\Components\IEntityState.cs" />
     <Compile Include="Entity\Components\INetworkOwnable.cs" />
     <Compile Include="Entity\Components\NetworkEntityIdentifierTag.cs" />
-    <Compile Include="Entity\Components\NetworkEntityStateTag.cs" />
+    <Compile Include="Entity\Components\State\ButtonEntityStateTag.cs" />
+    <Compile Include="Entity\Components\State\DoorEntityStateTag.cs" />
+    <Compile Include="Entity\Components\State\NetworkEntityStateTag.cs" />
+    <Compile Include="Entity\GameObject\NetworkButton.cs" />
     <Compile Include="Entity\IEntityObject.cs" />
-    <Compile Include="Entity\IUnlockable.cs" />
-    <Compile Include="Entity\IWorldInteractable.cs" />
-    <Compile Include="Entity\NetworkGameObject.cs" />
+    <Compile Include="Entity\GameObject\IUnlockable.cs" />
+    <Compile Include="Entity\GameObject\IWorldInteractable.cs" />
+    <Compile Include="Entity\GameObject\NetworkGameObject.cs" />
     <Compile Include="Entity\Prefab\EntityPrefabProvider.cs" />
     <Compile Include="Entity\Prefab\IEntityPrefabProvider.cs" />
     <Compile Include="Entity\Components\NetworkOwnerPeerTag.cs" />
@@ -129,7 +132,7 @@
     <Compile Include="Entity\Spawn\SpawnResult.cs" />
     <Compile Include="Entity\State\IDefaultStateProvider.cs" />
     <Compile Include="Entity\State\IEntityStateListener.cs" />
-    <Compile Include="Entity\NetworkDoor.cs" />
+    <Compile Include="Entity\GameObject\NetworkDoor.cs" />
     <Compile Include="Extensions\IGameObjectContextualBuilderExtensions.cs" />
     <Compile Include="Extensions\IPlayerEntityFactoryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

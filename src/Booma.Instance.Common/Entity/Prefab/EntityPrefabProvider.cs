@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Booma.Instance.Common
 {
 	//TODO: Implement handling for any prefab type. Not hardcoded.
-	public class EntityPrefabProvider : ScriptableObject, IEntityPrefabProvider
+	public class EntityPrefabProvider : MonoBehaviour, IEntityPrefabProvider
 	{
 		//TODO: Serialize a dictionary to the editor to setup prefab instances.
 		[SerializeField]

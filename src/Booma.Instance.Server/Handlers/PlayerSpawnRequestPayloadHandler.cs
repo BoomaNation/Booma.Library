@@ -71,9 +71,10 @@ namespace Booma.Instance.Server
 			foreach(var entity in entityCollection.Values.Where(e => e.NetworkGuid.EntityType == EntityType.GameObject))
 			{
 				ITagProvider<GameObjectPrefab> prefabTag = entity.WorldObject.GetComponent<ITagProvider<GameObjectPrefab>>();
+				IEntityState state = entity.WorldObject.GetComponentInChildren<IEntityState>();
 
 				peer.SendEvent(new GameObjectEntitySpawnEventPayload(entity.NetworkGuid, entity.WorldObject.transform.position.ToSurrogate(),
-					entity.WorldObject.transform.rotation.ToSurrogate(), entity.WorldObject.transform.localScale.ToSurrogate(), prefabTag.Tag, 0),
+					entity.WorldObject.transform.rotation.ToSurrogate(), entity.WorldObject.transform.localScale.ToSurrogate(), prefabTag.Tag, state.State),
 					DeliveryMethod.ReliableOrdered, false, 0);
 			}
 		}

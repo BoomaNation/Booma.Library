@@ -10,7 +10,7 @@ namespace Booma.Instance.Common
 		byte State { get; set; }
 	}
 
-	public interface IEntityState<TEntityStateType>
+	public interface IEntityState<TEntityStateType> : IEntityState
 	{
 		TEntityStateType State { get; set; }
 	}

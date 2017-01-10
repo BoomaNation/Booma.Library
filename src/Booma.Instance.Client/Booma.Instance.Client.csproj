@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.27\lib\net35\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Booma.Client.Common.IoCModules, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -84,6 +84,10 @@
     </Reference>
     <Reference Include="GladBehaviour.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladBehaviour.Common.1.0.5\lib\net35\GladBehaviour.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GladBehaviour.Editor, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladBehaviour.Editor.1.0.5\lib\net35\GladBehaviour.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GladLive.Common, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
@@ -170,16 +174,16 @@
       <HintPath>..\..\packages\RestSharp.105.2.3\lib\net35\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Autofac, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Autofac.1.0.25\lib\net35\SceneJect.Autofac.dll</HintPath>
+    <Reference Include="SceneJect.Autofac, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Autofac.1.0.27\lib\net35\SceneJect.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.25\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.27\lib\net35\SceneJect.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SceneJect.Editor, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Editor.1.0.25\lib\net35\SceneJect.Editor.dll</HintPath>
+    <Reference Include="SceneJect.Editor, Version=1.0.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Editor.1.0.27\lib\net35\SceneJect.Editor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -200,6 +204,7 @@
   <ItemGroup>
     <Compile Include="Entity\Components\NetworkInteractableEntity.cs" />
     <Compile Include="Entity\Components\PlayerNetworkTransform.cs" />
+    <Compile Include="Entity\GameObject\ClientNetworkButton.cs" />
     <Compile Include="Entity\GameObject\ClientNetworkDoor.cs" />
     <Compile Include="Entity\GameObject\DefaultGameObjectPrefabEntityFactory.cs" />
     <Compile Include="Entity\GameObject\IGameObjectPrefabEntityFactory.cs" />
