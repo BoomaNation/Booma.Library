@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Booma.Entity.Identity;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Instance.Common
+namespace Booma.Instance.NetworkObject
 {
 	public abstract class NetworkButton : NetworkGameObject<NetworkButton.ButtonState>, IWorldInteractable
 	{
@@ -27,11 +28,12 @@ namespace Booma.Instance.Common
 		}
 
 		[SerializeField]
-		private UnityEvent OnPressed;
-
-		[SerializeField]
 		private UnityEvent OnDeactivated;
 
+		[SerializeField]
+		private UnityEvent OnPressed;
+
+		/// <inheritdoc />
 		protected override void OnEntityStateChanged(ButtonState newState)
 		{
 			switch (newState)
@@ -43,15 +45,24 @@ namespace Booma.Instance.Common
 					OnDeactivated?.Invoke();
 					break;
 
-					//TODO: Log
+				//TODO: Log
 				default:
 					break;
 			}
 		}
 
-		public bool TryInteract(NetworkEntityGuid entityInteracting)
+
+		public bool TryInteract([NotNull] NetworkEntityGuid entityInteracting)
 		{
+			if (entityInteracting == null) throw new ArgumentNullException(nameof(entityInteracting));
+
 			//TODO: Distance checking.
+			return TryInteract();
+		}
+
+		public bool TryInteract()
+		{
+			
 			if (this.State != ButtonState.Activated)
 			{
 				State = ButtonState.Activated;

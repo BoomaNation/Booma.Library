@@ -6,7 +6,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Instance.Common
+namespace Booma.Instance.NetworkObject
 {
 	[Serializable]
 	public class EntityStateUnityEvent : UnityEvent<byte> { }

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.Common
+namespace Booma.Instance.NetworkObject
 {
+	/// <summary>
+	/// Service that indicates a default state.
+	/// </summary>
 	public interface IDefaultStateProvider
 	{
 		/// <summary>
@@ -13,6 +16,10 @@ namespace Booma.Instance.Common
 		byte DefaultState { get; }
 	}
 
+	/// <summary>
+	/// Generic service that indicates a default state.
+	/// </summary>
+	/// <typeparam name="TNetworkStateType">The state type.</typeparam>
 	public interface IDefaultStateProvider<TNetworkStateType> : IDefaultStateProvider
 		where TNetworkStateType : struct, IConvertible
 	{

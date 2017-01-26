@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Client", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Anim", "src\Booma.Instance.Anim\Booma.Instance.Anim.csproj", "{16BB43AD-C8E3-4BCF-9610-89830EF09524}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.NetworkObject", "src\Booma.Instance.NetworkObject\Booma.Instance.NetworkObject.csproj", "{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.NetworkObject.Objects", "src\Booma.Instance.NetworkObject.Objects\Booma.Instance.NetworkObject.Objects.csproj", "{D359414D-A9C0-4443-94E9-44B46E16B4E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +58,7 @@ Global
 		{5A959423-5523-4FF5-9667-963BF97F2879} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 		{E058C29B-70EE-4DCA-8065-CDF3DB355175} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 		{16BB43AD-C8E3-4BCF-9610-89830EF09524} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
 	EndGlobalSection
 EndGlobal

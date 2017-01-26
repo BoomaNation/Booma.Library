@@ -190,11 +190,13 @@
     <Compile Include="Entity\Components\Tags\ServerGameObjectEntityIdentityTag.cs" />
     <Compile Include="Entity\GameObject\ServerNetworkButton.cs" />
     <Compile Include="Entity\GameObject\ServerNetworkDoor.cs" />
+    <Compile Include="Entity\GenericBase.cs" />
     <Compile Include="Entity\NetworkEntitySceneCollector.cs" />
     <Compile Include="Entity\Player\ConnectionToPlayerGuidLookupService.cs" />
     <Compile Include="Entity\Player\IConnectionToGuidLookupService.cs" />
     <Compile Include="Entity\Player\IConnectionToGuidRegistry.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
+    <Compile Include="Entity\TestGenericComponent.cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
     <Compile Include="Handlers\EntityInteractionRequestPayloadHandler.cs" />
     <Compile Include="Handlers\PlayerMoveRequestPayloadHandler.cs" />
