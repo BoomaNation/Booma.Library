@@ -8,6 +8,8 @@ using System.Text;
 using GladNet.Message;
 using Common.Logging;
 using Booma.Instance.Common;
+using Booma.Instance.NetworkObject;
+#pragma warning disable 649
 
 namespace Booma.Instance.Client.Handlers
 {
@@ -28,10 +30,10 @@ namespace Booma.Instance.Client.Handlers
 			{
 				var entityChunk = entityCollection[payload.EntityGuid];
 
-				IEntityState state = entityChunk.WorldObject.GetComponent<IEntityState>();
+				IEntityStateContainer state = entityChunk.WorldObject.GetComponent<IEntityStateContainer>();
 
 				if (state == null)
-					throw new InvalidOperationException($"Failed to find {nameof(IEntityState)} component on GameObject: {entityChunk.WorldObject.name} with Entity Id: {payload.EntityGuid.EntityId}.");
+					throw new InvalidOperationException($"Failed to find {nameof(IEntityStateContainer)} component on GameObject: {entityChunk.WorldObject.name} with Entity Id: {payload.EntityGuid.EntityId}.");
 
 				//Just straight set the state from the payload.
 				state.State = payload.State;

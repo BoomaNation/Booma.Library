@@ -8,6 +8,7 @@ using System.Text;
 using GladNet.Message;
 using Common.Logging;
 using Booma.Instance.Common;
+using Booma.Instance.NetworkObject;
 using UnityEngine;
 
 namespace Booma.Instance.Client.Handlers
@@ -41,7 +42,7 @@ namespace Booma.Instance.Client.Handlers
 			entityCollection.Add(payload.EntityGuid, new EntityContainer(payload.EntityGuid, details.EntityGameObject));
 
 			//TODO: Set default state.
-			IEntityState state = details.EntityGameObject.GetComponentInChildren<IEntityState>();
+			IEntityStateContainer state = details.EntityGameObject.GetComponentInChildren<IEntityStateContainer>();
 
 			if (state == null)
 				return;

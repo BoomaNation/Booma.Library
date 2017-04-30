@@ -8,6 +8,7 @@ using System.Text;
 using GladNet.Message;
 using Common.Logging;
 using Booma.Instance.Common;
+using Booma.Instance.NetworkObject;
 
 namespace Booma.Instance.Server.Handlers
 {

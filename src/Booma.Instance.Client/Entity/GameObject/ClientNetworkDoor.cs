@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Booma.Instance.NetworkObject;
 using UnityEngine;
 
 namespace Booma.Instance.Client
@@ -20,7 +21,7 @@ namespace Booma.Instance.Client
 		public void OnTriggerEnter(Collider other)
 		{
 			//If the door is locked we can do nothing.
-			if (this.State == DoorState.Locked)
+			if (StateContainer.State == DoorState.Locked)
 				return;
 
 			entityOccuptance++;
@@ -31,7 +32,7 @@ namespace Booma.Instance.Client
 		public void OnTriggerExit(Collider other)
 		{
 			//If the door is locked we can do nothing.
-			if (this.State == DoorState.Locked)
+			if (StateContainer.State == DoorState.Locked)
 				return;
 
 			//TODO: This will break if entities leave the world
@@ -42,10 +43,17 @@ namespace Booma.Instance.Client
 					a.SetTrigger(DefaultDoorAnimationTrigger.Close.ToString());
 		}
 
-		protected override void HandleInitialState(DoorState state)
+		protected override void OnEntityStateChanged(DoorState newState)
+		{
+			//For now we can just call handle initial. May not work in the future.
+			OnStart(newState);
+		}
+
+		/// <inheritdoc />
+		protected override void OnStart(DoorState initialState)
 		{
 			//TODO: Handle both states.
-			switch (state)
+			switch (StateContainer.State)
 			{
 				case DoorState.Unlocked:
 					this.OnDoorUnlocked?.Invoke();
@@ -59,12 +67,6 @@ namespace Booma.Instance.Client
 				default:
 					break;
 			}
-		}
-
-		protected override void OnEntityStateChanged(DoorState newState)
-		{
-			//For now we can just call handle initial. May not work in the future.
-			HandleInitialState(newState);
 		}
 	}
 }

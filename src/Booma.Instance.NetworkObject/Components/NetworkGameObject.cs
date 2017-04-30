@@ -15,28 +15,14 @@ namespace Booma.Instance.NetworkObject
 	{
 		[NotNull]
 		[SerializeField]
-		private IEntityStateContainer<TNetworkStateType> stateContainer;
-
-		/// <summary>
-		/// Represents the current state of the door.
-		/// </summary>
-		protected TNetworkStateType State => stateContainer.State;
-
-		/// <summary>
-		/// Set the current <see cref="NetworkGameObject{TNetworkStateType}"/>'s <typeparamref name="TNetworkStateType"/>.
-		/// </summary>
-		/// <param name="state"></param>
-		protected void SetState(TNetworkStateType state)
-		{
-			stateContainer.State = state;
-		}
+		protected IEntityStateContainer<TNetworkStateType> StateContainer;
 
 		protected virtual void Start()
 		{
-			if(stateContainer == null)
+			if(StateContainer == null)
 				throw new InvalidOperationException($"Service {nameof(IEntityStateContainer<TNetworkStateType>)} is null and unavailable.");
 
-			OnStart(stateContainer.State);
+			OnStart(StateContainer.State);
 		}
 
 		/// <inheritdoc />

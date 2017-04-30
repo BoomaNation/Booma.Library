@@ -20,12 +20,12 @@ namespace Booma.Instance.NetworkObject
 	/// Generic service that indicates a default state.
 	/// </summary>
 	/// <typeparam name="TNetworkStateType">The state type.</typeparam>
-	public interface IDefaultStateProvider<TNetworkStateType> : IDefaultStateProvider
+	public interface IDefaultStateProvider<out TNetworkStateType> : IDefaultStateProvider
 		where TNetworkStateType : struct, IConvertible
 	{
 		/// <summary>
 		/// Indicates the default state.
 		/// </summary>
-		TNetworkStateType DefaultState { get; }
+		new TNetworkStateType DefaultState { get; }
 	}
 }

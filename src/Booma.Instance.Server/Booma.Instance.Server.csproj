@@ -190,17 +190,12 @@
     <Compile Include="Entity\Components\Tags\ServerGameObjectEntityIdentityTag.cs" />
     <Compile Include="Entity\GameObject\ServerNetworkButton.cs" />
     <Compile Include="Entity\GameObject\ServerNetworkDoor.cs" />
-    <Compile Include="Entity\GenericBase.cs" />
     <Compile Include="Entity\NetworkEntitySceneCollector.cs" />
     <Compile Include="Entity\Player\ConnectionToPlayerGuidLookupService.cs" />
     <Compile Include="Entity\Player\IConnectionToGuidLookupService.cs" />
     <Compile Include="Entity\Player\IConnectionToGuidRegistry.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
-    <Compile Include="Entity\TestGenericComponent.cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
-    <Compile Include="Handlers\EntityInteractionRequestPayloadHandler.cs" />
-    <Compile Include="Handlers\PlayerMoveRequestPayloadHandler.cs" />
-    <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />
     <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />
     <Compile Include="IoC\ServerServicesRegisteration.cs" />
     <Compile Include="Networking\BoomaInstanceServerApplicationBase.cs" />
@@ -221,6 +216,14 @@
     <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
       <Project>{5a959423-5523-4ff5-9667-963bf97f2879}</Project>
       <Name>Booma.Instance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.NetworkObject.Objects\Booma.Instance.NetworkObject.Objects.csproj">
+      <Project>{d359414d-a9c0-4443-94e9-44b46e16b4e5}</Project>
+      <Name>Booma.Instance.NetworkObject.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.NetworkObject\Booma.Instance.NetworkObject.csproj">
+      <Project>{c0e850f9-5b2d-41a1-b537-1f5e660a35c0}</Project>
+      <Name>Booma.Instance.NetworkObject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

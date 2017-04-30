@@ -28,7 +28,7 @@ namespace Booma.Instance.Server
 		/// <see cref="IPayloadHandler{TPeerType}"/>
 		/// </summary>
 		/// <returns></returns>
-		private IEnumerable<IMessageHandler<InstanceClientSession, IRequestMessage>> FindHandlersInScene()
+		private static IEnumerable<IMessageHandler<InstanceClientSession, IRequestMessage>> FindHandlersInScene()
 		{
 			//Used for debugging for count of handlers in the scene
 			//The type co/contra variance in Unity is iffy
@@ -38,7 +38,7 @@ namespace Booma.Instance.Server
 				return
 #endif
 			Resources.FindObjectsOfTypeAll<MonoBehaviour>()
-				.Where(mb => mb.GetType().GetInterfaces().Where(t => typeof(IRequestMessageHandler<InstanceClientSession>).IsAssignableFrom(t)).Count() != 0) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
+				.Where(mb => mb.GetType().GetInterfaces().Any(t => typeof(IRequestMessageHandler<InstanceClientSession>).IsAssignableFrom(t))) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
 				.Cast<IMessageHandler<InstanceClientSession, IRequestMessage>>();
 
 #if DEBUG || DEBUG_BUILD || DEBUGBUILD

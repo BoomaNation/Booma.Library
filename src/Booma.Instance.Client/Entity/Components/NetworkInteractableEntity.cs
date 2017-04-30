@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Booma.Entity.Identity;
+using Booma.Instance.NetworkObject;
 using SceneJect.Common;
 using GladBehaviour.Common;
 using UnityEngine;
@@ -29,6 +30,15 @@ namespace Booma.Instance.Client
 		void OnMouseDown()
 		{
 			TryInteract(null);
+		}
+
+		/// <inheritdoc />
+		public bool TryInteract()
+		{
+			//Send the interaction request for the server to handle.
+			SendRequest(new EntityInteractionRequestPayload(guidContainer.NetworkGuid), DeliveryMethod.ReliableOrdered, false, 0);
+
+			return true;
 		}
 	}
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+
 namespace Booma.Instance.Server
 {
 	[Injectee]
@@ -23,8 +24,6 @@ namespace Booma.Instance.Server
 
 		[Inject]
 		private readonly NetworkEntityCollection entityCollection;
-
-		Func<int> i = () => 1;
 
 		[Inject]
 		private readonly INetPeer peer;

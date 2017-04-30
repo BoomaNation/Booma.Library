@@ -9,9 +9,10 @@ namespace Booma.Instance.Server
 	//TODO: document; thread safety
 	public class ConnectionToPlayerGuidLookupService : IConnectionToGuidLookupService, IConnectionToGuidRegistry
 	{
-		private Dictionary<NetworkEntityGuid, int> GuidToConnectionMap;
+		//TODO: Use a 2-way map/dict
+		private Dictionary<NetworkEntityGuid, int> GuidToConnectionMap { get; }
 
-		private Dictionary<int, NetworkEntityGuid> ConnectionToGuidMap;
+		private Dictionary<int, NetworkEntityGuid> ConnectionToGuidMap { get; }
 
 		public ConnectionToPlayerGuidLookupService()
 		{

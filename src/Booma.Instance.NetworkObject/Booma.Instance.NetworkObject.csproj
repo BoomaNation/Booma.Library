@@ -80,7 +80,7 @@
     <Compile Include="Components\Tags\NetworkEntityIdentifierTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="State\IDefaultStateProvider.cs" />
-    <Compile Include="State\IEntityState.cs" />
+    <Compile Include="State\IEntityStateContainer.cs" />
     <Compile Include="State\IEntityStateListener.cs" />
   </ItemGroup>
   <ItemGroup>

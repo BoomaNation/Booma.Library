@@ -10,6 +10,7 @@ using Booma.Instance.Common;
 using SceneJect.Common;
 using Common.Logging;
 using UnityEngine;
+#pragma warning disable 649
 
 namespace Booma.Instance.Client
 {

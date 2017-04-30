@@ -63,9 +63,9 @@ namespace Booma.Instance.NetworkObject
 		public bool TryInteract()
 		{
 			
-			if (this.State != ButtonState.Activated)
+			if (StateContainer.State != ButtonState.Activated)
 			{
-				State = ButtonState.Activated;
+				StateContainer.State = ButtonState.Activated;
 
 				return true;
 			}

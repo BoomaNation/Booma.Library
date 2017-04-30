@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Booma.Instance.NetworkObject;
 using UnityEngine;
 
 namespace Booma.Instance.Server

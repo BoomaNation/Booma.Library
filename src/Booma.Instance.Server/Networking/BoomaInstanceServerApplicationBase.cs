@@ -56,7 +56,6 @@ namespace Booma.Instance.Server
 			registry.Register(typeof(EntityPositionUpdateEvent));
 			registry.Register(typeof(EntityInteractionRequestPayload));
 			registry.Register(typeof(EntityStateChangedEvent));
-
 		}
 
 		protected override ClientPeerSession CreateIncomingPeerSession(INetworkMessageRouterService sender, IConnectionDetails details, INetworkMessageSubscriptionService subService, IDisconnectionServiceHandler disconnectHandler, INetworkMessageRouteBackService routebackService)

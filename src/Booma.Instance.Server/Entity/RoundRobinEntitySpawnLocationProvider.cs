@@ -26,7 +26,7 @@ namespace Booma.Instance.Server
 			if (SpawnPointTransforms == null)
 				throw new InvalidOperationException($"{nameof(SpawnPointTransforms)} must not be null.");
 
-			if (SpawnPointTransforms.Count() == 0)
+			if (!SpawnPointTransforms.Any())
 				throw new InvalidOperationException($"{nameof(SpawnPointTransforms)} must not be empty.");
 		}
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Booma.Instance.NetworkObject;
 using UnityEngine;
 
 namespace Booma.Instance.Client
@@ -13,11 +14,6 @@ namespace Booma.Instance.Client
 	{
 		[SerializeField]
 		private Animator animationController;
-
-		protected override void HandleInitialState(ButtonState state)
-		{
-			HandleAnimation(state);
-		}
 
 		protected virtual void HandleAnimation(ButtonState state)
 		{
@@ -37,6 +33,12 @@ namespace Booma.Instance.Client
 
 			//Also animate
 			HandleAnimation(newState);
+		}
+
+		/// <inheritdoc />
+		protected override void OnStart(ButtonState initialState)
+		{
+			HandleAnimation(StateContainer.State);
 		}
 	}
 }
