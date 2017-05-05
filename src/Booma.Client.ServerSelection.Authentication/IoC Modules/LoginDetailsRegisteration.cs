@@ -21,7 +21,7 @@ namespace Booma.Client.ServerSelection.Authentication
 			LoginDetailsSceneData loginDetails = MonoBehaviour.FindObjectOfType<LoginDetailsSceneData>();
 
 			if (loginDetails == null)
-				throw new Exception($"{loginDetails} of type {nameof(LoginDetailsSceneData)} could not be found in the scene.");
+				throw new Exception($"{nameof(loginDetails)} of type {nameof(LoginDetailsSceneData)} could not be found in the scene.");
 
 			register.Register(loginDetails, getFlags(), typeof(ILoginDetails));
 		}

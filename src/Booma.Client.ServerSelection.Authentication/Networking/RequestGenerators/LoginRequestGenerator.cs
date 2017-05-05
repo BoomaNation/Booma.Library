@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Common;
-using UnityEngine;
 using GladBehaviour.Common;
-using GladLive.Common.Payloads;
 using SceneJect.Common;
 using System.Security.Cryptography;
 using GladLive.Security.Common;
+using GladNet.Engine.Common;
+using UnityEngine;
+using GladNet.Payload.Authentication;
 
 namespace Booma.Client.ServerSelection.Authentication
 {
@@ -21,19 +22,22 @@ namespace Booma.Client.ServerSelection.Authentication
 	{
 		//TODO: Put this in a base class.
 		[SerializeField]
-		private IClientPeerNetworkMessageSender messageSender;
-
-		/// <summary>
-		/// RSA Cryptoservice for encrypting passwords before sending them.
-		/// </summary>
-		[Inject]
-		private ICryptoService cryptoService;
+		private INetPeer messageSender;
 
 		/// <summary>
 		/// User provided login details for the attempted login.
 		/// </summary>
 		[Inject]
 		private ILoginDetails loginDetails;
+
+		public void Start()
+		{
+			if(messageSender == null)
+				throw new InvalidOperationException($"Field {nameof(messageSender)} was null.");
+
+			if(loginDetails == null)
+				throw new InvalidOperationException($"Field {nameof(loginDetails)} was null.");
+		}
 
 		public void SendRequest()
 		{
@@ -42,7 +46,7 @@ namespace Booma.Client.ServerSelection.Authentication
 
 		public SendResult SendRequestWithResult()
 		{
-			SendResult result = messageSender.SendRequest(new LoginRequest(loginDetails.LoginString, cryptoService.Encrypt(loginDetails.Password)), DeliveryMethod.ReliableUnordered, true);
+			SendResult result = messageSender.TrySendMessage(OperationType.Request, new AuthenticationRequest(loginDetails.LoginString, loginDetails.Password), DeliveryMethod.ReliableOrdered, true);
 
 			//We don't need the login object anymore
 			Destroy(loginDetails as UnityEngine.Object);
