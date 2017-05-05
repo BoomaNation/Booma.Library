@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using JetBrains.Annotations;
 
 namespace Booma.Client.Network.Common
 {
@@ -39,6 +40,9 @@ namespace Booma.Client.Network.Common
 
 		public bool TryProcessMessage(IEventMessage message, IMessageParameters parameters, TPeerType peer)
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (peer == null) throw new ArgumentNullException(nameof(peer));
+
 			TPayloadType payload = message.Payload.Data as TPayloadType;
 
 			//if it's the not the payload type this handler handles then we
