@@ -14,6 +14,7 @@ using Common.Logging;
 using GladNet.Message.Handlers;
 using Easyception;
 using GladNet.ASP.Client.RestSharp.Middleware.Authentication;
+using GladNet.Payload;
 
 namespace Booma.Client.Network.Common
 {
@@ -21,7 +22,11 @@ namespace Booma.Client.Network.Common
 	public class BoomaNetworkWebPeer<TInheritingType> : MonoBehaviour, INetPeer, INetworkMessageReceiver
 		where TInheritingType : BoomaNetworkWebPeer<TInheritingType>
 	{
+		/// <summary>
+		/// The base end-point of the authentication URL.
+		/// </summary>
 		[SerializeField]
+		[Tooltip("The base URL of the Authentication service.", order = 1)]
 		private string BaseUrl;
 
 		//INetPeer
@@ -31,7 +36,12 @@ namespace Booma.Client.Network.Common
 
 		public NetStatus Status { get; private set; }
 
-		protected IWebRequestEnqueueStrategy enqueuStrat { get; private set; }
+		private RestSharpCurrentThreadEnqueueRequestHandlerStrategy enqueuStrat { get; set; }
+
+		/// <summary>
+		/// Registry service for registering middlewares.
+		/// </summary>
+		protected IMiddlewareRegistry MiddlewareRegistry => enqueuStrat;
 
 		[Inject]
 		protected readonly ISerializerStrategy serializer;

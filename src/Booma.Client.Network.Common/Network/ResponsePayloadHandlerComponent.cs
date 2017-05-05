@@ -39,6 +39,9 @@ namespace Booma.Client.Network.Common
 
 		public bool TryProcessMessage(IResponseMessage message, IMessageParameters parameters, TPeerType peer)
 		{
+			if (message == null) throw new ArgumentNullException(nameof(message));
+			if (peer == null) throw new ArgumentNullException(nameof(peer));
+
 			TPayloadType payload = message.Payload.Data as TPayloadType;
 
 			//if it's the not the payload type this handler handles then we
