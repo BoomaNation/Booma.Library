@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+
+    "dependencies": {
+        "GladNet.Serializer": "2.0.33",
+        "UnityEngine": "1.0.0"
+    },
+
+	"frameworks": {
+		"net35": {
+
+		},
+		"net451": {
+
+		}
+	}
+}

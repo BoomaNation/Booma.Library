@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-*",
+
+    "dependencies": {
+        "Booma.Entity.Identity": "1.0.10",
+        "Booma.Entity.Prefab": "1.0.10",
+        "Booma.Payloads.Common": "1.0.0-*",
+        "Booma.Payloads.Surrogates.Unity": "1.0.0-*",
+        "GladNet.Payload": "2.0.34",
+        "GladNet.Serializer": "2.0.34"
+    },
+
+	"frameworks": {
+		"net35": {
+			"dependencies": {
+			}
+		},
+		"net451": {
+
+		}
+	}
+}
