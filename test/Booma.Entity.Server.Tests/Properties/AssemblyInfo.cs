@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Booma.Entity.Identity.Tests")]
+[assembly: AssemblyTitle("Booma.Entity.Server.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Booma.Entity.Identity.Tests")]
+[assembly: AssemblyProduct("Booma.Entity.Server.Tests")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("40d67de7-d2a2-4e9b-b785-e0d633a734ad")]
+[assembly: Guid("ed24d152-b5e2-4a3e-9a2e-4c5056e46cab")]
 
 // Version information for an assembly consists of the following four values:
 //

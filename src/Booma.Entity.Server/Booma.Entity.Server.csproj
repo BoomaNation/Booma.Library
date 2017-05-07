@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}</ProjectGuid>
+    <ProjectGuid>{7824B076-70C3-4E78-9F65-95948F7C9B6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Entity.Identity.Tests</RootNamespace>
-    <AssemblyName>Booma.Entity.Identity.Tests</AssemblyName>
+    <RootNamespace>Booma.Entity.Server</RootNamespace>
+    <AssemblyName>Booma.Entity.Server</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.3.2.1\lib\net35\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,17 +38,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombatEntities\IActiveStatsQueryable.cs" />
+    <Compile Include="CombatEntities\IStatsQueryable.cs" />
+    <Compile Include="Creature\ICreatureEntity.cs" />
+    <Compile Include="Player\IPlayerEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\NetworkEntityGuidBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
-      <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
-      <Name>Booma.Entity.Identity</Name>
+    <ProjectReference Include="..\Booma.Stats.Common\Booma.Stats.Common.csproj">
+      <Project>{b9838908-0a73-4a49-bda7-d7088bded89e}</Project>
+      <Name>Booma.Stats.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

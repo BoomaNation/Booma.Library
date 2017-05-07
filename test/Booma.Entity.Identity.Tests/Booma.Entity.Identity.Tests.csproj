@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F886943-A611-439E-B876-2EEEEBFBC415}</ProjectGuid>
+    <ProjectGuid>{6461B9A5-C0BB-43DE-999C-BFE553875A2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Stats.Common.Tests</RootNamespace>
-    <AssemblyName>Booma.Stats.Common.Tests</AssemblyName>
+    <RootNamespace>Booma.Entity.Identity.Tests</RootNamespace>
+    <AssemblyName>Booma.Entity.Identity.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,24 +58,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\Extensions\IStatsContainerExtensionsTests.cs" />
-    <Compile Include="UnitTests\Formulas\Resist\LinearResistanceMultiplierStrategyTests.cs" />
-    <Compile Include="UnitTests\ImmutableGenericContainerTests.cs" />
-    <Compile Include="UnitTests\StatContainers\Builder\ImmutableCombatStatContainerBuilderTests .cs" />
-    <Compile Include="UnitTests\StatContainers\Builder\ImmutableResistanceStatContainerBuilderTests.cs" />
-    <Compile Include="UnitTests\StatContainers\Builder\ImmutableStatContainerBuilderTestsGeneric.cs" />
-    <Compile Include="UnitTests\StatContainers\Builder\ImmutableTransientStatContainerBuilderTests .cs" />
-    <Compile Include="UnitTests\StatContainers\ImmutableCombatStatContainerTests.cs" />
-    <Compile Include="UnitTests\StatContainers\ImmutableResistanceStatContainerTests.cs" />
-    <Compile Include="UnitTests\StatContainers\ImmutableTransientStatContainerTests.cs" />
+    <Compile Include="UnitTests\NetworkEntityGuidBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Booma.Stats.Common\Booma.Stats.Common.csproj">
-      <Project>{b9838908-0a73-4a49-bda7-d7088bded89e}</Project>
-      <Name>Booma.Stats.Common</Name>
+    <ProjectReference Include="..\..\src\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
+      <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
+      <Name>Booma.Entity.Identity</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
