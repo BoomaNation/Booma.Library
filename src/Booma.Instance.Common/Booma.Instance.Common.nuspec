@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Booma.Instance.Common</id>
+    <version>$version$</version>
+    <title>Booma.Instance.Common</title>
+    <authors>www.github.com/HelloKitty</authors>
+    <owners>www.github.com/HelloKitty</owners>
+    <licenseUrl>https://github.com/BoomaNation/Booma.Instance/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/BoomaNation/Booma.Instance</projectUrl>
+    <description>Booma project common library for instances.</description>
+    <copyright>Copyright 2015-2016</copyright>
+    <tags></tags>
+    <dependencies>
+       <dependency id="Booma.Instance.Data" version="$version$" />
+    </dependencies>
+  </metadata>
+</package>

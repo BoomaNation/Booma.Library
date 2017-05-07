@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7639BE6C-634A-47BD-B9DA-D0EC89D71694}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{09A92FBB-C49C-4FA9-967C-2363F464CBD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Server", "src\Booma.Instance.Server\Booma.Instance.Server.csproj", "{538D0F6A-EBFF-42F3-B701-614FAA390E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Common", "src\Booma.Instance.Common\Booma.Instance.Common.csproj", "{5A959423-5523-4FF5-9667-963BF97F2879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Client", "src\Booma.Instance.Client\Booma.Instance.Client.csproj", "{E058C29B-70EE-4DCA-8065-CDF3DB355175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Anim", "src\Booma.Instance.Anim\Booma.Instance.Anim.csproj", "{16BB43AD-C8E3-4BCF-9610-89830EF09524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.NetworkObject", "src\Booma.Instance.NetworkObject\Booma.Instance.NetworkObject.csproj", "{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.NetworkObject.Objects", "src\Booma.Instance.NetworkObject.Objects\Booma.Instance.NetworkObject.Objects.csproj", "{D359414D-A9C0-4443-94E9-44B46E16B4E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Client.Handlers", "src\Booma.Instance.Client.Handlers\Booma.Instance.Client.Handlers.csproj", "{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C0471230-884B-4F2F-9716-86955CD6621E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7FD7F771-D8E9-4EE4-BB33-A8BF164936C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.Server.Handlers", "src\Booma.Instance.Server.Handlers\Booma.Instance.Server.Handlers.csproj", "{180DE084-E2E3-405C-BF1D-84BADC3E9043}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{538D0F6A-EBFF-42F3-B701-614FAA390E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538D0F6A-EBFF-42F3-B701-614FAA390E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538D0F6A-EBFF-42F3-B701-614FAA390E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538D0F6A-EBFF-42F3-B701-614FAA390E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A959423-5523-4FF5-9667-963BF97F2879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A959423-5523-4FF5-9667-963BF97F2879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A959423-5523-4FF5-9667-963BF97F2879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A959423-5523-4FF5-9667-963BF97F2879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E058C29B-70EE-4DCA-8065-CDF3DB355175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180DE084-E2E3-405C-BF1D-84BADC3E9043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180DE084-E2E3-405C-BF1D-84BADC3E9043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180DE084-E2E3-405C-BF1D-84BADC3E9043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180DE084-E2E3-405C-BF1D-84BADC3E9043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{538D0F6A-EBFF-42F3-B701-614FAA390E7B} = {7FD7F771-D8E9-4EE4-BB33-A8BF164936C7}
+		{5A959423-5523-4FF5-9667-963BF97F2879} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{E058C29B-70EE-4DCA-8065-CDF3DB355175} = {C0471230-884B-4F2F-9716-86955CD6621E}
+		{16BB43AD-C8E3-4BCF-9610-89830EF09524} = {C0471230-884B-4F2F-9716-86955CD6621E}
+		{C0E850F9-5B2D-41A1-B537-1F5E660A35C0} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{D359414D-A9C0-4443-94E9-44B46E16B4E5} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC} = {C0471230-884B-4F2F-9716-86955CD6621E}
+		{C0471230-884B-4F2F-9716-86955CD6621E} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{7FD7F771-D8E9-4EE4-BB33-A8BF164936C7} = {7639BE6C-634A-47BD-B9DA-D0EC89D71694}
+		{180DE084-E2E3-405C-BF1D-84BADC3E9043} = {7FD7F771-D8E9-4EE4-BB33-A8BF164936C7}
+	EndGlobalSection
+EndGlobal
