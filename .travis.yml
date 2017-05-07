@@ -1,6 +1,9 @@
 language: csharp
 solution: ./Booma.Combat.Formula.Server.sln
 
+notifications:
+  slack: boomanationteam:sPQHUqEWA3wTaB9IKOSxe2f1
+
 install:
   - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory tests/testrunner
   - nuget restore Booma.Combat.Formula.Server.sln -ConfigFile NuGet.config
