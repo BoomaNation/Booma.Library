@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04423310-B1DD-4883-8634-6B2B00534EDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Booma.Payloads.Instance</RootNamespace>
+    <AssemblyName>Booma.Payloads.Instance</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Easyception, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Easyception.2.0.0\lib\net35\Easyception.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Payload, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Payload.2.0.34\lib\net35\GladNet.Payload.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Payloads\Events\EntityPositionUpdateEvent.cs" />
+    <Compile Include="Payloads\Events\EntitySpawn\EntitySpawnEventPayload.cs" />
+    <Compile Include="Payloads\Events\EntitySpawn\GameObjectEntitySpawnEventPayload.cs" />
+    <Compile Include="Payloads\Events\EntitySpawn\PlayerEntitySpawnEventPayload.cs" />
+    <Compile Include="Payloads\Events\EntityStateChangedEvent.cs" />
+    <Compile Include="Payloads\Requests\EntityInteractionRequestPayload.cs" />
+    <Compile Include="Payloads\Requests\PlayerMoveRequestPayload.cs" />
+    <Compile Include="Payloads\Requests\PlayerSpawnRequestPayload.cs" />
+    <Compile Include="Payloads\Responses\Codes\PlayerSpawnResponseCode.cs" />
+    <Compile Include="Payloads\Responses\PlayerSpawnResponsePayload.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
+      <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
+      <Name>Booma.Entity.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Entity.Prefab\Booma.Entity.Prefab.csproj">
+      <Project>{853a6d54-67f9-4128-8a28-c4e91c87ac18}</Project>
+      <Name>Booma.Entity.Prefab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Payloads.Common\Booma.Payloads.Common.csproj">
+      <Project>{b2776c82-e686-45a6-bd73-b5913f3e69d3}</Project>
+      <Name>Booma.Payloads.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Payloads.Surrogates.Unity\Booma.Payloads.Surrogates.Unity.csproj">
+      <Project>{1fefea38-2586-4ce1-8662-4c12fd3c6e62}</Project>
+      <Name>Booma.Payloads.Surrogates.Unity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
