@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CDC666D9-2D16-4666-8F23-EEA14587BFB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E537CB1E-858C-4085-A082-02CF0FD5E143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Server", "src\Booma.Entity.Server\Booma.Entity.Server.csproj", "{7824B076-70C3-4E78-9F65-95948F7C9B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Server.Tests", "tests\Booma.Entity.Server.Tests\Booma.Entity.Server.Tests.csproj", "{79180EEB-90E1-459A-B811-81509BA5B19E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Identity", "src\Booma.Entity.Identity\Booma.Entity.Identity.csproj", "{11E0AEA4-66B0-44AB-A909-8D58E862DEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Identity.Tests", "tests\Booma.Entity.Identity.Tests\Booma.Entity.Identity.Tests.csproj", "{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Prefab", "src\Booma.Entity.Prefab\Booma.Entity.Prefab.csproj", "{853A6D54-67F9-4128-8A28-C4E91C87AC18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7824B076-70C3-4E78-9F65-95948F7C9B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7824B076-70C3-4E78-9F65-95948F7C9B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7824B076-70C3-4E78-9F65-95948F7C9B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7824B076-70C3-4E78-9F65-95948F7C9B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79180EEB-90E1-459A-B811-81509BA5B19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79180EEB-90E1-459A-B811-81509BA5B19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79180EEB-90E1-459A-B811-81509BA5B19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79180EEB-90E1-459A-B811-81509BA5B19E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E0AEA4-66B0-44AB-A909-8D58E862DEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E0AEA4-66B0-44AB-A909-8D58E862DEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E0AEA4-66B0-44AB-A909-8D58E862DEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E0AEA4-66B0-44AB-A909-8D58E862DEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D67DE7-D2A2-4E9B-B785-E0D633A734AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{853A6D54-67F9-4128-8A28-C4E91C87AC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853A6D54-67F9-4128-8A28-C4E91C87AC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853A6D54-67F9-4128-8A28-C4E91C87AC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853A6D54-67F9-4128-8A28-C4E91C87AC18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7824B076-70C3-4E78-9F65-95948F7C9B6E} = {CDC666D9-2D16-4666-8F23-EEA14587BFB1}
+		{79180EEB-90E1-459A-B811-81509BA5B19E} = {E537CB1E-858C-4085-A082-02CF0FD5E143}
+		{11E0AEA4-66B0-44AB-A909-8D58E862DEE1} = {CDC666D9-2D16-4666-8F23-EEA14587BFB1}
+		{40D67DE7-D2A2-4E9B-B785-E0D633A734AD} = {E537CB1E-858C-4085-A082-02CF0FD5E143}
+		{853A6D54-67F9-4128-8A28-C4E91C87AC18} = {CDC666D9-2D16-4666-8F23-EEA14587BFB1}
+	EndGlobalSection
+EndGlobal

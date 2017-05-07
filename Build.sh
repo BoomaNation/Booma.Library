@@ -1,0 +1,1 @@
+xbuild ./Booma.Entity.sln /p:DebugSymbols=False

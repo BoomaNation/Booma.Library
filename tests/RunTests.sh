@@ -1,0 +1,2 @@
+mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Booma.Entity.Server.Tests/bin/Debug/Booma.Entity.Server.Tests.dll
+mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Booma.Entity.Identity.Tests/bin/Debug/Booma.Entity.Identity.Tests.dll
