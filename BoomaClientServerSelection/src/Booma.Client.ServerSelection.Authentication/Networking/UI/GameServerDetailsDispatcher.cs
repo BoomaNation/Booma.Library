@@ -20,7 +20,8 @@ namespace Booma.Client.ServerSelection.Authentication
 		{
 			if (string.IsNullOrEmpty(name)) throw new ArgumentException("Value cannot be null or empty.", nameof(name));
 
-			OnServerDetailsChanged?.Invoke($"{name} - Server Region: {region}");
+			//TODO: Extract this into a formatter object
+			OnServerDetailsChanged?.Invoke($"{region}/{name}");
 		}
 	}
 }

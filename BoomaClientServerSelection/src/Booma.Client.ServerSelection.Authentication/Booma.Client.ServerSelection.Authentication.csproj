@@ -87,14 +87,14 @@
       <HintPath>..\..\packages\GladLive.Security.Common.1.0.16\lib\net35\GladLive.Security.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GladNet.ASP.Client.Lib, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.Lib.1.0.11\lib\net35\GladNet.ASP.Client.Lib.dll</HintPath>
+    <Reference Include="GladNet.ASP.Client.Lib, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.ASP.Client.Lib.1.0.12\lib\net35\GladNet.ASP.Client.Lib.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.ASP.Client.RestSharp, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.1.0.11\lib\net35\GladNet.ASP.Client.RestSharp.dll</HintPath>
+    <Reference Include="GladNet.ASP.Client.RestSharp, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.1.0.12\lib\net35\GladNet.ASP.Client.RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.ASP.Client.RestSharp.Middleware.Authentication, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.Middleware.Authentication.1.0.11\lib\net35\GladNet.ASP.Client.RestSharp.Middleware.Authentication.dll</HintPath>
+    <Reference Include="GladNet.ASP.Client.RestSharp.Middleware.Authentication, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.Middleware.Authentication.1.0.12\lib\net35\GladNet.ASP.Client.RestSharp.Middleware.Authentication.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Common.2.0.34\lib\net35\GladNet.Common.dll</HintPath>
@@ -128,14 +128,6 @@
     </Reference>
     <Reference Include="GladNet.Payload.Authentication, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Payload.Authentication.2.0.34\lib\net35\GladNet.Payload.Authentication.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.PhotonServer.Client, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Client.1.0.20\lib\net35\GladNet.PhotonServer.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="GladNet.PhotonServer.Common, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.PhotonServer.Common.1.0.20\lib\net35\GladNet.PhotonServer.Common.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>

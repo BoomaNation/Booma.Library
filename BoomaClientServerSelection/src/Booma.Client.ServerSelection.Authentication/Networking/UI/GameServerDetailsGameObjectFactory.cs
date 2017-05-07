@@ -38,17 +38,12 @@ namespace Booma.Client.ServerSelection.Authentication
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(name));
 
-			GameObject newButton = GameObject.Instantiate(DetailsPrefab, DetailsPrefab.transform.position, DetailsPrefab.transform.rotation) as GameObject;
+			GameObject newButton = GameObject.Instantiate(DetailsPrefab, RootDetailsObject.transform) as GameObject;
 			newButton.SetActive(true);
-
-			//Make it a child
-			newButton.transform.parent = RootDetailsObject.transform;
-
-			//Shift it down so buttons don't overlap
-			newButton.transform.position = new Vector3(newButton.transform.position.x, newButton.transform.position.y + buttonCount * SpaceInbetweenButtons, newButton.transform.position.z);
 
 			GameServerDetailsDispatcher detailsDispatcher = newButton.GetComponent<GameServerDetailsDispatcher>();
 
+			newButton.GetComponent<RectTransform>().localPosition = new Vector3(0, -1 * buttonCount * SpaceInbetweenButtons);
 			if (detailsDispatcher == null)
 				throw new InvalidOperationException($"The {nameof(DetailsPrefab)} should contain a {nameof(GameServerDetailsDispatcher)} component.");
 

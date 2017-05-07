@@ -16,6 +16,7 @@ namespace Booma.Client.ServerSelection.Authentication
 	/// Component is capable of sending gameserver list requests through the
 	/// peer to the currently connected network.
 	/// </summary>
+	[Injectee]
 	public class GameServerListRequestGenerator : GladMonoBehaviour, IRequestSender
 	{
 		//TODO: Put this in a base class.

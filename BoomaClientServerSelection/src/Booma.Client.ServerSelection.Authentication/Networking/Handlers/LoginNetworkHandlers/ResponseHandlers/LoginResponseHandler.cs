@@ -6,6 +6,7 @@ using System.Text;
 using GladNet.Common;
 using UnityEngine;
 using Booma.Client.Network.Common;
+using Common.Logging;
 using SceneJect.Common;
 using UnityEngine.Events;
 using GladNet.Message;
@@ -16,6 +17,7 @@ namespace Booma.Client.ServerSelection.Authentication
 	/// <summary>
 	/// Response handler that handless <see cref="LoginResponse"/> payloads.
 	/// </summary>
+	[Injectee]
 	public class LoginResponseHandler : ResponsePayloadHandlerComponent<AuthenticationWebClient, AuthenticationResponse>
 	{
 		/// <summary>
@@ -36,8 +38,14 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private UnityEvent OnSuccess;
 
+		[Inject]
+		private ILog Logger;
+
 		protected override void OnIncomingHandlableMessage(IResponseMessage message, AuthenticationResponse payload, IMessageParameters parameters, AuthenticationWebClient peer)
 		{
+			if(Logger.IsDebugEnabled)
+				Logger.Debug($"Auth result: {payload.AuthenticationSuccessful}");
+
 			if (payload.AuthenticationSuccessful)
 				OnSuccess?.Invoke();
 			else
