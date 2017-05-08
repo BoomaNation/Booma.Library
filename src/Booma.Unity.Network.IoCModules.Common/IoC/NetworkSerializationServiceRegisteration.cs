@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Client.Network.Common
+namespace Booma.Unity.Network
 {
 	public class NetworkSerializationServiceRegisteration : NonBehaviourDependency
 	{

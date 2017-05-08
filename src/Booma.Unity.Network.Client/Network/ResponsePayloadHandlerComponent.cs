@@ -17,6 +17,7 @@ namespace Booma.Client.Network.Common
 	/// </summary>
 	/// <typeparam name="TPeerType">Type of peer this event was recieved on.</typeparam>
 	/// <typeparam name="TPayloadType">Type of payload that this handler can handle.</typeparam>
+	[Injectee]
 	public abstract class ResponsePayloadHandlerComponent<TPeerType, TPayloadType> : MonoBehaviour, IResponseMessageHandler<TPeerType>, IClassLogger
 		where TPeerType : INetPeer
 		where TPayloadType : PacketPayload

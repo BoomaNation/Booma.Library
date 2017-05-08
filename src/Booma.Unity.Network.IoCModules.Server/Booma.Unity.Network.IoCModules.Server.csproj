@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}</ProjectGuid>
+    <ProjectGuid>{78701185-6AC3-490C-BCCE-EEF8725A792C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Unity.Network.IoCModules.Client</RootNamespace>
-    <AssemblyName>Booma.Unity.Network.IoCModules.Client</AssemblyName>
+    <RootNamespace>Booma.Unity.Network.IoCModules.Server</RootNamespace>
+    <AssemblyName>Booma.Unity.Network.IoCModules.Server</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,18 +36,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj">
-      <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
-      <Name>Booma.Unity.Network.Client</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

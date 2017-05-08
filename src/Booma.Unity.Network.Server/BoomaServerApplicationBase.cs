@@ -8,8 +8,8 @@ using Common.Logging;
 using GladNet.Engine.Common;
 using GladNet.Engine.Server;
 using GladNet.Serializer;
-using Booma.Client.Logging;
 using GladNet.Message;
+using SceneJect.Common;
 
 namespace Booma.Server.Network.Unity.Common
 {
@@ -17,11 +17,16 @@ namespace Booma.Server.Network.Unity.Common
 	/// Base Booma server application Type.
 	/// Uses <see cref="ProtoBuf"/>net serialization strategies.
 	/// </summary>
+	[Injectee]
 	public abstract class BoomaServerApplicationBase : UnityServerApplicationBase<ProtobufnetSerializerStrategy, ProtobufnetDeserializerStrategy, ProtobufnetRegistry>
 	{
 		/// <summary>
-		/// Basic Unity3D logging service.
+		/// Sceneject injectable logging dependency.
 		/// </summary>
-		public override ILog Logger { get; } = new UnityLoggingService();
+		[Inject]
+		private readonly ILog _Logger;
+
+		/// <inheritdoc />
+		public override ILog Logger => _Logger;
 	}
 }

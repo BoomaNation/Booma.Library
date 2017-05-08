@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Client.Network.Common
+namespace Booma.Unity.Network
 {
 	/// <summary>
 	/// Abstract generic network message handler IoC/DI <see cref="SceneJect"/> registeration module.
