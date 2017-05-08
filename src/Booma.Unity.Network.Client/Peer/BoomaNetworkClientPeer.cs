@@ -1,5 +1,4 @@
-﻿using GladLive.Common;
-using GladNet.Serializer.Protobuf;
+﻿using GladNet.Serializer.Protobuf;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace Booma.Client.Network.Common
 	/// <see cref="UnityClientPeer{TSerializationStrategy, TDeserializationStrategy, TSerializerRegistry}"/> which are
 	/// cumbersome to new contribtors.
 	/// </summary>
-	[InjecteeAttribute] //marks the class for SceneJect injection
+	[Injectee] //marks the class for SceneJect injection
 	public abstract class BoomaNetworkClientPeer<TInheritingType> : UnityClientPeer<ProtobufnetSerializerStrategy, ProtobufnetDeserializerStrategy, ProtobufnetRegistry>
 		where TInheritingType : BoomaNetworkClientPeer<TInheritingType>
 	{

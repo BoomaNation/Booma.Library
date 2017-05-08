@@ -13,7 +13,6 @@ using GladNet.Serializer;
 using Common.Logging;
 using GladNet.Message.Handlers;
 using Easyception;
-using GladNet.ASP.Client.RestSharp.Middleware.Authentication;
 using GladNet.Payload;
 
 namespace Booma.Client.Network.Common

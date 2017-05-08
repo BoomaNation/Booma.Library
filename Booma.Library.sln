@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Payloads.Tests", "tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Stats.Common.Tests", "test\Booma.Stats.Common.Tests\Booma.Stats.Common.Tests.csproj", "{F8CC3608-3CCE-4202-9398-6FCC37D77E7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Unity.Network.Client", "src\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj", "{680D46C2-6557-4269-BE18-C041FAE0BAEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Unity.Network.IoCModules.Client", "src\Booma.Unity.Network.IoCModules.Client\Booma.Unity.Network.IoCModules.Client.csproj", "{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +123,14 @@ Global
 		{F8CC3608-3CCE-4202-9398-6FCC37D77E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CC3608-3CCE-4202-9398-6FCC37D77E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CC3608-3CCE-4202-9398-6FCC37D77E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680D46C2-6557-4269-BE18-C041FAE0BAEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680D46C2-6557-4269-BE18-C041FAE0BAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680D46C2-6557-4269-BE18-C041FAE0BAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680D46C2-6557-4269-BE18-C041FAE0BAEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,5 +157,7 @@ Global
 		{09B6AAD4-37B6-4FC1-85FF-68A7230E41C8} = {FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}
 		{60F48CAE-7EF8-44CB-B037-DCE68B761265} = {FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}
 		{F8CC3608-3CCE-4202-9398-6FCC37D77E7E} = {FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}
+		{680D46C2-6557-4269-BE18-C041FAE0BAEA} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
+		{EB8B8B2E-DB4F-4C21-BC95-BB8BB21B621E} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
 	EndGlobalSection
 EndGlobal
