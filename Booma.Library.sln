@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Unity.Network.IoCModu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Unity.Network.IoCModules.Common", "src\Booma.Unity.Network.IoCModules.Common\Booma.Unity.Network.IoCModules.Common.csproj", "{9B97CD14-C357-45F2-A620-CE4D9514011C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.ServerSelection.Client", "src\Booma.ServerSelection.Client\Booma.ServerSelection.Client.csproj", "{1043DA13-1507-4583-9B74-2BAD6F479567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.ServerSelection.IoCModules.Client", "src\Booma.ServerSelection.IoCModules.Client\Booma.ServerSelection.IoCModules.Client.csproj", "{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +153,14 @@ Global
 		{9B97CD14-C357-45F2-A620-CE4D9514011C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B97CD14-C357-45F2-A620-CE4D9514011C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B97CD14-C357-45F2-A620-CE4D9514011C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1043DA13-1507-4583-9B74-2BAD6F479567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1043DA13-1507-4583-9B74-2BAD6F479567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1043DA13-1507-4583-9B74-2BAD6F479567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1043DA13-1507-4583-9B74-2BAD6F479567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,5 +192,7 @@ Global
 		{F0D54151-C076-43EE-B45A-3C714C79A720} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
 		{78701185-6AC3-490C-BCCE-EEF8725A792C} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
 		{9B97CD14-C357-45F2-A620-CE4D9514011C} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
+		{1043DA13-1507-4583-9B74-2BAD6F479567} = {A650AC59-09CB-409A-9439-95746FDC6018}
+		{A7CFB6EE-B6F5-4EC2-82F6-6BB7810036F2} = {A650AC59-09CB-409A-9439-95746FDC6018}
 	EndGlobalSection
 EndGlobal

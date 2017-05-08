@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Common.ServerSelection;
+using Booma.ServerSelection.Common;
 using UnityEngine.UI;
 using UnityEngine;
 

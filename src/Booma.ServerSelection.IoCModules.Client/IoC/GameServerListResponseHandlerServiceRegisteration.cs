@@ -1,6 +1,4 @@
-﻿using Booma.Client.Network.Common;
-using GladLive.Common;
-using GladNet.Message;
+﻿using GladNet.Message;
 using GladNet.Message.Handlers;
 using SceneJect.Common;
 using System;
@@ -8,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Booma.Unity.Network;
 using UnityEngine;
 
 namespace Booma.Client.ServerSelection.Authentication

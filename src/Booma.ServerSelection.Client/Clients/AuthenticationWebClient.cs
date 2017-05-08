@@ -1,9 +1,6 @@
 ﻿using Booma.Client.Network.Common;
-using Booma.Payloads.ServerSelection;
-using GladNet.ASP.Client.RestSharp;
 using GladNet.ASP.Client.RestSharp.Middleware.Authentication;
 using GladNet.Message;
-using GladNet.Payload;
 using GladNet.Serializer;
 using SceneJect.Common;
 using System;
