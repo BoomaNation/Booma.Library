@@ -9,3 +9,6 @@ This section describes projects or libraries which are now deprecated, removed f
 **Booma.Common.ServerSelection** -> **Booma.ServerSelection.Common**
 
 **Booma.Client.Common.IoCModules** -> **Booma.Unity.IoCModules.Common**
+
+**Booma.Client.Logging** -> **Booma.Unity.Logging.Common**
+
