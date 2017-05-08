@@ -1,1 +1,0 @@
-mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Booma.Combat.Formula.Server.Tests/bin/Debug/Booma.Combat.Formula.Server.Tests.dll

@@ -1,5 +1,4 @@
-﻿using GladNet.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +49,10 @@ namespace Booma.Client.Logging
 					UnityEngine.Debug.LogError(message);
 					break;
 				case LogLevel.Off:
+					//Do nothing if the logging is disabled
+					break;
+				case LogLevel.All:
+					//TODO: What should we do here?
 					break;
 				default:
 					UnityEngine.Debug.Log(message);
