@@ -23,3 +23,6 @@ This section describes projects or libraries which are now deprecated, removed f
 
 * Booma.Client.Network.Common -> **Booma.Unity.Network.Client** + **Booma.Unity.Network.IoCModules.Client**
 
+* Booma.Server.Network.Unity.Common -> **Booma.Unity.Network.Server** + **Booma.Unity.Network.IoCModules.Server**
+
+* Booma.Client.ServerSelection.Authentication -> **Booma.ServerSelection.Client** + **Booma.ServerSelection.IoCModules.Client**
