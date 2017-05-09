@@ -26,3 +26,7 @@ This section describes projects or libraries which are now deprecated, removed f
 * Booma.Server.Network.Unity.Common -> **Booma.Unity.Network.Server** + **Booma.Unity.Network.IoCModules.Server**
 
 * Booma.Client.ServerSelection.Authentication -> **Booma.ServerSelection.Client** + **Booma.ServerSelection.IoCModules.Client**
+
+* Booma.Instance.Client.Handlers -> **Booma.Instance.Handlers.Client**
+
+* Booma.Instance.Server.Handlers -> **Booma.Instance.Handlers.Server**
