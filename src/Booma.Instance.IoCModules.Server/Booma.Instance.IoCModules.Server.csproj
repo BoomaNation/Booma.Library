@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0D54151-C076-43EE-B45A-3C714C79A720}</ProjectGuid>
+    <ProjectGuid>{570680F0-C719-4A8B-8357-042F1D65026B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Unity.Network.Server</RootNamespace>
-    <AssemblyName>Booma.Unity.Network.Server</AssemblyName>
+    <RootNamespace>Booma.Instance.IoCModules.Server</RootNamespace>
+    <AssemblyName>Booma.Instance.IoCModules.Server</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,18 +54,6 @@
     <Reference Include="GladNet.Engine.Server, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Engine.Server.2.0.34\lib\net35\GladNet.Engine.Server.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.Lidgren.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.5\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.5\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Lidgren.Server, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.5\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.5\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
-    </Reference>
     <Reference Include="GladNet.Message, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Message.2.0.34\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
@@ -77,15 +65,6 @@
     </Reference>
     <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.12\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
-    </Reference>
-    <Reference Include="Lidgren.Network, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Lidgren.Network.1.0.3\lib\net35\Lidgren.Network.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SceneJect.Common, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SceneJect.Common.1.0.28\lib\net35\SceneJect.Common.dll</HintPath>
@@ -101,9 +80,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoomaServerApplicationBase.cs" />
-    <Compile Include="Handlers\RequestPayloadHandlerComponent.cs" />
+    <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />
+    <Compile Include="IoC\ServerServicesRegisteration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
+      <Project>{5a959423-5523-4ff5-9667-963bf97f2879}</Project>
+      <Name>Booma.Instance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.Server\Booma.Instance.Server.csproj">
+      <Project>{538d0f6a-ebff-42f3-b701-614faa390e7b}</Project>
+      <Name>Booma.Instance.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

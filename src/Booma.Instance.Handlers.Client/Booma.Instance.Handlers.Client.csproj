@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0D54151-C076-43EE-B45A-3C714C79A720}</ProjectGuid>
+    <ProjectGuid>{36B2B3E9-B161-42CE-A9E6-76B9F63A54AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Unity.Network.Server</RootNamespace>
-    <AssemblyName>Booma.Unity.Network.Server</AssemblyName>
+    <RootNamespace>Booma.Instance.Handlers.Client</RootNamespace>
+    <AssemblyName>Booma.Instance.Handlers.Client</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,20 +51,17 @@
     <Reference Include="GladNet.Engine.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Engine.Common.2.0.34\lib\net35\GladNet.Engine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.Engine.Server, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Server.2.0.34\lib\net35\GladNet.Engine.Server.dll</HintPath>
+    <Reference Include="GladNet.Lidgren.Client, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.1.0.5\lib\net35\GladNet.Lidgren.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Client.Unity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.1.0.5\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Lidgren.Common.1.0.5\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.1.0.5\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Lidgren.Server, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.1.0.5\lib\net35\GladNet.Lidgren.Server.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Lidgren.Server.Unity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Server.Unity.1.0.5\lib\net35\GladNet.Lidgren.Server.Unity.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Message.2.0.34\lib\net35\GladNet.Message.dll</HintPath>
@@ -78,14 +75,8 @@
     <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.1.0.12\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
-    </Reference>
     <Reference Include="Lidgren.Network, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Lidgren.Network.1.0.3\lib\net35\Lidgren.Network.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SceneJect.Common, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SceneJect.Common.1.0.28\lib\net35\SceneJect.Common.dll</HintPath>
@@ -96,17 +87,74 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
+    <Reference Include="Unity.Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.Newtonsoft.Json.7.0.0.0\lib\net35-Client\Unity.Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoomaServerApplicationBase.cs" />
-    <Compile Include="Handlers\RequestPayloadHandlerComponent.cs" />
+    <Compile Include="Handlers\EntityPositionUpdateEventHandler .cs" />
+    <Compile Include="Handlers\EntityStateChangedEventHandler.cs" />
+    <Compile Include="Handlers\GameObjectEntitySpawnEventHandler.cs" />
+    <Compile Include="Handlers\PlayerEntitySpawnEventHandler.cs" />
+    <Compile Include="Handlers\PlayerSpawnResponseHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
+      <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
+      <Name>Booma.Entity.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Entity.Prefab\Booma.Entity.Prefab.csproj">
+      <Project>{853a6d54-67f9-4128-8a28-c4e91c87ac18}</Project>
+      <Name>Booma.Entity.Prefab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.Client\Booma.Instance.Client.csproj">
+      <Project>{e058c29b-70ee-4dca-8065-cdf3db355175}</Project>
+      <Name>Booma.Instance.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
+      <Project>{5a959423-5523-4ff5-9667-963bf97f2879}</Project>
+      <Name>Booma.Instance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.NetworkObject.Objects\Booma.Instance.NetworkObject.Objects.csproj">
+      <Project>{d359414d-a9c0-4443-94e9-44b46e16b4e5}</Project>
+      <Name>Booma.Instance.NetworkObject.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Instance.NetworkObject\Booma.Instance.NetworkObject.csproj">
+      <Project>{c0e850f9-5b2d-41a1-b537-1f5e660a35c0}</Project>
+      <Name>Booma.Instance.NetworkObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Payloads.Common\Booma.Payloads.Common.csproj">
+      <Project>{b2776c82-e686-45a6-bd73-b5913f3e69d3}</Project>
+      <Name>Booma.Payloads.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Payloads.Instance\Booma.Payloads.Instance.csproj">
+      <Project>{04423310-b1dd-4883-8634-6b2b00534edd}</Project>
+      <Name>Booma.Payloads.Instance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Payloads.Surrogates.Unity\Booma.Payloads.Surrogates.Unity.csproj">
+      <Project>{1fefea38-2586-4ce1-8662-4c12fd3c6e62}</Project>
+      <Name>Booma.Payloads.Surrogates.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj">
+      <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
+      <Name>Booma.Unity.Network.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
