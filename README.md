@@ -9,6 +9,12 @@ To use this project you'll first need a couple of things:
 * Visual Studio 2017 (earlier versions will likely be incompatible)
 * Add Nuget Feed https://www.myget.org/F/hellokitty/api/v2 in VS (Options -> NuGet -> Package Sources)
 
+## Current Dependency Graph
+
+To help understand the relationships between the various csprojs it may be helpful for some to view and skim this dependency graph generated from the project itself.
+
+It is not directly embed here because it is VERY LARGE but is only about 700kb. You can view it [here](http://i.imgur.com/gFSK3Uc.png).
+
 ## Deprecated Libraries
 
 This section describes projects or libraries which are now deprecated, removed from the main project and/or have been renamed.
