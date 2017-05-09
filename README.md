@@ -1,6 +1,6 @@
 # Booma.Library
 
-TODO: Document and describe what this new mega-repo is.
+Booma.Library is a repository containing all the dll libraries for the Booma project. This is a repo that was created by merging approximately 10 other [Booma Nation](www.github.com/BoomaNation) repos. It contains anything from general/common libraries down to specific client/server libraries like the Instance client/server project.
 
 ## Setup
 
@@ -30,3 +30,8 @@ This section describes projects or libraries which are now deprecated, removed f
 * Booma.Instance.Client.Handlers -> **Booma.Instance.Handlers.Client**
 
 * Booma.Instance.Server.Handlers -> **Booma.Instance.Handlers.Server**
+
+
+## Licensing
+
+This project is protected under the GPL licensing agreement. It will be actively enforced.
