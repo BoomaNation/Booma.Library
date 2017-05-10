@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.IoCModules.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Instance.IoCModules.Server", "src\Booma.Instance.IoCModules.Server\Booma.Instance.IoCModules.Server.csproj", "{570680F0-C719-4A8B-8357-042F1D65026B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.Character", "src\Booma.Entity.Character\Booma.Entity.Character.csproj", "{33DE9187-B344-4E7B-9400-158B4098842E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{570680F0-C719-4A8B-8357-042F1D65026B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570680F0-C719-4A8B-8357-042F1D65026B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570680F0-C719-4A8B-8357-042F1D65026B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DE9187-B344-4E7B-9400-158B4098842E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DE9187-B344-4E7B-9400-158B4098842E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DE9187-B344-4E7B-9400-158B4098842E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DE9187-B344-4E7B-9400-158B4098842E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -270,5 +276,6 @@ Global
 		{180DE084-E2E3-405C-BF1D-84BADC3E9043} = {EAE3EFE1-0387-453F-920B-23664406CC99}
 		{F6E57992-7956-4AB8-9682-6D4757DCA584} = {F4ED7763-87DC-4E45-B8B6-09700AE9CB74}
 		{570680F0-C719-4A8B-8357-042F1D65026B} = {EAE3EFE1-0387-453F-920B-23664406CC99}
+		{33DE9187-B344-4E7B-9400-158B4098842E} = {93AFA0C0-42B1-4903-9C13-4DBE35BA2CD3}
 	EndGlobalSection
 EndGlobal
