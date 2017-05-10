@@ -48,11 +48,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\NetworkEntityGuidBuilderTests.cs" />
+    <Compile Include="UnitTests\SectionIdCalculatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Booma.Entity.Character\Booma.Entity.Character.csproj">
+      <Project>{33de9187-b344-4e7b-9400-158b4098842e}</Project>
+      <Name>Booma.Entity.Character</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
       <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
       <Name>Booma.Entity.Identity</Name>
@@ -60,6 +65,10 @@
     <ProjectReference Include="..\..\src\Booma.Entity.Prefab\Booma.Entity.Prefab.csproj">
       <Project>{853a6d54-67f9-4128-8a28-c4e91c87ac18}</Project>
       <Name>Booma.Entity.Prefab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Booma.Entity.SectionId.Calculator\Booma.Entity.SectionId.Calculator.csproj">
+      <Project>{75689a50-abcf-46d4-9381-5708cf3d82cf}</Project>
+      <Name>Booma.Entity.SectionId.Calculator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Booma.Entity.Server\Booma.Entity.Server.csproj">
       <Project>{7824b076-70c3-4e78-9f65-95948f7c9b6e}</Project>

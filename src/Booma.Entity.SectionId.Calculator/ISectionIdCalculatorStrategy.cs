@@ -18,8 +18,7 @@ namespace Booma.Entity.Character
 		/// </summary>
 		/// <param name="inputName">The character's name.</param>
 		/// <param name="classRace">The character's class.</param>
-		/// <exception cref="ArgumentNullException">Throws if <see cref="inputName"/> is null.</exception>
-		/// <exception cref="ArgumentException">Throws if <see cref="inputName"/> empty or non-alphanumeric.</exception>
+		/// <exception cref="ArgumentException">Throws if <see cref="inputName"/> null, empty or non-alphanumeric.</exception>
 		/// <exception cref="InvalidEnumArgumentException">Throws if <see cref="CharacterClassRace"/> is out of range.</exception>
 		/// <returns>The <see cref="SectionId"/> based on the provided inputs.</returns>
 		SectionId Compute([NotNull] string inputName, CharacterClassRace classRace);
