@@ -55,6 +55,8 @@ namespace Booma.Entity.Tests
 
 		[Test]
 		[TestCase(SectionId.Oran, "Glader", CharacterClassRace.HUnewearl)]
+		[TestCase(SectionId.Purplenum, "Glader", CharacterClassRace.FOnewearl)]
+		[TestCase(SectionId.Redria, "Glader", CharacterClassRace.HUmar)]
 		public static void Test_Player_Strategy_Produces_PSOBB_Expected_SectionId_Values(SectionId expectedId, string name, CharacterClassRace classRace)
 		{
 			//arrange
