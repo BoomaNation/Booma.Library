@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using JetBrains.Annotations;
 
 namespace Booma.Entity.Character
 {
@@ -18,7 +20,8 @@ namespace Booma.Entity.Character
 		/// <param name="classRace">The character's class.</param>
 		/// <exception cref="ArgumentNullException">Throws if <see cref="inputName"/> is null.</exception>
 		/// <exception cref="ArgumentException">Throws if <see cref="inputName"/> empty or non-alphanumeric.</exception>
+		/// <exception cref="InvalidEnumArgumentException">Throws if <see cref="CharacterClassRace"/> is out of range.</exception>
 		/// <returns>The <see cref="SectionId"/> based on the provided inputs.</returns>
-		SectionId Compute(string inputName, CharacterClassRace classRace);
+		SectionId Compute([NotNull] string inputName, CharacterClassRace classRace);
 	}
 }

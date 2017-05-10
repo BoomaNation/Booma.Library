@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -44,6 +47,7 @@
     <Compile Include="Attributes\SectionIdWeightAttribute.cs" />
     <Compile Include="Enums\CharacterClassRace.cs" />
     <Compile Include="Enums\SectionId.cs" />
+    <Compile Include="Extensions\CharacterClassRaceExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
