@@ -36,6 +36,8 @@ namespace Booma.Entity.Identity
 
 		public override int GetHashCode(TType obj)
 		{
+			if (obj == null) throw new ArgumentNullException(nameof(obj));
+
 			//Just return the ulong hash code.
 			return obj.RawGuidValue.GetHashCode();
 		}
