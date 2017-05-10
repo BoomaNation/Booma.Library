@@ -34,18 +34,18 @@ namespace Booma.Entity.Identity
 		/// <summary>
 		/// Indicates the <see cref="EntityType"/> that this <see cref="NetworkEntityGuid"/> is for.
 		/// </summary>
-		public EntityType EntityType { get { return (EntityType)(byte)((RawGuidValue & 0x00FF000000000000) >> 48); } } //mask out to the EE (entity Type) and then shift it down to a byte
+		public EntityType EntityType => (EntityType)(byte)((RawGuidValue & 0x00FF000000000000) >> 48); //mask out to the EE (entity Type) and then shift it down to a byte
 
 		/// <summary>
 		/// Indiciates if the GUID is an empty or unitialized GUID.
 		/// </summary>
 		/// <returns></returns>
-		public bool isEmpty { get { return RawGuidValue == 0; } }
+		public bool isEmpty => RawGuidValue == 0;
 
 		/// <summary>
 		/// Indiciates the current GUID of the entity. This is the last chunk represents the actual ID without any type or identifying information.
 		/// </summary>
-		public int EntityId { get { return (int)(RawGuidValue & 0x00000000FFFFFFFF); } } //FFFF FFFF masks out everything but an unsigned integer. Casts to int. We waste bits this way but we gain considerable perf.
+		public int EntityId => (int)(RawGuidValue & 0x00000000FFFFFFFF); //FFFF FFFF masks out everything but an unsigned integer. Casts to int. We waste bits this way but we gain considerable perf.
 
 		public NetworkEntityGuid(ulong guidValue)
 		{
@@ -90,7 +90,7 @@ namespace Booma.Entity.Identity
 			if (!(obj is NetworkEntityGuid))
 				return false;
 
-			return this.Equals(obj as NetworkEntityGuid);
+			return this.Equals((NetworkEntityGuid) obj);
 		}
 
 		public bool Equals(NetworkEntityGuid other)
@@ -99,6 +99,12 @@ namespace Booma.Entity.Identity
 				return false;
 			else
 				return other.RawGuidValue == this.RawGuidValue;
+		}
+
+		/// <inheritdoc />
+		public override int GetHashCode()
+		{
+			return RawGuidValue.GetHashCode();
 		}
 	}
 }
