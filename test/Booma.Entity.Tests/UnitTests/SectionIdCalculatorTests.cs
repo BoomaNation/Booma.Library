@@ -54,9 +54,20 @@ namespace Booma.Entity.Tests
 		}
 
 		[Test]
+		public static void Test_Player_Strategy_Throws_On_Spanishbullshit_Characters()
+		{
+			//arrange
+			PlayerSectionIdCalculatorStrategy strat = new PlayerSectionIdCalculatorStrategy();
+
+			//assert
+			Assert.Throws<ArgumentException>(() => strat.Compute("Hellá", CharacterClassRace.FOmar));
+		}
+
+		[Test]
 		[TestCase(SectionId.Oran, "Glader", CharacterClassRace.HUnewearl)]
 		[TestCase(SectionId.Purplenum, "Glader", CharacterClassRace.FOnewearl)]
 		[TestCase(SectionId.Redria, "Glader", CharacterClassRace.HUmar)]
+		[TestCase(SectionId.Skyly, "3064", CharacterClassRace.HUcast)]
 		public static void Test_Player_Strategy_Produces_PSOBB_Expected_SectionId_Values(SectionId expectedId, string name, CharacterClassRace classRace)
 		{
 			//arrange

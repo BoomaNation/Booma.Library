@@ -25,10 +25,8 @@ namespace Booma.Entity
 			if(!Regex.IsMatch(inputName, @"^[a-zA-Z0-9]*$")) throw new ArgumentException("Provided name must contain only letters or digits", nameof(inputName));
 
 			//Sum the ASCII values modulo 10 + the class offset
-			int nameTotal = inputName.Aggregate(0, (sum, c) => sum + c % 10) + classRace.GetSectionIdOffet();
-
-			//We then want the first digit which
-			return (SectionId) (nameTotal % 10);
+			//Then grab the last digit which maps to the SectionId
+			return (SectionId) (inputName.Aggregate(classRace.GetSectionIdOffet(), (sum, c) => sum + c % 10) % 10);
 		}
 	}
 }
