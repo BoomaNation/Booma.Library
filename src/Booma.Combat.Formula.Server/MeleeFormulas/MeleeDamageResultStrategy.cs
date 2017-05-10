@@ -36,7 +36,7 @@ namespace Booma.Combat.Formula.Server
 
 			//CombatDamage = ((UserATP - TargetDEF) / 5) * AttackTypeMultiplier
 			//http://www.freewebs.com/azurepso/psostatistics.htm
-			Value = (int)(((finalATP.Value - targetDFP.Value) / 5.0f) * attackMultiplier.Multiplier);
+			Value = (int)((finalATP.Value - targetDFP.Value) / 5.0f * attackMultiplier.Multiplier);
 		}
 	}
 }

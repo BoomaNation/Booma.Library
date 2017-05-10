@@ -25,17 +25,12 @@ namespace Booma.Combat.Formula.Server
 		/// <summary>
 		/// Base/weak min mutliplier for damage.
 		/// </summary>
-		public static IMultiplierProvider BaseMin { get; } = new CombatAttackTypeMultiplier(0.8f);
-
-		/// <summary>
-		/// Base/weak max mutliplier for damage.
-		/// </summary>
-		public static IMultiplierProvider BaseMax { get; } = new CombatAttackTypeMultiplier(0.87f);
+		public static IMultiplierProvider Base { get; } = new CombatAttackTypeMultiplier(0.9f);
 
 
 		/// <summary>
 		/// Heavy multiplier for damage.
 		/// </summary>
-		public static IMultiplierProvider Heavy { get; } = new CombatAttackTypeMultiplier(1.701f);
+		public static IMultiplierProvider Heavy { get; } = new CombatAttackTypeMultiplier(1.89f);
 	}
 }
