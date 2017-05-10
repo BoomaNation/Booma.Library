@@ -42,5 +42,29 @@ namespace Booma.Entity.Tests
 			//assert
 			Assert.Throws<InvalidEnumArgumentException>(() => strat.Compute("Hello", CharacterClassRace.FOmar + 500));
 		}
+
+		[Test]
+		public static void Test_Player_Strategy_Doesnt_Throw_On_Valid_Input()
+		{
+			//arrange
+			PlayerSectionIdCalculatorStrategy strat = new PlayerSectionIdCalculatorStrategy();
+
+			//assert
+			Assert.DoesNotThrow(() => strat.Compute("Hello", CharacterClassRace.FOmar));
+		}
+
+		[Test]
+		[TestCase(SectionId.Oran, "Glader", CharacterClassRace.HUnewearl)]
+		public static void Test_Player_Strategy_Produces_PSOBB_Expected_SectionId_Values(SectionId expectedId, string name, CharacterClassRace classRace)
+		{
+			//arrange
+			PlayerSectionIdCalculatorStrategy strat = new PlayerSectionIdCalculatorStrategy();
+
+			//act
+			SectionId sectionId = strat.Compute(name, classRace);
+
+			//assert
+			Assert.AreEqual(expectedId, sectionId, $"Expected {expectedId} for {name} {classRace} but computed {sectionId}.");
+		}
 	}
 }

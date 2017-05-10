@@ -27,8 +27,8 @@ namespace Booma.Entity
 			//Sum the ASCII values modulo 10 + the class offset
 			int nameTotal = inputName.Aggregate(0, (sum, c) => sum + c % 10) + classRace.GetSectionIdOffet();
 
-			//We then want the first digit which can be achieved with bitwise operations
-			return (SectionId) (nameTotal & 1);
+			//We then want the first digit which
+			return (SectionId) (nameTotal % 10);
 		}
 	}
 }
