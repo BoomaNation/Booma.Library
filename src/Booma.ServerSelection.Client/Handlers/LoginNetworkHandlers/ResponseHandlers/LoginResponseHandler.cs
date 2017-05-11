@@ -37,9 +37,6 @@ namespace Booma.Client.ServerSelection.Authentication
 		[SerializeField]
 		private UnityEvent OnSuccess;
 
-		[Inject]
-		private ILog Logger;
-
 		protected override void OnIncomingHandlableMessage(IResponseMessage message, AuthenticationResponse payload, IMessageParameters parameters, AuthenticationWebClient peer)
 		{
 			if(Logger.IsDebugEnabled)

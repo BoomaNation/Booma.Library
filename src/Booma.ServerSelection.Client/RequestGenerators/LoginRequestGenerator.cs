@@ -26,13 +26,6 @@ namespace Booma.Client.ServerSelection.Authentication
 		[Inject]
 		private readonly ILoginDetails loginDetails;
 
-		/// <inheritdoc />
-		protected override void OnStart()
-		{
-			if (loginDetails == null)
-				throw new InvalidOperationException($"Field {nameof(loginDetails)} was null.");
-		}
-
 		public override void SendRequest()
 		{
 			SendRequestWithResult();
