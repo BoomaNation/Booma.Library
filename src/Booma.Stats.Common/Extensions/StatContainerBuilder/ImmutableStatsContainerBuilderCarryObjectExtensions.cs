@@ -168,23 +168,11 @@ namespace Booma.Stats.Common
 			return builder;
 		}
 
-		//Build methods
-		public static ImmutableStatsContainer<ResistanceStatType> Build(this ImmutableStatsContainerBuilder<ResistanceStatType>.IBuilder builder)
+		public static ImmutableStatsContainer<TStatType> Build<TStatType>(this ImmutableStatsContainerBuilder<TStatType>.IBuilder builder)
+			where TStatType : struct, IConvertible
 		{
 			//create a new resistance container
-			return new ImmutableResistanceStatsContainer(builder.BuilderDictionary);
-		}
-
-		public static ImmutableStatsContainer<CombatStatType> Build(this ImmutableStatsContainerBuilder<CombatStatType>.IBuilder builder)
-		{
-			//create a new combat container
-			return new ImmutableCombatStatsContainer(builder.BuilderDictionary);
-		}
-
-		public static ImmutableStatsContainer<TransientStatType> Build(this ImmutableStatsContainerBuilder<TransientStatType>.IBuilder builder)
-		{
-			//create a new combat container
-			return new ImmutableTransientStatsContainer(builder.BuilderDictionary);
+			return new ImmutableStatsContainer<TStatType>(builder.BuilderDictionary);
 		}
 	}
 }

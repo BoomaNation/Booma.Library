@@ -7,7 +7,7 @@ using System.Text;
 namespace Booma.Stats.Common.Tests.UnitTests
 {
 	[TestFixture]
-	public class ImmutableTransientStatsContainerTests : ImmutableGenericContainerTests<ImmutableTransientStatsContainer, TransientStatType> //the basic tests are handled in a generic base class
+	public class ImmutableTransientStatsContainerTests : ImmutableGenericContainerTests<ImmutableStatsContainer<TransientStatType>, TransientStatType> //the basic tests are handled in a generic base class
 	{
 		protected override IDictionary<TransientStatType, int> StatEnumTestInitValues()
 		{

@@ -13,7 +13,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Ctor_Doesnt_Throw()
 		{
 			//assert
-			Assert.DoesNotThrow(() => new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer()));
+			Assert.DoesNotThrow(() => new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>()));
 		}
 
 		[Test]
@@ -21,7 +21,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Empty_Resistance_Container_Causes_All_Default_Multipliers_To_Be_Produce(ResistanceStatType resist)
 		{
 			//arrange
-			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer());
+			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>());
 
 			//assert: That no resistances should produce 1.0f multipliers
 			Assert.AreEqual(1.0f, strat.ResistanceMultiplier(resist).Multiplier);
@@ -32,7 +32,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Resistance_Container_With_Zero_Resist_Causes_All_Default_Multipliers(ResistanceStatType resist)
 		{
 			//arrange
-			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer(ResistContainerValuesWithZero()));
+			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>(ResistContainerValuesWithZero()));
 
 			//assert: That no resistances should produce 1.0f multipliers
 			Assert.AreEqual(1.0f, strat.ResistanceMultiplier(resist).Multiplier);
@@ -43,7 +43,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Resistance_Container_With_Hundred_Resist_Causes_All_Zero_Values(ResistanceStatType resist)
 		{
 			//arrange
-			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer(ResistContainerValuesWithHundreds()));
+			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>(ResistContainerValuesWithHundreds()));
 
 			//assert: That no resistances should produce 1.0f multipliers
 			Assert.AreEqual(0.0f, strat.ResistanceMultiplier(resist).Multiplier);
@@ -54,7 +54,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Resistance_Container_With_50_Resist_Causes_All_Half_Values(ResistanceStatType resist)
 		{
 			//arrange
-			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer(ResistContainerValuesWith50()));
+			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>(ResistContainerValuesWith50()));
 
 			//assert: That no resistances should produce 1.0f multipliers
 			Assert.AreEqual(0.5f, strat.ResistanceMultiplier(resist).Multiplier);
@@ -65,7 +65,7 @@ namespace Booma.Stats.Common.Tests.UnitTests
 		public static void Resistance_Container_With_200_Resist_Causes_0_And_Not_Negative_Values(ResistanceStatType resist)
 		{
 			//arrange
-			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableResistanceStatsContainer(ResistContainerValuesWith200()));
+			LinearResistanceMultiplierStrategy strat = new LinearResistanceMultiplierStrategy(new ImmutableStatsContainer<ResistanceStatType>(ResistContainerValuesWith200()));
 
 			//assert: That no resistances should produce 1.0f multipliers
 			Assert.AreEqual(0.0f, strat.ResistanceMultiplier(resist).Multiplier);

@@ -10,7 +10,7 @@ namespace Booma.Stats.Common
 	/// Base-class type for Immutable stats container types.
 	/// </summary>
 	/// <typeparam name="TStatType">The stat type the container is tracking</typeparam>
-	public abstract class ImmutableStatsContainer<TStatType> : IStatsContainer<TStatType>
+	public class ImmutableStatsContainer<TStatType> : IStatsContainer<TStatType>
 		where TStatType : struct, IConvertible
 	{
 		//This allows this class not to depend on external stat provider implementations
@@ -58,12 +58,10 @@ namespace Booma.Stats.Common
 		/// Creates a partially initialized immutable container for stats.
 		/// </summary>
 		/// <param name="values">Values key-store for <see cref="TStatType"/>.</param>
-		protected ImmutableStatsContainer(IDictionary<TStatType, int> values)
+		public ImmutableStatsContainer(IDictionary<TStatType, int> values)
+			: this()
 		{
 			if (values == null) throw new ArgumentNullException(nameof(values));
-
-			//If it's empty then we don't need to do anything fancy
-			_statsMap = new IStatProvider<TStatType>[values.Count];
 
 			//Set each keypair to be in the flat cache-quick array of nullable ints
 			//map to the enum int codes
@@ -73,7 +71,7 @@ namespace Booma.Stats.Common
 		/// <summary>
 		/// Creates an empty-immutable container for stats.
 		/// </summary>
-		protected ImmutableStatsContainer()
+		public ImmutableStatsContainer()
 		{
 			//We need a new array of atleast the size of the largest value in CombatStatType
 			_statsMap = new IStatProvider<TStatType>[maxMapKeyValue + 1];
