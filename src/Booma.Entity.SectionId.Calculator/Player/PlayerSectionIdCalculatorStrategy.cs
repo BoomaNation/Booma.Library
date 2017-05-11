@@ -26,7 +26,7 @@ namespace Booma.Entity
 
 			//Sum the ASCII values modulo 10 + the class offset
 			//Then grab the last digit which maps to the SectionId
-			return (SectionId) (inputName.Aggregate(classRace.GetSectionIdOffet(), (sum, c) => sum + c % 10) % 10);
+			return (SectionId) (inputName.Aggregate(classRace.GetSectionIdOffset(), (sum, c) => sum + c % 10) % 10);
 		}
 	}
 }

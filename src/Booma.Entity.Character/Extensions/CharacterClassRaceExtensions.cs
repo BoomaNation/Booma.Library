@@ -25,7 +25,7 @@ namespace Booma.Entity.Character
 		/// <param name="classRace">The class race value.</param>
 		/// <exception cref="InvalidEnumArgumentException">Throws if <see cref="classRace"/> is out of range.</exception>
 		/// <returns>The offset value.</returns>
-		public static int GetSectionIdOffet(this CharacterClassRace classRace)
+		public static int GetSectionIdOffset(this CharacterClassRace classRace)
 		{
 			if (!Enum.IsDefined(typeof(CharacterClassRace), classRace)) throw new InvalidEnumArgumentException(nameof(classRace), (int) classRace, typeof(CharacterClassRace));
 
@@ -37,7 +37,7 @@ namespace Booma.Entity.Character
 				ClassRaceToFieldMap[classRace] = typeof(CharacterClassRace).GetField(classRace.ToString());
 
 				//just recur
-				return GetSectionIdOffet(classRace);
+				return GetSectionIdOffset(classRace);
 			}
 		}
 	}
