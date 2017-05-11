@@ -42,11 +42,13 @@ namespace Booma.Client.Network.Common
 		/// </summary>
 		protected IMiddlewareRegistry MiddlewareRegistry => enqueuStrat;
 
+		//These must be protected for potential middlware registerations
 		[Inject]
-		private readonly ISerializerStrategy serializer;
+		protected readonly ISerializerStrategy serializer;
 
+		//These must be protected for potential middlware registerations
 		[Inject]
-		private readonly IDeserializerStrategy deserializer;
+		protected readonly IDeserializerStrategy deserializer;
 
 		/// <summary>
 		/// Registeration service for payloads.
