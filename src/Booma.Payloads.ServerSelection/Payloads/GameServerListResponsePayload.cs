@@ -3,11 +3,14 @@ using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Booma.Payloads.ServerSelection
 {
-	//TODO: Debate on authorized request
+	/// <summary>
+	/// Network message response that returns a collection of ship details.
+	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.GetGameServerListResponse)]
 	public class GameServerListResponsePayload : PacketPayload, IResponseStatus<GameServerListResponseCode>
@@ -25,7 +28,7 @@ namespace Booma.Payloads.ServerSelection
 		/// <summary>
 		/// Collection of available gameservers.
 		/// </summary>
-		public IEnumerable<SimpleGameServerDetailsModel> GameServerDetails { get { return gameServerDetails; } }
+		public IEnumerable<SimpleGameServerDetailsModel> GameServerDetails => gameServerDetails;
 
 		/// <summary>
 		/// Creates a new gameserver list response with only a response code.
@@ -43,8 +46,10 @@ namespace Booma.Payloads.ServerSelection
 		/// <param name="details">Details collection.</param>
 		public GameServerListResponsePayload(GameServerListResponseCode code, IEnumerable<SimpleGameServerDetailsModel> details)
 		{
-			ResponseCode = code;
+			if (details == null) throw new ArgumentNullException(nameof(details));
+			if (!Enum.IsDefined(typeof(GameServerListResponseCode), code)) throw new InvalidEnumArgumentException(nameof(code), (int) code, typeof(GameServerListResponseCode));
 
+			ResponseCode = code;
 			//set to internal field
 			gameServerDetails = details.ToArray();
 		}

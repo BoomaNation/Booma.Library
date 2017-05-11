@@ -7,7 +7,9 @@ using System.Linq;
 
 namespace Booma.Payloads.ServerSelection
 {
-	//TODO: Debate on authorized request
+	/// <summary>
+	/// Request that requests the ship list.
+	/// </summary>
 	[GladNetSerializationContract]
 	[BoomaPayload(BoomaPayloadMessageType.GetGameServerListRequest)]
 	public class GameServerListRequestPayload : PacketPayload

@@ -26,11 +26,12 @@ namespace Booma.Payloads.ServerSelection
 		[GladNetMember(GladNetDataIndex.Index2)]
 		private byte[] serverIPBytes;
 
-		private IPAddress _ServerIP;
+		private Lazy<IPAddress> _ServerIP { get; }
+
 		/// <summary>
 		/// Represents the IP address of the server.
 		/// </summary>
-		public IPAddress ServerIP { get { return _ServerIP == null ? _ServerIP = new IPAddress(serverIPBytes) : _ServerIP; } }
+		public IPAddress ServerIP => _ServerIP.Value;
 
 		/// <summary>
 		/// Port incoming client connections should be on.
@@ -50,6 +51,8 @@ namespace Booma.Payloads.ServerSelection
 			serverIPBytes = address.GetAddressBytes();
 			ServerPort = port;
 			Region = region;
+
+			_ServerIP = new Lazy<IPAddress>(CreateAddressFromBytes, true);
 		}
 
 		/// <summary>
@@ -57,7 +60,15 @@ namespace Booma.Payloads.ServerSelection
 		/// </summary>
 		protected SimpleGameServerDetailsModel()
 		{
+			_ServerIP = new Lazy<IPAddress>(CreateAddressFromBytes, true);
+		}
 
+		private IPAddress CreateAddressFromBytes()
+		{
+			if (serverIPBytes == null || serverIPBytes.Length == 0)
+				throw new InvalidOperationException($"Cannot create address. Serialized bytes {serverIPBytes} was nutll.");
+
+			return new IPAddress(serverIPBytes);
 		}
 	}
 }
