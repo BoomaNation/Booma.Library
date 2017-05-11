@@ -15,21 +15,15 @@ using UnityEngine.Events;
 
 namespace Booma.Client.ServerSelection
 {
+	/// <summary>
+	/// Peer component that will communicate with the gameserver list service (ship list service)
+	/// </summary>
 	public class GameServerListWebClient : BoomaNetworkWebPeer<GameServerListWebClient>
 	{
-		[Inject]
-		private readonly ISerializerRegistry registry;
-
-		public override void Start()
+		/// <inheritdoc />
+		protected override void RegisterPayloads(ISerializerRegistry registerService)
 		{
-			base.Start();
-
-			RegisterMessages();
-		}
-		
-		private void RegisterMessages()
-		{
-			registry.RegisterServerSelectionPayloads();
+			registerService.RegisterServerSelectionPayloads();
 		}
 	}
 }

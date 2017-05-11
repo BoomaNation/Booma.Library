@@ -13,36 +13,36 @@ using UnityEngine.Events;
 
 namespace Booma.Client.ServerSelection
 {
+	/// <summary>
+	/// A network peer component that is used to connect to the authentication service.
+	/// </summary>
+	[Injectee]
 	public class AuthenticationWebClient : BoomaNetworkWebPeer<AuthenticationWebClient>
 	{
-		//TODO: Token handling
+		/// <summary>
+		/// Unity3D dispatchable event that is called when connection is established.
+		/// </summary>
 		[SerializeField]
 		private UnityEvent OnConnected;
-
-		[Inject]
-		private readonly ISerializerRegistry registry;
 
 		public override void Start()
 		{
 			base.Start();
 
-			//TODO: Fix fault so we can register middlewares
 			MiddlewareRegistry.RegisterAuthenticationMiddleware(this.serializer, this.deserializer, new JWTTokenServiceManager());
 
-			RegisterMessages();
+			//Web peers connect right away
 			OnConnected?.Invoke();
 		}
-		
-		private void RegisterMessages()
-		{
-			//TODO: Extension for message registeration
-			registry.RegisterAuthenticationPayloads();
-			registry.Register(typeof(NetworkMessage));
-			registry.Register(typeof(RequestMessage));
-			registry.Register(typeof(ResponseMessage));
-			registry.RegisterServerSelectionPayloads();
 
-			//TODO: Add async handling so that we don't need to register here
+		/// <inheritdoc />
+		protected override void RegisterPayloads(ISerializerRegistry registeryService)
+		{
+			registeryService.RegisterAuthenticationPayloads();
+			registeryService.Register(typeof(NetworkMessage));
+			registeryService.Register(typeof(RequestMessage));
+			registeryService.Register(typeof(ResponseMessage));
+			registeryService.RegisterServerSelectionPayloads();
 		}
 	}
 }
