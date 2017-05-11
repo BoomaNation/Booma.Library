@@ -54,7 +54,7 @@ namespace Booma.Entity.Tests
 		}
 
 		[Test]
-		public static void Test_Player_Strategy_Throws_On_Spanishbullshit_Characters()
+		public static void Test_Player_Strategy_Throws_On_AltCode_Characters()
 		{
 			//arrange
 			PlayerSectionIdCalculatorStrategy strat = new PlayerSectionIdCalculatorStrategy();
