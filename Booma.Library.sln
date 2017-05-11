@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Entity.SectionId.Calc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.Unity.Network.Common", "src\Booma.Unity.Network.Common\Booma.Unity.Network.Common.csproj", "{D55C3F65-A9BF-4713-97AF-9F24628E41E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.ServerSelection.Handlers.Client", "src\Booma.ServerSelection.Handlers.Client\Booma.ServerSelection.Handlers.Client.csproj", "{D1911DAC-BD52-4660-9F5B-1C3A72F648F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{D55C3F65-A9BF-4713-97AF-9F24628E41E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D55C3F65-A9BF-4713-97AF-9F24628E41E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D55C3F65-A9BF-4713-97AF-9F24628E41E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1911DAC-BD52-4660-9F5B-1C3A72F648F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1911DAC-BD52-4660-9F5B-1C3A72F648F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1911DAC-BD52-4660-9F5B-1C3A72F648F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1911DAC-BD52-4660-9F5B-1C3A72F648F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -291,5 +297,6 @@ Global
 		{33DE9187-B344-4E7B-9400-158B4098842E} = {93AFA0C0-42B1-4903-9C13-4DBE35BA2CD3}
 		{75689A50-ABCF-46D4-9381-5708CF3D82CF} = {93AFA0C0-42B1-4903-9C13-4DBE35BA2CD3}
 		{D55C3F65-A9BF-4713-97AF-9F24628E41E1} = {C04F6721-E028-4680-A4B2-B3A98B89BB1F}
+		{D1911DAC-BD52-4660-9F5B-1C3A72F648F5} = {A650AC59-09CB-409A-9439-95746FDC6018}
 	EndGlobalSection
 EndGlobal
