@@ -36,6 +36,8 @@ namespace Booma.Payloads.ServerSelection
 		/// <param name="code">response code.</param>
 		public GameServerListResponsePayload(GameServerListResponseCode code)
 		{
+			if (!Enum.IsDefined(typeof(GameServerListResponseCode), code)) throw new InvalidEnumArgumentException(nameof(code), (int) code, typeof(GameServerListResponseCode));
+
 			ResponseCode = code;
 		}
 
