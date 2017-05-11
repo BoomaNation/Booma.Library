@@ -18,7 +18,7 @@ using GladNet.Payload;
 namespace Booma.Client.Network.Common
 {
 	[Injectee]
-	public class BoomaNetworkWebPeer<TInheritingType> : MonoBehaviour, INetPeer, INetworkMessageReceiver
+	public abstract class BoomaNetworkWebPeer<TInheritingType> : MonoBehaviour, INetPeer, INetworkMessageReceiver
 		where TInheritingType : BoomaNetworkWebPeer<TInheritingType>
 	{
 		/// <summary>
@@ -43,10 +43,16 @@ namespace Booma.Client.Network.Common
 		protected IMiddlewareRegistry MiddlewareRegistry => enqueuStrat;
 
 		[Inject]
-		protected readonly ISerializerStrategy serializer;
+		private readonly ISerializerStrategy serializer;
 
 		[Inject]
-		protected readonly IDeserializerStrategy deserializer;
+		private readonly IDeserializerStrategy deserializer;
+
+		/// <summary>
+		/// Registeration service for payloads.
+		/// </summary>
+		[Inject]
+		private readonly ISerializerRegistry registry;
 
 		[Inject]
 		protected readonly ILog classLogger;
@@ -69,7 +75,17 @@ namespace Booma.Client.Network.Common
 			NetworkSendService = new WebPeerClientMessageSender(enqueuStrat);
 
 			PeerDetails = new WebClientPeerDetails(BaseUrl, 0, 0);
+
+			//Call register payloads method to register any needed payloads
+			RegisterPayloads(registry);
 		}
+
+		/// <summary>
+		/// Called when payloads are ready to be registered with the underlying peer.
+		/// Should register ALL messages that will be sent or recieved with this peer.
+		/// </summary>
+		/// <param name="registerService">The registeration service.</param>
+		protected abstract void RegisterPayloads(ISerializerRegistry registerService);
 
 		public bool CanSend(OperationType opType)
 		{
@@ -84,7 +100,8 @@ namespace Booma.Client.Network.Common
 
 		public void OnNetworkMessageReceive(IResponseMessage message, IMessageParameters parameters)
 		{
-			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IResponseMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
+			if (message == null) throw new ArgumentNullException(nameof(message));
+
 			responseHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 
