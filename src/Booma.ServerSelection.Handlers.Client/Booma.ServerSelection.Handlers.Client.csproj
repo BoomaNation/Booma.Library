@@ -77,8 +77,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\GameServerListHandler\ResponseHandlers\GameServerListResponseHandler.cs" />
-    <Compile Include="Handlers\LoginNetworkHandlers\ResponseHandlers\LoginResponseHandler.cs" />
+    <Compile Include="Handlers\GameServerListHandler\GameServerListResponseHandler.cs" />
+    <Compile Include="Handlers\LoginNetworkHandlers\LoginResponseHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
