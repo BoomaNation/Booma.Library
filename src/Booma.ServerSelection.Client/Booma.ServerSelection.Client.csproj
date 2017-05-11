@@ -112,7 +112,6 @@
     <Compile Include="Login\LoginDetailsSceneData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestGenerators\GameServerListRequestGenerator.cs" />
-    <Compile Include="RequestGenerators\IRequestSender.cs" />
     <Compile Include="RequestGenerators\LoginRequestGenerator.cs" />
     <Compile Include="UI\GameServerDetailsDispatcher.cs" />
     <Compile Include="UI\GameServerDetailsGameObjectFactory.cs" />
