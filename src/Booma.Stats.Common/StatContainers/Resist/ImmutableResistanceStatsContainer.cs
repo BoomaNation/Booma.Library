@@ -31,15 +31,5 @@ namespace Booma.Stats.Common
 		{
 
 		}
-
-		/// <summary>
-		/// Converts a <see cref="ResistanceStatType"/> value to an int key value.
-		/// </summary>
-		/// <param name="statType">The stat type to convert to int.</param>
-		/// <returns>A key value for the given <paramref name="statType"/>.</returns>
-		protected override int ConvertStatToKey(ResistanceStatType statType)
-		{
-			return statType.ToKey();
-		}
 	}
 }
