@@ -23,10 +23,12 @@ namespace Booma.Payloads.Instance
 		public NetworkEntityGuid NetworkGuid { get; private set; }
 
 		/// <summary>
-		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerMoveRequestPayload"/> payload.
+		/// Creates a new <see cref="PlayerMoveRequestPayload"/> payload.
 		/// </summary>
 		public EntityInteractionRequestPayload(NetworkEntityGuid guidOfEntityToInteractWith)
 		{
+			if (guidOfEntityToInteractWith == null) throw new ArgumentNullException(nameof(guidOfEntityToInteractWith));
+
 			//TODO: Check refs
 			NetworkGuid = guidOfEntityToInteractWith;
 		}

@@ -5,6 +5,7 @@ using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Booma.Payloads.Instance
@@ -46,7 +47,10 @@ namespace Booma.Payloads.Instance
 		/// </summary>
 		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation, NetworkEntityGuid entityGuid)
 		{
-			//TODO: Check refs
+			if (position == null) throw new ArgumentNullException(nameof(position));
+			if (rotation == null) throw new ArgumentNullException(nameof(rotation));
+			if (entityGuid == null) throw new ArgumentNullException(nameof(entityGuid));
+			if (!Enum.IsDefined(typeof(PlayerSpawnResponseCode), code)) throw new InvalidEnumArgumentException(nameof(code), (int) code, typeof(PlayerSpawnResponseCode));
 
 			ResponseCode = code;
 			EntityGuid = entityGuid;

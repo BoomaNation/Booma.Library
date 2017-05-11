@@ -37,6 +37,9 @@ namespace Booma.Payloads.Instance
 
 		public EntityStateChangedEvent(byte state, NetworkEntityGuid entityGuid, float timeStamp)
 		{
+			if (entityGuid == null) throw new ArgumentNullException(nameof(entityGuid));
+			if (timeStamp < 0) throw new ArgumentOutOfRangeException(nameof(timeStamp));
+
 			//TODO: Check refs
 			//TODO: Verify args
 			State = state;

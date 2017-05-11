@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Booma.Payloads.Common
 {
-	// <summary>
+	/// <summary>
 	/// Simplified <see cref="Attribute"/> of the <see cref="GladNetSerializationIncludeAttribute"/> which reduces the
 	/// complexity for marking payloads with meta-data.
 	/// </summary>

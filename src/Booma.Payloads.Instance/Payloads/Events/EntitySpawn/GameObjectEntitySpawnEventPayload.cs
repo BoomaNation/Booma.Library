@@ -3,6 +3,7 @@ using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Booma.Entity.Identity;
 using Booma.Payloads.Surrogates.Unity;
@@ -16,12 +17,21 @@ namespace Booma.Payloads.Instance
 	[GladNetSerializationContract]
 	public class GameObjectEntitySpawnEventPayload : EntitySpawnEventPayload
 	{
+		/// <summary>
+		/// The scale of the object.
+		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index1)]
 		public Vector3Surrogate Scale { get; private set; }
 
+		/// <summary>
+		/// The prefab ID.
+		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index2)]
 		public GameObjectPrefab PrefabId { get; private set; }
 
+		/// <summary>
+		/// The current state or starting state of the object.
+		/// </summary>
 		[GladNetMember(GladNetDataIndex.Index3)]
 		public byte CurrentState { get; private set; }
 
@@ -29,6 +39,9 @@ namespace Booma.Payloads.Instance
 			Vector3Surrogate scale, GameObjectPrefab prefabId, byte state) 
 			: base(entityGuid, position, rotation)
 		{
+			if (scale == null) throw new ArgumentNullException(nameof(scale));
+			if (!Enum.IsDefined(typeof(GameObjectPrefab), prefabId)) throw new InvalidEnumArgumentException(nameof(prefabId), (int) prefabId, typeof(GameObjectPrefab));
+
 			//TODO: Check values/refs
 			Scale = scale;
 			PrefabId = prefabId;

@@ -38,6 +38,10 @@ namespace Booma.Payloads.Instance
 
 		public EntityPositionUpdateEvent(Vector3Surrogate position, NetworkEntityGuid entityGuid, float timeStamp)
 		{
+			if (position == null) throw new ArgumentNullException(nameof(position));
+			if (entityGuid == null) throw new ArgumentNullException(nameof(entityGuid));
+			if (timeStamp < 0) throw new ArgumentOutOfRangeException(nameof(timeStamp));
+
 			//TODO: Check refs
 			//TODO: Verify args
 			EntityGuid = entityGuid;

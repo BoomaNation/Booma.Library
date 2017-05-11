@@ -29,13 +29,14 @@ namespace Booma.Payloads.Instance
 		public float TimeSinceStart { get; private set; }
 
 		/// <summary>
-		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerMoveRequestPayload"/> payload.
+		/// Creates a new <see cref="PlayerMoveRequestPayload"/> payload.
 		/// </summary>
 		public PlayerMoveRequestPayload(Vector3Surrogate position, float timeStamp)
 		{
-			//TODO: Check refs
-			Position = position;
+			if (position == null) throw new ArgumentNullException(nameof(position));
+			if (timeStamp < 0) throw new ArgumentOutOfRangeException(nameof(timeStamp));
 
+			Position = position;
 			TimeSinceStart = timeStamp;
 		}
 
