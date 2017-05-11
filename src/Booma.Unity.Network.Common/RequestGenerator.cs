@@ -12,7 +12,7 @@ using UnityEngine;
 namespace Booma.Unity.Network
 {
 	[Injectee]
-	public abstract class RequestGenerator : GladMonoBehaviour
+	public abstract class RequestGenerator : GladMonoBehaviour, IRequestSender
 	{
 		//TODO: How should we chooce if we should inject this or set it with GladMonoBehaviour?
 		[SerializeField]
@@ -30,15 +30,26 @@ namespace Booma.Unity.Network
 		[Inject]
 		public readonly ILog Logger;
 
-		/// <summary>
-		/// Sends the request this <see cref="RequestGenerator"/> was created to send.
-		/// </summary>
+		private void Start()
+		{
+			if (NetworkPeer == null)
+				throw new InvalidOperationException($"Field {nameof(_NetworkPeer)} was null.");
+
+			if (Logger == null)
+				throw new InvalidOperationException($"Field {nameof(Logger)} was null.");
+
+			OnStart();
+		}
+
+		protected virtual void OnStart()
+		{
+			//do nothing; let overriders implement if they want.
+		}
+
+		/// <inheritdoc />
 		public abstract void SendRequest();
 
-		/// <summary>
-		/// Sends the request this <see cref="RequestGenerator"/> was created to send.
-		/// Also returns the <see cref="SendResult"/>
-		/// </summary>
+		/// <inheritdoc />
 		public abstract SendResult SendRequestWithResult();
 	}
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Booma.Unity.Network;
 using SceneJect.Common;
 using UnityEngine;
 
@@ -17,35 +18,19 @@ namespace Booma.Client.ServerSelection.Authentication
 	/// peer to the currently connected network.
 	/// </summary>
 	[Injectee]
-	public class GameServerListRequestGenerator : GladMonoBehaviour, IRequestSender
+	public class GameServerListRequestGenerator : RequestGenerator
 	{
-		//TODO: Put this in a base class.
-		[SerializeField]
-		private INetPeer messageSender;
-
-		[Inject]
-		private ILog logger;
-
-		public void Start()
-		{
-			if (messageSender == null)
-				throw new InvalidOperationException($"Field {nameof(messageSender)} was null.");
-
-			if (logger == null)
-				throw new InvalidOperationException($"Field {nameof(logger)} was null.");
-		}
-
-		public void SendRequest()
+		public override void SendRequest()
 		{
 			SendRequestWithResult();
 		}
 
-		public SendResult SendRequestWithResult()
+		public override SendResult SendRequestWithResult()
 		{
-			if(logger.IsDebugEnabled)
-				logger.Debug("Sending list request.");
+			if(Logger.IsDebugEnabled)
+				Logger.Debug("Sending list request.");
 
-			return messageSender.TrySendMessage(OperationType.Request, new GameServerListRequestPayload(), DeliveryMethod.ReliableOrdered, true);
+			return NetworkPeer.TrySendMessage(OperationType.Request, new GameServerListRequestPayload(), DeliveryMethod.ReliableOrdered, true);
 		}
 	}
 }

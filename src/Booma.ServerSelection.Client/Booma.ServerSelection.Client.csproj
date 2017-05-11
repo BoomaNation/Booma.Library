@@ -135,6 +135,10 @@
       <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
       <Name>Booma.Unity.Network.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Booma.Unity.Network.Common\Booma.Unity.Network.Common.csproj">
+      <Project>{D55C3F65-A9BF-4713-97AF-9F24628E41E1}</Project>
+      <Name>Booma.Unity.Network.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -6,6 +6,7 @@ using GladNet.Common;
 using GladBehaviour.Common;
 using SceneJect.Common;
 using System.Security.Cryptography;
+using Booma.Unity.Network;
 using GladNet.Engine.Common;
 using UnityEngine;
 using GladNet.Payload.Authentication;
@@ -17,35 +18,29 @@ namespace Booma.Client.ServerSelection.Authentication
 	/// to send requests to a <see cref="IClientPeerNetworkMessageSender"/>.
 	/// </summary>
 	[Injectee]
-	public class LoginRequestGenerator : GladMonoBehaviour, IRequestSender
+	public class LoginRequestGenerator : RequestGenerator
 	{
-		//TODO: Put this in a base class.
-		[SerializeField]
-		private INetPeer messageSender;
-
 		/// <summary>
 		/// User provided login details for the attempted login.
 		/// </summary>
 		[Inject]
-		private ILoginDetails loginDetails;
+		private readonly ILoginDetails loginDetails;
 
-		public void Start()
+		/// <inheritdoc />
+		protected override void OnStart()
 		{
-			if(messageSender == null)
-				throw new InvalidOperationException($"Field {nameof(messageSender)} was null.");
-
-			if(loginDetails == null)
+			if (loginDetails == null)
 				throw new InvalidOperationException($"Field {nameof(loginDetails)} was null.");
 		}
 
-		public void SendRequest()
+		public override void SendRequest()
 		{
 			SendRequestWithResult();
 		}
 
-		public SendResult SendRequestWithResult()
+		public override SendResult SendRequestWithResult()
 		{
-			SendResult result = messageSender.TrySendMessage(OperationType.Request, new AuthenticationRequest(loginDetails.LoginString, loginDetails.Password), DeliveryMethod.ReliableOrdered, true);
+			SendResult result = NetworkPeer.TrySendMessage(OperationType.Request, new AuthenticationRequest(loginDetails.LoginString, loginDetails.Password), DeliveryMethod.ReliableOrdered, true);
 
 			//We don't need the login object anymore
 			Destroy(loginDetails as UnityEngine.Object);

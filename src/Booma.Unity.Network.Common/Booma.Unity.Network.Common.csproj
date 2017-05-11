@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRequestSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestGenerator.cs" />
   </ItemGroup>
