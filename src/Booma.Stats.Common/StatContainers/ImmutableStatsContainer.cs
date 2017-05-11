@@ -20,14 +20,26 @@ namespace Booma.Stats.Common
 		/// </summary>
 		protected class ImmutableStatsContainerDefaultStatProvider : IStatProvider<TStatType>
 		{
-			public TStatType StatType { get; }
+			/// <summary>
+			/// Wrapped <see cref="KeyValuePair{TKey,TValue}"/> that contains the values provided through the
+			/// <see cref="IStatProvider{TStatType}"/> interface.
+			/// </summary>
+			private KeyValuePair<TStatType, int> internalManagedKeyValuePair { get; }
 
-			public int Value { get; }
+			/// <inheritdoc />
+			public TStatType StatType => internalManagedKeyValuePair.Key;
 
-			public ImmutableStatsContainerDefaultStatProvider(TStatType statType, int val)
+			/// <inheritdoc />
+			public int Value => internalManagedKeyValuePair.Value;
+
+			/// <summary>
+			/// Creates a new wrapper around the <see cref="KeyValuePair{TKey,TValue}"/> to fit the
+			/// <see cref="IStatProvider{TStatType}"/> interface.
+			/// </summary>
+			/// <param name="kvp">The <see cref="KeyValuePair{TKey,TValue}"/> to wrap around.</param>
+			public ImmutableStatsContainerDefaultStatProvider(KeyValuePair<TStatType, int> kvp)
 			{
-				StatType = statType;
-				Value = val;
+				internalManagedKeyValuePair = kvp;
 			}
 		}
 
@@ -54,18 +66,8 @@ namespace Booma.Stats.Common
 			_statsMap = new IStatProvider<TStatType>[values.Count];
 
 			//Set each keypair to be in the flat cache-quick array of nullable ints
-			foreach (var kvp in values.AsEnumerable())
-			{
-				try
-				{
-					//map to the enum int codes
-					_statsMap[ConvertStatToKey(kvp.Key)] = new ImmutableStatsContainerDefaultStatProvider(kvp.Key, kvp.Value);
-				}
-				catch(IndexOutOfRangeException e)
-				{
-					throw new IndexOutOfRangeException($"Index {kvp.Key} value: {ConvertStatToKey(kvp.Key)} current array size: {_statsMap.Count()} failed", e);
-				}
-			}
+			//map to the enum int codes
+			values.ToList().ForEach(kvp => _statsMap[ConvertStatToKey(kvp.Key)] = new ImmutableStatsContainerDefaultStatProvider(kvp));
 		}
 
 		/// <summary>
