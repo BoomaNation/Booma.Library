@@ -15,6 +15,26 @@ To help understand the relationships between the various csprojs it may be helpf
 
 It is not directly embed here because it is VERY LARGE but is only about 700kb. You can view it [here](http://i.imgur.com/gFSK3Uc.png).
 
+## Information
+
+Booma is a big project. It references some internal tools such as: Sceneject, GladBehaviour, GladNet and sometimes GladLive. These libraries/tools/frameworks may be confusing because they were written quickly to target and solve critical problems without regard for general usability sometimes. This section will aim to clarify and explain some of those libraries' and tools' use within Booma and other parts of Booma that may be complex but don't depend on external libraries.
+
+### Packets/Payloads
+
+The Booma project uses a traditional networking message scheme that sends packets with both a header and a payload. These headers containing message type information and an operation code in the header. The three main message types that a user can send are:
+
+1. **Response message** is a message that can only be sent from a server to a listening peer.
+2. **Event message** is a message that can only be sent from a server to a listening peer.
+3. **Request message** is a message that can only be sent from a client to a listening server.
+
+Events are typically used when the message was unsolicitied by a client. Responses are typically used to respond to requests but the GladNet2 API does not offer a system for continuations or async handling. Therefore the context for a request and response will not be the same. Though this may change in the future. There is **NO** enforcement by GladNet that requires you to follow these semantics. It is just suggested.
+
+To understand how the payloads of these messages (packets) are defined you do not need to dig into GladNet2, which is the networking API used, but instead look only at the [DTOs (Data Transfer Object)](https://martinfowler.com/eaaCatalog/dataTransferObject.html) that make up the payloads.
+
+To get an understanding of what payloads there are you should refer to their [enumeration of operation codes](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.Payloads.Common/Enums/BoomaPayloadMessageType.cs). For this example we will analyze GetGameServerListResponse. It may be confusing as to why the field is initialized to another enumeration value but that can be ignored for now.
+
+TODO: Finish the rest of this explaination on how payload/networking is handled
+
 ## Deprecated Libraries
 
 This section describes projects or libraries which are now deprecated, removed from the main project and/or have been renamed.
