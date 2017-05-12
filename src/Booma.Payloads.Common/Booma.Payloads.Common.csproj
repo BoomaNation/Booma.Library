@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\BoomaPayloadAttribute.cs" />
-    <Compile Include="Enums\BoomaNetworkMessageType.cs" />
+    <Compile Include="Enums\BoomaPayloadMessageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IResponseStatus.cs" />
   </ItemGroup>
