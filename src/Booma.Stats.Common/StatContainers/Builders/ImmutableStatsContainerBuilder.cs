@@ -59,10 +59,7 @@ namespace Booma.Stats.Common
 			/// <returns>The value that was set.</returns>
 			public int this[TStatType stat]
 			{
-				set
-				{
-					BuilderDictionary[stat] = value;
-				}
+				set => BuilderDictionary[stat] = value;
 			}
 
 			/// <summary>
@@ -75,6 +72,7 @@ namespace Booma.Stats.Common
 			/// </summary>
 			public ImmutableStatsContainerBuilderCarryObject()
 			{
+				//TODO: Better way to get initial size
 				BuilderDictionary = new Dictionary<TStatType, int>(10);
 			}
 		}

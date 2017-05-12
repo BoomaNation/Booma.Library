@@ -18,6 +18,7 @@ namespace Booma.Stats.Common
 		/// </summary>
 		private class LinearResistanceMultiplierProvider : IMultiplierProvider
 		{
+			/// <inheritdoc />
 			public float Multiplier { get; }
 
 			/// <summary>
@@ -51,6 +52,8 @@ namespace Booma.Stats.Common
 		/// <param name="resistContainer">Resistance container that has the resist values.</param>
 		public LinearResistanceMultiplierStrategy(IStatsContainer<ResistanceStatType> resistContainer)
 		{
+			if (resistContainer == null) throw new ArgumentNullException(nameof(resistContainer));
+
 			resistanceContainer = resistContainer;
 		}
 
