@@ -27,13 +27,45 @@ The Booma project uses a traditional networking message scheme that sends packet
 2. **Event message** is a message that can only be sent from a server to a listening peer.
 3. **Request message** is a message that can only be sent from a client to a listening server.
 
-Events are typically used when the message was unsolicitied by a client. Responses are typically used to respond to requests but the GladNet2 API does not offer a system for continuations or async handling. Therefore the context for a request and response will not be the same. Though this may change in the future. There is **NO** enforcement by GladNet that requires you to follow these semantics. It is just suggested.
+Events are typically used when the message was unsolicitied by a client. Responses are typically used to respond to requests but the GladNet2 API does not offer a system for continuations or async handling. Therefore the context for a request and response will not be the same. Though this may change in the future. There is **NO** enforcement by GladNet that requires you to follow these semantics. It is just suggested. You also **DO NOT** need to manually create and send these messages. They are handled under the hood.
 
 To understand how the payloads of these messages (packets) are defined you do not need to dig into GladNet2, which is the networking API used, but instead look only at the [DTOs (Data Transfer Object)](https://martinfowler.com/eaaCatalog/dataTransferObject.html) that make up the payloads.
 
-To get an understanding of what payloads there are you should refer to their [enumeration of operation codes](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.Payloads.Common/Enums/BoomaPayloadMessageType.cs). For this example we will analyze GetGameServerListResponse. It may be confusing as to why the field is initialized to another enumeration value but that can be ignored for now.
+To get an understanding of what payloads there are you should refer to their [enumeration of operation codes](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.Payloads.Common/Enums/BoomaPayloadMessageType.cs). For this example we will analyze [GetGameServerListResponse](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.Payloads.ServerSelection/Payloads/GameServerListResponsePayload.cs). It may be confusing as to why the field is initialized to another enumeration value but that can be ignored for now.
 
-TODO: Finish the rest of this explaination on how payload/networking is handled
+**Breakdown:**
+
+The class attribute [GladNetSerializationContract] is required on the class to indicate to GladNet2 that this is a DTO that can and should be made serializable.
+
+The class attribute [BoomaPayload(BoomaPayloadMessageType.GetGameServerListResponse)] is required on the class to tell GladNet2 that it should use the BoomaPayloadMessageType.GetGameServerListResponse value, which can be found in the [enumeration of operation codes](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.Payloads.Common/Enums/BoomaPayloadMessageType.cs), in the header as the message's opcode. This allows you to send DTOs without even specifying the operation code manually.
+
+The base type PacketPayload must be inherited from to enable network serialization for the type. The reason for this is GladNet2 sends the DTOs polymorphically so all of them must be a PacketPayload.
+
+The field or property attribute [GladNetMember(...)] is required to markup a classes' fields or properties to indicate to the serializer that the contents of this field or property should be serialized. If you want to send a particular piece of data you must mark it with this attribute. Otherwise no data, or null, will be sent in its place. See the example below which marks a ResponseCode property of type GameServerListResponseCode enabled for serialization. The GladNetDataIndex parameter for the attribute should be unique for the current fields/properties in that level of the Type heirarchy. It controls the order of serialization and deserialization used.
+
+```
+/// <summary>
+/// Indicates the status of the response.
+/// </summary>
+[GladNetMember(GladNetDataIndex.Index1)]
+public GameServerListResponseCode ResponseCode { get; private set; }
+```
+
+All serializable payloads should contain a default parameterless ctor like below. It can be either private or public.
+
+```
+/// <summary>
+/// Creates a new payload for the <see cref="BoomaPayloadMessageType.GetGameServerListResponse"/> packet.
+/// </summary>
+public GameServerListResponsePayload()
+{
+
+}
+```
+
+### Network Peers and Message Sending
+
+TODO: Add this section
 
 ## Deprecated Libraries
 
