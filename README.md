@@ -65,7 +65,7 @@ public GameServerListResponsePayload()
 
 ### Network Peers and Message Sending
 
-TODO: Document NetPeers
+Network Peers are simple, but complex under the hood, and they offer an interface to the network to send messages. An example of a complete network peer can be seen in the [AuthenticationWebClient](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.ServerSelection.Client/Clients/AuthenticationWebClient.cs) which registers the accepted payloads, registers an HTTP web middleware and not much else. The simplicity of the network peer/client was by design in GladNet2. The ability to create peers, point them to service endpoints and send messages through them is made incredibly easy with this system. Most importantly these peers all implement the **INetPeer** interface which allows you to send messages through them. Sending network messages through peers is one of the two critial points of networking in the Booma project.
 
 Sending network messages does not require creating a ResponseMessage, EventMessage or RequestMessage. Sending messages involves simply sending a PacketPayload through an interface such as [INetPeer's Extension Methods](https://github.com/HelloKitty/GladNet2/blob/master/src/GladNet.Engine.Common/General/Extensions/Peer/INetPeerExtensions.cs).
 
