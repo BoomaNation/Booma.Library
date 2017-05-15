@@ -67,20 +67,20 @@ public GameServerListResponsePayload()
 
 TODO: Document NetPeers
 
-Sending network messages does not require creating a ResponseMessage, EventMessage or RequestMessage. Sending messages involves simply sending a PacketPayload through an interface such as [INetPeer's Extension Methods](https://github.com/HelloKitty/GladNet2/blob/ed77a3f54fa9a1519f14e41e95cb8ceec6a0a369/src/GladNet.Engine.Common/General/Extensions/Peer/INetPeerExtensions.cs).
+Sending network messages does not require creating a ResponseMessage, EventMessage or RequestMessage. Sending messages involves simply sending a PacketPayload through an interface such as [INetPeer's Extension Methods](https://github.com/HelloKitty/GladNet2/blob/master/src/GladNet.Engine.Common/General/Extensions/Peer/INetPeerExtensions.cs).
 
-For example, to understand how the sending of a payload through a network peer works consult the [LoginRequestGenerator](https://github.com/BoomaNation/Booma.Library/blob/7f8f1624b063d9e4f55651cf3948f4d5c5073c04/src/Booma.ServerSelection.Client/RequestGenerators/LoginRequestGenerator.cs) which shows:
+For example, to understand how the sending of a payload through a network peer works consult the [LoginRequestGenerator](https://github.com/BoomaNation/Booma.Library/blob/master/src/Booma.ServerSelection.Client/RequestGenerators/GameServerListRequestGenerator.cs) which shows:
 
 ```
-NetworkPeer.TrySendMessage(OperationType.Request, new AuthenticationRequest(loginDetails.LoginString, loginDetails.Password), DeliveryMethod.ReliableOrdered, true);
+NetworkPeer.TrySendMessage(OperationType.Request, new GameServerListRequestPayload(), DeliveryMethod.ReliableOrdered, true);
 ```
 
-This sends a RequestMessage with the operation code specific by the AuthenticationRequest which is a special GladNet payload. See the Payload section to understand how operation codes are tied to specific payload Types. It sends it with an [ordered reliable](https://github.com/HelloKitty/GladNet2/blob/master/src/GladNet.Common/Network/Parameters/DeliveryMethod.cs) method. Consult the linked GladNet2 documentation to explain what each means. Lastly it's sent encrypted. This is unimplemented as of this writing, that is not all GladNet2 implementations support encryption toggling, but it works partly for the HTTP implementation and unsued implementations such as PhotonServer.
+This sends a RequestMessage with the operation code specific by the GameServerListRequestPayload. See the Payload section to understand how operation codes are tied to specific payload Types. It sends it with an [ordered reliable](https://github.com/HelloKitty/GladNet2/blob/master/src/GladNet.Common/Network/Parameters/DeliveryMethod.cs) method. Consult the linked GladNet2 documentation to explain what each means. Lastly it's sent encrypted. This is unimplemented as of this writing, that is not all GladNet2 implementations support encryption toggling, but it works partly for the HTTP implementation and unsued implementations such as PhotonServer.
 
 This though was through the least specific interface INetPeer and through extension methods for this interface. More specific interfaces offer a cleaner way to send messages like so:
 
 ```
-Peer.SendRequest(new AuthenticationRequest(loginDetails.LoginString, loginDetails.Password), DeliveryMethod.ReliableOrdered, true);
+Peer.SendRequest(new GameServerListRequestPayload(), DeliveryMethod.ReliableOrdered, true);
 ```
 
 ## Deprecated Libraries
