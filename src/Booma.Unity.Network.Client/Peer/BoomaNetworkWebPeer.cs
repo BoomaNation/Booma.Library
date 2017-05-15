@@ -22,10 +22,10 @@ namespace Booma.Client.Network.Common
 		where TInheritingType : BoomaNetworkWebPeer<TInheritingType>
 	{
 		/// <summary>
-		/// The base end-point of the authentication URL.
+		/// The base end-point of the service.
 		/// </summary>
 		[SerializeField]
-		[Tooltip("The base URL of the Authentication service.", order = 1)]
+		[Tooltip("The base URL of the service.", order = 1)]
 		private string BaseUrl;
 
 		//INetPeer
