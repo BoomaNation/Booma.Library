@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Booma.Entity.Character;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace Booma.Entity.Tests
 {

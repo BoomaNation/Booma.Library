@@ -1,0 +1,1 @@
+msbuild Booma.Library.sln /p:Configuration=Release
