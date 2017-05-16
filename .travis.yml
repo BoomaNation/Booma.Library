@@ -1,7 +1,7 @@
 language: csharp
 solution: Booma.Library.sln
 install:
-  - nuget restore Booma.Library.sln -NoCache -NonInteractive -ConfigFile Nuget.config
+  - nuget restore Booma.Library.sln -ConfigFile NuGet.config
   - nuget install NUnit.Runners -Version 3.6.1 -OutputDirectory testrunner
 script:
   - ./build.sh
