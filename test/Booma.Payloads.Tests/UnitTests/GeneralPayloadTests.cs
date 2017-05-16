@@ -32,7 +32,7 @@ namespace Booma.Payload.Common.Tests
 
 			foreach (Type t in GetPacketPayloadTypes())
 			{
-				if (t.GetCustomAttribute<BoomaPayloadAttribute>(true) == null)
+				if (t.GetCustomAttribute<BoomaPayloadAttribute>(false) == null)
 				{
 					Assert.Fail($"***ERROR***: {t?.FullName} doesn't implement the {nameof(BoomaPayloadAttribute)}");
 				}
@@ -79,7 +79,7 @@ namespace Booma.Payload.Common.Tests
 			List<Type> failedTypes = new List<Type>();
 
 			IEnumerable<Tuple<Type, BoomaPayloadAttribute>> tuples = GetPacketPayloadTypes()
-				.Select(x => new Tuple<Type, BoomaPayloadAttribute>(x, x.GetCustomAttribute<BoomaPayloadAttribute>(true)))
+				.Select(x => new Tuple<Type, BoomaPayloadAttribute>(x, x.GetCustomAttribute<BoomaPayloadAttribute>(false)))
 				.Where(x => x != null);
 
 			foreach (var tup in tuples)
@@ -100,7 +100,7 @@ namespace Booma.Payload.Common.Tests
 
 		protected IEnumerable<Type> GetPacketPayloadTypes()
 		{
-			return AssemblyToSearch.GetTypes().Where(t => typeof(PacketPayload).IsAssignableFrom(t));
+			return AssemblyToSearch.GetTypes().Where(t => typeof(PacketPayload).IsAssignableFrom(t) && t.BaseType == typeof(PacketPayload));
 		}
 	}
 }
