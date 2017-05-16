@@ -1,0 +1,1 @@
+xbuild /p:Configuration=Release Booma.Library.sln
