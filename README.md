@@ -105,6 +105,12 @@ This section describes projects or libraries which are now deprecated, removed f
 
 * Booma.Instance.Server.Handlers -> **Booma.Instance.Handlers.Server**
 
+## Tests
+
+**Travis Linux Mono**: [![Build Status](https://travis-ci.org/BoomaNation/Booma.Library.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Library)
+
+**Appveyor Windows .NET**: [![Build status](https://ci.appveyor.com/api/projects/status/wrx2xe3w2gf8puat?svg=true)](https://ci.appveyor.com/project/HelloKitty/booma-library)
+
 
 ## Licensing
 
