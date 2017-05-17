@@ -10,5 +10,5 @@ result3=$?
 mono ./testrunner/NUnit.ConsoleRunner.3.6.1/tools/nunit3-console.exe ./test/Booma.Stats.Common.Tests/bin/Release/Booma.Stats.Common.Tests.dll
 result4=$?
 
-(( $result1 | $result2 | $result3 | $result4 ))
+! (( $result1 | $result2 | $result3 | $result4 ))
 exit $?
