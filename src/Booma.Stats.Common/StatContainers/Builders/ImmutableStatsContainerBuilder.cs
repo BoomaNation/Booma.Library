@@ -59,7 +59,8 @@ namespace Booma.Stats.Common
 			/// <returns>The value that was set.</returns>
 			public int this[TStatType stat]
 			{
-				set => BuilderDictionary[stat] = value;
+				//Don't use expression body set due to appveyor failure
+				set { BuilderDictionary[stat] = value; }
 			}
 
 			/// <summary>
