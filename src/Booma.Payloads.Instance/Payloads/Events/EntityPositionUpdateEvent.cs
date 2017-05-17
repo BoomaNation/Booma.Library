@@ -13,7 +13,7 @@ namespace Booma.Payloads.Instance
 	/// An event that contains information about a position update for an entity.
 	/// </summary>
 	[GladNetSerializationContract]
-	//[BoomaPayload(BoomaPayloadMessageType.EntityPositionUpdateEvent)]
+	[BoomaPayload(BoomaPayloadMessageType.EntityPositionUpdateEvent)]
 	public class EntityPositionUpdateEvent : PacketPayload
 	{
 		/// <summary>
