@@ -9,7 +9,7 @@ using Booma.ServerSelection.Common;
 namespace Booma.GameServerListService.MigrationsGenerator.Migrations
 {
     [DbContext(typeof(GameServerListDbContext))]
-    [Migration("20170518051939_Initial")]
+    [Migration("20170518074456_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,11 @@ namespace Booma.GameServerListService.MigrationsGenerator.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnName("address");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnName("name");
 
                     b.Property<int>("Region")

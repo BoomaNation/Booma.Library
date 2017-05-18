@@ -14,8 +14,8 @@ namespace Booma.GameServerListService.MigrationsGenerator.Migrations
                 {
                     id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
-                    address = table.Column<string>(nullable: true),
-                    name = table.Column<string>(nullable: true),
+                    address = table.Column<string>(nullable: false),
+                    name = table.Column<string>(nullable: false),
                     region = table.Column<int>(nullable: false),
                     port = table.Column<int>(nullable: false),
                     status_flags = table.Column<int>(nullable: false)

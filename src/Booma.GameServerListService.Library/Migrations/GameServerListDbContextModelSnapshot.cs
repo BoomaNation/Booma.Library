@@ -23,9 +23,11 @@ namespace Booma.GameServerListService.MigrationsGenerator.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnName("address");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnName("name");
 
                     b.Property<int>("Region")
