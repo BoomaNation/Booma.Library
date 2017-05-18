@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.GameServerListService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booma.GameServerListService.MigrationsGenerator", "src\Booma.GameServerListService.MigrationsGenerator\Booma.GameServerListService.MigrationsGenerator.csproj", "{FCC10DC2-CD98-473F-BB69-16F6E2EE9EC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build.All", "src\Build.All\Build.All.csproj", "{2F3D5367-487F-4E16-937B-8B140FC08033}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -271,6 +273,10 @@ Global
 		{FCC10DC2-CD98-473F-BB69-16F6E2EE9EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCC10DC2-CD98-473F-BB69-16F6E2EE9EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCC10DC2-CD98-473F-BB69-16F6E2EE9EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F3D5367-487F-4E16-937B-8B140FC08033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F3D5367-487F-4E16-937B-8B140FC08033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F3D5367-487F-4E16-937B-8B140FC08033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F3D5367-487F-4E16-937B-8B140FC08033}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -325,5 +331,6 @@ Global
 		{4DD3DBF3-D460-4363-A487-2BB5A21D26AD} = {20A84B98-8D50-47B8-A42A-2DE10B4F2153}
 		{9FD7F7BB-C354-4540-AE17-B82F37EB9198} = {20A84B98-8D50-47B8-A42A-2DE10B4F2153}
 		{FCC10DC2-CD98-473F-BB69-16F6E2EE9EC2} = {20A84B98-8D50-47B8-A42A-2DE10B4F2153}
+		{2F3D5367-487F-4E16-937B-8B140FC08033} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
 	EndGlobalSection
 EndGlobal
