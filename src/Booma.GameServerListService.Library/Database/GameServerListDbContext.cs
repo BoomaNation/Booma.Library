@@ -24,15 +24,6 @@ namespace Booma.GameServerList.Lib
 		{
 			if(GameServers == null)
 				throw new InvalidOperationException($"Internally managed {nameof(GameServers)} {nameof(DbSet<GameServerDetailsModel>)} is null. ASP should have initialized it.");
-
-			//Uncomment for test
-			if (!GameServers.Any())
-			{
-				GameServers.Add(new GameServerDetailsModel() { Address = IPAddress.Any.ToString(), Name = "Vega", Region = ServerRegion.NA, ServerPort = 55, Status = ServerStatus.Online | ServerStatus.Public });
-				GameServers.Add(new GameServerDetailsModel() { Address = IPAddress.Any.ToString(), Name = "Fodra", Region = ServerRegion.JP, ServerPort = 55, Status = ServerStatus.Online | ServerStatus.Public });
-				GameServers.Add(new GameServerDetailsModel() { Address = IPAddress.Any.ToString(), Name = "Ephinea", Region = ServerRegion.EU, ServerPort = 55, Status = ServerStatus.Online | ServerStatus.Public });
-				SaveChanges();
-			}
 		}
 	}
 }

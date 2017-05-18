@@ -292,9 +292,9 @@
     <Compile Include="Controllers\GameListRequestController.cs" />
     <Compile Include="Database\GameServerListDbContext.cs" />
     <Compile Include="Enums\ServerStatus.cs" />
-    <Compile Include="Migrations\20160817065900_InitialGameServerDetailsMigration.cs" />
-    <Compile Include="Migrations\20160817065900_InitialGameServerDetailsMigration.Designer.cs">
-      <DependentUpon>20160817065900_InitialGameServerDetailsMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170518025159_Initial.cs" />
+    <Compile Include="Migrations\20170518025159_Initial.Designer.cs">
+      <DependentUpon>20170518025159_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GameServerListDbContextModelSnapshot.cs" />
     <Compile Include="Models\GameServerDetailsModel.cs" />
