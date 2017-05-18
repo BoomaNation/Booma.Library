@@ -9,7 +9,7 @@ using Booma.ServerSelection.Common;
 namespace Booma.GameServerListService.MigrationsGenerator.Migrations
 {
     [DbContext(typeof(GameServerListDbContext))]
-    [Migration("20170518025159_Initial")]
+    [Migration("20170518051939_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
