@@ -107,13 +107,16 @@ This section describes projects or libraries which are now deprecated, removed f
 
 ## Tests
 
-**Travis Linux Mono**: [![Build Status](https://travis-ci.org/BoomaNation/Booma.Library.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Library)
+Tests are preformed on release configuration on TravisCI's Linux Mono container and Appveyor's Windows .NET enviroment.
 
-**Appveyor Windows .NET**: [![Build status](https://ci.appveyor.com/api/projects/status/wrx2xe3w2gf8puat?svg=true)](https://ci.appveyor.com/project/HelloKitty/booma-library)
+|    | Linux Mono Release | Windows .NET Release |
+|:---|----------------:|------------------:|
+|**master**| [![Build Status](https://travis-ci.org/BoomaNation/Booma.Library.svg?branch=master)](https://travis-ci.org/BoomaNation/Booma.Library) | [![Build status](https://ci.appveyor.com/api/projects/status/wrx2xe3w2gf8puat/branch/master?svg=true)](https://ci.appveyor.com/project/HelloKitty/booma-library/branch/master) |
+|**dev**| [![Build Status](https://travis-ci.org/BoomaNation/Booma.Library.svg?branch=dev)](https://travis-ci.org/BoomaNation/Booma.Library) | [![Build status](https://ci.appveyor.com/api/projects/status/wrx2xe3w2gf8puat/branch/dev?svg=true)](https://ci.appveyor.com/project/HelloKitty/booma-library/branch/dev) |
 
 ## Builds
 
-**Myget Nuget**: [![boomanation MyGet Build Status](https://www.myget.org/BuildSource/Badge/boomanation?identifier=f7e83c43-9a76-4659-ac46-6272e15eb108)](https://www.myget.org/)
+**Myget Nuget**: [![boomanation MyGet Build Status](https://www.myget.org/BuildSource/Badge/boomanation?identifier=f7e83c43-9a76-4659-ac46-6272e15eb108)](https://www.myget.org/F/boomanation/api/v3/index.json)
 
 Feed: [https://www.myget.org/F/boomanation/api/v3/index.json](https://www.myget.org/F/boomanation/api/v3/index.json)
 
