@@ -53,6 +53,7 @@
     <Compile Include="Services\IResponseStatus.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Payloads.Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

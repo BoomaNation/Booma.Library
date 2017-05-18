@@ -56,6 +56,7 @@
     <Compile Include="Types\TransientStatType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Stats.Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

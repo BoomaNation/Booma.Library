@@ -129,6 +129,7 @@
     <Compile Include="UnityEvent\NetworkUnityEvent.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Unity.Network.Client.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

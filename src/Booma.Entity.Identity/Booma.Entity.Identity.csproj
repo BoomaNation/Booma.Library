@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Entity.Identity.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

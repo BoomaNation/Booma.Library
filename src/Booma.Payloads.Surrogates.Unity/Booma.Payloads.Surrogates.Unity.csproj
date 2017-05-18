@@ -54,6 +54,7 @@
     <Compile Include="Surrogates\World\Vector3Surrogate.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Payloads.Surrogates.Unity.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

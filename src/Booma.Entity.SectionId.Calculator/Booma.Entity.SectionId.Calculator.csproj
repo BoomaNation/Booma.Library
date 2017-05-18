@@ -52,6 +52,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Entity.SectionId.Calculator.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

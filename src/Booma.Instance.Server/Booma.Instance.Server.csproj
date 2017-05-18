@@ -137,6 +137,7 @@
     <Compile Include="Services\INetworkGuidFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Instance.Server.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

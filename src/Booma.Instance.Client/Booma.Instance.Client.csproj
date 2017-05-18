@@ -160,6 +160,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Instance.Client.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -83,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.ServerSelection.IoCModules.Client.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

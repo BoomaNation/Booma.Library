@@ -49,5 +49,8 @@
       <Name>Booma.Unity.Network.Client</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Booma.Unity.Network.IoCModules.Client.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

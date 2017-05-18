@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>BoomaNation</authors>
+    <owners>HelloKitty and BoomaNation</owners>
+    <projectUrl>https://github.com/BoomaNation/Booma.Library</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/16558426?v=3&s=200</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Booma.Library component.</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Booma Booma.Libary</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>

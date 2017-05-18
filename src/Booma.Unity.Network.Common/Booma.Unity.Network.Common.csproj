@@ -85,6 +85,7 @@
     <Compile Include="RequestGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Booma.Unity.Network.Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

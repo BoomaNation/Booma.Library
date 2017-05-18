@@ -204,5 +204,8 @@
       <Name>Booma.Unity.Network.Server</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Build.All.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

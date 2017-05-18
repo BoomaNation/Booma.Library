@@ -318,6 +318,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Booma.GameServerListService.Library.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
