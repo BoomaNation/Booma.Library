@@ -216,6 +216,10 @@
     <Compile Include="Migrations\20170518051939_Initial.designer.cs">
       <DependentUpon>20170518051939_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170518052804_NonNullableStrings.cs" />
+    <Compile Include="Migrations\20170518052804_NonNullableStrings.designer.cs">
+      <DependentUpon>20170518052804_NonNullableStrings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GameServerListDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

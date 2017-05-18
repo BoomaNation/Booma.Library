@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Booma.ServerSelection.Common;
+using Microsoft.EntityFrameworkCore.Query.Expressions;
 
 namespace Booma.GameServerList.Lib
 {
@@ -23,9 +24,11 @@ namespace Booma.GameServerList.Lib
 		/// Name of the server (Ex. Vegas)
 		/// </summary>
 		[Column("name")]
+		[Required(AllowEmptyStrings = false)]
 		public string Name { get; set; }
 
 		[Column("address")]
+		[Required(AllowEmptyStrings = false)]
 		public string Address { get; set; }
 
 		/// <summary>

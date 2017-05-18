@@ -9,9 +9,10 @@ using Booma.ServerSelection.Common;
 namespace Booma.GameServerListService.MigrationsGenerator.Migrations
 {
     [DbContext(typeof(GameServerListDbContext))]
-    partial class GameServerListDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170518052804_NonNullableStrings")]
+    partial class NonNullableStrings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
