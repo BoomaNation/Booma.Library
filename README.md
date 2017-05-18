@@ -111,6 +111,11 @@ This section describes projects or libraries which are now deprecated, removed f
 
 **Appveyor Windows .NET**: [![Build status](https://ci.appveyor.com/api/projects/status/wrx2xe3w2gf8puat?svg=true)](https://ci.appveyor.com/project/HelloKitty/booma-library)
 
+## Builds
+
+**Myget Nuget**: [![boomanation MyGet Build Status](https://www.myget.org/BuildSource/Badge/boomanation?identifier=f7e83c43-9a76-4659-ac46-6272e15eb108)](https://www.myget.org/)
+
+Feed: [https://www.myget.org/F/boomanation/api/v3/index.json](https://www.myget.org/F/boomanation/api/v3/index.json)
 
 ## Licensing
 
