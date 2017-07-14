@@ -72,6 +72,7 @@ namespace Booma.GameServerList.Lib
 		[HttpGet]
 		public async Task<IActionResult> Get()
 		{
+
 			IEnumerable<GameServerDetailsModel> details = await GameserverDetailsRepoService.GetAllPublic();
 
 			if(details == null)

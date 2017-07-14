@@ -104,7 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\AuthenticationWebClient.cs" />
     <Compile Include="Clients\GameServerListWebClient.cs" />
     <Compile Include="Login\ILoginDetails.cs" />
     <Compile Include="Login\LoginDetailsSceneData.cs" />

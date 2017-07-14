@@ -78,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\GameServerListHandler\GameServerListResponseHandler.cs" />
-    <Compile Include="Handlers\LoginNetworkHandlers\LoginResponseHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +109,9 @@
   <ItemGroup>
     <None Include="Booma.ServerSelection.Handlers.Client.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\LoginNetworkHandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

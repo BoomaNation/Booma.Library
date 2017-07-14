@@ -79,7 +79,6 @@
   <ItemGroup>
     <Compile Include="IoC\GameServerListResponseHandlerServiceRegisteration.cs" />
     <Compile Include="IoC\LoginDetailsRegisteration.cs" />
-    <Compile Include="IoC\LoginNetworkResponseHandlerServiceRegisteration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
