@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}</ProjectGuid>
+    <ProjectGuid>{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GaiaOnline.Game.Client</RootNamespace>
-    <AssemblyName>GaiaOnline.Game.Client</AssemblyName>
+    <RootNamespace>GaiaOnline.Game.Common</RootNamespace>
+    <AssemblyName>GaiaOnline.Game.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,19 +43,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Direction2DMotor.cs" />
-    <Compile Include="GaiaAvatarStateController.cs" />
-    <Compile Include="GaiaCharacterInputDispatcher.cs" />
-    <Compile Include="Listeners\IDirectionChangeListener.cs" />
-    <Compile Include="LegsAnimation.cs" />
-    <Compile Include="Listeners\IMovementChangeListener.cs" />
+    <Compile Include="Extensions\Vector3Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj">
-      <Project>{eebd3ab3-afb6-478c-8b18-42d5ea5e2251}</Project>
-      <Name>GaiaOnline.Game.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
