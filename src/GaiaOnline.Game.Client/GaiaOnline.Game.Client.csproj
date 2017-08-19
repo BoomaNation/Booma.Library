@@ -47,7 +47,7 @@
     <Compile Include="GaiaAvatarStateController.cs" />
     <Compile Include="GaiaCharacterInputDispatcher.cs" />
     <Compile Include="Listeners\IDirectionChangeListener.cs" />
-    <Compile Include="LegsAnimation.cs" />
+    <Compile Include="LegsMotionAnimator.cs" />
     <Compile Include="Listeners\IMovementChangeListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

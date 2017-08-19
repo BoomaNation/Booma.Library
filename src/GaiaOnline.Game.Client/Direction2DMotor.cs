@@ -11,16 +11,16 @@ namespace GaiaOnline
 	public sealed class Direction2DMotor : MonoBehaviour, IDirectionChangeListener
 	{
 		/// <summary>
-		/// The cached direction.
-		/// </summary>
-		private Vector2 MovementDirection { get; set; }
-
-		/// <summary>
 		/// The movement speed the motor shall move with.
 		/// </summary>
 		[SerializeField]
 		[Tooltip("The movement speed the motor should move with.")]
 		private float MovementSpeed;
+
+		/// <summary>
+		/// The cached direction.
+		/// </summary>
+		private Vector2 MovementDirection { get; set; }
 
 		public void OnDirectionChanged(Vector2 direction)
 		{
