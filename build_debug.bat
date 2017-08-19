@@ -4,8 +4,9 @@ dotnet publish src/GaiaOnline.Game.Common/GaiaOnline.Game.Common.csproj -c debug
 dotnet publish src/GaiaOnline.Game.Network.Client/GaiaOnline.Game.Network.Client.csproj -c debug
 
 if not exist "build" mkdir build
-xcopy src\GaiaOnline.Game.Client\bin\debug\net46\publish build /Y /EXCLUDE:BuildExclude.txt
-xcopy src\GaiaOnline.Game.Common\bin\debug\net46\publish build /Y /EXCLUDE:BuildExclude.txt
-xcopy src\GaiaOnline.Game.Network.Client\bin\debug\net46\publish build /Y /EXCLUDE:BuildExclude.txt
+if not exist "build\debug" mkdir build\debug
+xcopy src\GaiaOnline.Game.Client\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt
+xcopy src\GaiaOnline.Game.Common\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt
+xcopy src\GaiaOnline.Game.Network.Client\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt
 
 PAUSE

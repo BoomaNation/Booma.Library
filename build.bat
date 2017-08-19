@@ -4,8 +4,9 @@ dotnet publish src/GaiaOnline.Game.Common/GaiaOnline.Game.Common.csproj -c relea
 dotnet publish src/GaiaOnline.Game.Network.Client/GaiaOnline.Game.Network.Client.csproj -c release
 
 if not exist "build" mkdir build
-xcopy src\GaiaOnline.Game.Client\bin\Release\net46\publish build /Y /EXCLUDE:BuildExclude.txt
-xcopy src\GaiaOnline.Game.Common\bin\Release\net46\publish build /Y /EXCLUDE:BuildExclude.txt
-xcopy src\GaiaOnline.Game.Network.Client\bin\Release\net46\publish build /Y /EXCLUDE:BuildExclude.txt
+if not exist "build\release" mkdir build\release
+xcopy src\GaiaOnline.Game.Client\bin\Release\net46\publish build\release /Y /EXCLUDE:BuildExclude.txt
+xcopy src\GaiaOnline.Game.Common\bin\Release\net46\publish build\release /Y /EXCLUDE:BuildExclude.txt
+xcopy src\GaiaOnline.Game.Network.Client\bin\Release\net46\publish build\release /Y /EXCLUDE:BuildExclude.txt
 
 PAUSE
