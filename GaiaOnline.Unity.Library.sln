@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Client", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
 		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{1EBDE396-D132-4C66-BD97-F363E44FE351} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
 	EndGlobalSection
 EndGlobal
