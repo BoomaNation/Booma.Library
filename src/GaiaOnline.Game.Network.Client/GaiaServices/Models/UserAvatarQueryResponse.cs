@@ -23,10 +23,7 @@ namespace Assets.Scripts
 
 		//TODO: Implement status code checking
 		[XmlIgnore]
-		public bool isRequestSuccessful
-		{
-			get { throw new NotImplementedException(); }
-		}
+		public bool isRequestSuccessful => throw new NotImplementedException();
 
 		[XmlAttribute("avatarPath")]
 		public string AvatarRelativeUrlPath { get; set; } //must be public setter for the XmlSerializer. May switch to DataContract instead.
@@ -46,6 +43,7 @@ namespace Assets.Scripts
 			UserId = userId;
 		}
 
+		//TODO: Can we make this protected? Or will XML cry?
 		public UserAvatarQueryResponse()
 		{
 
