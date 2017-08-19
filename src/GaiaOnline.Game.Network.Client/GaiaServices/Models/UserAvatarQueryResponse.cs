@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using JetBrains.Annotations;
 
-namespace Assets.Scripts
+namespace GaiaOnline
 {
 	//TODO: They use different encoding for XML than the default XmlSerializer
 	//profiles?mode=lookup&avatar_username=

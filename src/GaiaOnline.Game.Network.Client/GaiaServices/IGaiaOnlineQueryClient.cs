@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TypeSafe.Http.Net;
 
-namespace Assets.Scripts
+namespace GaiaOnline
 {
 	//profiles?mode=lookup&avatar_username=
 	/// <summary>

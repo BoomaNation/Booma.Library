@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assets.Scripts;
+using TypeSafe.Http.Net;
 using UnityEngine;
 
-namespace TypeSafe.Http.Net
+namespace GaiaOnline
 {
 	public sealed class UnityTexture2DBodySerializerStrategy : IRequestSerializationStrategy, IResponseDeserializationStrategy, IContentTypeAssociable
 	{

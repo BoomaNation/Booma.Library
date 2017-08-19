@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TypeSafe.Http.Net;
 
-namespace TypeSafe.Http.Net
+namespace GaiaOnline
 {
 	public static class UnityTexture2DSerializationRegisterationExtensions
 	{

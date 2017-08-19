@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace GaiaOnline
 {
 	/// <summary>
 	/// Used in place of a Texture2D. Allowing the Texture2D initialization to
