@@ -15,7 +15,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SceneJect.Metadata" Version="2.0.3" />
+    <PackageReference Include="Unitysync.Async" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj" />
+    <ProjectReference Include="..\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj" />
   </ItemGroup>
 
   <ItemGroup>

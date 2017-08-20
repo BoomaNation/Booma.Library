@@ -31,9 +31,9 @@ namespace GaiaOnline
 		[XmlAttribute("status")]
 		public int ResponseStatusCode { get; set; } //must be public setter for the XmlSerializer. May switch to DataContract instead.
 
-		//TODO: Implement status code checking
+		//Always 200, this is kinda hacky and unsafe but I've not seen any other code used for success
 		[XmlIgnore]
-		public bool isRequestSuccessful => throw new NotImplementedException();
+		public bool isRequestSuccessful => ResponseStatusCode == 200;
 
 		//This could be potentially null or empty if the request failed.
 		/// <summary>
