@@ -14,6 +14,7 @@ You will need:
 
 * Visual Studio 2017
 * Unity2017 with .NET 4.6 enabled
+* Add Nuget feed: https://www.myget.org/F/hellokitty/api/v3/index.json
 
 ## Builds
 
