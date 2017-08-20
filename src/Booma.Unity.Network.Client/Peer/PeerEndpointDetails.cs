@@ -20,21 +20,21 @@ namespace Booma.Client.Network.Common
 		[Tooltip("Either the remote-host's IP or domain name.")]
 		[SerializeField]
 		private string endpointName;
-		public string EndpointName { get { return endpointName; } }
+		public string EndpointName => endpointName;
 
 		/// <summary>
 		/// The endpoint port to connect through with this peer.
 		/// </summary>
 		[SerializeField]
 		private int endpointPort;
-		public int EndpointPort { get { return endpointPort; } }
+		public int EndpointPort => endpointPort;
 
 		/// <summary>
 		/// Application name of the remote service.
 		/// </summary>
 		[SerializeField]
 		private string applicationName;
-		public string ApplicationName { get { return applicationName; } }
+		public string ApplicationName => applicationName;
 
 		/// <summary>
 		/// Computes the full server address for the remote host.

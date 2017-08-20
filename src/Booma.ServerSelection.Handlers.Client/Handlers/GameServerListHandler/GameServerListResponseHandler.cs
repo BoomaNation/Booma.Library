@@ -1,10 +1,10 @@
-﻿using Booma.Client.Network.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Message;
 using Booma.Payloads.ServerSelection;
+using Common.Logging;
 using UnityEngine;
 using SceneJect.Common;
 using UnityEngine.Events;
@@ -12,7 +12,7 @@ using UnityEngine.Events;
 namespace Booma.Client.ServerSelection.Authentication
 {
 	[Injectee]
-	public class GameServerListResponseHandler : ResponsePayloadHandlerComponent<GameServerListWebClient, GameServerListResponsePayload>
+	public class GameServerListResponseHandler
 	{
 		[Serializable]
 		private sealed class GameServerListResponseEvent : UnityEvent<GameServerListResponseCode> { }
@@ -23,6 +23,9 @@ namespace Booma.Client.ServerSelection.Authentication
 		[Inject]
 		private readonly IGameServerDetailsGameObjectFactory detailsFactory;
 
+		[Inject]
+		private readonly ILog Logger;
+
 		/// <summary>
 		/// Unity event invoked when the ship list load fails.
 		/// </summary>
@@ -30,7 +33,8 @@ namespace Booma.Client.ServerSelection.Authentication
 		[Tooltip("Listeners invokved when the shiplist fails.")]
 		private GameServerListResponseEvent OnShipListResponseError;
 
-		protected override void OnIncomingHandlableMessage(IResponseMessage message, GameServerListResponsePayload payload, IMessageParameters parameters, GameServerListWebClient peer)
+		//TODO: Convert to the http client
+		protected void OnIncomingHandlableMessage(IResponseMessage message, GameServerListResponsePayload payload, IMessageParameters parameters)
 		{
 			if(Logger.IsDebugEnabled)
 				Logger.Debug($"Handling response game server list {payload.GameServerDetails.Count()}");

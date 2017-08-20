@@ -1,5 +1,4 @@
-﻿using Booma.Client.Network.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +8,7 @@ using GladNet.Message;
 using Booma.Payloads.Instance;
 using UnityEngine;
 using System.Collections;
+using Booma.Client.Network.Common;
 
 namespace Booma.Instance.Client
 {

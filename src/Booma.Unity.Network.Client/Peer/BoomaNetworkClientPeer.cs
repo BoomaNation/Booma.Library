@@ -28,14 +28,14 @@ namespace Booma.Client.Network.Common
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IResponseMessageHandlerService<TInheritingType> responseHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
+		private readonly IResponseMessageHandlerService<TInheritingType> ResponseMessageHandler; //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Handler service that will deal with dispatching <see cref="EventMessage"/> payloads that are of 
 		/// type <see cref="PacketPayload"/> and will generally have handling logic implemented/abstracted from this peer.
 		/// </summary>
 		[Inject]
-		private IEventMessageHandlerService<TInheritingType> eventHandler { get; set; } //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
+		private readonly IEventMessageHandlerService<TInheritingType> EventMessageHandler; //we have to have a setter, can't use C#6 readonly prop because FasterFlect when using SceneJect will complain that it can't find a setter.
 
 		/// <summary>
 		/// Assets that the generic arg <typeparamref name="TInheritingType"/> is the subtype.
@@ -51,14 +51,14 @@ namespace Booma.Client.Network.Common
 		{
 			//TODO: Phase out easyexception
 			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IEventMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
-			eventHandler.TryProcessMessage(message, null, this as TInheritingType);
+			EventMessageHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 
 		public sealed override void OnReceiveResponse(IResponseMessage message, IMessageParameters parameters)
 		{
 			//TODO: Phase out easyexception
 			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IResponseMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
-			responseHandler.TryProcessMessage(message, null, this as TInheritingType);
+			ResponseMessageHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 	}
 }

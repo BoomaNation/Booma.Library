@@ -45,17 +45,8 @@
     <Reference Include="GladBehaviour.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladBehaviour.Common.1.0.8\lib\net35\GladBehaviour.Common.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.ASP.Client.Lib, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.Lib.1.0.12\lib\net35\GladNet.ASP.Client.Lib.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.ASP.Client.RestSharp, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.1.0.12\lib\net35\GladNet.ASP.Client.RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.ASP.Client.RestSharp.Middleware.Authentication, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.ASP.Client.RestSharp.Middleware.Authentication.1.0.12\lib\net35\GladNet.ASP.Client.RestSharp.Middleware.Authentication.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.2.0.34\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.3.0.7\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Encryption.2.0.34\lib\net35\GladNet.Encryption.dll</HintPath>
@@ -84,8 +75,8 @@
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RestSharp.105.2.3\lib\net35\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.28\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.30\lib\net35\SceneJect.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,12 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\GameServerListWebClient.cs" />
-    <Compile Include="Login\ILoginDetails.cs" />
-    <Compile Include="Login\LoginDetailsSceneData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestGenerators\GameServerListRequestGenerator.cs" />
-    <Compile Include="RequestGenerators\LoginRequestGenerator.cs" />
     <Compile Include="UI\GameServerDetailsDispatcher.cs" />
     <Compile Include="UI\GameServerDetailsGameObjectFactory.cs" />
     <Compile Include="UI\IGameServerDetailsGameObjectFactory.cs" />
@@ -140,5 +126,6 @@
     <None Include="Booma.ServerSelection.Client.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

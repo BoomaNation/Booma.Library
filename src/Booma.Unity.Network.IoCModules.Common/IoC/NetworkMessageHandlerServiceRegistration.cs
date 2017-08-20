@@ -57,7 +57,7 @@ namespace Booma.Unity.Network
 				return
 #endif
 			Resources.FindObjectsOfTypeAll<MonoBehaviour>()
-				.Where(mb => mb.GetType().GetInterfaces().Where(t => typeof(TNetworkHandlerType).IsAssignableFrom(t)).Count() != 0 ) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
+				.Where(mb => mb.GetType().GetInterfaces().Any(t => typeof(TNetworkHandlerType).IsAssignableFrom(t))) //this checks to see if the handler we found is assignable to a potentially less derived interface type. (it's co? or maybe contra? variant)
 				.Cast<IMessageHandler<TPeerType, TNetworkMessageType>>();
 
 #if DEBUG || DEBUG_BUILD || DEBUGBUILD

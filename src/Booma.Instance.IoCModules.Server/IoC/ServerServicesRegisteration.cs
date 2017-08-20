@@ -17,7 +17,7 @@ namespace Booma.Instance.Server
 			NetPeerCollection peerCollection = new NetPeerCollection();
 			ConnectionToPlayerGuidLookupService lookupService = new ConnectionToPlayerGuidLookupService();
 
-			register.Register(entityCollection, RegistrationType.SingleInstance);
+			register.Register(entityCollection, RegistrationType.SingleInstance, null);
 			register.Register(guidFactory, RegistrationType.SingleInstance, typeof(INetworkGuidFactory));
 			register.Register(peerCollection, RegistrationType.SingleInstance, typeof(IReadonlyPeerCollection));
 			register.Register(peerCollection, RegistrationType.SingleInstance, typeof(IPeerCollection));

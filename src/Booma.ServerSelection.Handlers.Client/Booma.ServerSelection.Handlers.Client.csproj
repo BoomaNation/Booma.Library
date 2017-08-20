@@ -42,8 +42,8 @@
     <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
     </Reference>
-    <Reference Include="GladNet.Common, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.2.0.34\lib\net35\GladNet.Common.dll</HintPath>
+    <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Common.3.0.7\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Encryption.2.0.34\lib\net35\GladNet.Encryption.dll</HintPath>
@@ -63,8 +63,8 @@
     <Reference Include="GladNet.Serializer, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Serializer.2.0.34\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.28\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.1.0.30\lib\net35\SceneJect.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,7 +90,7 @@
       <Name>Booma.Payloads.ServerSelection</Name>
     </ProjectReference>
     <ProjectReference Include="..\Booma.ServerSelection.Client\Booma.ServerSelection.Client.csproj">
-      <Project>{1043da13-1507-4583-9b74-2bad6f479567}</Project>
+      <Project>{1043DA13-1507-4583-9B74-2BAD6F479567}</Project>
       <Name>Booma.ServerSelection.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\Booma.ServerSelection.Common\Booma.ServerSelection.Common.csproj">
@@ -110,8 +110,6 @@
     <None Include="Booma.ServerSelection.Handlers.Client.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Handlers\LoginNetworkHandlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
