@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 
 namespace GaiaOnline
 {
+	//TODO: Add HaloLive response interfaces
 	//TODO: They use different encoding for XML than the default XmlSerializer
 	//profiles?mode=lookup&avatar_username=
 	//Example: http://gaiaonline.com/profiles?mode=lookup&avatar_username=lm_a_kitty_cat

@@ -27,7 +27,7 @@ namespace GaiaOnline
 			IAuthenticationService authService = TypeSafeHttpBuilder<IAuthenticationService>.Create()
 				.RegisterDefaultSerializers()
 				.RegisterJsonNetSerializer()
-				.RegisterDotNetHttpClient(GetDeclaredServiceUrl(NetworkServiceType.AuthenticationService))
+				.RegisterDotNetHttpClient(GetDeclaredServiceUrl("AuthenticationService")) //TODO: Centralize the string
 				.Build();
 
 			//TODO: Adjust registeration
