@@ -33,7 +33,7 @@ namespace GaiaOnline
 
 			IGaiaOnlineQueryClient client = TypeSafeHttpBuilder<IGaiaOnlineQueryClient>.Create()
 				.RegisterDotNetHttpClient(@"http://www.gaiaonline.com")
-				.RegisterJsonNetSerializer()
+				.RegisterDotNetXmlSerializer()
 				.Build();
 
 			services.AddSingleton(client);

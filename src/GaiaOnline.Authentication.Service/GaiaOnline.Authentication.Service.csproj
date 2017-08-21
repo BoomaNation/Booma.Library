@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.4" />
     <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.4" />
-    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.4" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.4" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
