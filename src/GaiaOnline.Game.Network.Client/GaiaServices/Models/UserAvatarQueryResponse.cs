@@ -55,7 +55,7 @@ namespace GaiaOnline
 		[XmlAttribute("userId")]
 		public string UserId { get; set; } //must be public setter for the XmlSerializer. May switch to DataContract instead.
 
-		public UserAvatarQueryResponse(int responseStatusCode, string avatarRelativeUrlPath, [NotNull] string userId)
+		public UserAvatarQueryResponse(int responseStatusCode, string avatarRelativeUrlPath, string userId)
 		{
 			if (string.IsNullOrWhiteSpace(avatarRelativeUrlPath)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(avatarRelativeUrlPath));
 			if (string.IsNullOrWhiteSpace(userId)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(userId));

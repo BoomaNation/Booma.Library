@@ -74,7 +74,7 @@ namespace GaiaOnline
 			}
 		}
 
-		private void StartAvatarRendererConfigurationCoroutine([NotNull] Texture2D texture)
+		private void StartAvatarRendererConfigurationCoroutine(Texture2D texture)
 		{
 			if (texture == null) throw new ArgumentNullException(nameof(texture));
 
@@ -83,7 +83,7 @@ namespace GaiaOnline
 			StartCoroutine(SetAvatarForRenderers(texture));
 		}
 
-		private async Task<Texture2D> GetAvatarImage([NotNull] UserAvatarQueryResponse response)
+		private async Task<Texture2D> GetAvatarImage(UserAvatarQueryResponse response)
 		{
 			if (response == null) throw new ArgumentNullException(nameof(response));
 			if (String.IsNullOrWhiteSpace(response.AvatarRelativeUrlPath))
@@ -99,7 +99,7 @@ namespace GaiaOnline
 			return (await ImageClient.GetAvatarImage(stripUrl)).Texture.Value;
 		}
 
-		private IEnumerator SetAvatarForRenderers([NotNull] Texture2D texture)
+		private IEnumerator SetAvatarForRenderers(Texture2D texture)
 		{
 			if (texture == null) throw new ArgumentNullException(nameof(texture));
 

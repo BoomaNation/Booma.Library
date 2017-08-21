@@ -53,7 +53,7 @@ namespace GaiaOnline
 		/// which is constructed from the provided <see cref="ImageBytes"/>.
 		/// </summary>
 		/// <param name="imageBytes">The bytes.</param>
-		public Texture2DWrapper([NotNull] byte[] imageBytes)
+		public Texture2DWrapper(byte[] imageBytes)
 			: this() //also need to call constructorless for lazy init 
 		{
 			//We should accept empty arrays for empty pictures I suppose? Maybe?

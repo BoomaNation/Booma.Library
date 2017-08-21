@@ -15,18 +15,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SceneJect.Common" Version="2.0.3" />
-    <PackageReference Include="SceneJect.Metadata" Version="2.0.3" />
+    <PackageReference Include="HaloLive.Authentication.Client" Version="1.0.32" />
+    <PackageReference Include="HaloLive.NameResolution.Client" Version="1.0.32" />
+    <PackageReference Include="HaloLive.Network.Common" Version="1.0.32" />
+    <PackageReference Include="SceneJect.Common" Version="2.0.4" />
+    <PackageReference Include="SceneJect.Metadata" Version="2.0.4" />
     <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.4" />
     <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.4" />
     <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.4" />
     <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.4" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NetworkServices\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
   </ItemGroup>
 
 </Project>

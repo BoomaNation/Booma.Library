@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="GladBehaviour.Common" Version="1.0.9" />
-    <PackageReference Include="SceneJect.Metadata" Version="2.0.3" />
+    <PackageReference Include="SceneJect.Metadata" Version="2.0.4" />
     <PackageReference Include="Unitysync.Async" Version="1.0.4" />
   </ItemGroup>
 
@@ -29,10 +29,6 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="IoC\" />
   </ItemGroup>
 
 </Project>
