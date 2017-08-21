@@ -5,15 +5,27 @@ using Newtonsoft.Json;
 
 namespace GaiaOnline
 {
+	/// <summary>
+	/// Data model that represents information about a gameserver.
+	/// </summary>
 	[JsonObject]
 	public sealed class GameServerInfo
 	{
+		/// <summary>
+		/// The name of the server.
+		/// </summary>
 		[JsonProperty]
 		public string ServerName { get; private set; }
 
+		/// <summary>
+		/// The locale of the server.
+		/// </summary>
 		[JsonProperty]
 		public ClientRegionLocale ServerLocale { get; private set; }
 
+		/// <summary>
+		/// The enpoint pair of the server.
+		/// </summary>
 		[JsonProperty]
 		public ResolvedEndpoint Endpoint { get; private set; }
 
