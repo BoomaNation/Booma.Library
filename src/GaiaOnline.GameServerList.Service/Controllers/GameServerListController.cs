@@ -19,6 +19,10 @@ namespace GaiaOnline
 			GameServerRepository = gameServerRepository;
 		}
 
+		/// <summary>
+		/// Based on the client interface IGameServiceListQueryClient request method.
+		/// </summary>
+		/// <returns>The list of gameservers.</returns>
 		[HttpGet("list")]
 		public async Task<JsonResult> GetGameServerList() //no args are needed.
 		{

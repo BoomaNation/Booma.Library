@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using HaloLive.Models;
 
@@ -32,6 +33,7 @@ namespace GaiaOnline
 			//If you want to send back none then use empty collection.
 			if (servers == null) throw new ArgumentNullException(nameof(servers));
 
+			Servers = Enumerable.Empty<GameServerInfo>().ToList();
 			ResultCode = GameServerListResponseCode.Successful;
 			Servers = servers;
 		}
