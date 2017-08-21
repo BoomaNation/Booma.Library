@@ -13,6 +13,12 @@ namespace GaiaOnline
 	/// </summary>
 	public interface IGameServerMediatorService
 	{
+		/// <summary>
+		/// Attempts to enter the gameserver. Requesting access through the mediator.
+		/// It could fail for several reasons.
+		/// </summary>
+		/// <param name="token">The access token.</param>
+		/// <returns>The result of the attempted entry.</returns>
 		[Post("/api/gameserver/gateway")]
 		Task<ServerEntryResponse> TryEnterGameServer([DynamicHeader("Authorization")] string token);
 	}
