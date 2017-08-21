@@ -24,6 +24,9 @@ namespace GaiaOnline
 		{
 			IEnumerable<GameServerListEntryModel> entryModels = await GameServerRepository.RetrieveAll();
 
+			if (!entryModels.Any())
+				return Json(new GameServerListResponse(GameServerListResponseCode.NoGameServersAvailable));
+
 			return Json(new GameServerListResponse(entryModels.Select(gs => new GameServerInfo(gs.ServerName, gs.Region, new ResolvedEndpoint(gs.EndpointAddress, gs.EndpointPort))).ToList()));
 		}
 	}

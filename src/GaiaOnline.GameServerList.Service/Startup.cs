@@ -40,6 +40,7 @@ namespace GaiaOnline
 				throw new InvalidOperationException("No connection string is found in the configuration.");
 
 			services.AddDbContext<GameServerListDbContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
+			services.AddTransient<IGameServerListRepository, DatabaseGameServerListRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
