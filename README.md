@@ -14,6 +14,8 @@ It relies on [TypeSafe.Http.Net](https://github.com/HelloKitty/TypeSafe.Http.Net
 
 [Authentication Service](https://github.com/GaiaOnlineCommunity/GaiaOnline.Unity.Library/tree/master/src/GaiaOnline.Authentication.Service): is an ASP Core service that mocks an OAuth accesstoken/passwordgrant auth service. Can be replaced with a real OAuth service in the future.
 
+To get the endpoints for these services the client's should query the "glue" service, so to speak, that points them in the right direction. Located here: [Service Discovery Service](https://github.com/GaiaOnlineCommunity/HaloLive.ServiceDiscovery.Service)
+
 ## Setup
 
 You will need:
