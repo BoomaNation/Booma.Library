@@ -1,0 +1,1 @@
+dotnet GaiaOnline.Authentication.Service.dll --url=http://localhost:5001

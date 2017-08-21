@@ -24,5 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="run.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
