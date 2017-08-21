@@ -8,6 +8,12 @@ Library for interacting with the GaiaOnline API, endpoints and content inside of
 
 It relies on [TypeSafe.Http.Net](https://github.com/HelloKitty/TypeSafe.Http.Net), a fantastic library I wrote, for the HTTP networking required for querying the GaiaOnline API. This is done in such a way that does not differ from browsers nor other addons like BetterGaia. No reverse engineering etc. was required in any form to do this.
 
+## Information
+
+[GameServer List Sevice](https://github.com/GaiaOnlineCommunity/GaiaOnline.Unity.Library/tree/master/src/GaiaOnline.GameServerList.Service): is an ASP Core application that services a list of gameservers.
+
+[Authentication Service](https://github.com/GaiaOnlineCommunity/GaiaOnline.Unity.Library/tree/master/src/GaiaOnline.Authentication.Service): is an ASP Core service that mocks an OAuth accesstoken/passwordgrant auth service. Can be replaced with a real OAuth service in the future.
+
 ## Setup
 
 You will need:
