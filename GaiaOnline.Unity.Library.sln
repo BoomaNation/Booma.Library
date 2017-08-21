@@ -4,17 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{82223BC2-FD46-45B7-8714-A1BBB6FACC0E}"
-	ProjectSection(SolutionItems) = preProject
-		src\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj = src\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Client", "src\GaiaOnline.Game.Client\GaiaOnline.Game.Client.csproj", "{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Client", "src\GaiaOnline.Game.Client\GaiaOnline.Game.Client.csproj", "{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.AdditionalDependencies", "src\GaiaOnline.AdditionalDependencies\GaiaOnline.AdditionalDependencies.csproj", "{4094B729-4488-45FC-A03D-67C1BA4AF765}"
 EndProject
@@ -24,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{D3964B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerList.Models", "src\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj", "{BEE3E007-F546-48AF-B3EC-F44B93E46D88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.GameServerList.Service", "src\GaiaOnline.GameServerList.Service\GaiaOnline.GameServerList.Service.csproj", "{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerList.Service", "src\GaiaOnline.GameServerList.Service\GaiaOnline.GameServerList.Service.csproj", "{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
