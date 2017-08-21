@@ -6,7 +6,7 @@ if not exist "build" mkdir build
 if not exist "build\services\" mkdir build\services
 if not exist "build\services\Authentication" mkdir build\services\Authentication
 if not exist "build\services\GameServerList" mkdir build\services\GameServerList
-xcopy src\GaiaOnline.Authentication.Service\bin\Release\netcoreapp1.1\publish build\services\Authentication /Y
-xcopy src\GaiaOnline.GameServerList.Service\bin\Release\netcoreapp1.1\publish build\services\GameServerList /Y
+xcopy src\GaiaOnline.Authentication.Service\bin\Release\netcoreapp1.1\publish build\services\Authentication /Y /S
+xcopy src\GaiaOnline.GameServerList.Service\bin\Release\netcoreapp1.1\publish build\services\GameServerList /Y /S
 
 PAUSE
