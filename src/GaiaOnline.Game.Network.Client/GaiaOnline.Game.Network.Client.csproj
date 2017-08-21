@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
+    <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
   </ItemGroup>
 
 </Project>

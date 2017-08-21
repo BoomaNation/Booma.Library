@@ -6,7 +6,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using JetBrains.Annotations;
 
 namespace GaiaOnline
 {
@@ -19,7 +18,6 @@ namespace GaiaOnline
 	/// Contains a manually encoded HTTP response code. This indicates the state of the model and the status of the response.
 	/// It does not match the actual HTTP response code sent back, which is always 200.
 	/// </summary>
-	[Serializable]
 	[XmlType("response")]
 	public sealed class UserAvatarQueryResponse
 	{
