@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GaiaOnline.GameServerMediator.Models.Client\GaiaOnline.GameServerMediator.Models.Client.csproj" />
     <ProjectReference Include="..\GaiaOnline.GameServerMediator.Models\GaiaOnline.GameServerMediator.Models.csproj" />
   </ItemGroup>
 
