@@ -13,9 +13,9 @@ namespace Booma.Unity.Network
 		public override void Register(IServiceRegister register)
 		{
 			//Register the protobufnet serializers
-			register.Register<ProtobufnetSerializerStrategy>(this.getFlags(), typeof(ISerializerStrategy));
-			register.Register<ProtobufnetDeserializerStrategy>(this.getFlags(), typeof(IDeserializerStrategy));
-			register.Register<ProtobufnetRegistry>(this.getFlags(), typeof(ISerializerRegistry));
+			register.Register<ProtobufnetSerializerStrategy>(ComputeFlags(), typeof(ISerializerStrategy));
+			register.Register<ProtobufnetDeserializerStrategy>(ComputeFlags(), typeof(IDeserializerStrategy));
+			register.Register<ProtobufnetRegistry>(ComputeFlags(), typeof(ISerializerRegistry));
 		}
 	}
 }

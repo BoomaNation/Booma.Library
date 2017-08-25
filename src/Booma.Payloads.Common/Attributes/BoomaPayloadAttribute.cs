@@ -18,7 +18,7 @@ namespace Booma.Payloads.Common
 		/// </summary>
 		/// <param name="messageType">The <see cref="BoomaPayloadMessageType "/> to mark the payload for.</param>
 		public BoomaPayloadAttribute(BoomaPayloadMessageType messageType)
-			: base((GladNetIncludeIndex)messageType, typeof(PacketPayload), false)
+			: base((int)messageType, typeof(PacketPayload), false)
 		{
 
 		}

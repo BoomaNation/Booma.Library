@@ -20,7 +20,7 @@ namespace Booma.Instance.Server
 			ChainMessageHandlerStrategy<InstanceClientSession, IRequestMessage> chainHandler = new ChainMessageHandlerStrategy<InstanceClientSession, IRequestMessage>(FindHandlersInScene());
 
 			//generics are semi-limited in .Net when trying to construct an instance of the type so we put the requirement for inheritors to create the instance.
-			register.Register<RequestMessageHandlerService<InstanceClientSession>>(new RequestMessageHandlerService<InstanceClientSession>(chainHandler), getFlags(), typeof(IRequestMessageHandlerService<InstanceClientSession>));
+			register.Register<RequestMessageHandlerService<InstanceClientSession>>(new RequestMessageHandlerService<InstanceClientSession>(chainHandler), ComputeFlags(), typeof(IRequestMessageHandlerService<InstanceClientSession>));
 		}
 
 		/// <summary>

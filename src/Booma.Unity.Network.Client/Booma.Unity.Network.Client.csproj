@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Booma.Unity.Network.Client</RootNamespace>
     <AssemblyName>Booma.Unity.Network.Client</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -52,43 +52,43 @@
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.3.0.7\lib\net35\GladNet.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Common.3.0.14\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.3.0.7\lib\net35\GladNet.Encryption.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Encryption.3.0.14\lib\net35\GladNet.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.7\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.14\lib\net35\GladNet.Engine.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Client.3.0.7\lib\net35\GladNet.Lidgren.Client.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.3.0.14\lib\net35\GladNet.Lidgren.Client.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Client.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.3.0.7\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Lidgren.Client.Unity.3.0.14\lib\net35\GladNet.Lidgren.Client.Unity.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Common.3.0.7\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Lidgren.Common.3.0.14\lib\net35\GladNet.Lidgren.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Lidgren.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.3.0.7\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Lidgren.Engine.Common.3.0.14\lib\net35\GladNet.Lidgren.Engine.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.3.0.7\lib\net35\GladNet.Message.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Message.3.0.14\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message.Handlers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.Handlers.3.0.7\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Message.Handlers.3.0.14\lib\net35\GladNet.Message.Handlers.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.3.0.7\lib\net35\GladNet.Payload.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Payload.3.0.14\lib\net35\GladNet.Payload.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Payload.Authentication, Version=2.0.34.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Payload.Authentication.2.0.34\lib\net35\GladNet.Payload.Authentication.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.3.0.7\lib\net35\GladNet.Serializer.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.3.0.14\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Serializer.Protobuf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.3.0.7\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.Protobuf.3.0.14\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="HaloLive.Models.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HaloLive.Models.Common.1.0.32\lib\net45\HaloLive.Models.Common.dll</HintPath>
@@ -108,17 +108,17 @@
     <Reference Include="Lidgren.Network, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Lidgren.Network.1.0.3\lib\net35\Lidgren.Network.dll</HintPath>
     </Reference>
-    <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Net35Essentials.1.0.3\lib\net35\Net35Essentials.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net35\protobuf-net.dll</HintPath>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.30\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.2.0.4\lib\net46\SceneJect.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SceneJect.Metadata, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Metadata.2.0.3\lib\net35\SceneJect.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

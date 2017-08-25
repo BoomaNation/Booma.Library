@@ -19,13 +19,13 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Represents the unique entity indentifier.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public NetworkEntityGuid EntityGuid { get; private set; }
 
 		/// <summary>
 		/// Represents the current known position of the entity.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		public Vector3Surrogate Position { get; private set; }
 
 		//WARNING: Send the server timestamp. Not the unique player timestamp. The less info malicious actors have to spoof other player's
@@ -33,7 +33,7 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// The timestamp of this update.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index4)]
+		[GladNetMember(3)]
 		public float CurrentTimeStamp { get; private set; }
 
 		public EntityPositionUpdateEvent(Vector3Surrogate position, NetworkEntityGuid entityGuid, float timeStamp)

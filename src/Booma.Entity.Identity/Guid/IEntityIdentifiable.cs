@@ -10,7 +10,7 @@ namespace Booma.Entity.Identity
 	/// Contract for types that can indentify a Entity.
 	/// </summary>
 	[GladNetSerializationContract]
-	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(NetworkEntityGuid))]
+	[GladNetSerializationInclude(1, typeof(NetworkEntityGuid))]
 	public interface IEntityIdentifiable
 	{
 		/// <summary>

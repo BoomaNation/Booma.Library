@@ -19,7 +19,7 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Represents the new position the player wants to move to.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public NetworkEntityGuid NetworkGuid { get; private set; }
 
 		/// <summary>

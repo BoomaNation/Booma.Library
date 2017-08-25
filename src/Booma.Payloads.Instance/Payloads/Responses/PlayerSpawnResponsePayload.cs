@@ -21,25 +21,25 @@ namespace Booma.Payloads.Instance
 		/// Represents the unique entity indentifier.
 		/// (This will indicate what our GUID is on the server)
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index4)]
+		[GladNetMember(4)]
 		public NetworkEntityGuid EntityGuid { get; private set; }
 
 		/// <summary>
 		/// Response status; the response code of the request.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public PlayerSpawnResponseCode ResponseCode { get; private set; } //no readonly props until new protobuf-net
 
 		/// <summary>
 		/// Represents the position of the Entity.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		public Vector3Surrogate Position { get; private set; }
 
 		/// <summary>
 		/// Represents the rotation of the Entity
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
+		[GladNetMember(3)]
 		public QuaternionSurrogate Rotation { get; private set; }
 
 		/// <summary>

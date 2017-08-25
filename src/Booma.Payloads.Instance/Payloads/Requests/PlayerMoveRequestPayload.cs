@@ -18,14 +18,14 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Represents the new position the player wants to move to.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public Vector3Surrogate Position { get; private set; }
 
 		/// <summary>
 		/// Represents the time delta since the client start.
 		/// Consider this to be a timestamp that is unique to the client that is connected.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		public float TimeSinceStart { get; private set; }
 
 		/// <summary>

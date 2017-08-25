@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Booma.Instance.Handlers.Server</RootNamespace>
     <AssemblyName>Booma.Instance.Handlers.Server</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -44,28 +44,31 @@
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net40\Fasterflect.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.3.0.7\lib\net35\GladNet.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Common.3.0.14\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.3.0.7\lib\net35\GladNet.Encryption.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Encryption.3.0.14\lib\net35\GladNet.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.7\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.14\lib\net35\GladNet.Engine.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Engine.Server, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Server.3.0.7\lib\net35\GladNet.Engine.Server.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Engine.Server.3.0.14\lib\net35\GladNet.Engine.Server.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.3.0.7\lib\net35\GladNet.Message.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Message.3.0.14\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.3.0.7\lib\net35\GladNet.Payload.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Payload.3.0.14\lib\net35\GladNet.Payload.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.3.0.7\lib\net35\GladNet.Serializer.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.3.0.14\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.30\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.2.0.4\lib\net46\SceneJect.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SceneJect.Metadata, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Metadata.2.0.3\lib\net35\SceneJect.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

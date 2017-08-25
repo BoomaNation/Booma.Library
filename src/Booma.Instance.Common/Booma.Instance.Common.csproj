@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Booma.Instance.Common</RootNamespace>
     <AssemblyName>Booma.Instance.Common</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entity\Collections\EntityContainer.cs" />
@@ -73,32 +76,32 @@
     <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
     </Reference>
-    <Reference Include="GladBehaviour.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladBehaviour.Common.1.0.8\lib\net35\GladBehaviour.Common.dll</HintPath>
+    <Reference Include="GladBehaviour.Common, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladBehaviour.Common.1.0.9\lib\net46\GladBehaviour.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.3.0.7\lib\net35\GladNet.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Common.3.0.14\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.3.0.7\lib\net35\GladNet.Encryption.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Encryption.3.0.14\lib\net35\GladNet.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.7\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.14\lib\net35\GladNet.Engine.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.3.0.7\lib\net35\GladNet.Message.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Message.3.0.14\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.3.0.7\lib\net35\GladNet.Payload.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Payload.3.0.14\lib\net35\GladNet.Payload.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.3.0.7\lib\net35\GladNet.Serializer.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.3.0.14\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
-    <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Net35Essentials.1.0.3\lib\net35\Net35Essentials.dll</HintPath>
+    <Reference Include="SceneJect.Common, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Common.2.0.4\lib\net46\SceneJect.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SceneJect.Common, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.1.0.30\lib\net35\SceneJect.Common.dll</HintPath>
+    <Reference Include="SceneJect.Metadata, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SceneJect.Metadata.2.0.4\lib\net35\SceneJect.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>

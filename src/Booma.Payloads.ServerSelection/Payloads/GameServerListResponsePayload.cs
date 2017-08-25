@@ -18,11 +18,11 @@ namespace Booma.Payloads.ServerSelection
 		/// <summary>
 		/// Indicates the status of the response.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public GameServerListResponseCode ResponseCode { get; private set; }
 
 		//private and hidden. For serializer.
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		private SimpleGameServerDetailsModel[] gameServerDetails;
 
 		/// <summary>

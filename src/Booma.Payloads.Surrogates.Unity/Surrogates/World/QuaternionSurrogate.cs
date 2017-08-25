@@ -14,7 +14,7 @@ namespace Booma.Payloads.Surrogates.Unity
 		/// <summary>
 		/// The W coordinate of the Quaternion.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public float W { get; private set; }
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace Booma.Instance.Client
 			//Just create a new collection and register it
 			NetworkEntityCollection entityCollection = new NetworkEntityCollection();
 
-			register.Register(entityCollection, this.getFlags(), null);
+			register.Register(entityCollection, ComputeFlags(), null);
 		}
 	}
 }

@@ -17,10 +17,9 @@ namespace Booma.Instance.Server
 		/// </summary>
 		private IRequestMessageHandlerService<InstanceClientSession> requestMessageHandlerService { get; }
 
-		public InstanceClientSession(ILog logger, INetworkMessageRouterService sender, IConnectionDetails details, 
-			INetworkMessageSubscriptionService subService, IDisconnectionServiceHandler disconnectHandler, INetworkMessageRouteBackService routebackService,
-			IRequestMessageHandlerService<InstanceClientSession> requestMessageHandlers) 
-			: base(logger, sender, details, subService, disconnectHandler, routebackService)
+		public InstanceClientSession(ILog logger, INetworkMessagePayloadSenderService sender, IConnectionDetails details, 
+			INetworkMessageSubscriptionService subService, IDisconnectionServiceHandler disconnectHandler, IRequestMessageHandlerService<InstanceClientSession> requestMessageHandlers) 
+			: base(logger, sender, details, subService, disconnectHandler)
 		{
 			if (requestMessageHandlers == null)
 				throw new ArgumentNullException(nameof(requestMessageHandlers), $"Cannot provide a null {nameof(IRequestMessageHandlerService<InstanceClientSession>)}.");

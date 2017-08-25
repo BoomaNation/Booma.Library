@@ -9,25 +9,25 @@ namespace Booma.Payloads.Surrogates.Unity
 	/// Surrogate for the Unity3D Vector3 type.
 	/// </summary>
 	[GladNetSerializationContract]
-	[GladNetSerializationInclude(GladNetIncludeIndex.Index1, typeof(QuaternionSurrogate), true)]
+	[GladNetSerializationInclude(1, typeof(QuaternionSurrogate), true)]
 	public class Vector3Surrogate
 	{
 		/// <summary>
 		/// X coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public float X { get; private set; }
 
 		/// <summary>
 		/// Y coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		public float Y { get; private set; }
 
 		/// <summary>
 		/// Z coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
+		[GladNetMember(3)]
 		public float Z { get; private set; }
 
 		/// <summary>

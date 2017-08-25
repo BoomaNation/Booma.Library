@@ -20,19 +20,19 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// The scale of the object.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public Vector3Surrogate Scale { get; private set; }
 
 		/// <summary>
 		/// The prefab ID.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		public GameObjectPrefab PrefabId { get; private set; }
 
 		/// <summary>
 		/// The current state or starting state of the object.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
+		[GladNetMember(3)]
 		public byte CurrentState { get; private set; }
 
 		public GameObjectEntitySpawnEventPayload(NetworkEntityGuid entityGuid, Vector3Surrogate position, QuaternionSurrogate rotation,

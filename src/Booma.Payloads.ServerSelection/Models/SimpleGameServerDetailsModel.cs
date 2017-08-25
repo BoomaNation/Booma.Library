@@ -17,13 +17,13 @@ namespace Booma.Payloads.ServerSelection
 		/// <summary>
 		/// Name of the server (Ex. Vegas)
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1)]
+		[GladNetMember(1)]
 		public string Name { get; private set; }
 
 		/// <summary>
 		/// Serializable byte array representing the servers's <see cref="IPAddress"/>.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index2)]
+		[GladNetMember(2)]
 		private byte[] serverIPBytes;
 
 		private Lazy<IPAddress> _ServerIP { get; }
@@ -36,13 +36,13 @@ namespace Booma.Payloads.ServerSelection
 		/// <summary>
 		/// Port incoming client connections should be on.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index3)]
+		[GladNetMember(3)]
 		public int ServerPort { get; private set; }
 
 		/// <summary>
 		/// Region of the game server.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index4)]
+		[GladNetMember(4)]
 		public ServerRegion Region { get; private set; }
 
 		public SimpleGameServerDetailsModel(string name, IPAddress address, int port, ServerRegion region)

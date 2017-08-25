@@ -23,7 +23,7 @@ namespace Booma.Entity.Identity
 		/// <summary>
 		/// Raw 64bit numerical representation of the GUID.
 		/// </summary>
-		[GladNetMember(GladNetDataIndex.Index1, IsRequired = true)]
+		[GladNetMember(1, IsRequired = true)]
 		public ulong RawGuidValue { get; private set; } //dont use readonly prop. Some libraries can't serialize it yet.
 
 		/// <summary>

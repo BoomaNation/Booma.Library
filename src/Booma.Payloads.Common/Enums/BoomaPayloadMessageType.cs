@@ -14,51 +14,51 @@ namespace Booma.Payloads.Common
 		/// <summary>
 		/// A request to get the list of available gameservers/ships
 		/// </summary>
-		GetGameServerListRequest = GladNetIncludeIndex.Index19,
+		GetGameServerListRequest = 2,
 		
 		/// <summary>
 		/// A response containing the list of available gameservers/ships
 		/// </summary>
-		GetGameServerListResponse = GladNetIncludeIndex.Index20,
+		GetGameServerListResponse = 3,
 
 		/// <summary>
 		/// An event that contains information about an entity that should be spawned.
 		/// </summary>
-		EntitySpawnEvent = GladNetIncludeIndex.Index21,
+		EntitySpawnEvent = 4,
 
 		/// <summary>
 		/// An event that contains information about an entity that should be despawned.
 		/// </summary>
-		EntityDespawnEvent = GladNetIncludeIndex.Index22,
+		EntityDespawnEvent = 5,
 
 		/// <summary>
 		/// Request sent by players who want to spawn in an instance.
 		/// </summary>
-		PlayerSpawnRequest = GladNetIncludeIndex.Index23,
+		PlayerSpawnRequest = 6,
 
 		/// <summary>
 		/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/>.
 		/// </summary>
-		PlayerSpawnResponse = GladNetIncludeIndex.Index24,
+		PlayerSpawnResponse = 7,
 
 		/// <summary>
 		/// Request sent by the client's to request movement.
 		/// </summary>
-		PlayerMoveRequest = GladNetIncludeIndex.Index25,
+		PlayerMoveRequest = 8,
 
 		/// <summary>
 		/// Event sent by the server about position updates of an entity.
 		/// </summary>
-		EntityPositionUpdateEvent = GladNetIncludeIndex.Index26,
+		EntityPositionUpdateEvent = 9,
 
 		/// <summary>
 		/// Event sent by server when an entity's state has changed.
 		/// </summary>
-		EntityStateChangedEvent = GladNetIncludeIndex.Index27,
+		EntityStateChangedEvent = 10,
 
 		/// <summary>
 		/// Request sent by client when the client attempts to interact with an entity.
 		/// </summary>
-		EntityInteractionRequest = GladNetDataIndex.Index28
+		EntityInteractionRequest = 11
 	}
 }

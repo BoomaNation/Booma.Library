@@ -31,7 +31,7 @@ namespace Booma.Unity.Network
 			ChainMessageHandlerStrategy<TPeerType, TNetworkMessageType> chainHandler = new ChainMessageHandlerStrategy<TPeerType, TNetworkMessageType>(FindHandlersInScene());
 
 			//generics are semi-limited in .Net when trying to construct an instance of the type so we put the requirement for inheritors to create the instance.
-			register.Register<THandlerServiceTypeConcrete>(CreateConcreteService(chainHandler), getFlags(), typeof(THandlerServiceTypeServiceInterface));
+			register.Register<THandlerServiceTypeConcrete>(CreateConcreteService(chainHandler), ComputeFlags(), typeof(THandlerServiceTypeServiceInterface));
 		}
 
 		/// <summary>

@@ -17,7 +17,7 @@ namespace Booma.Client.Common.IoCModules
 		{
 			//Just register the service. Let users define the flags.
 			//Single instance is preferable though.
-			register.Register<UnityLoggingService>(getFlags(), typeof(ILog));
+			register.Register<UnityLoggingService>(ComputeFlags(), typeof(ILog));
 		}
 	}
 }
