@@ -158,17 +158,13 @@
       <Project>{1fefea38-2586-4ce1-8662-4c12fd3c6e62}</Project>
       <Name>Booma.Payloads.Surrogates.Unity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj">
+    <ProjectReference Include="..\Booma.Unity.Client\Booma.Unity.Client.csproj">
       <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
-      <Name>Booma.Unity.Network.Client</Name>
+      <Name>Booma.Unity.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Booma.Unity.Network.Common\Booma.Unity.Network.Common.csproj">
+    <ProjectReference Include="..\Booma.Unity.Common\Booma.Unity.Common.csproj">
       <Project>{d55c3f65-a9bf-4713-97af-9f24628e41e1}</Project>
-      <Name>Booma.Unity.Network.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Booma.Unity.Network.IoCModules.Common\Booma.Unity.Network.IoCModules.Common.csproj">
-      <Project>{9b97cd14-c357-45f2-a620-ce4d9514011c}</Project>
-      <Name>Booma.Unity.Network.IoCModules.Common</Name>
+      <Name>Booma.Unity.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

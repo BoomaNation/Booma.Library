@@ -110,9 +110,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj">
+    <ProjectReference Include="..\Booma.Unity.Client\Booma.Unity.Client.csproj">
       <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
-      <Name>Booma.Unity.Network.Client</Name>
+      <Name>Booma.Unity.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

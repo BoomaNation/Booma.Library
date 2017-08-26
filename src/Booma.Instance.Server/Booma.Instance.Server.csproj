@@ -169,9 +169,13 @@
       <Project>{1fefea38-2586-4ce1-8662-4c12fd3c6e62}</Project>
       <Name>Booma.Payloads.Surrogates.Unity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Booma.Unity.Network.Server\Booma.Unity.Network.Server.csproj">
+    <ProjectReference Include="..\Booma.Unity.Common\Booma.Unity.Common.csproj">
+      <Project>{d55c3f65-a9bf-4713-97af-9f24628e41e1}</Project>
+      <Name>Booma.Unity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Unity.Server\Booma.Unity.Server.csproj">
       <Project>{f0d54151-c076-43ee-b45a-3c714c79a720}</Project>
-      <Name>Booma.Unity.Network.Server</Name>
+      <Name>Booma.Unity.Server</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
