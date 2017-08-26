@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MiscUtil;
+using Generic.Math;
 
 namespace Booma.Stats.Common
 {
@@ -111,7 +111,7 @@ namespace Booma.Stats.Common
 		/// <returns>A key value for the given <paramref name="statType"/>.</returns>
 		protected int ConvertStatToKey(TStatType statType)
 		{
-			return Operator.Convert<TStatType, int>(statType);
+			return GenericMath.Convert<TStatType, int>(statType);
 		}
 
 		//Basically this is a more efficient version of Enum.IsBlahBlah
