@@ -129,6 +129,11 @@
     <Compile Include="Entity\Player\IConnectionToGuidRegistry.cs" />
     <Compile Include="Entity\RoundRobinEntitySpawnLocationProvider.cs" />
     <Compile Include="Event\IClientSessionEventListener.cs" />
+    <Compile Include="Handlers\EntityInteractionRequestPayloadHandler.cs" />
+    <Compile Include="Handlers\PlayerMoveRequestPayloadHandler.cs" />
+    <Compile Include="Handlers\PlayerSpawnRequestPayloadHandler.cs" />
+    <Compile Include="IoC\InstanceClientSessionRequestHandlerRegisteration.cs" />
+    <Compile Include="IoC\ServerServicesRegisteration.cs" />
     <Compile Include="Networking\BoomaInstanceServerApplicationBase.cs" />
     <Compile Include="Networking\Events\OnSessionDisconnectedEvent .cs" />
     <Compile Include="Networking\Events\OnNewSessionCreatedEvent.cs" />
