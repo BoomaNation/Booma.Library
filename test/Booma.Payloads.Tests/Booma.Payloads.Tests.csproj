@@ -59,7 +59,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\GeneralPayloadTests.cs" />
     <Compile Include="UnitTests\InstancePayloadTests.cs" />
-    <Compile Include="UnitTests\ServerSelectionPayloadTests.cs" />
     <Compile Include="UnitTests\SurrogatesUnityPayloadTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +72,6 @@
     <ProjectReference Include="..\..\src\Booma.Payloads.Instance\Booma.Payloads.Instance.csproj">
       <Project>{04423310-b1dd-4883-8634-6b2b00534edd}</Project>
       <Name>Booma.Payloads.Instance</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Booma.Payloads.ServerSelection\Booma.Payloads.ServerSelection.csproj">
-      <Project>{106826be-f16e-43b8-a1c6-dc0208d9299d}</Project>
-      <Name>Booma.Payloads.ServerSelection</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Booma.Payloads.Surrogates.Unity\Booma.Payloads.Surrogates.Unity.csproj">
       <Project>{1fefea38-2586-4ce1-8662-4c12fd3c6e62}</Project>
