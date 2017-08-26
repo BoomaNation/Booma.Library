@@ -1,5 +1,4 @@
 ﻿using GladBehaviour.Common;
-using MiscUtil;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Text;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using Generic.Math;
 
 namespace Booma.Instance.NetworkObject
 {
@@ -26,7 +26,7 @@ namespace Booma.Instance.NetworkObject
 		}
 
 		/// <inheritdoc />
-		void IEntityStateListener.OnEntityStateChanged(byte value) => OnEntityStateChanged(Operator<byte, TNetworkStateType>.Convert(value));
+		void IEntityStateListener.OnEntityStateChanged(byte value) => OnEntityStateChanged(GenericMath<byte, TNetworkStateType>.Convert(value));
 
 		protected abstract void OnStart(TNetworkStateType initialState);
 

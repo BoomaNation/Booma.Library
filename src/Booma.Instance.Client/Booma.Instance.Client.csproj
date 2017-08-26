@@ -123,6 +123,8 @@
     <Compile Include="Entity\Physics\IPhysicsContinousTriggerable.cs" />
     <Compile Include="Entity\Physics\IPhysicsTriggerable.cs" />
     <Compile Include="Entity\Player\ClientNetworkPlayerEntityFactory.cs" />
+    <Compile Include="GameObject\Door\DefaultButtonAnimationTrigger.cs" />
+    <Compile Include="GameObject\Door\DefaultDoorAnimationTrigger.cs" />
     <Compile Include="Handlers\EntityPositionUpdateEventHandler .cs" />
     <Compile Include="Handlers\EntityStateChangedEventHandler.cs" />
     <Compile Include="Handlers\GameObjectEntitySpawnEventHandler.cs" />
@@ -144,21 +146,9 @@
       <Project>{853a6d54-67f9-4128-8a28-c4e91c87ac18}</Project>
       <Name>Booma.Entity.Prefab</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Booma.Instance.Anim\Booma.Instance.Anim.csproj">
-      <Project>{16bb43ad-c8e3-4bcf-9610-89830ef09524}</Project>
-      <Name>Booma.Instance.Anim</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Booma.Instance.Common\Booma.Instance.Common.csproj">
       <Project>{5A959423-5523-4FF5-9667-963BF97F2879}</Project>
       <Name>Booma.Instance.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Booma.Instance.NetworkObject.Objects\Booma.Instance.NetworkObject.Objects.csproj">
-      <Project>{d359414d-a9c0-4443-94e9-44b46e16b4e5}</Project>
-      <Name>Booma.Instance.NetworkObject.Objects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Booma.Instance.NetworkObject\Booma.Instance.NetworkObject.csproj">
-      <Project>{c0e850f9-5b2d-41a1-b537-1f5e660a35c0}</Project>
-      <Name>Booma.Instance.NetworkObject</Name>
     </ProjectReference>
     <ProjectReference Include="..\Booma.Payloads.Instance\Booma.Payloads.Instance.csproj">
       <Project>{04423310-b1dd-4883-8634-6b2b00534edd}</Project>

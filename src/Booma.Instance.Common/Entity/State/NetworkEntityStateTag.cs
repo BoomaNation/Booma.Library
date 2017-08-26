@@ -1,9 +1,9 @@
 ﻿using GladBehaviour.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using Generic.Math;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
@@ -41,24 +41,21 @@ namespace Booma.Instance.NetworkObject
 		/// </summary>
 		public TStateType DefaultState => defaultState;
 
-		byte IDefaultStateProvider.DefaultState => MiscUtil.Operator<TStateType, byte>.Convert(defaultState);
+		byte IDefaultStateProvider.DefaultState => GenericMath<TStateType, byte>.Convert(defaultState);
 
 		/// <summary>
 		/// The current state of the entity.
 		/// </summary>
 		public TStateType State
 		{
-			get { return MiscUtil.Operator<byte, TStateType>.Convert(state); }
-			set { ((IEntityStateContainer)this).State = MiscUtil.Operator<TStateType, byte>.Convert(value); }
+			get => GenericMath<byte, TStateType>.Convert(state);
+			set => ((IEntityStateContainer)this).State = GenericMath<TStateType, byte>.Convert(value);
 		}
 
 		private byte state;
 		byte IEntityStateContainer.State
 		{
-			get
-			{
-				return state;
-			}
+			get => state;
 
 			set
 			{
@@ -76,7 +73,7 @@ namespace Booma.Instance.NetworkObject
 				Debug.LogWarning($"{name} object's {GetType().FullName} does not contain any listeners for its state change.");
 
 			//Set the default state.
-			state = MiscUtil.Operator<TStateType, byte>.Convert(defaultState);
+			state = GenericMath<TStateType, byte>.Convert(defaultState);
 		}
 	}
 }
