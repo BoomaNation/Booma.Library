@@ -120,6 +120,11 @@
     <Compile Include="Entity\Physics\IPhysicsContinousTriggerable.cs" />
     <Compile Include="Entity\Physics\IPhysicsTriggerable.cs" />
     <Compile Include="Entity\Player\ClientNetworkPlayerEntityFactory.cs" />
+    <Compile Include="Handlers\EntityPositionUpdateEventHandler .cs" />
+    <Compile Include="Handlers\EntityStateChangedEventHandler.cs" />
+    <Compile Include="Handlers\GameObjectEntitySpawnEventHandler.cs" />
+    <Compile Include="Handlers\PlayerEntitySpawnEventHandler.cs" />
+    <Compile Include="Handlers\PlayerSpawnResponseHandler.cs" />
     <Compile Include="Peer\InstanceClientPeer.cs" />
     <Compile Include="Peer\NetworkMessageSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

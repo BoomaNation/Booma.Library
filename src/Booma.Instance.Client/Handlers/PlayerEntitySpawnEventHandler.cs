@@ -1,6 +1,5 @@
 ﻿using Booma.Client.Network.Common;
 using Booma.Payloads.Instance;
-using GladNet.Message.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
