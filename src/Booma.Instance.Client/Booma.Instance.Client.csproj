@@ -72,6 +72,9 @@
     <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Message.3.0.14\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
+    <Reference Include="GladNet.Message.Handlers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GladNet.Message.Handlers.3.0.14\lib\net35\GladNet.Message.Handlers.dll</HintPath>
+    </Reference>
     <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\GladNet.Payload.3.0.14\lib\net35\GladNet.Payload.dll</HintPath>
     </Reference>
@@ -125,6 +128,9 @@
     <Compile Include="Handlers\GameObjectEntitySpawnEventHandler.cs" />
     <Compile Include="Handlers\PlayerEntitySpawnEventHandler.cs" />
     <Compile Include="Handlers\PlayerSpawnResponseHandler.cs" />
+    <Compile Include="IoC\ClientServicesRegisteration.cs" />
+    <Compile Include="IoC\InstanceClientEventHandlerRegisteration.cs" />
+    <Compile Include="IoC\InstanceClientResponseHandlerRegisteration.cs" />
     <Compile Include="Peer\InstanceClientPeer.cs" />
     <Compile Include="Peer\NetworkMessageSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +171,14 @@
     <ProjectReference Include="..\Booma.Unity.Network.Client\Booma.Unity.Network.Client.csproj">
       <Project>{680d46c2-6557-4269-be18-c041fae0baea}</Project>
       <Name>Booma.Unity.Network.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Unity.Network.Common\Booma.Unity.Network.Common.csproj">
+      <Project>{d55c3f65-a9bf-4713-97af-9f24628e41e1}</Project>
+      <Name>Booma.Unity.Network.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Unity.Network.IoCModules.Common\Booma.Unity.Network.IoCModules.Common.csproj">
+      <Project>{9b97cd14-c357-45f2-a620-ce4d9514011c}</Project>
+      <Name>Booma.Unity.Network.IoCModules.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
