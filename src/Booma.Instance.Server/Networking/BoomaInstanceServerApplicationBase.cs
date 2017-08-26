@@ -35,6 +35,11 @@ namespace Booma.Instance.Server
 		[SerializeField]
 		private OnSessionDisconnectedEvent OnSessionDisconnected;
 
+		private void Start()
+		{
+			StartServer();
+		}
+
 		//For testing
 		public void Update()
 		{

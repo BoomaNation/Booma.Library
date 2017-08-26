@@ -33,7 +33,7 @@ namespace Booma.Instance.Server
 			base.Start();
 
 			//Broadcast spawn on start
-			this.messageBroadcaster.SendEvent(new PlayerEntitySpawnEventPayload(guidContainer.NetworkGuid, entityTransform.position.ToSurrogate(), entityTransform.rotation.ToSurrogate()),
+			this.MessageBroadcaster.SendEvent(new PlayerEntitySpawnEventPayload(guidContainer.NetworkGuid, entityTransform.position.ToSurrogate(), entityTransform.rotation.ToSurrogate()),
 				DeliveryMethod.ReliableUnordered, false, 0);
 
 			//After broadcasting this entities spawn we should send spawn events for each other connected player.

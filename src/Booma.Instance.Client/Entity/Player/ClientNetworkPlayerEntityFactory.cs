@@ -1,17 +1,17 @@
 ﻿using Booma.Entity.Identity;
 using Booma.Instance.Common;
-using GladBehaviour.Common;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Booma.Instance.Client
 {
 	[Injectee]
-	public class ClientNetworkPlayerEntityFactory : GladMonoBehaviour, IPlayerEntityFactory
+	public class ClientNetworkPlayerEntityFactory : SerializedMonoBehaviour, IPlayerEntityFactory
 	{
 		[SerializeField]
 		private IEntityPrefabProvider prefabProvider;

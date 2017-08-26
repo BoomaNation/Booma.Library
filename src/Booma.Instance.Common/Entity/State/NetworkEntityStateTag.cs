@@ -1,10 +1,10 @@
-﻿using GladBehaviour.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Generic.Math;
 using JetBrains.Annotations;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,7 +19,7 @@ namespace Booma.Instance.NetworkObject
 	/// and tracks the current state of the object.
 	/// </summary>
 	/// <typeparam name="TStateType"></typeparam>
-	public abstract class NetworkEntityStateTag<TStateType> : GladMonoBehaviour, IEntityStateContainer<TStateType>,
+	public abstract class NetworkEntityStateTag<TStateType> : SerializedMonoBehaviour, IEntityStateContainer<TStateType>,
 		IDefaultStateProvider<TStateType>
 		where TStateType : struct, IConvertible
 	{

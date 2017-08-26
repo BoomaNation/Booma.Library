@@ -1,7 +1,6 @@
 ﻿using Booma.Entity.Identity;
 using Booma.Instance.Common;
 using Booma.Payloads.Instance;
-using GladBehaviour.Common;
 using GladNet.Common;
 using GladNet.Engine.Common;
 using SceneJect.Common;
@@ -90,7 +89,7 @@ namespace Booma.Instance.Server
 			else
 				Debug.Log($"{networkGuidContainer.NetworkGuid.RawGuidValue}");
 
-			if (this.messageBroadcaster == null)
+			if (this.MessageBroadcaster == null)
 				Debug.LogError("Broadcaster null.");
 
 			if (startBroadcastingOnStart)
@@ -108,7 +107,7 @@ namespace Booma.Instance.Server
 				//TODO: Handle time
 				EntityPositionUpdateEvent positionPacket = new EntityPositionUpdateEvent(entityTransform.position.ToSurrogate(), networkGuidContainer.NetworkGuid, 0);
 
-				this.messageBroadcaster.SendEvent(positionPacket, DeliveryMethod.ReliableDiscardStale, false, 1);
+				this.MessageBroadcaster.SendEvent(positionPacket, DeliveryMethod.ReliableDiscardStale, false, 1);
 
 				yield return cachedWaitTime;
 			}

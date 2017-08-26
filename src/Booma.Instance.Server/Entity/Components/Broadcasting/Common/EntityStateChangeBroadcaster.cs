@@ -21,7 +21,7 @@ namespace Booma.Instance.Server
 		public void OnEntityStateChanged(byte value)
 		{
 			//Broadcasts the state change to all peers.
-			this.messageBroadcaster.SendEvent(new EntityStateChangedEvent(value, guidContainer.NetworkGuid, 0),
+			this.MessageBroadcaster.SendEvent(new EntityStateChangedEvent(value, guidContainer.NetworkGuid, 0),
 				DeliveryMethod.ReliableOrdered, true, 0);
 		}
 	}

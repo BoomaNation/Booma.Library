@@ -1,5 +1,4 @@
-﻿using GladBehaviour.Common;
-using GladNet.Engine.Common;
+﻿using GladNet.Engine.Common;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -8,11 +7,12 @@ using System.Text;
 using GladNet.Common;
 using GladNet.Message;
 using GladNet.Payload;
+using Sirenix.OdinInspector;
 
 namespace Booma.Instance.Client
 {
 	[Injectee]
-	public abstract class NetworkMessageSender : GladMonoBehaviour
+	public abstract class NetworkMessageSender : SerializedMonoBehaviour
 	{
 		[Inject]
 		private readonly INetPeer peer;

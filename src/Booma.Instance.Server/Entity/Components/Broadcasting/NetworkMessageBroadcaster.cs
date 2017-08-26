@@ -1,5 +1,4 @@
-﻿using GladBehaviour.Common;
-using GladNet.Engine.Server;
+﻿using GladNet.Engine.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +9,8 @@ using GladNet.Message;
 using GladNet.Payload;
 using SceneJect.Common;
 using Booma.Instance.Common;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 namespace Booma.Instance.Server
 {
@@ -17,7 +18,7 @@ namespace Booma.Instance.Server
 	/// Base class for any message broadcasting component.
 	/// </summary>
 	[Injectee]
-	public abstract class NetworkMessageBroadcaster : GladMonoBehaviour
+	public abstract class NetworkMessageBroadcaster : SerializedMonoBehaviour
 	{
 		/// <summary>
 		/// Enumeration of all broadcasting modes.
@@ -41,35 +42,36 @@ namespace Booma.Instance.Server
 			AllExcludingOwner = 2
 		}
 
-		[SerializeField]
-		private NetworkMessageBroadcaster.Mode broadcastingMode;
-
 		/// <summary>
 		/// Indicates the set broadcasting mode for the broadcaster.
 		/// </summary>
-		public NetworkMessageBroadcaster.Mode BroadcastingMode { get { return broadcastingMode; } }
+		[OdinSerialize]
+		public NetworkMessageBroadcaster.Mode BroadcastingMode { get; private set; }
 
 		[Inject]
-		private readonly IGameObjectComponentAttachmentFactory componentFactory;
+		private IGameObjectComponentAttachmentFactory ComponentFactory { get; }
 
-		protected IMessageBroadcastingService messageBroadcaster { get; private set; } //can't be readonly prop because MonoBehaviour
+		protected IMessageBroadcastingService MessageBroadcaster { get; private set; } //can't be readonly prop because MonoBehaviour
 
 		protected virtual void Start()
 		{
-			switch (broadcastingMode)
+			if(ComponentFactory == null)
+				throw new InvalidOperationException($"The {nameof(ComponentFactory)} is null.");
+
+			switch (BroadcastingMode)
 			{
 				case Mode.None:
 					throw new NotImplementedException($"None? Why? This isn't implemented just yet. Sorry from Glader.");
 				case Mode.All:
-					messageBroadcaster = componentFactory.AddTo<AllPeerMessageBroadcastingStrategy>(this.gameObject);
+					MessageBroadcaster = ComponentFactory.AddTo<AllPeerMessageBroadcastingStrategy>(this.gameObject);
 					break;
 				case Mode.AllExcludingOwner:
-					messageBroadcaster = componentFactory.CreateBuilder()
+					MessageBroadcaster = ComponentFactory.CreateBuilder()
 						.With(Service<INetworkOwnable>.As(GetComponent(typeof(INetworkOwnable)) as INetworkOwnable))
 						.AddTo<IgnoreOwnerPeerMessageBroadcastingStrategy>(this.gameObject);
 					break;
 				default:
-					throw new NotImplementedException($"Encoundered {nameof(NetworkMessageBroadcaster.Mode)} setting {broadcastingMode} that was invalid.");
+					throw new NotImplementedException($"Encoundered {nameof(NetworkMessageBroadcaster.Mode)} setting {BroadcastingMode} that was invalid.");
 			}
 		}
 	}

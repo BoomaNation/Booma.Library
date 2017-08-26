@@ -1,5 +1,4 @@
 ﻿using Booma.Instance.Common;
-using GladBehaviour.Common;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Booma.Entity.Identity;
+using Sirenix.OdinInspector;
 
 namespace Booma.Instance.Common
 {
@@ -14,7 +14,7 @@ namespace Booma.Instance.Common
 	/// Factory that builds world representations for networked players.
 	/// </summary>
 	[Injectee]
-	public class NetworkPlayerEntityFactory : GladMonoBehaviour, IPlayerEntityFactory
+	public class NetworkPlayerEntityFactory : SerializedMonoBehaviour, IPlayerEntityFactory
 	{
 		/// <summary>
 		/// Service that produces prefabs.

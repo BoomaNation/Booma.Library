@@ -1,5 +1,4 @@
-﻿using GladBehaviour.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +6,18 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using Generic.Math;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 namespace Booma.Instance.NetworkObject
 {
-	public abstract class NetworkGameObject<TNetworkStateType> : GladMonoBehaviour, IEntityStateListener
+	public abstract class NetworkGameObject<TNetworkStateType> : SerializedMonoBehaviour, IEntityStateListener
 		where TNetworkStateType : struct, IConvertible
 	{
+		//TODO: Find a way to make this serializable and generic
+		//We can't make this generic or it won't work
 		[NotNull]
+		[OdinSerialize]
 		[SerializeField]
 		protected IEntityStateContainer<TNetworkStateType> StateContainer;
 
@@ -26,7 +30,7 @@ namespace Booma.Instance.NetworkObject
 		}
 
 		/// <inheritdoc />
-		void IEntityStateListener.OnEntityStateChanged(byte value) => OnEntityStateChanged(GenericMath<byte, TNetworkStateType>.Convert(value));
+		public void OnEntityStateChanged(byte value) => OnEntityStateChanged(GenericMath<byte, TNetworkStateType>.Convert(value));
 
 		protected abstract void OnStart(TNetworkStateType initialState);
 

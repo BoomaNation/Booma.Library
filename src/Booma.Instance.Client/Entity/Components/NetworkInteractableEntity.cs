@@ -6,7 +6,6 @@ using System.Text;
 using Booma.Entity.Identity;
 using Booma.Instance.NetworkObject;
 using SceneJect.Common;
-using GladBehaviour.Common;
 using UnityEngine;
 using Booma.Payloads.Instance;
 using GladNet.Common;
