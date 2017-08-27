@@ -15,19 +15,19 @@ namespace Booma.Payloads.Surrogates.Unity
 		/// <summary>
 		/// X coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(1)]
+		[GladNetMember(2)]
 		public float X { get; private set; }
 
 		/// <summary>
 		/// Y coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(2)]
+		[GladNetMember(3)]
 		public float Y { get; private set; }
 
 		/// <summary>
 		/// Z coordinate of the Vector.
 		/// </summary>
-		[GladNetMember(3)]
+		[GladNetMember(4)]
 		public float Z { get; private set; }
 
 		/// <summary>

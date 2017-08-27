@@ -17,6 +17,8 @@ namespace Booma.Instance.Server
 
 		public void Unlock()
 		{
+			Debug.Log($"Door {nameof(Unlock)} called.");
+
 			if (StateContainer.State != DoorState.Unlocked)
 				StateContainer.State = DoorState.Unlocked;
 			else
@@ -25,8 +27,6 @@ namespace Booma.Instance.Server
 
 		void Update()
 		{
-			Debug.Log($"Door State: {StateContainer.State.ToString()}");
-
 			if (Input.GetKeyDown(KeyCode.A))
 			{
 				StateContainer.State = DoorState.Unlocked;
@@ -51,6 +51,8 @@ namespace Booma.Instance.Server
 		/// <inheritdoc />
 		protected override void OnStart(DoorState initialState)
 		{
+			Debug.Log($"Door initial state {initialState}.");
+
 			//We setup in editor to start as locked. So if the default is unlocked just unlock.
 			if (StateContainer.State == DoorState.Unlocked)
 				Unlock();
@@ -59,8 +61,12 @@ namespace Booma.Instance.Server
 		/// <inheritdoc />
 		public void Unlock(NetworkEntityGuid entityInteracting)
 		{
-			if(entityInteracting == null)
+			if (entityInteracting != null)
+			{
+				Debug.Log($"Door {nameof(Unlock)} called by Entity: {entityInteracting.EntityId}.");
 				Unlock();
+			}
+				
 			
 			//TODO: Implement entity handling
 		}

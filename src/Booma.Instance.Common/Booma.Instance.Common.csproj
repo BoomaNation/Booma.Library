@@ -90,22 +90,22 @@
       <HintPath>..\..\packages\Generic.Math.1.0.2\lib\net46\Generic.Math.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.3.0.15\lib\net35\GladNet.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Common.3.0.16\lib\net35\GladNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.3.0.15\lib\net35\GladNet.Encryption.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Encryption.3.0.16\lib\net35\GladNet.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.15\lib\net35\GladNet.Engine.Common.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.16\lib\net35\GladNet.Engine.Common.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.3.0.15\lib\net35\GladNet.Message.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Message.3.0.16\lib\net35\GladNet.Message.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.3.0.15\lib\net35\GladNet.Payload.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Payload.3.0.16\lib\net35\GladNet.Payload.dll</HintPath>
     </Reference>
     <Reference Include="GladNet.Serializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.3.0.15\lib\net35\GladNet.Serializer.dll</HintPath>
+      <HintPath>..\..\packages\GladNet.Serializer.3.0.16\lib\net35\GladNet.Serializer.dll</HintPath>
     </Reference>
     <Reference Include="SceneJect.Common, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SceneJect.Common.2.0.5\lib\net46\SceneJect.Common.dll</HintPath>

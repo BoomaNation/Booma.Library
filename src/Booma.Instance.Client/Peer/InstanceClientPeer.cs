@@ -26,7 +26,7 @@ namespace Booma.Instance.Client
 				case NetStatus.Connected:
 					Debug.Log("Sending spawn request.");
 					//On connect request a spawn in the world
-					this.SendRequest(new PlayerSpawnRequestPayload(), DeliveryMethod.ReliableOrdered);
+					this.SendRequest(new ClaimSessionRequestPayload(), DeliveryMethod.ReliableOrdered);
 					break;
 				case NetStatus.EncryptionEstablished:
 					break;
@@ -63,8 +63,8 @@ namespace Booma.Instance.Client
 		{
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(EntitySpawnEventPayload));
-			registry.Register(typeof(PlayerSpawnResponsePayload));
-			registry.Register(typeof(PlayerSpawnRequestPayload));
+			registry.Register(typeof(ClaimSessionResponsePayload));
+			registry.Register(typeof(ClaimSessionRequestPayload));
 			registry.Register(typeof(EntityPositionUpdateEvent));
 			registry.Register(typeof(PlayerMoveRequestPayload));
 			registry.Register(typeof(EntityInteractionRequestPayload));

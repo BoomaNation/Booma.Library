@@ -10,17 +10,6 @@ namespace Booma.Payloads.Common
 	/// </summary>
 	public enum BoomaPayloadMessageType : int
 	{
-		//We have to make sure we don't overlap with GladLive
-		/// <summary>
-		/// A request to get the list of available gameservers/ships
-		/// </summary>
-		GetGameServerListRequest = 2,
-		
-		/// <summary>
-		/// A response containing the list of available gameservers/ships
-		/// </summary>
-		GetGameServerListResponse = 3,
-
 		/// <summary>
 		/// An event that contains information about an entity that should be spawned.
 		/// </summary>
@@ -32,14 +21,14 @@ namespace Booma.Payloads.Common
 		EntityDespawnEvent = 5,
 
 		/// <summary>
-		/// Request sent by players who want to spawn in an instance.
+		/// Request that tries to claim a session that a client wants, and the the server may or may not grant.
 		/// </summary>
-		PlayerSpawnRequest = 6,
+		ClaimSessionRequest = 6,
 
 		/// <summary>
-		/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/>.
+		/// Response sent by server as a response to <see cref="ClaimSessionRequest"/>.
 		/// </summary>
-		PlayerSpawnResponse = 7,
+		ClaimSessionResponse = 7,
 
 		/// <summary>
 		/// Request sent by the client's to request movement.

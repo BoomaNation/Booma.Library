@@ -11,11 +11,11 @@ using System.Linq;
 namespace Booma.Payloads.Instance
 {
 	/// <summary>
-	/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/>.
+	/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.ClaimSessionRequest"/>.
 	/// </summary>
 	[GladNetSerializationContract]
-	[BoomaPayload(BoomaPayloadMessageType.PlayerSpawnResponse)]
-	public class PlayerSpawnResponsePayload : PacketPayload, IResponseStatus<PlayerSpawnResponseCode>
+	[BoomaPayload(BoomaPayloadMessageType.ClaimSessionResponse)]
+	public class ClaimSessionResponsePayload : PacketPayload, IResponseStatus<PlayerSpawnResponseCode>
 	{
 		/// <summary>
 		/// Represents the unique entity indentifier.
@@ -43,9 +43,9 @@ namespace Booma.Payloads.Instance
 		public QuaternionSurrogate Rotation { get; private set; }
 
 		/// <summary>
-		/// Creates a new <see cref="BoomaPayloadMessageType.PlayerSpawnResponse"/> payload.
+		/// Creates a new <see cref="BoomaPayloadMessageType.ClaimSessionResponse"/> payload.
 		/// </summary>
-		public PlayerSpawnResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation, NetworkEntityGuid entityGuid)
+		public ClaimSessionResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation, NetworkEntityGuid entityGuid)
 		{
 			if (position == null) throw new ArgumentNullException(nameof(position));
 			if (rotation == null) throw new ArgumentNullException(nameof(rotation));
@@ -61,7 +61,7 @@ namespace Booma.Payloads.Instance
 		/// <summary>
 		/// Protected serializer ctor
 		/// </summary>
-		protected PlayerSpawnResponsePayload()
+		protected ClaimSessionResponsePayload()
 		{
 
 		}

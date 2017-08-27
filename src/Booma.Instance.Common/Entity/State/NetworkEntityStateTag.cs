@@ -5,6 +5,7 @@ using System.Text;
 using Generic.Math;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,6 @@ namespace Booma.Instance.NetworkObject
 		IDefaultStateProvider<TStateType>
 		where TStateType : struct, IConvertible
 	{
-		
 		/// <summary>
 		/// Event that is invoked when the state changes.
 		/// </summary>

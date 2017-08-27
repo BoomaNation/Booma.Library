@@ -53,8 +53,8 @@ namespace Booma.Instance.Server
 			//Register the payloads.
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(EntitySpawnEventPayload));
-			registry.Register(typeof(PlayerSpawnResponsePayload));
-			registry.Register(typeof(PlayerSpawnRequestPayload));
+			registry.Register(typeof(ClaimSessionResponsePayload));
+			registry.Register(typeof(ClaimSessionRequestPayload));
 			registry.Register(typeof(PlayerMoveRequestPayload));
 			registry.Register(typeof(EntityPositionUpdateEvent));
 			registry.Register(typeof(EntityInteractionRequestPayload));

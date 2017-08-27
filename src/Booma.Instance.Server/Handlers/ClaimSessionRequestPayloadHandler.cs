@@ -18,7 +18,7 @@ using Booma.Instance.NetworkObject;
 namespace Booma.Instance.Server
 {
 	[Injectee]
-	public class PlayerSpawnRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, PlayerSpawnRequestPayload>
+	public class ClaimSessionRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, ClaimSessionRequestPayload>
 	{
 		/// <summary>
 		/// Factory service for the player entities.
@@ -42,14 +42,13 @@ namespace Booma.Instance.Server
 		[Inject]
 		private readonly IConnectionToGuidRegistry connectionRegistry;
 
-		protected override void OnIncomingHandlableMessage(IRequestMessage message, PlayerSpawnRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
+		protected override void OnIncomingHandlableMessage(IRequestMessage message, ClaimSessionRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
 			//TODO: Right now we don't have a full handshake for entering an instance. So we need to make up a GUID for the entering player
 			//Important to check if we've actually already created an entity for this connection
 			//We don't have that implemenented though for the demo
+			NetworkEntityGuid guid = CreateEntityGuid(payload.SessionClaimGuid);
 
-			//rely on the factory implementation to handle placement details such as position and rotation
-			NetworkEntityGuid guid = entityGuidFactory.Create(EntityType.Player);
 			IEntitySpawnResults details = playerEntityFactory.SpawnPlayerEntity(new NetworkPlayerSpawnContext(guid, peer));
 
 			if (details.Result != SpawnResult.Success)
@@ -66,7 +65,7 @@ namespace Booma.Instance.Server
 			QuaternionSurrogate rot = details.EntityGameObject.transform.rotation.ToSurrogate();
 
 			//Send the response to the player who requested to spawn
-			peer.SendResponse(new PlayerSpawnResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, guid), DeliveryMethod.ReliableUnordered, true, 0);
+			peer.SendResponse(new ClaimSessionResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, guid), DeliveryMethod.ReliableUnordered, true, 0);
 
 			//TODO: Remove this. This is demo code.
 			foreach(var entity in entityCollection.Values.Where(e => e.NetworkGuid.EntityType == EntityType.GameObject))
@@ -78,6 +77,18 @@ namespace Booma.Instance.Server
 					entity.WorldObject.transform.rotation.ToSurrogate(), entity.WorldObject.transform.localScale.ToSurrogate(), prefabTag.Tag, state.State),
 					DeliveryMethod.ReliableOrdered, false, 0);
 			}
+		}
+
+		/// <summary>
+		/// Creates the entity GUID.
+		/// Can be overriden for special GUID handling.
+		/// </summary>
+		/// <param name="sessionGuid">The session GUID.</param>
+		/// <returns></returns>
+		protected virtual NetworkEntityGuid CreateEntityGuid(Guid sessionGuid)
+		{
+			//rely on the factory implementation to handle placement details such as position and rotation
+			return entityGuidFactory.Create(EntityType.Player);
 		}
 	}
 }

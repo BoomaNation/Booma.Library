@@ -11,12 +11,12 @@ namespace Booma.Payloads.Instance
 	public enum PlayerSpawnResponseCode : byte
 	{
 		/// <summary>
-		/// Represents an unknown <see cref="BoomaPayloadMessageType.PlayerSpawnResponse"/> state.
+		/// Represents an unknown <see cref="BoomaPayloadMessageType.ClaimSessionResponse"/> state.
 		/// </summary>
 		Unknown = 0,
 
 		/// <summary>
-		/// Represents that the <see cref="BoomaPayloadMessageType.PlayerSpawnRequest"/> was successful.
+		/// Represents that the <see cref="BoomaPayloadMessageType.ClaimSessionRequest"/> was successful.
 		/// </summary>
 		Success = 1,
 
