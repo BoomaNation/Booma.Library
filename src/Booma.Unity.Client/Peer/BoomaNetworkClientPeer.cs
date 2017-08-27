@@ -8,7 +8,6 @@ using GladNet.Common;
 using UnityEngine;
 using GladNet.Message.Handlers;
 using GladNet.Message;
-using Easyception;
 using GladNet.Lidgren.Client.Unity;
 using GladNet.Payload;
 
@@ -49,15 +48,15 @@ namespace Booma.Client.Network.Common
 
 		public sealed override void OnReceiveEvent(IEventMessage message, IMessageParameters parameters)
 		{
-			//TODO: Phase out easyexception
-			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IEventMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
+			if (message == null) throw new ArgumentNullException(nameof(message));
+
 			EventMessageHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 
 		public sealed override void OnReceiveResponse(IResponseMessage message, IMessageParameters parameters)
 		{
-			//TODO: Phase out easyexception
-			Throw<ArgumentNullException>.If.IsNull(message)?.Now(nameof(message), $"Cannot have a null {nameof(IResponseMessage)} in on recieve. This should never occur internally. Indicates major fault. Should never reach this point.");
+			if (message == null) throw new ArgumentNullException(nameof(message));
+
 			ResponseMessageHandler.TryProcessMessage(message, null, this as TInheritingType);
 		}
 	}
