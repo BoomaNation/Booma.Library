@@ -37,6 +37,13 @@ namespace Booma.Instance.Client
 			//TODO: Should we do this in the factory?
 			//Add to collection
 			entityCollection.Add(payload.EntityGuid, new EntityContainer(payload.EntityGuid, details.EntityGameObject));
+
+			OnCreatedEntity(details.EntityGameObject);
+		}
+
+		protected virtual void OnCreatedEntity(GameObject entity)
+		{
+			//We don't need to do anything. Consumers may want to do more to this.
 		}
 	}
 }

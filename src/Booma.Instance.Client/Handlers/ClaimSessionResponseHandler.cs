@@ -24,16 +24,25 @@ namespace Booma.Instance.Client
 		[Inject]
 		private readonly IGameObjectFactory gameobjectFactory;
 
+		[Inject]
+		private readonly NetworkEntityCollection entityCollection;
+
 		protected override void OnIncomingHandlableMessage(IResponseMessage message, ClaimSessionResponsePayload payload, IMessageParameters parameters, InstanceClientPeer peer)
 		{
 			//TODO: Implement spawning
 			if(Logger.IsInfoEnabled)
 				Logger.Info($"Recieved player spawn response. {payload.ResponseCode} {payload.Position} {payload.Rotation}");
 
-			OnCreatedEntity(gameobjectFactory.CreateBuilder()
+			GameObject entityGameObject = gameobjectFactory.CreateBuilder()
 				.With(Service<INetPeer>.As(peer))
 				.With(Service<NetworkEntityGuid>.As(payload.EntityGuid))
-				.Create(playerPrefab, payload.Position.ToVector3(), payload.Rotation.ToQuaternion()));
+				.Create(playerPrefab, payload.Position.ToVector3(), payload.Rotation.ToQuaternion());
+
+			//TODO: Should we do this in the factory?
+			//Add to collection
+			entityCollection.Add(payload.EntityGuid, new EntityContainer(payload.EntityGuid, entityGameObject));
+
+			OnCreatedEntity(entityGameObject);
 		}
 
 		protected virtual void OnCreatedEntity(GameObject entity)
