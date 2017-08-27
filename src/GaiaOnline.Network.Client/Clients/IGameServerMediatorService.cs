@@ -19,7 +19,15 @@ namespace GaiaOnline
 		/// </summary>
 		/// <param name="token">The access token.</param>
 		/// <returns>The result of the attempted entry.</returns>
-		[Post("/api/gameserver/gateway")]
+		[Post("/api/gateway/enter")]
 		Task<ServerEntryResponse> TryEnterGameServer([DynamicHeader("Authorization")] string token);
+
+		/// <summary>
+		/// Attempts to translate an <see cref="entityId"/> to a corresponding username.
+		/// </summary>
+		/// <param name="entityId">The entity id to check.</param>
+		/// <returns>The name of the user associated with the entity id.</returns>
+		[Get("/api/character/namequery")]
+		Task<string> GetNameFromId([StringBody] int entityId);
 	}
 }
