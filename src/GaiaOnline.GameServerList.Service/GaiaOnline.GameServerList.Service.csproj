@@ -24,6 +24,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GaiaOnline.Database.Common\GaiaOnline.Database.Common.csproj" />
     <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
   </ItemGroup>
   <ItemGroup>

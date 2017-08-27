@@ -32,12 +32,9 @@ namespace GaiaOnline
 			// Add framework services.
 			services.AddMvc();
 			services.AddLogging();
-			services.Configure<DatabaseConfigModel>(options => Configuration.GetSection(nameof(DatabaseConfigModel)).Bind(options)); //there a better way?
+			services.RegisterDatabaseConfigOptions(Configuration);
 
-			IOptions<DatabaseConfigModel> dbConfig = services.BuildServiceProvider().GetService<IOptions<DatabaseConfigModel>>();
-
-			if(dbConfig == null || String.IsNullOrWhiteSpace(dbConfig.Value.ConnectionString))
-				throw new InvalidOperationException("No connection string is found in the configuration.");
+			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
 
 			services.AddDbContext<GameServerListDbContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddTransient<IGameServerListRepository, DatabaseGameServerListRepository>();
