@@ -20,14 +20,12 @@ namespace Booma.Instance.Client
 		private readonly IPlayerEntityFactory playerFactory;
 
 		[Inject]
-		private readonly ILog logger;
-
-		[Inject]
 		private readonly NetworkEntityCollection entityCollection;
 
 		protected override void OnIncomingHandlableMessage(IEventMessage message, PlayerEntitySpawnEventPayload payload, IMessageParameters parameters, InstanceClientPeer peer)
 		{
-			logger.Info($"Recieved spawn event for ID: {payload.EntityGuid.EntityId}.");
+			if(Logger.IsInfoEnabled)
+				Logger.Info($"Recieved spawn event for ID: {payload.EntityGuid.EntityId}.");
 
 			IEntitySpawnResults details = playerFactory.SpawnPlayerEntity(payload.Position.ToVector3(), payload.Rotation.ToQuaternion(), new NetworkPlayerSpawnContext(payload.EntityGuid, peer));
 
