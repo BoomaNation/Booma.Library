@@ -59,9 +59,11 @@ namespace GaiaOnline
 				if(!response.isRequestSuccessful)
 					return new JsonResult(new JWTModel($"Failed error code: {response.ResponseStatusCode}", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
 
+				int userId = int.Parse(response.UserId);
+
 				//If we don't have the entry
-				if (!await GaiaNameRepo.DoesEntryExist(response.UserId))
-					if(!await GaiaNameRepo.InsertEntry(authModel.username, int.Parse(response.UserId)))
+				if (!await GaiaNameRepo.DoesEntryExist(userId))
+					if(!await GaiaNameRepo.InsertEntry(authModel.username, userId))
 						throw new InvalidOperationException($"Failed to add name entry UserName: {authModel.username} with Id: {response.UserId}.");
 
 				return new JsonResult(new JWTModel(response.UserId)); //we'll use user id temporarily as the accesstoken
