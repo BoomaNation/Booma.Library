@@ -21,5 +21,18 @@ namespace GaiaOnline
 		{
 
 		}
+
+		public GaiaNameQueryDatabaseContext()
+		{
+
+		}
+
+#if DEBUG || DEBUGBUILD
+		/// <inheritdoc />
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseMySql("Server=localhost;Database=GaiaOnlineMMO;Uid=root;Pwd=test;");
+		}
+#endif
 	}
 }
