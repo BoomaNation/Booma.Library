@@ -33,6 +33,12 @@ namespace GaiaOnline
 		{
 			// Add framework services.
 			services.AddMvc();
+			services.RegisterDatabaseConfigOptions(Configuration);
+
+			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
+
+			services.AddDbContext<GaiaNameQueryDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
+			services.AddTransient<IGaiaNameRepository, DbContextBasedGaiaNameRepository>();
 
 			IGaiaOnlineQueryClient client = TypeSafeHttpBuilder<IGaiaOnlineQueryClient>.Create()
 				.RegisterDotNetHttpClient(@"http://www.gaiaonline.com")
@@ -40,11 +46,6 @@ namespace GaiaOnline
 				.Build();
 
 			services.AddSingleton(client);
-
-			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
-
-			services.AddDbContext<GaiaNameQueryDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
-			services.AddTransient<IGaiaNameRepository, DbContextBasedGaiaNameRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

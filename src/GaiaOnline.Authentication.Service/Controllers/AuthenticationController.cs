@@ -31,11 +31,15 @@ namespace GaiaOnline
 		/// </summary>
 		private IGaiaOnlineQueryClient QueryClient { get; }
 
-		public AuthenticationController([FromServices] IGaiaOnlineQueryClient queryClient)
+		public IGaiaNameRepository GaiaNameRepo { get; }
+
+		public AuthenticationController([FromServices] IGaiaOnlineQueryClient queryClient, [FromServices] IGaiaNameRepository gaiaNameRepo)
 		{
 			if (queryClient == null) throw new ArgumentNullException(nameof(queryClient));
+			if (gaiaNameRepo == null) throw new ArgumentNullException(nameof(gaiaNameRepo));
 
 			QueryClient = queryClient;
+			GaiaNameRepo = gaiaNameRepo;
 		}
 
 		[HttpPost]
@@ -52,10 +56,15 @@ namespace GaiaOnline
 			{
 				UserAvatarQueryResponse response = await QueryClient.GetAvatarFromUsername(authModel.username);
 
-				if(response.isRequestSuccessful)
-					return new JsonResult(new JWTModel(response.UserId)); //we'll use user id temporarily as the accesstoken
-				
-				return new JsonResult(new JWTModel($"Failed error code: {response.ResponseStatusCode}", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
+				if(!response.isRequestSuccessful)
+					return new JsonResult(new JWTModel($"Failed error code: {response.ResponseStatusCode}", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
+
+				//If we don't have the entry
+				if (!await GaiaNameRepo.DoesEntryExist(response.UserId))
+					if(!await GaiaNameRepo.InsertEntry(authModel.username, int.Parse(response.UserId)))
+						throw new InvalidOperationException($"Failed to add name entry UserName: {authModel.username} with Id: {response.UserId}.");
+
+				return new JsonResult(new JWTModel(response.UserId)); //we'll use user id temporarily as the accesstoken
 			}
 			catch (Exception e)
 			{
