@@ -45,7 +45,8 @@ namespace GaiaOnline
 		[HttpPost]
 		public async Task<JsonResult> Authenticate(AuthRequestUrlEncodedMock authModel) //don't
 		{
-			if (authModel == null || !ModelState.IsValid) throw new ArgumentException(nameof(authModel));
+			if (authModel == null || !ModelState.IsValid)
+				return new JsonResult(new JWTModel($"Failed to authenticate.", "Invalid request."));
 
 			if(String.IsNullOrWhiteSpace(authModel.username))
 				return new JsonResult(new JWTModel($"Failed to authenticate.", "Username must be valid."));
