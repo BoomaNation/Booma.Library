@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace GaiaOnline
 {
@@ -29,6 +31,13 @@ namespace GaiaOnline
 		{
 			// Add framework services.
 			services.AddMvc();
+
+			services.RegisterDatabaseConfigOptions(Configuration);
+
+			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
+
+			services.AddDbContext<GaiaNameQueryDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
+			services.AddTransient<IGaiaNameRepository, DbContextBasedGaiaNameRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
