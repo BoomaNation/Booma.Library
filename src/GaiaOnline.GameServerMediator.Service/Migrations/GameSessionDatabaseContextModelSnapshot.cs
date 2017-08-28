@@ -7,38 +7,38 @@ using GaiaOnline;
 
 namespace GaiaOnline.GameServerMediator.Service.Migrations
 {
-    [DbContext(typeof(GameSessionDatabaseContext))]
-    partial class GameSessionDatabaseContextModelSnapshot : ModelSnapshot
-    {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.1");
+	[DbContext(typeof(GameSessionDatabaseContext))]
+	partial class GameSessionDatabaseContextModelSnapshot : ModelSnapshot
+	{
+		protected override void BuildModel(ModelBuilder modelBuilder)
+		{
+			modelBuilder
+				.HasAnnotation("ProductVersion", "1.1.1");
 
-            modelBuilder.Entity("GaiaOnline.GameSessionModel", b =>
-                {
-                    b.Property<int>("UserId");
+			modelBuilder.Entity("GaiaOnline.GameSessionModel", b =>
+				{
+					b.Property<int>("UserId");
 
-                    b.Property<DateTime>("SessionCreationTime")
-                        .ValueGeneratedOnAddOrUpdate();
+					b.Property<DateTime>("SessionCreationTime")
+						.ValueGeneratedOnAddOrUpdate();
 
-                    b.Property<Guid>("SessionGuid");
+					b.Property<Guid>("SessionGuid");
 
-                    b.Property<string>("SessionIp")
-                        .IsRequired();
+					b.Property<string>("SessionIp")
+						.IsRequired();
 
-                    b.HasKey("UserId");
+					b.HasKey("UserId");
 
-                    b.ToTable("GameSessions");
-                });
+					b.ToTable("GameSessions");
+				});
 
-            modelBuilder.Entity("GaiaOnline.GameSessionModel", b =>
-                {
-                    b.HasOne("GaiaOnline.GaiaNameEntryModel", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-        }
-    }
+			modelBuilder.Entity("GaiaOnline.GameSessionModel", b =>
+				{
+					b.HasOne("GaiaOnline.GaiaNameEntryModel", "User")
+						.WithMany()
+						.HasForeignKey("UserId")
+						.OnDelete(DeleteBehavior.Cascade);
+				});
+		}
+	}
 }

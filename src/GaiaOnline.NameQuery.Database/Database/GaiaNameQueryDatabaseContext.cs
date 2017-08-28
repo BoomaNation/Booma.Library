@@ -16,7 +16,7 @@ namespace GaiaOnline
 		/// </summary>
 		public DbSet<GaiaNameEntryModel> NameEntries { get; set; }
 
-		public GaiaNameQueryDatabaseContext(DbContextOptions options) 
+		public GaiaNameQueryDatabaseContext(DbContextOptions<GaiaNameQueryDatabaseContext> options) 
 			: base(options)
 		{
 

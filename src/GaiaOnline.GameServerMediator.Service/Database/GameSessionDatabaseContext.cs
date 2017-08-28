@@ -14,7 +14,7 @@ namespace GaiaOnline
 		/// </summary>
 		public DbSet<GameSessionModel> GameSessions { get; set; }
 
-		public GameSessionDatabaseContext(DbContextOptions options) 
+		public GameSessionDatabaseContext(DbContextOptions<GameSessionDatabaseContext> options) 
 			: base(options)
 		{
 
@@ -24,13 +24,5 @@ namespace GaiaOnline
 		{
 
 		}
-
-/*#if DEBUG || DEBUGBUILD
-		/// <inheritdoc />
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseMySql("Server=localhost;Database=GaiaOnlineMMO;Uid=root;Pwd=test;");
-		}
-#endif*/
 	}
 }
