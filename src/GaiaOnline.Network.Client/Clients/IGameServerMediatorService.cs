@@ -27,7 +27,7 @@ namespace GaiaOnline
 		/// </summary>
 		/// <param name="entityId">The entity id to check.</param>
 		/// <returns>The name of the user associated with the entity id.</returns>
-		[Get("/api/character/namequery")]
-		Task<string> GetNameFromId([StringBody] int entityId);
+		[Get("/api/avatar/namequery/{id}")]
+		Task<NameQueryResponse> GetAvatarNameById([AliasAs("id")] int entityId);
 	}
 }

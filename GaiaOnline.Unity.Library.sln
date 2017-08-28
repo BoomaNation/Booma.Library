@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.NameQuery.Databa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Database.Common", "src\GaiaOnline.Database.Common\GaiaOnline.Database.Common.csproj", "{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.NameQuery.Models", "src\GaiaOnline.NameQuery.Models\GaiaOnline.NameQuery.Models.csproj", "{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{62508B2E-7378-43E2-AB95-09417705C0A0} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
 		{E88FE383-0659-41EF-A311-193D03D8FA39} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
 		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC3687F9-5B94-46EB-AB27-C24E4361100F}

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.5</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;net46</TargetFrameworks>
     <Authors>https://github.com/HelloKitty</Authors>
     <Company>https://github.com/HelloKitty</Company>
     <Product></Product>
@@ -16,18 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="HaloLive.Models.Common" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Models.NameResolution.Common" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.5" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
-    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GaiaOnline.GameServerMediator.Models.Client\GaiaOnline.GameServerMediator.Models.Client.csproj" />
-    <ProjectReference Include="..\GaiaOnline.NameQuery.Models\GaiaOnline.NameQuery.Models.csproj" />
   </ItemGroup>
 
 </Project>
