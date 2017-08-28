@@ -47,32 +47,57 @@ namespace GaiaOnline
 		{
 			if (authModel == null || !ModelState.IsValid) throw new ArgumentException(nameof(authModel));
 
+			if(String.IsNullOrWhiteSpace(authModel.username))
+				return new JsonResult(new JWTModel($"Failed to authenticate.", "Username must be valid."));
+
 			//We should ask Gaia about this user. First enforce that it's not a number
 			int i;
 			if (int.TryParse(authModel.username, out i))
-				return null; //TODO: Send back error if they try to log in with userid
+				return new JsonResult(new JWTModel($"Failed to authenticate.", "Username must be used. Not the user id."));
 
 			try
 			{
-				UserAvatarQueryResponse response = await QueryClient.GetAvatarFromUsername(authModel.username);
+				bool wasFoundInDataStorage = await GaiaNameRepo.DoesEntryExist(authModel.username);
 
-				if(!response.isRequestSuccessful)
-					return new JsonResult(new JWTModel($"Failed error code: {response.ResponseStatusCode}", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
+				int? userId = !wasFoundInDataStorage ? await GetUserIdFrom(authModel.username, QueryClient) 
+					: await GetUserIdFrom(authModel.username, GaiaNameRepo);
 
-				int userId = int.Parse(response.UserId);
+				if(!userId.HasValue)
+					return new JsonResult(new JWTModel($"Failed to authenticate.", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
 
 				//If we don't have the entry
-				if (!await GaiaNameRepo.DoesEntryExist(userId))
-					if(!await GaiaNameRepo.InsertEntry(authModel.username, userId))
-						throw new InvalidOperationException($"Failed to add name entry UserName: {authModel.username} with Id: {response.UserId}.");
+				if(!wasFoundInDataStorage)
+					if(!await GaiaNameRepo.InsertEntry(authModel.username, userId.Value))
+						throw new InvalidOperationException($"Failed to add name entry UserName: {authModel.username} with Id: {userId.Value}.");
 
-				return new JsonResult(new JWTModel(response.UserId)); //we'll use user id temporarily as the accesstoken
+				return new JsonResult(new JWTModel(userId.Value.ToString())); //we'll use user id temporarily as the accesstoken
 			}
 			catch (Exception e)
 			{
 				//TODO: This could leak sensitive information. Only use this in dev
 				return new JsonResult(new JWTModel("Failed to query Gaia for user info.", e.Message));
 			}
+		}
+
+		private async Task<int?> GetUserIdFrom([NotNull] string userName, [NotNull] IGaiaNameRepository dataService)
+		{
+			if(dataService == null) throw new ArgumentNullException(nameof(dataService));
+			if(string.IsNullOrWhiteSpace(userName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(userName));
+
+			return await dataService.GetIdByName(userName);
+		}
+
+		private async Task<int?> GetUserIdFrom([NotNull] string userName, [NotNull] IGaiaOnlineQueryClient client)
+		{
+			if(client == null) throw new ArgumentNullException(nameof(client));
+			if(string.IsNullOrWhiteSpace(userName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(userName));
+
+			UserAvatarQueryResponse response = await client.GetAvatarFromUsername(userName);
+
+			if(!response.isRequestSuccessful)
+				return null;
+
+			return Int32.Parse(response.UserId);
 		}
 	}
 }

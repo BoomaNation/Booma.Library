@@ -27,20 +27,26 @@ namespace GaiaOnline
 		public async Task<string> GetNameById(int userId)
 		{
 			//Use AsNoTracking so that we always get live up-to-date results
-			return (await DatabaseContext.NameEntries.FirstAsync(n => n.UserId == userId))?.AvatarUsername;
+			return (await DatabaseContext.NameEntries.FirstAsync(n => n.UserId == userId)).AvatarUsername;
+		}
+
+		/// <inheritdoc />
+		public async Task<int> GetIdByName(string avatarName)
+		{
+			return (await DatabaseContext.NameEntries.FirstAsync(n => n.AvatarUsername == avatarName)).UserId;
 		}
 
 		/// <inheritdoc />
 		public async Task<bool> DoesEntryExist(int userId)
 		{
 			//Use AsNoTracking so that we always get live up-to-date results
-			return await DatabaseContext.NameEntries.AsNoTracking().AnyAsync(n => n.UserId == userId);
+			return await DatabaseContext.NameEntries.AnyAsync(n => n.UserId == userId);
 		}
 
 		/// <inheritdoc />
 		public async Task<bool> DoesEntryExist(string avatarName)
 		{
-			return await DatabaseContext.NameEntries.AsNoTracking().AnyAsync(n => n.AvatarUsername == avatarName);
+			return await DatabaseContext.NameEntries.AnyAsync(n => n.AvatarUsername == avatarName);
 		}
 
 		/// <inheritdoc />

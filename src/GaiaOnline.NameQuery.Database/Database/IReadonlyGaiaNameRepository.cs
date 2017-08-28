@@ -15,6 +15,13 @@ namespace GaiaOnline
 		Task<string> GetNameById(int userId);
 
 		/// <summary>
+		/// Gets the user id by the provided avatar username.
+		/// </summary>
+		/// <param name="avatarName">The avatar username.</param>
+		/// <returns>The user id that corresponds to the avatar username.</returns>
+		Task<int> GetIdByName(string avatarName);
+
+		/// <summary>
 		/// Indicates if the user id is known.
 		/// </summary>
 		/// <param name="userId">User id to check.</param>

@@ -6,6 +6,7 @@ using HaloLive.Models.NameResolution;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GaiaOnline
 {
@@ -33,6 +34,13 @@ namespace GaiaOnline
 			string avatarName = await gaiaNameRepository.GetNameById(entityId);
 
 			return Json(new NameQueryResponse(avatarName));
+		}
+
+		[HttpPost]
+		public async Task Test([FromServices] GaiaNameQueryDatabaseContext db)
+		{
+			db.NameEntries.Remove(await db.NameEntries.FirstOrDefaultAsync(s => s.UserId == 16174897));
+			await db.SaveChangesAsync();
 		}
 	}
 }
