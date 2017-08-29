@@ -18,8 +18,13 @@ namespace GaiaOnline
 		FailedSessionExpired = 2,
 
 		/// <summary>
+		/// Indicates that the session was for an IP that isn't the one provided for the inquiry.
+		/// </summary>
+		FailedSessionIsForDifferentIp = 3,
+
+		/// <summary>
 		/// Indicates some general server error occured causing a failure.
 		/// </summary>
-		FailedGeneralServerError = 3
+		FailedGeneralServerError = 4
 	}
 }
