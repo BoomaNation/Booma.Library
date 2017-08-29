@@ -1,18 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GaiaOnline
 {
-	public interface IGameSessionRepository
+	//TODO: Refactor into writable and readonly interface
+	public interface IGameSessionRepository : IReadOnlyGameSessionRepository
 	{
-		/// <summary>
-		/// Indicates if the <see cref="userId"/> is associated with an active gamesession.
-		/// </summary>
-		/// <param name="userId">The user id to check.</param>
-		/// <returns>True if a game session exists for the user.</returns>
-		Task<bool> HasSession(int userId);
-
 		//TODO: The user should be authenticated, and with OAuth can prove it, so we just require id. Switch to OAuth ASAP
 		/// <summary>
 		/// Tries to create a gamesession for the user.
