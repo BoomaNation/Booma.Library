@@ -27,7 +27,7 @@ namespace GaiaOnline
 		public async Task<JsonResult> TryEnterGameServer([FromServices] IGameSessionRepository gameSessionRepository)
 		{
 			if(!ModelState.IsValid)
-				return Json(new ServerEntryResponse(ServerEntryResponseCode.FailedConnectionActivelyRefused)));
+				return Json(new ServerEntryResponse(ServerEntryResponseCode.FailedConnectionActivelyRefused));
 
 			//TODO: Once this is OAuth2 we can't just parse the token like this
 			int? potentialId = TryGetUserId(Request);
