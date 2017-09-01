@@ -46,15 +46,15 @@ namespace GaiaOnline
 		public async Task<JsonResult> Authenticate(AuthRequestUrlEncodedMock authModel) //don't
 		{
 			if (authModel == null || !ModelState.IsValid)
-				return new JsonResult(new JWTModel($"Failed to authenticate.", "Invalid request."));
+				return Json(new JWTModel($"Failed to authenticate.", "Invalid request."));
 
 			if(String.IsNullOrWhiteSpace(authModel.username))
-				return new JsonResult(new JWTModel($"Failed to authenticate.", "Username must be valid."));
+				return Json(new JWTModel($"Failed to authenticate.", "Username must be valid."));
 
 			//We should ask Gaia about this user. First enforce that it's not a number
 			int i;
 			if (int.TryParse(authModel.username, out i))
-				return new JsonResult(new JWTModel($"Failed to authenticate.", "Username must be used. Not the user id."));
+				return Json(new JWTModel($"Failed to authenticate.", "Username must be used. Not the user id."));
 
 			try
 			{
@@ -64,19 +64,19 @@ namespace GaiaOnline
 					: await GetUserIdFrom(authModel.username, GaiaNameRepo);
 
 				if(!userId.HasValue)
-					return new JsonResult(new JWTModel($"Failed to authenticate.", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
+					return Json(new JWTModel($"Failed to authenticate.", $"Failed to query for the User: {authModel.username}. This user is unavailable or doesn't exist."));
 
 				//If we don't have the entry
 				if(!wasFoundInDataStorage)
 					if(!await GaiaNameRepo.InsertEntry(authModel.username, userId.Value))
 						throw new InvalidOperationException($"Failed to add name entry UserName: {authModel.username} with Id: {userId.Value}.");
 
-				return new JsonResult(new JWTModel(userId.Value.ToString())); //we'll use user id temporarily as the accesstoken
+				return Json(new JWTModel(userId.Value.ToString())); //we'll use user id temporarily as the accesstoken
 			}
 			catch (Exception e)
 			{
 				//TODO: This could leak sensitive information. Only use this in dev
-				return new JsonResult(new JWTModel("Failed to query Gaia for user info.", e.Message));
+				return Json(new JWTModel("Failed to query Gaia for user info.", e.Message));
 			}
 		}
 
