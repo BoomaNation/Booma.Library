@@ -34,10 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NetworkServices\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj" />
     <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
     <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
   </ItemGroup>
