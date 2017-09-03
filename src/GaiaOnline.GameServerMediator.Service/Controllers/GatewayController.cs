@@ -53,6 +53,7 @@ namespace GaiaOnline
 		}
 
 		//TODO: We should use OAuth to authenticate requests. We MUST make sure they are from actual servers.
+		[HttpPost("validate")]
 		public async Task<JsonResult> InquireOnSessionDetails([FromBody] SessionClaimInquiryRequest sessionInquiryRequest, [FromServices] IReadOnlyGameSessionRepository gameSessionRepository)
 		{
 			//TODO: The session could be removed? We may do that when they log out. Or if they transfer.
@@ -72,6 +73,7 @@ namespace GaiaOnline
 			return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.Success));
 		}
 
+		//TODO: Once we use OAuth we won't need this
 		public int? TryGetUserId(HttpRequest request)
 		{
 			//TODO: When we enable actual OAuth we won't need to manually read this

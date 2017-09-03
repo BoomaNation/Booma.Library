@@ -1,6 +1,6 @@
 dotnet restore GaiaOnline.Unity.Library.sln
-dotnet publish src/GaiaOnline.Game.Client/GaiaOnline.Game.Client.csproj -c release
 dotnet publish src/GaiaOnline.Game.Common/GaiaOnline.Game.Common.csproj -c release
+dotnet publish src/GaiaOnline.Game.Client/GaiaOnline.Game.Client.csproj -c release
 dotnet publish src/GaiaOnline.Game.Network.Client/GaiaOnline.Game.Network.Client.csproj -c release
 dotnet publish src/GaiaOnline.AdditionalDependencies/GaiaOnline.AdditionalDependencies.csproj -c release
 
