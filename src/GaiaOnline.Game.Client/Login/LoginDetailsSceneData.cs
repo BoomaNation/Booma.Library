@@ -25,12 +25,6 @@ namespace GaiaOnline
 		/// </summary>
 		public string Password { get; private set; } = "test";
 
-		private void Awake()
-		{
-			//We should keep the object alive until someone destroys it.
-			DontDestroyOnLoad(this);
-		}
-
 		//These setters are here for hooking to UnityEvents
 		/// <summary>
 		/// Sets the <see cref="UserName"/> value.

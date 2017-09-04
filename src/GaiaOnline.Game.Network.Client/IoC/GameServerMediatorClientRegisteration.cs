@@ -35,8 +35,11 @@ namespace GaiaOnline
 		//We don't need to cache this, since it'll only ever be called once per connection
 		private string GenerateGameServerMediatorUrl()
 		{
+			//TODO: This is for testing only
+			return @"http://localhost:5003";
+
 			//TODO: This is kinda hacky, I don't like player prefs but other solutions suck too. Also we can't put this behind IoC since this executes before IoC
-			return $"http://{PlayerPrefs.HasKey(PlayerPreferences.GameServerIp.ToString())}:{PlayerPrefs.HasKey(PlayerPreferences.GameServerPort.ToString())}";
+			//return $"http://{PlayerPrefs.HasKey(PlayerPreferences.GameServerIp.ToString())}:{PlayerPrefs.HasKey(PlayerPreferences.GameServerPort.ToString())}";
 		}
 	}
 }
