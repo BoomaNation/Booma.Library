@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TypeSafe.Http.Net.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TypeSafe.Http.Net.IHttpServiceProxyBuilder`1">
+            <summary>
+            Contract for a HTTP service builder.
+            </summary>
+            <typeparam name="THttpServiceInterface">The http service type.</typeparam>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpServiceProxyBuilder`1.Build">
+            <summary>
+            Builds the HTTP service <see cref="!:THttpServiceInterface"/>.
+            </summary>
+            <returns>An instance of the constructed HTTP service.</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IRequestContextFactory">
+            <summary>
+            Contract for a factory that produces request contexts.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestContextFactory.CreateContext(TypeSafe.Http.Net.IServiceCallContext,TypeSafe.Http.Net.IServiceCallParametersContext)">
+            <summary>
+            Creates a <see cref="T:TypeSafe.Http.Net.IHttpClientRequestContext"/> based on the context of the provided service call and parameters.
+            </summary>
+            <param name="callContext">The calling context.</param>
+            <param name="parameterContext">The parameter context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IServiceCallContext">
+            <summary>
+            Represents the context of a service call.
+            (Ex. user calls serviceProxy.Authenticate(username, password) on its custom made IAuthServer interface
+            so we package up contextual information for the service call so it is easily extended and passed around as the current 
+            service request/call).
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IServiceCallParametersContext">
+            <summary>
+            Contract for a type that provides or manages the context of the parameters 
+            for a particular service call.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IServiceCallParametersContext.HasParameters">
+            <summary>
+            Indicates if the service call has any parameters.
+            If this is false it is likely <see cref="P:TypeSafe.Http.Net.IServiceCallParametersContext.Parameters"/> is null or at least empty.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IServiceCallParametersContext.Parameters">
+            <summary>
+            The parameters involved in the service call.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IHttpClientRequestContext">
+            <summary>
+            Context for a HTTP service request.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpClientRequestContext.ActionPath">
+            <summary>
+            The action path to use.
+            Will contain the contextual query string parameters too if the request
+            requires query string parameters.
+            (ex. /api/auth)
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpClientRequestContext.RequestMethod">
+            <summary>
+            The method for the request.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpClientRequestContext.RequestHeaders">
+            <summary>
+            Collection of the request headers to be used.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpClientRequestContext.BodyContext">
+            <summary>
+            Represents the context of the body.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpClientRequestContext.SupressedErrorCodesContext">
+            <summary>
+            Dictionary of supressed codes. All values are initialized.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IRequestBodyContext">
+            <summary>
+            Context for the body of the request.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IRequestBodyContext.HasBody">
+            <summary>
+            Indicates if the request contains a body to write.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IRequestBodyContext.Body">
+            <summary>
+            The body for the request.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IRequestBodyWriter">
+            <summary>
+            Contract for types that can write body data.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestBodyWriter.Write(System.Byte[],System.String)">
+            <summary>
+            Writes binary bytes as the content of the request body.
+            </summary>
+            <param name="bytes">The bytes to write.</param>
+            <param name="contentTypeValue">The value to use as the content type.</param>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestBodyWriter.Write(System.String,System.String)">
+            <summary>
+            Writes text/string data as the content of the request body.
+            </summary>
+            <param name="content"></param>
+            <param name="contentTypeValue">The value to use as the content type.</param>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestBodyWriter.WriteAsync(System.Byte[],System.String)">
+            <summary>
+            Writes binary bytes asyncronously as the content of the request body.
+            </summary>
+            <param name="bytes">The bytes to write.</param>
+            <param name="contentTypeValue">The value to use as the content type.</param>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestBodyWriter.WriteAsync(System.String,System.String)">
+            <summary>
+            Writes text/string data asyncronously as the content of the request body.
+            </summary>
+            <param name="content"></param>
+            <param name="contentTypeValue">The value to use as the content type.</param>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IRequestHeader.HeaderType">
+            <summary>
+            Indicates the header type.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IRequestHeader.HeaderValue">
+            <summary>
+            The fully built header value containing one or more
+            values with the correct delimiters.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IResponseBodyReader">
+            <summary>
+            Contract for types that can read response bodies.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseBodyReader.ReadAsBytesAsync">
+            <summary>
+            Reads the response body asyncronously as a <see cref="!:byte[]"/>
+            </summary>
+            <returns>The read <see cref="!:byte[]"/></returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseBodyReader.ReadAsStringAsync">
+            <summary>
+            Reads the response body asyncronously as a <see cref="T:System.String"/>
+            </summary>
+            <returns>The read <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseBodyReader.ReadAsBytes">
+            <summary>
+            Reads the response body as a <see cref="!:byte[]"/>
+            </summary>
+            <returns>The read <see cref="!:byte[]"/></returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseBodyReader.ReadAsString">
+            <summary>
+            Reads the response body as a <see cref="T:System.String"/>
+            </summary>
+            <returns>The read <see cref="T:System.String"/></returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.ISupressedErrorCodeContext">
+            <summary>
+            Service interface that provides information about supressed error codes.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.ISupressedErrorCodeContext.SupressedErrorCodes">
+            <summary>
+            The supressed error codes.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IActionPathServiceCallInterpreter">
+            <summary>
+            Service that interprets service calls to produce <see cref="T:System.String"/> action paths.
+            These are the paths appended to the
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IHeaderServiceCallInterpreter">
+            <summary>
+            Service that interprets service calls to produce <see cref="T:TypeSafe.Http.Net.IRequestHeader"/> collections.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IRequestPipelineService`1">
+            <summary>
+            Contract for types that act on <see cref="T:TypeSafe.Http.Net.IServiceCallContext"/> and <see cref="T:TypeSafe.Http.Net.IServiceCallParametersContext"/>
+            to produce results or interpret the information contained within them.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestPipelineService`1.ProduceFromContext(TypeSafe.Http.Net.IServiceCallContext,TypeSafe.Http.Net.IServiceCallParametersContext)">
+            <summary>
+            Pipeline service that reads the provided <see cref="!:serviceContext"/> along with the provided <see cref="!:parameters"/>
+            to create the specified <typeparamref name="TResultType"/>.
+            </summary>
+            <param name="serviceContext">The service context for the call.</param>
+            <param name="parameters">The context of the parameters for this service call.</param>
+            <returns>A non-null <typeparamref name="TResultType"/>.</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IContentTypeAssociable">
+            <summary>
+            Contract for types that are associated with a 0 to n
+            many content types.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IContentTypeAssociable.AssociatedContentType">
+            <summary>
+            The associated types.
+            Possibly empty but never null.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IDeserializationStrategyFactory.DeserializerFor(System.String)">
+            <summary>
+            Creates a serialization strategy for the provided <see cref="!:contentType"/>.
+            </summary>
+            <param name="contentType">Non-null non-empty content type.</param>
+            <returns>A request serialization strategy if found.</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IRequestSerializationStrategy">
+            <summary>
+            Contract for types that provide serialization services.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IRequestSerializationStrategy.TrySerialize(System.Object,TypeSafe.Http.Net.IRequestBodyWriter)">
+            <summary>
+            Tries to serialize the content
+            </summary>
+            <param name="content">Content to try to serialize into the writer.</param>
+            <param name="writer">The writer to write the serialized content into.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IResponseDeserializationStrategy">
+            <summary>
+            Strategy for deserializing responses from
+            a provided <see cref="T:TypeSafe.Http.Net.IResponseBodyReader"/>.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseDeserializationStrategy.Deserialize``1(TypeSafe.Http.Net.IResponseBodyReader)">
+            <summary>
+            Deserializes the response from the provided response body reader.
+            </summary>
+            <param name="reader">A reader service that can interpret the response.</param>
+            <returns>A non-null <typeparamref name="TReturnType"/> deserialized from the body.</returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IResponseDeserializationStrategy.DeserializeAsync``1(TypeSafe.Http.Net.IResponseBodyReader)">
+            <summary>
+            Deserializes the response asyncronously from the provided response body reader.
+            </summary>
+            <param name="reader">A reader service that can interpret the response.</param>
+            <returns>A non-null <typeparamref name="TReturnType"/> deserialized from the body.</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.ISerializationStrategyFactory">
+            <summary>
+            Contract for services that provide serialization strategy creation.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.ISerializationStrategyFactory.SerializerFor(System.Type)">
+            <summary>
+            Creates a serialization strategy for the provided <see cref="!:contentType"/>.
+            </summary>
+            <param name="contentType">Non-null content type.</param>
+            <returns>A request serialization strategy if found.</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.ISerializationStrategyRegister">
+            <summary>
+            Contract for types that provide serialization registry.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.ISerializationStrategyRegister.Register``2(``1)">
+            <summary>
+            Registers a serialization service mapped to the provided attribute types.
+            </summary>
+            <typeparam name="TBodySerializerMetadataType"></typeparam>
+            <typeparam name="TSerializerType">The serializer type.</typeparam>
+            <param name="serializationService">The serialization service to map to the attributes.</param>
+            <returns>True if the service was registered</returns>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IHttpClientServiceRegister">
+            <summary>
+            Contract for types that allow the registeration of a
+            HTTP client implementation.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpClientServiceRegister.Register(TypeSafe.Http.Net.IHttpServiceProxy)">
+            <summary>
+            Registers a HTTP client proxy.
+            </summary>
+            <param name="proxy">The proxy to register.</param>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IHttpService">
+            <summary>
+            Contract for all HTTP services.
+            </summary>
+        </member>
+        <member name="P:TypeSafe.Http.Net.IHttpService.BaseUrl">
+            <summary>
+            The base endpoint of the HTTP service.
+            </summary>
+        </member>
+        <member name="T:TypeSafe.Http.Net.IHttpServiceProxy">
+            <summary>
+            Contract for HTTP service proxies that mediate between the HTTP application layer and the consuming user.
+            </summary>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpServiceProxy.Send``1(TypeSafe.Http.Net.IHttpClientRequestContext,TypeSafe.Http.Net.IRequestSerializationStrategy,TypeSafe.Http.Net.IDeserializationStrategyFactory)">
+            <summary>
+            Sends a request with the designated <see cref="!:TReturnType"/> with the provided context and the strategy
+            for serializing the body content.
+            </summary>
+            <typeparam name="TReturnType">The return type to expect.</typeparam>
+            <param name="requestContext">The context of the request.</param>
+            <param name="serializer"></param>
+            <param name="deserializationFactory"></param>
+            <returns>The a future promise for a deserialized return data.</returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpServiceProxy.Send``1(TypeSafe.Http.Net.IHttpClientRequestContext,TypeSafe.Http.Net.IDeserializationStrategyFactory)">
+            <summary>
+            Sends a request with the designated <see cref="!:TReturnType"/> with the provided context.
+            </summary>
+            <typeparam name="TReturnType">The return type to expect.</typeparam>
+            <param name="requestContext">The context of the request.</param>
+            <param name="deserializationFactory"></param>
+            <returns>The a future promise for a deserialized return data.</returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpServiceProxy.Send(TypeSafe.Http.Net.IHttpClientRequestContext,TypeSafe.Http.Net.IRequestSerializationStrategy)">
+            <summary>
+            Sends a request with the provided context with no response data.
+            </summary>
+            <param name="requestContext">The context of the request.</param>
+            <param name="serializer"></param>
+            <returns>A future.</returns>
+        </member>
+        <member name="M:TypeSafe.Http.Net.IHttpServiceProxy.Send(TypeSafe.Http.Net.IHttpClientRequestContext)">
+            <summary>
+            Sends a request with the provided context with no response data.
+            </summary>
+            <param name="requestContext">The context of the request.</param>
+            <returns>A future.</returns>
+        </member>
+    </members>
+</doc>

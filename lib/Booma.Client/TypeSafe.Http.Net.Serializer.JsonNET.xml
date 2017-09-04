@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TypeSafe.Http.Net.Serializer.JsonNET</name>
+    </assembly>
+    <members>
+        <member name="M:TypeSafe.Http.Net.JsonNetSerializationRegisterationExtensions.RegisterJsonNetSerializer``1(``0)">
+            <summary>
+            Registers the Json.NET serializer in the serializer registeration service.
+            </summary>
+            <param name="builder">The builder being built.</param>
+            <returns>The builder for fluent chaining.</returns>
+        </member>
+        <member name="P:TypeSafe.Http.Net.JsonNetJsonBodySerializerStrategy.AssociatedContentType">
+            <inheritdoc />
+        </member>
+        <member name="M:TypeSafe.Http.Net.JsonNetJsonBodySerializerStrategy.TrySerialize(System.Object,TypeSafe.Http.Net.IRequestBodyWriter)">
+            <inheritdoc />
+        </member>
+        <member name="M:TypeSafe.Http.Net.JsonNetJsonBodySerializerStrategy.Deserialize``1(TypeSafe.Http.Net.IResponseBodyReader)">
+            <inheritdoc />
+        </member>
+        <member name="M:TypeSafe.Http.Net.JsonNetJsonBodySerializerStrategy.DeserializeAsync``1(TypeSafe.Http.Net.IResponseBodyReader)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

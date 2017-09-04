@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GladNet.Common</name>
+    </assembly>
+    <members>
+        <member name="T:GladNet.Common.IDeepCloneable">
+            <summary>
+            Contract for implementing objects to provide functionality to deep copy an object.
+            For information about shallow vs deep copying see: http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
+            </summary>
+        </member>
+        <member name="M:GladNet.Common.IDeepCloneable.DeepClone">
+            <summary>
+            Creates a deep copied instance of an object.
+            </summary>
+            <returns>Returns a non-null deep copied instance of an object.</returns>
+        </member>
+        <member name="T:GladNet.Common.IDeepCloneable`1">
+            <summary>
+            Contract for implementing objects to provide functionality to deep copy an object.
+            For information about shallow vs deep copying see: http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
+            </summary>
+            <typeparam name="TObjectType">Type copying.</typeparam>
+        </member>
+        <member name="M:GladNet.Common.IDeepCloneable`1.DeepClone">
+            <summary>
+            Creates a deep copied instance of an object.
+            </summary>
+            <returns>Returns a non-null deep copied instance of an object.</returns>
+        </member>
+        <member name="T:GladNet.Common.IShallowCloneable">
+            <summary>
+            Contract for implementing objects to provide functionality to shallow copy an object.
+            For information about shallow vs deep copying see: http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
+            </summary>
+        </member>
+        <member name="M:GladNet.Common.IShallowCloneable.ShallowClone">
+            <summary>
+            Creates a shallow copied instance of an object.
+            </summary>
+            <returns>Returns a non-null shallow copied instance of an object.</returns>
+        </member>
+        <member name="T:GladNet.Common.IShallowCloneable`1">
+            <summary>
+            Contract for implementing objects to provide functionality to shallow copy an object.
+            For information about shallow vs deep copying see: http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
+            </summary>
+            <typeparam name="TObjectType">Type copying.</typeparam>
+        </member>
+        <member name="M:GladNet.Common.IShallowCloneable`1.ShallowClone">
+            <summary>
+            Creates a shallow copied instance of an object.
+            </summary>
+            <returns>Returns a non-null shallow copied instance of an object.</returns>
+            Hiding is intended
+        </member>
+        <member name="T:GladNet.Common.SendResult">
+            <summary>
+            Represents the result of trying to send a networked message.
+            </summary>
+        </member>
+        <member name="T:GladNet.Common.DeliveryMethod">
+            <summary>
+            Represents the potential delivery methods for packets to be sent.
+            </summary>
+        </member>
+        <member name="T:GladNet.Common.OperationType">
+            <summary>
+            Represents valid operation types for networked messages.
+            </summary>
+        </member>
+    </members>
+</doc>
