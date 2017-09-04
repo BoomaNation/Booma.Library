@@ -29,6 +29,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Booma.Instance.Client">
+      <HintPath>..\..\lib\Booma.Client\Booma.Instance.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Booma.Payloads.Instance">
+      <HintPath>..\..\lib\Booma.Client\Booma.Payloads.Instance.dll</HintPath>
+    </Reference>
+    <Reference Include="Booma.Unity.Network.Client">
+      <HintPath>..\..\lib\Booma.Client\Booma.Unity.Network.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Common">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Engine.Common">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Engine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Client.Unity">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Lidgren.Client.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Payload">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Payload.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Serializer.Protobuf">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Serializer.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
