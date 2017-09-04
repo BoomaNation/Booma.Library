@@ -25,6 +25,7 @@
     <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.5" />
     <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.5" />
     <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.5" />
+    <PackageReference Include="Unitysync.Async" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

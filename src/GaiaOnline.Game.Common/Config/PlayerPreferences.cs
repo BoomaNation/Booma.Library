@@ -26,5 +26,10 @@ namespace GaiaOnline
 		/// The stored name of the gameserver.
 		/// </summary>
 		GameServerName = 2,
+
+		/// <summary>
+		/// The stored user token value.
+		/// </summary>
+		UserToken = 3,
 	}
 }
