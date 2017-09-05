@@ -77,7 +77,7 @@ namespace GaiaOnline
 		public int? TryGetUserId(HttpRequest request)
 		{
 			//TODO: When we enable actual OAuth we won't need to manually read this
-			if(Request.Headers.ContainsKey("Authorization"))
+			if(!Request.Headers.ContainsKey("Authorization"))
 				return null;
 
 			string token = Request.Headers["Authorization"].FirstOrDefault();
@@ -86,7 +86,8 @@ namespace GaiaOnline
 				return null;
 
 			int id;
-			int.TryParse(token, out id);
+			if(!int.TryParse(token, out id))
+				return null;
 
 			return id;
 		}
