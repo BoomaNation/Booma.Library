@@ -45,5 +45,11 @@ namespace GaiaOnline
 
 			ResultCode = resultCode;
 		}
+
+		[JsonConstructor]
+		private ServerEntryResponse()
+		{
+			
+		}
 	}
 }
