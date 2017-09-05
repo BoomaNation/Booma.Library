@@ -6,6 +6,7 @@ dotnet publish src/GaiaOnline.AdditionalDependencies/GaiaOnline.AdditionalDepend
 
 if not exist "build" mkdir build
 if not exist "build\debug" mkdir build\debug
+xcopy lib\Booma.Client build\debug /Y /EXCLUDE:BuildExclude.txt
 xcopy src\GaiaOnline.Game.Common\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt
 xcopy src\GaiaOnline.Game.Client\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt
 xcopy src\GaiaOnline.Game.Network.Client\bin\debug\net46\publish build\debug /Y /EXCLUDE:BuildExclude.txt

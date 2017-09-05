@@ -45,6 +45,16 @@
             to the serializer service called <see cref="P:GladNet.Lidgren.Client.Unity.UnityClientPeer`3.serializer"/> within this class.
             </summary>
         </member>
+        <member name="P:GladNet.Lidgren.Client.Unity.UnityClientPeer`3.PeerDetails">
+            <summary>
+            Is null if there is no connection.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Client.Unity.UnityClientPeer`3.internalLidgrenNetworkClient">
+            <summary>
+            Is null if there is no connection attempt.
+            </summary>
+        </member>
         <member name="M:GladNet.Lidgren.Client.Unity.UnityClientPeer`3.SendRequest(GladNet.Payload.PacketPayload,GladNet.Common.DeliveryMethod,System.Boolean,System.Byte)">
             <summary>
             Sends a networked request.
