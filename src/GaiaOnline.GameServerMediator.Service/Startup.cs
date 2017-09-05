@@ -39,6 +39,7 @@ namespace GaiaOnline
 			services.AddDbContext<GaiaNameQueryDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddDbContext<GameSessionDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddTransient<IReadonlyGaiaNameRepository, DbContextBasedGaiaNameRepository>();
+			services.AddTransient<IGameSessionRepository, DatabaseGameSessionRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
