@@ -15,7 +15,9 @@ namespace GaiaOnline
 	public class GameServerMediatorClientRegisteration : NonBehaviourDependency
 	{
 		//TODO: This is kinda hacky, I don't like player prefs but other solutions suck too. Also we can't put this behind IoC since this executes before IoC
-		private bool hasStoredGameServer => PlayerPrefs.HasKey(PlayerPreferences.GameServerIp.ToString()) && PlayerPrefs.HasKey(PlayerPreferences.GameServerPort.ToString());
+		private bool hasStoredGameServer => true;
+			//TODO: Enable this once we use actual seperate gameservers
+			//PlayerPrefs.HasKey(PlayerPreferences.GameServerIp.ToString()) && PlayerPrefs.HasKey(PlayerPreferences.GameServerPort.ToString());
 
 		/// <inheritdoc />
 		public override void Register(IServiceRegister register)
@@ -25,6 +27,7 @@ namespace GaiaOnline
 				//We need to know where the server is first. We can't ask the discovery service.
 				register.RegisterInstance<IGameServerMediatorService, IGameServerMediatorService>(TypeSafeHttpBuilder<IGameServerMediatorService>.Create()
 					.RegisterDefaultSerializers()
+					.RegisterJsonNetSerializer()
 					.RegisterDotNetHttpClient(GenerateGameServerMediatorUrl())
 					.Build());
 			}
