@@ -8,6 +8,7 @@ using HaloLive.Models.Authentication;
 using HaloLive.Network;
 using SceneJect.Common;
 using UnityEngine;
+using UnityEngine.Events;
 using Unitysync.Async;
 
 namespace GaiaOnline
@@ -23,6 +24,9 @@ namespace GaiaOnline
 
 		[Inject]
 		private IUserAuthenticationDetailsContainer AuthDetails { get; }
+
+		[SerializeField]
+		private UnityEvent OnRecievedSuccessfulAuthResponse;
 
 		//TODO: Validate services and auth details
 		public void AuthenticateUser()
@@ -49,6 +53,8 @@ namespace GaiaOnline
 			//TODO: maybe extract this into seperate interface
 			//the result should be valid and we should store the result in the player prefs
 			PlayerPrefs.SetString(PlayerPreferences.UserToken.ToString(), result.AccessToken);
+
+			OnRecievedSuccessfulAuthResponse?.Invoke();
 		}
 	}
 }
