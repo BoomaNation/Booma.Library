@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Booma.Entity.Identity;
 using GladNet.Engine.Common;
+using JetBrains.Annotations;
 using SceneJect.Common;
 
 namespace Booma.Instance.Common
@@ -11,30 +12,33 @@ namespace Booma.Instance.Common
 	/// <summary>
 	/// Context for a spawning entity.
 	/// </summary>
-	public class NetworkPlayerSpawnContext : IPlayerSpawnContext, ISpawnContext
+	public class NetworkPlayerSpawnContext : IPlayerSpawnContext
 	{
 		/// <summary>
 		/// Network GUID context.
 		/// </summary>
-		public NetworkEntityGuid NetworkGuid { get; }
+		public NetworkEntityGuid EntityGuid { get; }
 
 		/// <summary>
 		/// Network peer context.
 		/// </summary>
-		public INetPeer Peer { get; }
+		public INetPeer OwnerPeer { get; }
 
-		public NetworkPlayerSpawnContext(NetworkEntityGuid guid, INetPeer peer)
+		public NetworkPlayerSpawnContext([NotNull] NetworkEntityGuid guid, [NotNull] INetPeer peer)
 		{
-			//TODO: Null tests
+			if(guid == null) throw new ArgumentNullException(nameof(guid));
+			if(peer == null) throw new ArgumentNullException(nameof(peer));
 
-			NetworkGuid = guid;
-			Peer = peer;
+			EntityGuid = guid;
+			OwnerPeer = peer;
 		}
 
-		public IGameObjectContextualBuilder ProvideContext(IGameObjectContextualBuilder builder)
+		public IGameObjectContextualBuilder ProvideContext([NotNull] IGameObjectContextualBuilder builder)
 		{
-			return builder.With(Service<NetworkEntityGuid>.As(NetworkGuid))
-				.With(Service<INetPeer>.As(Peer));
+			if(builder == null) throw new ArgumentNullException(nameof(builder));
+
+			return builder.With(Service<NetworkEntityGuid>.As(EntityGuid))
+				.With(Service<INetPeer>.As(OwnerPeer));
 		}
 	}
 }

@@ -11,6 +11,6 @@ namespace Booma.Instance.Common
 		/// <summary>
 		/// Peer the owns the context.
 		/// </summary>
-		INetPeer Peer { get; }
+		INetPeer OwnerPeer { get; }
 	}
 }

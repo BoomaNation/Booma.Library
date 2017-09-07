@@ -11,6 +11,6 @@ namespace Booma.Instance.Common
 		/// <summary>
 		/// The network GUID associated with the entity.
 		/// </summary>
-		NetworkEntityGuid NetworkGuid { get; }
+		NetworkEntityGuid EntityGuid { get; }
 	}
 }

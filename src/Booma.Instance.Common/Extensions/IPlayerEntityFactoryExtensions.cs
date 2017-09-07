@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Booma.Instance.Common
 {
-	public static class IPlayerEntityFactoryExtensions
+	public static class IEntityFactoryExtensions
 	{
 		/// <summary>
 		/// Creates a player entity in the instance world.
@@ -15,7 +15,9 @@ namespace Booma.Instance.Common
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
 		/// <returns>A gameobject that represents the base player entity.</returns>
-		public static IEntitySpawnResults SpawnPlayerEntity(this IPlayerEntityFactory factory, Vector3 position, Quaternion rotation, ISpawnContext context)
+		public static IEntitySpawnResults SpawnPlayerEntity<TEntityFactory, TContextType>(this TEntityFactory factory, Vector3 position, Quaternion rotation, TContextType context)
+			where TEntityFactory : IEntityFactory<TContextType>
+			where TContextType : ISpawnContext
 		{
 			return factory.TrySpawnEntity(position, rotation, context);
 		}
@@ -26,7 +28,9 @@ namespace Booma.Instance.Common
 		/// <param name="position">Position of the entity.</param>
 		/// <param name="rotation">Rotation of the entity.</param>
 		/// <returns>A gameobject that represents the base player entity.</returns>
-		public static IEntitySpawnResults SpawnPlayerEntity(this IPlayerEntityFactory factory, ISpawnContext context)
+		public static IEntitySpawnResults SpawnPlayerEntity<TEntityFactory, TContextType>(this TEntityFactory factory, TContextType context)
+			where TEntityFactory : IEntityFactory<TContextType>
+			where TContextType : ISpawnContext
 		{
 			return factory.TrySpawnEntity(context);
 		}

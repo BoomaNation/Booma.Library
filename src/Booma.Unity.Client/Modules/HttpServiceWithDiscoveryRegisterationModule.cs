@@ -27,9 +27,9 @@ namespace Booma.Client
 		[Tooltip("The locale for the service request.")]
 		private ClientRegionLocale Locale;
 
-		protected async Task<string> GetDeclaredServiceUrl(NetworkServiceType serviceType)
+		protected async Task<string> GetDeclaredServiceUrl(string serviceType)
 		{
-			if (!Enum.IsDefined(typeof(NetworkServiceType), serviceType)) throw new InvalidEnumArgumentException(nameof(serviceType), (int) serviceType, typeof(NetworkServiceType));
+			if(string.IsNullOrWhiteSpace(serviceType)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(serviceType));
 
 			//We can't do this async. It's a required dependency before things can move forward
 			if (ServiceUrlToDiscoveryServiceMap.ContainsKey(_ServiceDiscoveryEndpoint))
@@ -49,12 +49,12 @@ namespace Booma.Client
 			}
 		}
 
-		private async Task<string> QueryServiceForEndpoint(NetworkServiceType serviceType)
+		private async Task<string> QueryServiceForEndpoint(string serviceType)
 		{
+			if(string.IsNullOrWhiteSpace(serviceType)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(serviceType));
+
 			await Task.Delay(5000)
 				.ConfigureAwait(false);
-
-			if (!Enum.IsDefined(typeof(NetworkServiceType), serviceType)) throw new InvalidEnumArgumentException(nameof(serviceType), (int) serviceType, typeof(NetworkServiceType));
 
 			IServiceDiscoveryService service = ServiceUrlToDiscoveryServiceMap[_ServiceDiscoveryEndpoint];
 

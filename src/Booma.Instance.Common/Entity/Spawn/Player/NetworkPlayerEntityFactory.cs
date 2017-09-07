@@ -16,48 +16,58 @@ namespace Booma.Instance.Common
 	[Injectee]
 	public class NetworkPlayerEntityFactory : SerializedMonoBehaviour, IPlayerEntityFactory
 	{
-		/// <summary>
-		/// Service that produces prefabs.
-		/// </summary>
 		[SerializeField]
-		private IEntityPrefabProvider prefabProvider;
+		private GameObject NetworkPlayerPrefab;
 
 		/// <summary>
 		/// Service that issues spawn points.
 		/// </summary>
 		[SerializeField]
-		private readonly ISpawnPointStrategy playerSpawnStrategy;
+		private ISpawnPointStrategy PlayerSpawnStrategy { get; }
 
 		/// <summary>
 		/// IoC/DI Managed <see cref="GameObject"/> factory.
 		/// </summary>
 		[Inject]
-		private readonly IGameObjectFactory gameobjectFactory;
+		private IGameObjectFactory GameobjectFactory { get; }
 
 		private void Start()
 		{
-			if (prefabProvider == null)
-				throw new InvalidOperationException($"Set {nameof(prefabProvider)} in the inspector with the player entity prefab.");
+			if(NetworkPlayerPrefab == null)
+				throw new InvalidOperationException($"The {nameof(NetworkPlayerEntityFactory)} does not have a set {nameof(NetworkPlayerPrefab)} field.");
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, ISpawnContext context)
+		/// <inheritdoc />
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, IPlayerSpawnContext context)
 		{
-			GameObject entityObject = gameobjectFactory.CreateBuilder()
-				.With(context)
-				.Create(prefabProvider.GetPrefab(PrefabType.NetworkPlayer), position, rotation);
+			GameObject entityObject = OnEntityConstruction(context, GameobjectFactory.CreateBuilder().With(context))
+				.Create(NetworkPlayerPrefab, position, rotation);
 
-			return new DefaultEntitySpawnDetails(entityObject);
+			return OnEntityConstructionCompleted(context, new DefaultEntitySpawnDetails(entityObject));
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(ISpawnContext context)
+		protected virtual IGameObjectContextualBuilder OnEntityConstruction(IPlayerSpawnContext context, IGameObjectContextualBuilder builder)
+		{
+			//Access point that allows implementers of this type to extend the construction process.
+			return builder;
+		}
+
+		protected virtual IEntitySpawnResults OnEntityConstructionCompleted(IPlayerSpawnContext context, IEntitySpawnResults result)
+		{
+			//Access point that allows implementers of this type to extend the construction process.
+			return result;
+		}
+
+		/// <inheritdoc />
+		public IEntitySpawnResults TrySpawnEntity(IPlayerSpawnContext context)
 		{
 			//Grabs a spawn point from the spawn point service.
-			Transform spawnTransform = playerSpawnStrategy.GetSpawnpoint();
+			Transform spawnTransform = PlayerSpawnStrategy.GetSpawnpoint();
 
 			return this.TrySpawnEntity(spawnTransform.position, spawnTransform.rotation, context);
 		}
 
-		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, Vector3 scale, ISpawnContext context)
+		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, Vector3 scale, IPlayerSpawnContext context)
 		{
 			IEntitySpawnResults results = TrySpawnEntity(position, rotation, context);
 

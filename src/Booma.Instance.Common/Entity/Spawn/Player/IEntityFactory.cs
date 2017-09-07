@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Booma.Instance.Common
 {
-	public interface IEntityFactory<TContextType>
+	public interface IEntityFactory<in TContextType>
 		where TContextType : ISpawnContext
 	{
 		/// <summary>

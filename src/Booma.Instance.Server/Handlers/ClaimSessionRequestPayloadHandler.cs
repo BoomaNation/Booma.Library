@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using GladNet.Message;
 using SceneJect.Common;
 using Booma.Instance.Common;
@@ -14,50 +15,39 @@ using UnityEngine;
 using Booma.Entity.Identity;
 using Booma.Entity.Prefab;
 using Booma.Instance.NetworkObject;
+using GladNet.Engine.Server;
+using Unitysync.Async;
 
 namespace Booma.Instance.Server
 {
 	[Injectee]
-	public class ClaimSessionRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, ClaimSessionRequestPayload>
+	public abstract class ClaimSessionRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, ClaimSessionRequestPayload>
 	{
 		/// <summary>
 		/// Factory service for the player entities.
 		/// </summary>
 		[Inject]
-		private readonly IPlayerEntityFactory playerEntityFactory;
-
-		/// <summary>
-		/// Player entity collection.
-		/// </summary>
-		[Inject]
-		private readonly NetworkEntityCollection entityCollection;
-
-		[Inject]
-		private readonly IPeerCollection peerCollection;
-
-		//TODO: This is temporary. We don't need this service once full handshake is implemented. For demo we need it though
-		[Inject]
-		private readonly INetworkGuidFactory entityGuidFactory;
-
-		[Inject]
-		private readonly IConnectionToGuidRegistry connectionRegistry;
+		private IPlayerEntityFactory PlayerEntityFactory { get; }
 
 		protected override void OnIncomingHandlableMessage(IRequestMessage message, ClaimSessionRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
-			//TODO: Right now we don't have a full handshake for entering an instance. So we need to make up a GUID for the entering player
-			//Important to check if we've actually already created an entity for this connection
-			//We don't have that implemenented though for the demo
-			NetworkEntityGuid guid = CreateEntityGuid(payload.SessionClaimGuid);
+			CreateEntityGuid(payload.SessionClaimGuid)
+				.UnityAsyncContinueWith(this, g => OnNetworkGuidGenerated(g, peer));
+		}
 
-			IEntitySpawnResults details = playerEntityFactory.SpawnPlayerEntity(new NetworkPlayerSpawnContext(guid, peer));
+		/// <summary>
+		/// Dispatched when a guid is generated.
+		/// </summary>
+		/// <typeparam name="TPeer">The peer type.</typeparam>
+		/// <param name="guid">The guid.</param>
+		/// <param name="peer">The peer.</param>
+		private void OnNetworkGuidGenerated<TPeer>(NetworkEntityGuid guid, TPeer peer)
+			where TPeer : INetPeer, IResponsePayloadSender
+		{
+			IEntitySpawnResults details = PlayerEntityFactory.SpawnPlayerEntity(new NetworkPlayerSpawnContext(guid, peer));
 
-			if (details.Result != SpawnResult.Success)
-				throw new InvalidOperationException($"Failed to create Entity for {peer.ToString()}. Failure: {details.Result.ToString()}");
-
-			//TODO: This is temporary stuff for demo
-			entityCollection.Add(guid, new EntityContainer(guid, details.EntityGameObject));
-			peerCollection.Add(peer);
-			connectionRegistry.Register(peer.PeerDetails.ConnectionID, guid);
+			if(details.Result != SpawnResult.Success)
+				throw new InvalidOperationException($"Failed to create Entity for {peer}. Failure: {details.Result}");
 
 			//TODO: Clean this up
 			Vector3Surrogate pos = details.EntityGameObject.transform.position.ToSurrogate();
@@ -66,17 +56,6 @@ namespace Booma.Instance.Server
 
 			//Send the response to the player who requested to spawn
 			peer.SendResponse(new ClaimSessionResponsePayload(PlayerSpawnResponseCode.Success, pos, rot, guid), DeliveryMethod.ReliableUnordered, true, 0);
-
-			//TODO: Remove this. This is demo code.
-			foreach(var entity in entityCollection.Values.Where(e => e.NetworkGuid.EntityType == EntityType.GameObject))
-			{
-				ITagProvider<GameObjectPrefab> prefabTag = entity.WorldObject.GetComponent<ITagProvider<GameObjectPrefab>>();
-				IEntityStateContainer state = entity.WorldObject.GetComponentInChildren<IEntityStateContainer>();
-
-				peer.SendEvent(new GameObjectEntitySpawnEventPayload(entity.NetworkGuid, entity.WorldObject.transform.position.ToSurrogate(),
-					entity.WorldObject.transform.rotation.ToSurrogate(), entity.WorldObject.transform.localScale.ToSurrogate(), prefabTag.Tag, state.State),
-					DeliveryMethod.ReliableOrdered, false, 0);
-			}
 		}
 
 		/// <summary>
@@ -85,10 +64,6 @@ namespace Booma.Instance.Server
 		/// </summary>
 		/// <param name="sessionGuid">The session GUID.</param>
 		/// <returns></returns>
-		protected virtual NetworkEntityGuid CreateEntityGuid(Guid sessionGuid)
-		{
-			//rely on the factory implementation to handle placement details such as position and rotation
-			return entityGuidFactory.Create(EntityType.Player);
-		}
+		protected abstract Task<NetworkEntityGuid> CreateEntityGuid(Guid sessionGuid);
 	}
 }

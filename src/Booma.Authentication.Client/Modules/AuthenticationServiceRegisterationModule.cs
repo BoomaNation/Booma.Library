@@ -29,7 +29,7 @@ namespace Booma.Client
 			IAuthenticationService authService = TypeSafeHttpBuilder<IAuthenticationService>.Create()
 				.RegisterDefaultSerializers()
 				.RegisterJsonNetSerializer()
-				.RegisterDotNetHttpClient(GetDeclaredServiceUrl(NetworkServiceType.AuthenticationService))
+				.RegisterDotNetHttpClient(GetDeclaredServiceUrl("AuthenticationService")) //TODO: Central the naming of these services
 				.Build();
 
 			//TODO: Adjust registeration
