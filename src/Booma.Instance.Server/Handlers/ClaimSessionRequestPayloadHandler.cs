@@ -20,6 +20,9 @@ using Unitysync.Async;
 
 namespace Booma.Instance.Server
 {
+	/// <summary>
+	/// Abstract implementation for the logic 
+	/// </summary>
 	[Injectee]
 	public abstract class ClaimSessionRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, ClaimSessionRequestPayload>
 	{
@@ -29,7 +32,7 @@ namespace Booma.Instance.Server
 		[Inject]
 		private IPlayerEntityFactory PlayerEntityFactory { get; }
 
-		protected override void OnIncomingHandlableMessage(IRequestMessage message, ClaimSessionRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
+		protected sealed override void OnIncomingHandlableMessage(IRequestMessage message, ClaimSessionRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
 			CreateEntityGuid(payload.SessionClaimGuid)
 				.UnityAsyncContinueWith(this, g => OnNetworkGuidGenerated(g, peer));
@@ -41,7 +44,7 @@ namespace Booma.Instance.Server
 		/// <typeparam name="TPeer">The peer type.</typeparam>
 		/// <param name="guid">The guid.</param>
 		/// <param name="peer">The peer.</param>
-		private void OnNetworkGuidGenerated<TPeer>(NetworkEntityGuid guid, TPeer peer)
+		protected virtual void OnNetworkGuidGenerated<TPeer>(NetworkEntityGuid guid, TPeer peer)
 			where TPeer : INetPeer, IResponsePayloadSender
 		{
 			IEntitySpawnResults details = PlayerEntityFactory.SpawnPlayerEntity(new NetworkPlayerSpawnContext(guid, peer));
