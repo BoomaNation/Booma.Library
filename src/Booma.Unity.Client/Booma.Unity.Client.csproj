@@ -143,8 +143,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\HttpServiceRegisterationModule.cs" />
-    <Compile Include="Modules\HttpServiceWithDiscoveryRegisterationModule.cs" />
+    <Compile Include="IGameServerMediatorService.cs" />
+    <Compile Include="IoC\GameServerMediatorClientRegisteration.cs" />
+    <Compile Include="IoC\HttpServiceRegisterationModule.cs" />
+    <Compile Include="IoC\HttpServiceWithDiscoveryRegisterationModule.cs" />
     <Compile Include="Network\EventPayloadHandlerComponent.cs" />
     <Compile Include="Network\ResponsePayloadHandlerComponent.cs" />
     <Compile Include="Peer\BoomaNetworkClientPeer.cs" />
@@ -156,6 +158,16 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Booma.Models.GameServerMediator.Common\Booma.Models.GameServerMediator.Common.csproj">
+      <Project>{0a05e97a-5e68-49a8-bc58-f41221891140}</Project>
+      <Name>Booma.Models.GameServerMediator.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Booma.Models.NameQuery\Booma.Models.NameQuery.csproj">
+      <Project>{101178d4-c128-4676-827f-f899b1e79f0c}</Project>
+      <Name>Booma.Models.NameQuery</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

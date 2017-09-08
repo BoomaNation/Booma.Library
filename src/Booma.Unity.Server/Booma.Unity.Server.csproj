@@ -99,6 +99,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TypeSafe.Http.Net.Metadata, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TypeSafe.Http.Net.Metadata.2.2.5\lib\net45\TypeSafe.Http.Net.Metadata.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
@@ -106,10 +109,17 @@
   <ItemGroup>
     <Compile Include="BoomaServerApplicationBase.cs" />
     <Compile Include="Handlers\RequestPayloadHandlerComponent.cs" />
+    <Compile Include="IGameServerSessionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Booma.Models.GameServerMediator.Server\Booma.Models.GameServerMediator.Server.csproj">
+      <Project>{79af08fa-b053-4466-b8eb-68ef474ca806}</Project>
+      <Name>Booma.Models.GameServerMediator.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
