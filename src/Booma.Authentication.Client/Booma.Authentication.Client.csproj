@@ -93,13 +93,12 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="Unitysync.Async, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unitysync.Async.1.0.4\lib\net46\Unitysync.Async.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Async\WaitForFuture.cs" />
     <Compile Include="Client\AuthenticationClient.cs" />
-    <Compile Include="Async\UnityAsyncCoroutines.cs" />
-    <Compile Include="Async\UnityAsyncTaskExtensions.cs" />
-    <Compile Include="Async\UnityAsyncHelperExtensions.cs" />
     <Compile Include="Modules\AuthenticationServiceRegisterationModule.cs" />
     <Compile Include="LoginDetailsSceneData.cs" />
     <Compile Include="Modules\UserDetailsLocationRegisterationModule.cs" />

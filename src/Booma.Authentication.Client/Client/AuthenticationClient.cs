@@ -11,6 +11,7 @@ using HaloLive.Network;
 using SceneJect.Common;
 using UnityEngine;
 using UnityEngine.Events;
+using Unitysync.Async;
 
 namespace Booma.Client
 {
