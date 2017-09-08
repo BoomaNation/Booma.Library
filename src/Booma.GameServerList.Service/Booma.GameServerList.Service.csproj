@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
@@ -7,32 +7,26 @@
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="HaloLive.Hosting.Server" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Models.NameResolution.Server" Version="2.0.1" />
+    <PackageReference Include="HaloLive.Network.Common" Version="2.0.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
   </ItemGroup>
-
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\GaiaOnline.Database.Common\GaiaOnline.Database.Common.csproj" />
-    <ProjectReference Include="..\GaiaOnline.GameServerMediator.Models.Common\GaiaOnline.GameServerMediator.Models.Common.csproj" />
-    <ProjectReference Include="..\GaiaOnline.GameServerMediator.Models.Server\GaiaOnline.GameServerMediator.Models.Server.csproj" />
-    <ProjectReference Include="..\GaiaOnline.NameQuery.Database\GaiaOnline.NameQuery.Database.csproj" />
-    <ProjectReference Include="..\GaiaOnline.NameQuery.Models\GaiaOnline.NameQuery.Models.csproj" />
+    <ProjectReference Include="..\Booma.Database.Common\Booma.Database.Common.csproj" />
+    <ProjectReference Include="..\Booma.Models.GameServerList\Booma.Models.GameServerList.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="run.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
