@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GladNet.Lidgren.Engine.Common</name>
+    </assembly>
+    <members>
+        <member name="T:GladNet.Lidgren.Engine.Common.LidgrenNetworkMessageMessageContext">
+            <summary>
+            Lidgren message context for <see cref="T:GladNet.Message.NetworkMessage"/>s.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenNetworkMessageMessageContext.GeneratedNetworkMessage">
+            <summary>
+            The generated message.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.LidgrenStatusChangeMessageContext">
+            <summary>
+            Lidgren message context for <see cref="T:GladNet.Message.IStatusMessage"/>s.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenStatusChangeMessageContext.GeneratedStatusMessage">
+            <summary>
+            The generated message.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.ILidgrenMessageContextFactory">
+            <summary>
+            Factory that generates <see cref="T:GladNet.Lidgren.Engine.Common.LidgrenMessageContext"/>s.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.ILidgrenMessageContextFactory.CanCreateContext(Lidgren.Network.NetIncomingMessageType)">
+            <summary>
+            Indicates if the <see cref="T:Lidgren.Network.NetIncomingMessageType"/> is a context
+            the factory can create.
+            </summary>
+            <param name="messageType">The message type.</param>
+            <returns>True if the context factory can produce a context for that type.</returns>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.ILidgrenMessageContextFactory.CreateContext(Lidgren.Network.NetIncomingMessage)">
+            <summary>
+            Creates a <see cref="T:GladNet.Lidgren.Engine.Common.LidgrenMessageContext"/> based on the incoming
+            <see cref="T:Lidgren.Network.NetIncomingMessage"/> instance.
+            </summary>
+            <param name="message"></param>
+            <returns>A non-null reference to a derived <see cref="T:GladNet.Lidgren.Engine.Common.LidgrenMessageContext"/>.</returns>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.LidgrenMessageContext">
+            <summary>
+            Base context for a Lidgren message context.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageContext.MessageType">
+            <summary>
+            Indicates the context's message type.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageContext.ConnectionId">
+            <summary>
+            Indicates the unique indentifier
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageContext.DeliveryMethod">
+            <summary>
+            Delivery method used.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageContext.Encrypted">
+            <summary>
+            Indicates if the message was encrypted
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageContext.Channel">
+            <summary>
+            Indicates the channel used.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.INetworkMessageDispatcher">
+            <summary>
+            Lidgren service contract for dispatching incoming network messages.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.INetworkMessageDispatcher.Dispatch(Lidgren.Network.NetIncomingMessage)">
+            <summary>
+            Dispatches the incoming message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.INetworkMessageDispatcher.Dispatch(Lidgren.Network.NetConnectionStatus)">
+            <summary>
+            Dispatched the incoming status change.
+            </summary>
+            <param name="status">New status.</param>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageDetailsAdapter.Channel">
+            <inheritdoc />
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageDetailsAdapter.DeliveryMethod">
+            <inheritdoc />
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenMessageDetailsAdapter.Encrypted">
+            <inheritdoc />
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.LidgrenNetworkMessageRouterService">
+            <summary>
+            Abstract contract for message routing/sending service for Lidgren peers/connections.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.INetworkThread.IncomingMessageQueue">
+            <summary>
+            Ordered collection of incoming messages.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.INetworkThread.isAlive">
+            <summary>
+            Indicates if the network thread is running.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.INetworkThread.Start(Lidgren.Network.NetPeer)">
+            <summary>
+            Peer context to use for the network thread.
+            </summary>
+            <param name="outgoingPeerContext"></param>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.INetworkThread.Stop">
+            <summary>
+            Stops the network thread.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.ManagedLidgrenNetworkThread.outgoingMessageQueue">
+            <summary>
+            The ordered awaitable collection of <see cref="T:System.Action"/>s that dispatch outgoing messages.
+            </summary>
+        </member>
+        <member name="F:GladNet.Lidgren.Engine.Common.ManagedLidgrenNetworkThread.incomingMessageQueue">
+            <summary>
+            The ordered awaitable collection of <see cref="T:GladNet.Lidgren.Engine.Common.LidgrenMessageContext"/>s.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.ManagedLidgrenNetworkThread.IncomingMessageQueue">
+            <summary>
+            Ordered collection of incoming messages.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.ManagedLidgrenNetworkThread.sendServiceStrategy">
+            <summary>
+            Strategy used to select the sending service for a message.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.ISendServiceSelectionStrategy">
+            <summary>
+            Contract for strategy that produces <see cref="!:INetworkMessageRouterService"/>s based on
+            the provided connectionId.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter">
+            <summary>
+            Lidgren details adapter for the <see cref="T:GladNet.Engine.Common.IConnectionDetails"/> interface.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter.RemoteIP">
+            <summary>
+            IPAddress of the remote peer.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter.RemotePort">
+            <summary>
+            Remote port of the peer.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter.LocalPort">
+            <summary>
+            Local port the peer is connecting on.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter.ConnectionID">
+            <summary>
+            AUID of the peer. (Application-wide unique)
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.LidgrenConnectionDetailsAdapter.#ctor(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new adapter for the <see cref="T:GladNet.Engine.Common.IConnectionDetails"/> interface.
+            </summary>
+            <param name="remoteIP">Remote IP address of the connection.</param>
+            <param name="remotePort">Remote port of the connection.</param>
+            <param name="localPort">Local port of the connection.</param>
+            <param name="connectionID">Unique (port-wise) ID of the connection.</param>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.SemaphoreQueue`1.QueueSemaphore">
+            <summary>
+            A manual-managed semaphore for the <see cref="T:System.Collections.Generic.Queue`1"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.SemaphoreQueue`1.SyncRoot">
+            <summary>
+            A read/write optimized syncronization queue.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.SemaphoreQueue`1.#ctor">
+            <summary>
+            Creates a default <see cref="T:GladNet.Lidgren.Engine.Common.WaitableQueue`1"/> with a <see cref="T:System.Threading.EventWaitHandle"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.WaitableQueue`1.QueueSemaphore">
+            <summary>
+            A manual-managed semaphore for the <see cref="T:System.Collections.Generic.Queue`1"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Lidgren.Engine.Common.WaitableQueue`1.SyncRoot">
+            <summary>
+            A read/write optimized syncronization queue.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.WaitableQueue`1.#ctor">
+            <summary>
+            Creates a default <see cref="T:GladNet.Lidgren.Engine.Common.WaitableQueue`1"/> with a <see cref="T:System.Threading.EventWaitHandle"/>.
+            </summary>
+        </member>
+        <member name="T:GladNet.Lidgren.Engine.Common.INetworkMessageFactory">
+            <summary>
+            Factory service for creating <see cref="T:GladNet.Message.NetworkMessage"/> instances.
+            </summary>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.INetworkMessageFactory.Create(GladNet.Common.OperationType,GladNet.Payload.PacketPayload)">
+            <summary>
+            Creates a new <see cref="T:GladNet.Message.INetworkMessage"/>
+            </summary>
+            <param name="opType">Operation type of the message.</param>
+            <param name="payload">Payload for the <see cref="T:GladNet.Message.INetworkMessage"/>.</param>
+            <returns>A new non-null <see cref="T:GladNet.Message.INetworkMessage"/>.</returns>
+        </member>
+        <member name="M:GladNet.Lidgren.Engine.Common.LidgrenNetworkMessageFactory.Create(GladNet.Common.OperationType,GladNet.Payload.PacketPayload)">
+            <summary>
+            Creates a new <see cref="T:GladNet.Message.INetworkMessage"/>
+            </summary>
+            <param name="opType">Operation type of the message.</param>
+            <param name="payload">Payload for the <see cref="T:GladNet.Message.INetworkMessage"/>.</param>
+            <returns>A new non-null <see cref="T:GladNet.Message.INetworkMessage"/>.</returns>
+        </member>
+    </members>
+</doc>

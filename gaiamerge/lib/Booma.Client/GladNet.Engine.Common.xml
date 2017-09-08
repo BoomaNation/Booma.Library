@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GladNet.Engine.Common</name>
+    </assembly>
+    <members>
+        <member name="M:GladNet.Engine.Common.IDecryptableExtensions.DecryptWith``1(``0,GladNet.Encryption.IDecryptorStrategy)">
+            <summary>
+            Decrypts an object with the provided decryption strategy.
+            </summary>
+            <typeparam name="TObjectType">Type being decrypted.</typeparam>
+            <param name="obj">Object being decrypted.</param>
+            <param name="decryptor">Strategy for decryption.</param>
+            <returns>A a decerypted deserializable instance.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.SubscribeTo``1(GladNet.Engine.Common.INetworkMessageSubscriptionService)">
+            <summary>
+            Creates a builder object that can service subscription requests that does not require explict building.
+            </summary>
+            <typeparam name="TNetworkMessageType">Type of the network mesage to subscribe to.</typeparam>
+            <param name="service">Subscription service instance.</param>
+            <returns>A subscription builder that carries Type information that allows for subscriptions.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.IEventMessage},GladNet.Engine.Common.OnNetworkEventMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.IEventMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.IResponseMessage},GladNet.Engine.Common.OnNetworkResponseMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.IResponseMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.IRequestMessage},GladNet.Engine.Common.OnNetworkRequestMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.IRequestMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.IStatusMessage},GladNet.Engine.Common.OnNetworkStatusMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.IStatusMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.EventMessage},GladNet.Engine.Common.OnNetworkEventMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.EventMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.ResponseMessage},GladNet.Engine.Common.OnNetworkResponseMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.ResponseMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.RequestMessage},GladNet.Engine.Common.OnNetworkRequestMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.RequestMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubcriptionServiceFluentExtensions.With(GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder{GladNet.Message.StatusMessage},GladNet.Engine.Common.OnNetworkStatusMessage)">
+            <summary>
+            Subscribes the target delegate to <see cref="T:GladNet.Message.StatusMessage"/> publisher.
+            </summary>
+            <param name="builder">Instance of the fluent builder that carries Type information.</param>
+            <param name="subscriber">Subscriber delegate object.</param>
+            <returns>Fluently returns the instance this method was invoked on.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.OperationTypeExtensions.ToNetworkMessageType(GladNet.Common.OperationType)">
+            <summary>
+            Maps <see cref="T:GladNet.Common.OperationType"/> to <see cref="T:System.Type"/> of <see cref="T:GladNet.Message.NetworkMessage"/>.
+            </summary>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> to map.</param>
+            <returns><see cref="T:System.Type"/> of <see cref="T:GladNet.Message.NetworkMessage"/> the <see cref="T:GladNet.Common.OperationType"/> maps to.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.ISerializeableExtensions.SerializeWith``1(``0,GladNet.Serializer.ISerializerStrategy)">
+            <summary>
+            Serializes an object with the provided deserialization strategy.
+            </summary>
+            <typeparam name="TObjectType">Type being serialized.</typeparam>
+            <param name="obj">Object being serialized.</param>
+            <param name="decryptor">Strategy for serialization.</param>
+            <returns>A a serialized instance of the object that can be encrypted.</returns>
+        </member>
+        <member name="T:GladNet.Engine.Common.IClassLogger">
+            <summary>
+            Contract for class that provides externally visible logging services.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IClassLogger.Logger">
+            <summary>
+            Class logging service.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.AUIDServiceCollection`1">
+            <summary>
+            A non-thread safe, but syncronization ready, AUID collection service that maps <typeparamref name="TAUIDMapType"/> to
+            their AUID <see cref="T:System.Int32"/> values.
+            </summary>
+            <typeparam name="TAUIDMapType"></typeparam>
+        </member>
+        <member name="M:GladNet.Engine.Common.AUIDServiceCollection`1.#ctor(System.Int32)">
+            <summary>
+            Creates a new AUID map service collection that maps AUIDs to <typeparamref name="TAUIDMapType"/>s references.
+            </summary>
+            <param name="capacity">The initial number of elements that the service can contain.</param>
+        </member>
+        <member name="P:GladNet.Engine.Common.AUIDServiceCollection`1.syncObj">
+            <summary>
+            Syncronationization object for accessing the dictionary.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.IAUIDService`1">
+            <summary>
+            AUID mapping service for <typeparamref name="TAUIDMapType"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IAUIDService`1.syncObj">
+            <summary>
+            Syncronationization object for accessing the dictionary.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.INetworkMessagePublisher">
+            <summary>
+            Implementer offers the ability for consumers to subscribe to publishing channels.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.INetworkMessagePublisher.EventPublisher">
+            <summary>
+            Event channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.INetworkMessagePublisher.RequestPublisher">
+            <summary>
+            Request channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.INetworkMessagePublisher.ResponsePublisher">
+            <summary>
+            Response channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.INetworkMessagePublisher.StatusPublisher">
+            <summary>
+            Status channel.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder`1">
+            <summary>
+            Begins a subscription request
+            (Fluent builder that carries data)
+            </summary>
+            <typeparam name="TNetworkMessageType">Type of <see cref="T:GladNet.Message.NetworkMessage"/> to subscribe to.</typeparam>
+        </member>
+        <member name="P:GladNet.Engine.Common.INetworkMessageSubcriptionFluentBuilder`1.Service">
+            <summary>
+            Subscription service to carry for fluent.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.INetworkMessageSubscriptionService">
+            <summary>
+            Implementer offers subscription services for network messages.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubscriptionService.SubscribeToRequests(GladNet.Engine.Common.OnNetworkRequestMessage)">
+            <summary>
+            Subscribes to <see cref="!:IRequestMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubscriptionService.SubscribeToEvents(GladNet.Engine.Common.OnNetworkEventMessage)">
+            <summary>
+            Subscribes to <see cref="!:IEventMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubscriptionService.SubscribeToResponses(GladNet.Engine.Common.OnNetworkResponseMessage)">
+            <summary>
+            Subscribes to <see cref="!:IResponseMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessageSubscriptionService.SubscribeToStatusChanges(GladNet.Engine.Common.OnNetworkStatusMessage)">
+            <summary>
+            Subscribes to <see cref="!:IStatusMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.OnNetworkEventMessage">
+            <summary>
+            Delegate for <see cref="T:GladNet.Message.IEventMessage"/>s.
+            </summary>
+            <param name="eventMessage">Network message instance.</param>
+            <param name="parameters">Message parameters for the network message.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.OnNetworkRequestMessage">
+            <summary>
+            Delegate for <see cref="T:GladNet.Message.IRequestMessage"/>s.
+            </summary>
+            <param name="requestMessage">Network message instance.</param>
+            <param name="parameters">Message parameters for the network message.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.OnNetworkResponseMessage">
+            <summary>
+            Delegate for <see cref="T:GladNet.Message.IResponseMessage"/>s.
+            </summary>
+            <param name="responseMessage">Network message instance.</param>
+            <param name="parameters">Message parameters for the network message.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.OnNetworkStatusMessage">
+            <summary>
+            Delegate for <see cref="T:GladNet.Message.IStatusMessage"/>s.
+            </summary>
+            <param name="statusMessage">Network message instance.</param>
+            <param name="parameters">Message parameters for the network message.</param>
+        </member>
+        <member name="E:GladNet.Engine.Common.NetworkMessagePublisher.EventPublisher">
+            <summary>
+            Event channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.NetworkMessagePublisher.RequestPublisher">
+            <summary>
+            Request channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.NetworkMessagePublisher.ResponsePublisher">
+            <summary>
+            Response channel.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.NetworkMessagePublisher.StatusPublisher">
+            <summary>
+            Status channel.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.OnNetworkMessageReceive(GladNet.Message.IEventMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Interface method overload for receiving a <see cref="T:GladNet.Message.IEventMessage"/>.
+            </summary>
+            <param name="message">The event recieved from the remote peer.</param>
+            <param name="parameters">The message parameters the message was sent with.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.OnNetworkMessageReceive(GladNet.Message.IResponseMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Interface method overload for receiving a <see cref="T:GladNet.Message.IResponseMessage"/>.
+            </summary>
+            <param name="message">The response recieved from the remote peer.</param>
+            <param name="parameters">The message parameters the message was sent with.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.OnNetworkMessageReceive(GladNet.Message.IRequestMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Interface method overload for receiving a <see cref="T:GladNet.Message.IRequestMessage"/>.
+            </summary>
+            <param name="message">The request recieved from the remote peer.</param>
+            <param name="parameters">The message parameters the message was sent with.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.OnNetworkMessageReceive(GladNet.Message.IStatusMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Dispatchable method that handles <see cref="T:GladNet.Message.IStatusMessage"/> changes.
+            </summary>
+            <param name="status">The status message recieved from the remote peer.</param>
+            <param name="parameters">The message parameters the message was sent with.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.SubscribeToEvents(GladNet.Engine.Common.OnNetworkEventMessage)">
+            <summary>
+            Subscribes to <see cref="T:GladNet.Message.IEventMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.SubscribeToRequests(GladNet.Engine.Common.OnNetworkRequestMessage)">
+            <summary>
+            Subscribes to <see cref="T:GladNet.Message.IRequestMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.SubscribeToResponses(GladNet.Engine.Common.OnNetworkResponseMessage)">
+            <summary>
+            Subscribes to <see cref="T:GladNet.Message.IResponseMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.NetworkMessagePublisher.SubscribeToStatusChanges(GladNet.Engine.Common.OnNetworkStatusMessage)">
+            <summary>
+            Subscribes to <see cref="T:GladNet.Message.IStatusMessage"/> network messages.
+            </summary>
+            <param name="subscriber">Delegate target subscribing.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.NetworkMessageSubscriptionFluentBuilder`1">
+            <summary>
+            Concrete fluent builder that carries data for fluent extensions
+            </summary>
+            <typeparam name="TNetworkMessageType"></typeparam>
+        </member>
+        <member name="P:GladNet.Engine.Common.NetworkMessageSubscriptionFluentBuilder`1.Service">
+            <summary>
+            Subscription service to carry for fluent.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.IClientPeerPayloadSender">
+            <summary>
+            Contracts implementing types to offer specific/supported <see cref="T:GladNet.Payload.PacketPayload"/> sending such as; Request
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.IClientPeerPayloadSender.SendRequest(GladNet.Payload.PacketPayload,GladNet.Common.DeliveryMethod,System.Boolean,System.Byte)">
+            <summary>
+            Sends a networked request.
+            </summary>
+            <param name="payload"><see cref="T:GladNet.Payload.PacketPayload"/> for the desired network request message.</param>
+            <param name="deliveryMethod">Desired <see cref="T:GladNet.Common.DeliveryMethod"/> for the request. See documentation for more information.</param>
+            <param name="encrypt">Optional: Indicates if the message should be encrypted. Default: false</param>
+            <param name="channel">Optional: Inidicates the channel the network message should be sent on. Default: 0</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.IClientPeerPayloadSender.SendRequest``1(``0)">
+            <summary>
+            Sends a networked request.
+            Additionally this message/payloadtype is known to have static send parameters and those will be used in transit.
+            </summary>
+            <typeparam name="TPacketType">Type of the packet payload.</typeparam>
+            <param name="payload">Payload instance to be sent in the message that contains static message parameters.</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetSender.CanSend(GladNet.Common.OperationType)">
+            <summary>
+            Indicates if the <see cref="T:GladNet.Common.OperationType"/> can be sent with this peer.
+            </summary>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> to check.</param>
+            <returns>True if the peer can see the <paramref name="opType"/>.</returns>
+        </member>
+        <member name="T:GladNet.Engine.Common.INetworkMessagePayloadSenderService">
+            <summary>
+            Contract that guarantees implementing types offer some <see cref="T:GladNet.Payload.PacketPayload"/> sending functionality.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessagePayloadSenderService.TrySendMessage(GladNet.Common.OperationType,GladNet.Payload.PacketPayload,GladNet.Common.DeliveryMethod,System.Boolean,System.Byte)">
+            <summary>
+            Attempts to send a message; may fail and failure will be reported.
+            </summary>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> of the message to send.</param>
+            <param name="payload">Payload instance to be sent in the message.</param>
+            <param name="deliveryMethod">The deseried <see cref="T:GladNet.Common.DeliveryMethod"/> of the message.</param>
+            <param name="encrypt">Indicates if the message should be encrypted.</param>
+            <param name="channel">Indicates the channel for this message to be sent over.</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.INetworkMessagePayloadSenderService.TrySendMessage``1(GladNet.Common.OperationType,``0)">
+            <summary>
+            Attempts to send a message; may fail and failure will be reported.
+            Additionally this message/payloadtype is known to have static send parameters and those will be used in transit.
+            </summary>
+            <typeparam name="TPacketType">Type of the packet payload.</typeparam>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> of the message to send.</param>
+            <param name="payload">Payload instance to be sent in the message that contains static message parameters.</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.ClientPeer.CanSend(GladNet.Common.OperationType)">
+            <summary>
+            Indicates if a <see cref="T:GladNet.Engine.Common.Peer"/> can send the given <paramref name="opType"/>.
+            </summary>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> to check.</param>
+            <returns>True if the <see cref="T:GladNet.Engine.Common.Peer"/> can send the given <see cref="T:GladNet.Common.OperationType"/>.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.ClientPeer.SendRequest(GladNet.Payload.PacketPayload,GladNet.Common.DeliveryMethod,System.Boolean,System.Byte)">
+            <summary>
+            Sends a networked request.
+            </summary>
+            <param name="payload"><see cref="T:GladNet.Payload.PacketPayload"/> for the desired network request message.</param>
+            <param name="deliveryMethod">Desired <see cref="T:GladNet.Common.DeliveryMethod"/> for the request. See documentation for more information.</param>
+            <param name="encrypt">Optional: Indicates if the message should be encrypted. Default: false</param>
+            <param name="channel">Optional: Inidicates the channel the network message should be sent on. Default: 0</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.ClientPeer.SendRequest``1(``0)">
+            <summary>
+            Sends a networked request.
+            Additionally this message/payloadtype is known to have static send parameters and those will be used in transit.
+            </summary>
+            <typeparam name="TPacketType">Type of the packet payload.</typeparam>
+            <param name="payload">Payload instance to be sent in the message that contains static message parameters.</param>
+            <returns>Indication of the message send state.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.ClientPeer.OnReceiveEvent(GladNet.Message.IEventMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Called internally when an event is recieved.
+            </summary>
+            <param name="eventMessage"><see cref="T:GladNet.Message.IEventMessage"/> sent by the peer.</param>
+            <param name="parameters">Parameters the message was sent with.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.ClientPeer.OnReceiveResponse(GladNet.Message.IResponseMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Called internally when a response is recieved.
+            </summary>
+            <param name="payload"><see cref="T:GladNet.Message.IResponseMessage"/> sent by the peer.</param>
+            <param name="parameters">Parameters the message was sent with.</param>
+        </member>
+        <member name="T:GladNet.Engine.Common.DefaultDisconnectionServiceHandler">
+            <summary>
+            Default simple implementation of the <see cref="T:GladNet.Engine.Common.IDisconnectionServiceHandler"/> interface.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.DefaultDisconnectionServiceHandler.isDisconnected">
+            <summary>
+            Indicates if the connection is disconnected.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.DefaultDisconnectionServiceHandler.DisconnectionEventHandler">
+            <summary>
+            Publisher of <see cref="T:GladNet.Engine.Common.OnNetworkDisconnect"/> events to subscribers.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.DefaultDisconnectionServiceHandler.#ctor">
+            <summary>
+            Creates a new adapter for the <see cref="T:GladNet.Engine.Common.IDisconnectionServiceHandler"/> interface.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.DefaultDisconnectionServiceHandler.Disconnect">
+            <summary>
+            Disconnects the connection.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.IConnectionDetails">
+            <summary>
+            Connection details describing the remote and local peer details.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IConnectionDetails.RemoteIP">
+            <summary>
+            IPAddress of the remote peer.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IConnectionDetails.RemotePort">
+            <summary>
+            Remote port of the peer.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IConnectionDetails.LocalPort">
+            <summary>
+            Local port the peer is connecting on.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IConnectionDetails.ConnectionID">
+            <summary>
+            Application Unique ID (AUID) of the peer.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.IDisconnectable">
+            <summary>
+            Contract for implementing disconnectable functionality.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.IDisconnectable.Disconnect">
+            <summary>
+            Disconnects the disconnectable object.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.IDisconnectionServiceHandler">
+            <summary>
+            Service offering disconnection functionality.
+            </summary>
+        </member>
+        <member name="E:GladNet.Engine.Common.IDisconnectionServiceHandler.DisconnectionEventHandler">
+            <summary>
+            Publisher of <see cref="T:GladNet.Engine.Common.OnNetworkDisconnect"/> events to subscribers.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.IDisconnectionServiceHandler.isDisconnected">
+            <summary>
+            Indicates if the connection is disconnected.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.OnNetworkDisconnect">
+            <summary>
+            Delegate signature for network disconnects.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.INetPeer">
+            <summary>
+            Implementer provides network peer services.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.INetPeer.Status">
+            <summary>
+            Indicates the Network Status of the current <see cref="T:GladNet.Engine.Common.INetPeer"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.INetPeer.PeerDetails">
+            <summary>
+            Provides details about the peer.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.INetPeer.NetworkSendService">
+            <summary>
+            Peer's service for sending network messages.
+            </summary>
+        </member>
+        <member name="T:GladNet.Engine.Common.Peer">
+            <summary>
+            Base class for all network Peers or Sessions in GladNet.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.Peer.NetworkSendService">
+            <summary>
+            Peer's service for sending network messages.
+            Use Extension methods or specific types for an neater API.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.Peer.Status">
+            <summary>
+            Indicates the Network Status of the current <see cref="T:GladNet.Engine.Common.INetPeer"/>.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.Peer.PeerDetails">
+            <summary>
+            Provides access to various connection related details for a this given Pee's connection.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.Peer.Logger">
+            <summary>
+            Class logging service.
+            </summary>
+        </member>
+        <member name="P:GladNet.Engine.Common.Peer.disconnectionHandler">
+            <summary>
+            Internally available <see cref="T:GladNet.Engine.Common.IDisconnectionServiceHandler"/> service that child classes
+            can access and subscribe to.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.Peer.Disconnect">
+            <summary>
+            Disconnects the <see cref="T:GladNet.Engine.Common.Peer"/> object.
+            </summary>
+        </member>
+        <member name="M:GladNet.Engine.Common.Peer.CanSend(GladNet.Common.OperationType)">
+            <summary>
+            Indicates if the <see cref="T:GladNet.Common.OperationType"/> can be sent with this peer.
+            </summary>
+            <param name="opType"><see cref="T:GladNet.Common.OperationType"/> to check.</param>
+            <returns>True if the peer can see the <paramref name="opType"/>.</returns>
+        </member>
+        <member name="M:GladNet.Engine.Common.Peer.OnStatusChanged(GladNet.Common.NetStatus)">
+            <summary>
+            Called when <see cref="T:GladNet.Common.NetStatus"/> <see cref="P:GladNet.Engine.Common.Peer.Status"/> changes.
+            Can be overriden to preform actions in child classes.
+            </summary>
+            <param name="status">The new <see cref="T:GladNet.Common.NetStatus"/> of the <see cref="T:GladNet.Engine.Common.INetPeer"/> instance.</param>
+        </member>
+        <member name="M:GladNet.Engine.Common.Peer.OnReceiveStatus(GladNet.Message.IStatusMessage,GladNet.Message.IMessageParameters)">
+            <summary>
+            Internally managed status receival method.
+            Setup to be called internally using the <see cref="T:GladNet.Engine.Common.INetworkMessageSubscriptionService"/>.
+            </summary>
+            <param name="message">The new <see cref="T:GladNet.Message.IStatusMessage"/> message.</param>
+            <param name="parameters"><see cref="T:GladNet.Message.IMessageParameters"/> the <see cref="T:GladNet.Message.IStatusMessage"/> was sent with.</param>
+        </member>
+    </members>
+</doc>

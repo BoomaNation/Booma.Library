@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <Authors>https://github.com/HelloKitty</Authors>
+    <Company>https://github.com/HelloKitty</Company>
+    <Product></Product>
+    <Description></Description>
+    <Copyright>Andrew Blakely</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags></PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HaloLive.Authentication.Client" Version="2.0.1" />
+    <PackageReference Include="HaloLive.NameResolution.Client" Version="2.0.1" />
+    <PackageReference Include="HaloLive.Network.Common" Version="2.0.1" />
+    <PackageReference Include="SceneJect.Common" Version="2.0.5" />
+    <PackageReference Include="SceneJect.Metadata" Version="2.0.5" />
+    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.5" />
+    <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.5" />
+    <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.5" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.5" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.5" />
+    <PackageReference Include="Unitysync.Async" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Booma.Instance.Client">
+      <HintPath>..\..\lib\Booma.Client\Booma.Instance.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Booma.Payloads.Instance">
+      <HintPath>..\..\lib\Booma.Client\Booma.Payloads.Instance.dll</HintPath>
+    </Reference>
+    <Reference Include="Booma.Unity.Network.Client">
+      <HintPath>..\..\lib\Booma.Client\Booma.Unity.Network.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Common">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Engine.Common">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Engine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Lidgren.Client.Unity">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Lidgren.Client.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Payload">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Payload.dll</HintPath>
+    </Reference>
+    <Reference Include="GladNet.Serializer.Protobuf">
+      <HintPath>..\..\lib\Booma.Client\GladNet.Serializer.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj" />
+    <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
+    <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
+  </ItemGroup>
+
+</Project>

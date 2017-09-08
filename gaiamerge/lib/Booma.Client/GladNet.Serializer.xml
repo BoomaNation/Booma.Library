@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GladNet.Serializer</name>
+    </assembly>
+    <members>
+        <member name="T:GladNet.Serializer.GladNetMemberAttribute">
+            <summary>
+            Marks members with Meta-data about serialization. Existence indicates the member is a target
+            that requires serialization. Optional information can be included to better serialize.
+            </summary>
+        </member>
+        <member name="P:GladNet.Serializer.GladNetMemberAttribute.IsRequired">
+            <summary>
+            Indicates whether this member is mandatory.
+            </summary>
+        </member>
+        <member name="P:GladNet.Serializer.GladNetMemberAttribute.TagID">
+            <summary>
+            Inidicates the unique (unenforced) ID of the member for the <see cref="T:System.Type"/> to be
+            serialized.
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.GladNetMemberAttribute.#ctor(System.Int32)">
+            <summary>
+            Create a new member attribute for a target data.
+            </summary>
+            <param name="tagID">A positive integer (non-zero)</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throws if tagID is 0 or negative.</exception>
+        </member>
+        <member name="T:GladNet.Serializer.GladNetSerializationIncludeAttribute">
+            <summary>
+            Implies a (unenforced) contract between a <see cref="T:GladNet.Serializer.GladNetSerializationContractAttribute"/> marked construct
+            and another <see cref="T:System.Type"/> that is a derived or base type the targeted <see cref="T:System.Type"/>. 
+            Meta-data needed to map an int to a <see cref="T:System.Type"/>
+            </summary>
+        </member>
+        <member name="P:GladNet.Serializer.GladNetSerializationIncludeAttribute.TypeToWireTo">
+            <summary>
+            Indicates the <see cref="T:System.Type"/> of the inheriting/implementing
+            construct. Used to identify objects in case of less-derived Type serialized.
+            </summary>
+        </member>
+        <member name="P:GladNet.Serializer.GladNetSerializationIncludeAttribute.TagID">
+            <summary>
+            Indiciates a unique (not enforced) ID for that can be used to map
+            int -> Type for derived types.
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.GladNetSerializationIncludeAttribute.#ctor(System.Int32,System.Type,System.Boolean)">
+            <summary>
+            Marks a target with the Include attribute. 
+            Attribute doesn't handle enforcing.
+            </summary>
+            <param name="tagID">The unique (unenforced) ID to associate with the <see cref="T:System.Type"/>.</param>
+            <param name="type">Type of the derived or base Type to associate with. (Unenforced to be a derived or subtype)</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throws if tagID is 0 or negative.</exception>
+        </member>
+        <member name="T:GladNet.Serializer.IDeserializable">
+            <summary>
+            Implementer is an object that can be deserialized
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.IDeserializable.Deserialize(GladNet.Serializer.IDeserializerStrategy)">
+            <summary>
+            Attempts to deserialize an object with a given deserialization strategy.
+            </summary>
+            <param name="deserializer">Deserialization strategy.</param>
+            <returns>Indicates if the deserialization was successful.</returns>
+        </member>
+        <member name="T:GladNet.Serializer.IDeserializerStrategy">
+            <summary>
+            Implementer provides deserialization services.
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.IDeserializerStrategy.Deserialize``1(System.Byte[])">
+            <summary>
+            Deserializes the potential <typeparamref name="TData"/> instance represented by the <see cref="T:System.Byte"/>[].
+            </summary>
+            <typeparam name="TData">Type to deserialize to.</typeparam>
+            <param name="value">Byte representation of an object.</param>
+            <returns>An instance/value deserialized from the given byte[] or null if failed.</returns>
+        </member>
+        <member name="M:GladNet.Serializer.IDeserializerStrategy.Deserialize``1(System.IO.Stream)">
+            <summary>
+            Deserializes the potential <typeparamref name="TData"/> instance represented by the <see cref="T:System.Byte"/>[].
+            </summary>
+            <typeparam name="TData">Type to deserialize to.</typeparam>
+            <param name="stream">Stream representation of an object.</param>
+            <returns>An instance/value deserialized from the given byte[] or null if failed.</returns>
+        </member>
+        <member name="T:GladNet.Serializer.ISerializable">
+            <summary>
+            Implementer is an object that can be serialized
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.ISerializable.Serialize(GladNet.Serializer.ISerializerStrategy)">
+            <summary>
+            Attempts to serialize an object with a given serialization strategy.
+            </summary>
+            <param name="serializer">Serialization strategy.</param>
+            <returns>Indicates if the serialization was successful.</returns>
+        </member>
+        <member name="T:GladNet.Serializer.ISerializationVisitable">
+            <summary>
+            Implementer is an object that can be serialized by a visitor.
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.ISerializationVisitable.SerializeWithVisitor(GladNet.Serializer.ISerializerStrategy)">
+            <summary>
+            Attempts to serialize an object with a given serialization strategy.
+            </summary>
+            <param name="serializer">Serialization strategy.</param>
+            <returns>Returns a non-null array of bytes representing the serialized object or throws.</returns>
+        </member>
+        <member name="T:GladNet.Serializer.ISerializerRegistry">
+            <summary>
+            Implementer can register <see cref="T:System.Type"/>s for serialization.
+            </summary>
+        </member>
+        <member name="T:GladNet.Serializer.ISerializerStrategy">
+            <summary>
+            Implementer provides serialization services.
+            </summary>
+        </member>
+        <member name="M:GladNet.Serializer.ISerializerStrategy.Serialize``1(``0)">
+            <summary>
+            Serializes the a <typeparamref name="TData"/> instance/value to a byte[].
+            </summary>
+            <typeparam name="TData">Type being serialized.</typeparam>
+            <param name="data">Instance/value to serialize.</param>
+            <returns>An instance/value serialized from the given instance of <typeparamref name="TData"/>.</returns>
+        </member>
+        <member name="M:GladNet.Serializer.ISerializerStrategy.Serialize``1(System.IO.Stream,``0)">
+            <summary>
+            Serializes the a <typeparamref name="TData"/> instance/value to a <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <typeparam name="TData">Type being serialized.</typeparam>
+            <param name="data">Instance/value to serialize.</param>
+        </member>
+    </members>
+</doc>

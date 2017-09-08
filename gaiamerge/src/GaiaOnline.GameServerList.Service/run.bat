@@ -1,0 +1,1 @@
+dotnet GaiaOnline.GameServerList.Service.dll --url=http://localhost:5002

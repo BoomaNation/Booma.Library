@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GladNet.Encryption</name>
+    </assembly>
+    <members>
+        <member name="T:GladNet.Encryption.IDecryptable">
+            <summary>
+            Implementer is an object that can be decrypted.
+            </summary>
+        </member>
+        <member name="M:GladNet.Encryption.IDecryptable.Decrypt(GladNet.Encryption.IDecryptorStrategy)">
+            <summary>
+            Attempts to decrypt the raw data within the implementing type.
+            </summary>
+            <param name="decryptor">The decryptor object that handles the specifics of encryption.</param>
+            <exception cref="!:CryptographicException">Throws if decryption fails.</exception>
+            <returns>Indicates if decryption was successful.</returns>
+        </member>
+        <member name="T:GladNet.Encryption.IDecryptorStrategy">
+            <summary>
+            Creates a contract that an implementing type is capable of decrypting a <see cref="T:System.Byte"/>[]
+            No promise is made that the implementing type can decrypt data encrypted by any algorithm.
+            Implementer is a decryption strategy.
+            </summary>
+        </member>
+        <member name="M:GladNet.Encryption.IDecryptorStrategy.Decrypt(System.Byte[])">
+            <summary>
+            Decrypts a <see cref="T:System.Byte"/>[] that is encrypted if possible.
+            Should throw on failure.
+            </summary>
+            <param name="value">Chunk to be decrypted.</param>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Throws if the underlying decryption fails</exception>
+            <returns>Returns null if valu parameter is null. Otherwise returns decrypted <see cref="T:System.Byte"/>[]. Can throw if fails.</returns>
+        </member>
+        <member name="T:GladNet.Encryption.IEncryptable">
+            <summary>
+            Implementer is an object that can be encrypted.
+            </summary>
+        </member>
+        <member name="M:GladNet.Encryption.IEncryptable.Encrypt(GladNet.Encryption.IEncryptorStrategy)">
+            <summary>
+            Attempts to encrypt the raw data within the implementing type.
+            </summary>
+            <param name="encryptor">The encryptor object that handles the specifics of encryption.</param>
+            <exception cref="!:CryptographicException">Throws if encryption fails.</exception>
+            <returns>Indicates if encryption was successful.</returns>
+        </member>
+        <member name="T:GladNet.Encryption.IEncryptorStrategy">
+            <summary>
+            Creates a contract that an implementing type is capable of encrypting a <see cref="T:System.Byte"/>[]
+            Implementer is an encryption strategy.
+            </summary>
+        </member>
+        <member name="M:GladNet.Encryption.IEncryptorStrategy.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a <see cref="T:System.Byte"/>[].
+            Should throw on failure.
+            </summary>
+            <param name="value">Chunk to be encrypted.</param>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Throws if the underlying encryption fails</exception>
+            <returns>Returns null if valu parameter is null. Otherwise returns encrypted <see cref="T:System.Byte"/>[]. Can throw if fails.</returns>
+        </member>
+    </members>
+</doc>

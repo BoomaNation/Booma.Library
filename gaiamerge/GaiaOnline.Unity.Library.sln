@@ -1,0 +1,146 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{82223BC2-FD46-45B7-8714-A1BBB6FACC0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Client", "src\GaiaOnline.Game.Client\GaiaOnline.Game.Client.csproj", "{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.AdditionalDependencies", "src\GaiaOnline.AdditionalDependencies\GaiaOnline.AdditionalDependencies.csproj", "{4094B729-4488-45FC-A03D-67C1BA4AF765}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E56BA77B-D413-4C62-931C-2A122BA76C03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{D3964BC6-DF3A-456B-853F-D0B69096D23C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerList.Models", "src\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj", "{BEE3E007-F546-48AF-B3EC-F44B93E46D88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerList.Service", "src\GaiaOnline.GameServerList.Service\GaiaOnline.GameServerList.Service.csproj", "{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Authentication.Service", "src\GaiaOnline.Authentication.Service\GaiaOnline.Authentication.Service.csproj", "{655CBFF3-2ABB-4085-90AF-5521E29F60A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Network.Client", "src\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj", "{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerMediator.Service", "src\GaiaOnline.GameServerMediator.Service\GaiaOnline.GameServerMediator.Service.csproj", "{F950210B-142F-4BF9-972F-DEE1D56AF62D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Models.Common", "src\GaiaOnline.Models.Common\GaiaOnline.Models.Common.csproj", "{62508B2E-7378-43E2-AB95-09417705C0A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.NameQuery.Database", "src\GaiaOnline.NameQuery.Database\GaiaOnline.NameQuery.Database.csproj", "{E88FE383-0659-41EF-A311-193D03D8FA39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Database.Common", "src\GaiaOnline.Database.Common\GaiaOnline.Database.Common.csproj", "{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.NameQuery.Models", "src\GaiaOnline.NameQuery.Models\GaiaOnline.NameQuery.Models.csproj", "{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerMediator.Models.Common", "src\GaiaOnline.GameServerMediator.Models.Common\GaiaOnline.GameServerMediator.Models.Common.csproj", "{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.GameServerMediator.Models.Server", "src\GaiaOnline.GameServerMediator.Models.Server\GaiaOnline.GameServerMediator.Models.Server.csproj", "{27609372-D53E-4CD3-8804-A2162F4506B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Network", "Network", "{37D385B3-B129-4C42-9C0D-B13BB83FF549}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Network.Server", "src\GaiaOnline.Network.Server\GaiaOnline.Network.Server.csproj", "{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBDE396-D132-4C66-BD97-F363E44FE351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE3E007-F546-48AF-B3EC-F44B93E46D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE3E007-F546-48AF-B3EC-F44B93E46D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE3E007-F546-48AF-B3EC-F44B93E46D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE3E007-F546-48AF-B3EC-F44B93E46D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B293AEBF-C399-4C9D-8C83-0F1E5756FF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655CBFF3-2ABB-4085-90AF-5521E29F60A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655CBFF3-2ABB-4085-90AF-5521E29F60A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655CBFF3-2ABB-4085-90AF-5521E29F60A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655CBFF3-2ABB-4085-90AF-5521E29F60A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F950210B-142F-4BF9-972F-DEE1D56AF62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F950210B-142F-4BF9-972F-DEE1D56AF62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F950210B-142F-4BF9-972F-DEE1D56AF62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F950210B-142F-4BF9-972F-DEE1D56AF62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E88FE383-0659-41EF-A311-193D03D8FA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88FE383-0659-41EF-A311-193D03D8FA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88FE383-0659-41EF-A311-193D03D8FA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88FE383-0659-41EF-A311-193D03D8FA39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27609372-D53E-4CD3-8804-A2162F4506B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27609372-D53E-4CD3-8804-A2162F4506B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27609372-D53E-4CD3-8804-A2162F4506B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27609372-D53E-4CD3-8804-A2162F4506B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{1EBDE396-D132-4C66-BD97-F363E44FE351} = {37D385B3-B129-4C42-9C0D-B13BB83FF549}
+		{4094B729-4488-45FC-A03D-67C1BA4AF765} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{E56BA77B-D413-4C62-931C-2A122BA76C03} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{D3964BC6-DF3A-456B-853F-D0B69096D23C} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{BEE3E007-F546-48AF-B3EC-F44B93E46D88} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{B293AEBF-C399-4C9D-8C83-0F1E5756FF85} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{655CBFF3-2ABB-4085-90AF-5521E29F60A5} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40} = {37D385B3-B129-4C42-9C0D-B13BB83FF549}
+		{F950210B-142F-4BF9-972F-DEE1D56AF62D} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{62508B2E-7378-43E2-AB95-09417705C0A0} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{E88FE383-0659-41EF-A311-193D03D8FA39} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{2AC0205C-4C60-4FF2-8997-E7AB29BB5285} = {E56BA77B-D413-4C62-931C-2A122BA76C03}
+		{1869D92E-4A30-46DD-BEDA-B7B26CE764B5} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{1F03E1B1-138B-4BF9-8EC3-BA7BA652E6F1} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{27609372-D53E-4CD3-8804-A2162F4506B6} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{37D385B3-B129-4C42-9C0D-B13BB83FF549} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{C13EEDA2-41DC-4ADA-BDFD-78D8DFB68788} = {37D385B3-B129-4C42-9C0D-B13BB83FF549}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC3687F9-5B94-46EB-AB27-C24E4361100F}
+	EndGlobalSection
+EndGlobal
