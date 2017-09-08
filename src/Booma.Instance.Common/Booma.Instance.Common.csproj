@@ -1,116 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A959423-5523-4FF5-9667-963BF97F2879}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Booma.Instance.Common</RootNamespace>
-    <AssemblyName>Booma.Instance.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>net46</TargetFramework>
+    <Authors>https://github.com/HelloKitty</Authors>
+    <Company>https://github.com/HelloKitty</Company>
+    <Product></Product>
+    <Description></Description>
+    <Copyright>Andrew Blakely</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags></PackageTags>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Entity\Communication\IUnlockable.cs" />
-    <Compile Include="Entity\Communication\IWorldInteractable.cs" />
-    <Compile Include="Entity\Components\NetworkGameObject.cs" />
-    <Compile Include="Entity\Components\Tags\ITagProvider.cs" />
-    <Compile Include="Entity\Components\Tags\NetworkEntityIdentifierTag.cs" />
-    <Compile Include="Entity\Collections\EntityContainer.cs" />
-    <Compile Include="Entity\Collections\NetworkEntityCollection.cs" />
-    <Compile Include="Entity\Components\INetworkOwnable.cs" />
-    <Compile Include="Entity\IEntityObject.cs" />
-    <Compile Include="Entity\Components\NetworkOwnerPeerTag.cs" />
-    <Compile Include="Entity\Prefab\PrefabType.cs" />
-    <Compile Include="Entity\Spawn\Context\IEntitySpawnContext.cs" />
-    <Compile Include="Entity\Spawn\Context\IPlayerSpawnContext.cs" />
-    <Compile Include="Entity\Spawn\Context\ISpawnContext.cs" />
-    <Compile Include="Entity\Spawn\Context\NetworkPlayerSpawnContext.cs" />
-    <Compile Include="Entity\Spawn\ISpawnPointStrategy.cs" />
-    <Compile Include="Entity\Spawn\Player\IEntityFactory.cs" />
-    <Compile Include="Entity\Spawn\Player\IPlayerEntityFactory.cs" />
-    <Compile Include="Entity\Spawn\DefaultEntitySpawnDetails.cs" />
-    <Compile Include="Entity\Spawn\IEntitySpawnResults.cs" />
-    <Compile Include="Entity\Spawn\Context\IPeerOwnedSpawnContext.cs" />
-    <Compile Include="Entity\Spawn\Player\NetworkPlayerEntityFactory.cs" />
-    <Compile Include="Entity\Spawn\SpawnResult.cs" />
-    <Compile Include="Extensions\IGameObjectContextualBuilderExtensions.cs" />
-    <Compile Include="Extensions\IPlayerEntityFactoryExtensions.cs" />
-    <Compile Include="Entity\Objects\NetworkButton.cs" />
-    <Compile Include="Entity\Objects\NetworkDoor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entity\State\ButtonEntityStateTag.cs" />
-    <Compile Include="Entity\State\DoorEntityStateTag.cs" />
-    <Compile Include="Entity\State\IDefaultStateProvider.cs" />
-    <Compile Include="Entity\State\IEntityStateContainer.cs" />
-    <Compile Include="Entity\State\IEntityStateListener.cs" />
-    <Compile Include="Entity\State\NetworkEntityStateTag.cs" />
+    <PackageReference Include="Common.Logging" Version="3.3.1" />
+    <PackageReference Include="Common.Logging.Core" Version="3.3.1" />
+    <PackageReference Include="Fasterflect" Version="2.1.3" />
+    <PackageReference Include="Generic.Math" Version="1.0.1" />
+    <PackageReference Include="GladNet.Common" Version="3.0.18" />
+    <PackageReference Include="GladNet.Encryption" Version="3.0.18" />
+    <PackageReference Include="GladNet.Engine.Common" Version="3.0.18" />
+    <PackageReference Include="GladNet.Message" Version="3.0.18" />
+    <PackageReference Include="GladNet.Payload" Version="3.0.18" />
+    <PackageReference Include="GladNet.Serializer" Version="3.0.18" />
+    <PackageReference Include="SceneJect.Common" Version="2.0.5" />
+    <PackageReference Include="SceneJect.Metadata" Version="2.0.5" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\Booma.Entity.Identity\Booma.Entity.Identity.csproj">
-      <Project>{11e0aea4-66b0-44ab-a909-8d58e862dee1}</Project>
-      <Name>Booma.Entity.Identity</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Booma.Entity.Identity\Booma.Entity.Identity.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Common.Logging.3.3.1\lib\net35\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Common.Logging.Core.3.3.1\lib\net35\Common.Logging.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll</HintPath>
-    </Reference>
-    <Reference Include="Generic.Math, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Generic.Math.1.0.2\lib\net46\Generic.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Common.3.0.18\lib\net35\GladNet.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Encryption.3.0.18\lib\net35\GladNet.Encryption.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Engine.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Engine.Common.3.0.18\lib\net35\GladNet.Engine.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Message.3.0.18\lib\net35\GladNet.Message.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Payload.3.0.18\lib\net35\GladNet.Payload.dll</HintPath>
-    </Reference>
-    <Reference Include="GladNet.Serializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GladNet.Serializer.3.0.18\lib\net35\GladNet.Serializer.dll</HintPath>
-    </Reference>
-    <Reference Include="SceneJect.Common, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Common.2.0.5\lib\net46\SceneJect.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="SceneJect.Metadata, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SceneJect.Metadata.2.0.5\lib\net35\SceneJect.Metadata.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
       <HintPath>..\..\lib\Odin\Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
@@ -121,16 +44,5 @@
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Booma.Instance.Common.nuspec" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

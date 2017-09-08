@@ -1,5 +1,4 @@
 ﻿using Booma.Entity.Identity;
-using Booma.Entity.Prefab;
 using Booma.Instance.Common;
 using SceneJect.Common;
 using System;
@@ -24,8 +23,7 @@ namespace Booma.Instance.Server
 			//Find every gameobject in the scene that is tagged as an entity.
 			foreach(GameObject go in Resources.FindObjectsOfTypeAll<GameObject>()
 				.Where(go => go.scene != null && !String.IsNullOrEmpty(go.scene.name))
-				.Where(go => go.GetComponent<IEntityGuidContainer>() != null)
-				.Where(go => go.GetComponent<ITagProvider<GameObjectPrefab>>() != null))
+				.Where(go => go.GetComponent<IEntityGuidContainer>() != null))
 			{
 				IEntityGuidContainer guid = go.GetComponent<IEntityGuidContainer>();
 

@@ -13,7 +13,6 @@ using Booma.Payloads.Surrogates.Unity;
 using GladNet.Common;
 using UnityEngine;
 using Booma.Entity.Identity;
-using Booma.Entity.Prefab;
 using Booma.Instance.NetworkObject;
 using GladNet.Engine.Server;
 using Unitysync.Async;

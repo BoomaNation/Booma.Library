@@ -51,7 +51,6 @@ namespace Booma.Instance.NetworkObject
 			}
 		}
 
-
 		public bool TryInteract([NotNull] NetworkEntityGuid entityInteracting)
 		{
 			if (entityInteracting == null) throw new ArgumentNullException(nameof(entityInteracting));
