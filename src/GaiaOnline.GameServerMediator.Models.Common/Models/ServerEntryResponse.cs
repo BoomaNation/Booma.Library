@@ -28,7 +28,7 @@ namespace GaiaOnline
 		/// The endpoint that client should connect to.
 		/// </summary>
 		[JsonProperty]
-		public ResolvedEndpoint Endpoint { get; }
+		public ResolvedEndpoint Endpoint { get; private set; }
 
 		public ServerEntryResponse(Guid sessionClaimGuid, ResolvedEndpoint endpoint)
 		{
