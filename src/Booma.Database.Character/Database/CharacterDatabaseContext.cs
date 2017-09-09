@@ -10,7 +10,12 @@ namespace Booma
 		/// <summary>
 		/// Set of characters in the database.
 		/// </summary>
-		public DbSet<CharacterDatabaseModel> NameEntries { get; set; }
+		public DbSet<CharacterDatabaseModel> Characters { get; set; }
+
+		/// <summary>
+		/// Set of character appearances in the database.
+		/// </summary>
+		public DbSet<CharacterAppearanceModel> CharacterAppearances { get; set; }
 
 		public CharacterDatabaseContext(DbContextOptions<CharacterDatabaseContext> options) 
 			: base(options)
