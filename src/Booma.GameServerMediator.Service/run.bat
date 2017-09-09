@@ -1,1 +1,1 @@
-dotnet GaiaOnline.GameServerMediator.Service.dll --url=http://localhost:5003
+dotnet Booma.GameServerMediator.Service.dll --url=http://localhost:5003

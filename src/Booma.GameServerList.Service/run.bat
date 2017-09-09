@@ -1,1 +1,1 @@
-dotnet GaiaOnline.GameServerList.Service.dll --url=http://localhost:5002
+dotnet Booma.GameServerList.Service.dll --url=http://localhost:5002
