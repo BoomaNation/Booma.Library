@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Booma
@@ -44,6 +45,7 @@ namespace Booma
 		/// <summary>
 		/// Tag/metdata that contains UID information.
 		/// </summary>
+		[Required]
 		[SerializeField]
 		public IEntityGuidContainer networkGuidContainer;
 

@@ -15,12 +15,14 @@ namespace Booma
 	[Injectee]
 	public class NetworkPlayerEntityFactory : SerializedMonoBehaviour, IPlayerEntityFactory
 	{
+		[Required]
 		[SerializeField]
 		private GameObject NetworkPlayerPrefab;
 
 		/// <summary>
 		/// Service that issues spawn points.
 		/// </summary>
+		[Required]
 		[SerializeField]
 		private ISpawnPointStrategy PlayerSpawnStrategy { get; }
 
@@ -29,12 +31,6 @@ namespace Booma
 		/// </summary>
 		[Inject]
 		private IGameObjectFactory GameobjectFactory { get; }
-
-		private void Start()
-		{
-			if(NetworkPlayerPrefab == null)
-				throw new InvalidOperationException($"The {nameof(NetworkPlayerEntityFactory)} does not have a set {nameof(NetworkPlayerPrefab)} field.");
-		}
 
 		/// <inheritdoc />
 		public IEntitySpawnResults TrySpawnEntity(Vector3 position, Quaternion rotation, IPlayerSpawnContext context)

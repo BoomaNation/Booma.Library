@@ -11,23 +11,20 @@ namespace Booma
 	[Injectee]
 	public class ServerGameObjectEntityIdentityTag : MonoBehaviour, IEntityGuidContainer, ITagProvider<NetworkEntityGuid>
 	{
+		//TODO: Should we inject a guid ourselves?
 		[Inject]
-		private readonly INetworkGuidFactory guidFactory;
+		private INetworkGuidFactory GuidFactory { get; }
 
-		private Lazy<NetworkEntityGuid> networkGuid = null;
-		public NetworkEntityGuid NetworkGuid { get { return networkGuid.Value; } }
+		/// <inheritdoc />
+		public NetworkEntityGuid NetworkGuid => Tag;
 
-		public NetworkEntityGuid Tag { get { return networkGuid.Value; } }
+		/// <inheritdoc />
+		public NetworkEntityGuid Tag { get; private set; }
 
-		private void Awake()
+		private void Start()
 		{
-			//Don't touch guid factory in awake. No injected property is available in awake reliably
-			networkGuid = new Lazy<NetworkEntityGuid>(BuildGuid, true);
-		}
-
-		public NetworkEntityGuid BuildGuid()
-		{
-			return guidFactory.Create(EntityType.GameObject);
+			//Just create a new guid for the tag.
+			Tag = GuidFactory.Create(EntityType.GameObject);
 		}
 	}
 }
