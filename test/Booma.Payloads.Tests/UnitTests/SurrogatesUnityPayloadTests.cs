@@ -12,7 +12,7 @@ namespace Booma.Payloads.Tests.UnitTests
 	{
 		/// <inheritdoc />
 		public SurrogatesUnityPayloadTests()
-			: base(typeof(Booma.Payloads.Surrogates.Unity.QuaternionSurrogate).Assembly)
+			: base(typeof(QuaternionSurrogate).Assembly)
 		{
 
 		}
