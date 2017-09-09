@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Unitysync.Async;
 
-namespace Booma.Client
+namespace Booma
 {
 	[Injectee]
 	public sealed class AuthenticationClient : MonoBehaviour

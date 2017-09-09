@@ -1,12 +1,11 @@
-﻿using Booma.Instance.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Instance.NetworkObject;
+using Booma;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	[RequireComponent(typeof(ButtonEntityStateTag))] //require the state tag
 	public class ServerNetworkButton : NetworkButton

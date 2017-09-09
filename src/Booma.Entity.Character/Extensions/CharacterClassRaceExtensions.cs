@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using Fasterflect;
 
-namespace Booma.Entity.Character
+namespace Booma
 {
 	/// <summary>
 	/// Extension methods for the <see cref="CharacterClassRace"/> enumeration Type.

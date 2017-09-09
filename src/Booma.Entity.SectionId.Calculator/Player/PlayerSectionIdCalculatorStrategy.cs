@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Booma.Entity.Character;
+using Booma;
 
-namespace Booma.Entity
+namespace Booma
 {
 	/// <summary>
 	/// Strategy for player character calculation producing <see cref="SectionId"/> based on their

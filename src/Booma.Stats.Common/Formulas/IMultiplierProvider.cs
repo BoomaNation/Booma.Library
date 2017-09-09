@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Stats.Common
+namespace Booma
 {
 	/// <summary>
 	/// Interface for objects that can produce multipliers.

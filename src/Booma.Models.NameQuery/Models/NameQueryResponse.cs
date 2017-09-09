@@ -4,7 +4,7 @@ using System.Text;
 using HaloLive.Models;
 using Newtonsoft.Json;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// DTO model that represents tha result of a name query.

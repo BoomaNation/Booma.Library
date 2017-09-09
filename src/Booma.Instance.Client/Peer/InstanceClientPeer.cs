@@ -5,12 +5,11 @@ using System.Text;
 using GladNet.Common;
 using GladNet.Serializer;
 using GladNet.Message;
-using Booma.Payloads.Instance;
+using Booma;
 using UnityEngine;
 using System.Collections;
-using Booma.Client.Network.Common;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	public class InstanceClientPeer : BoomaNetworkClientPeer<InstanceClientPeer>
 	{

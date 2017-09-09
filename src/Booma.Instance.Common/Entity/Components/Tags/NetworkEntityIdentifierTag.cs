@@ -1,4 +1,4 @@
-﻿using Booma.Entity.Identity;
+﻿using Booma;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	/// <summary>
 	/// Component for indentifying entities.

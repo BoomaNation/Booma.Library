@@ -9,7 +9,7 @@ using GladNet.Message;
 using GladNet.Payload;
 using Sirenix.OdinInspector;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	[Injectee]
 	public abstract class NetworkMessageSender : SerializedMonoBehaviour

@@ -1,14 +1,13 @@
-﻿using Booma.Instance.Common;
+﻿using Booma;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using Booma.Entity.Identity;
 using Sirenix.OdinInspector;
 
-namespace Booma.Instance.Common
+namespace Booma
 {
 	/// <summary>
 	/// Factory that builds world representations for networked players.

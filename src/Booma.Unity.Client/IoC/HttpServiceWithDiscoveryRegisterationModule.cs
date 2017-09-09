@@ -12,7 +12,7 @@ using SceneJect.Common;
 using TypeSafe.Http.Net;
 using UnityEngine;
 
-namespace Booma.Client
+namespace Booma
 {
 	public abstract class HttpServiceWithDiscoveryRegisterationModule : NonBehaviourDependency
 	{

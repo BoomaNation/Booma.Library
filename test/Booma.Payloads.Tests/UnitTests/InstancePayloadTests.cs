@@ -13,7 +13,7 @@ namespace Booma.Payloads.Tests
 	{
 		/// <inheritdoc />
 		public InstancePayloadTests() 
-			: base(typeof(Booma.Payloads.Instance.EntityInteractionRequestPayload).Assembly)
+			: base(typeof(EntityInteractionRequestPayload).Assembly)
 		{
 
 		}

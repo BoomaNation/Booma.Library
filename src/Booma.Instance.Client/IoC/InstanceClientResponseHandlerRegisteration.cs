@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Unity.Network;
+using Booma;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	public class InstanceClientResponseHandlerRegisteration : NetworkMessageHandlerServiceRegistration<InstanceClientPeer, IResponseMessage, IResponseMessageHandler<InstanceClientPeer>, ResponseMessageHandlerService<InstanceClientPeer>, IResponseMessageHandlerService<InstanceClientPeer>>
 	{

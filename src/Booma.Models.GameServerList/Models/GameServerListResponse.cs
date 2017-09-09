@@ -4,7 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using HaloLive.Models;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// The response for a quest for gameservers.

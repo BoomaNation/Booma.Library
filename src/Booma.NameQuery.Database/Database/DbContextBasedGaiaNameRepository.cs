@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public sealed class DbContextBasedGaiaNameRepository : IGaiaNameRepository
 	{

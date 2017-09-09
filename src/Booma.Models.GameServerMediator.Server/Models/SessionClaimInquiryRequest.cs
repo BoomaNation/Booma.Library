@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Request that tried to inquire about information related to the <see cref="SessionGuid"/>.

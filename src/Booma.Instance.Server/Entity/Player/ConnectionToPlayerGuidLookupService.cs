@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
+using Booma;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	//TODO: document; thread safety
 	public class ConnectionToPlayerGuidLookupService : IConnectionToGuidLookupService, IConnectionToGuidRegistry

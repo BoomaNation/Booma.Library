@@ -1,16 +1,13 @@
-﻿using Booma.Instance.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
-using Booma.Instance.NetworkObject;
+using Booma;
 using SceneJect.Common;
 using UnityEngine;
-using Booma.Payloads.Instance;
 using GladNet.Common;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	public class NetworkInteractableEntity : NetworkMessageSender, IWorldInteractable
 	{

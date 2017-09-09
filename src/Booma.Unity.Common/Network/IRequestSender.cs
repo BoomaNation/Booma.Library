@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Unity.Network
+namespace Booma
 {
 	/// <summary>
 	/// Contract for types that provide request sending functionality

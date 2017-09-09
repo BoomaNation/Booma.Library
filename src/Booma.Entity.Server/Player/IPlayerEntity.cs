@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Server.Player
+namespace Booma
 {
 	/// <summary>
 	/// Interfaces that contracts implementers as player entities.

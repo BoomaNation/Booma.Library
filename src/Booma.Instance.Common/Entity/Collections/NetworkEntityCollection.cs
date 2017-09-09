@@ -1,11 +1,11 @@
-﻿using Booma.Entity.Identity;
+﻿using Booma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Common
+namespace Booma
 {
 	/// <summary>
 	/// Dictionary/map of <see cref="NetworkEntityGuid"/>s and their corressponding <see cref="GameObject"/>.

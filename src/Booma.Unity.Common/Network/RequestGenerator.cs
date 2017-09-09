@@ -9,7 +9,7 @@ using SceneJect.Common;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Booma.Unity.Network
+namespace Booma
 {
 	[Injectee]
 	public abstract class RequestGenerator : SerializedMonoBehaviour, IRequestSender

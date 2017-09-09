@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
+using Booma;
 using GladNet.Engine.Common;
 using JetBrains.Annotations;
 using SceneJect.Common;
 
-namespace Booma.Instance.Common
+namespace Booma
 {
 	/// <summary>
 	/// Context for a spawning entity.

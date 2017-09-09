@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Identity
+namespace Booma
 {
 	/// <summary>
 	/// Implements simple value-type style comparision semantics for the <see cref="NetworkEntityGuid"/>
@@ -13,7 +13,7 @@ namespace Booma.Entity.Identity
 		where TType : NetworkEntityGuid
 	{
 		/// <summary>
-		/// Singleton instance of the <see cref="NetworkGuidEqualityComparer"/>.
+		/// Singleton instance of the <see cref="NetworkGuidEqualityComparer{TType}"/>.
 		/// </summary>
 		public static NetworkGuidEqualityComparer<TType> Instance { get; } = new NetworkGuidEqualityComparer<TType>();
 

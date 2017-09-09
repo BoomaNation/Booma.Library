@@ -1,16 +1,13 @@
-﻿using Booma.Payloads.Instance;
-using Booma.Server.Network.Unity.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Message;
 using SceneJect.Common;
-using Booma.Entity.Identity;
-using Booma.Instance.Common;
+using Booma;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	[Injectee]
 	public class PlayerMoveRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, PlayerMoveRequestPayload>

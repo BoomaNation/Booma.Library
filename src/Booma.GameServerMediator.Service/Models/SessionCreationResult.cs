@@ -1,6 +1,6 @@
 using System;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public sealed class SessionCreationResult
 	{

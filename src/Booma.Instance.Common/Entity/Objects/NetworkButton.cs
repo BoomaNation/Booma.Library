@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
+using Booma;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	public abstract class NetworkButton : NetworkGameObject<NetworkButton.ButtonState>, IWorldInteractable
 	{

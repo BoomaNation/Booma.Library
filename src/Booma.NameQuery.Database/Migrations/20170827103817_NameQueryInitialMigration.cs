@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GaiaOnline.NameQuery.Database.Migrations
+namespace Booma
 {
     public partial class NameQueryInitialMigration : Migration
     {

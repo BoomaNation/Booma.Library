@@ -1,5 +1,4 @@
-﻿using Booma.Entity.Identity;
-using Booma.Instance.Common;
+﻿using Booma;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Text;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	[Injectee]
 	public class ClientNetworkPlayerEntityFactory : NetworkPlayerEntityFactory

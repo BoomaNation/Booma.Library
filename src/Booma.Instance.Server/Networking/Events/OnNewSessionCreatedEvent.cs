@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine.Events;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Event for new session creation.

@@ -8,7 +8,7 @@ using GladNet.Engine.Common;
 using GladNet.Message;
 using GladNet.Message.Handlers;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	public class InstanceClientSession : ClientPeerSession
 	{

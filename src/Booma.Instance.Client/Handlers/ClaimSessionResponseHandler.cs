@@ -1,18 +1,15 @@
-﻿using Booma.Payloads.Instance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Client.Network.Common;
 using GladNet.Message;
-using Booma.Instance.Common;
+using Booma;
 using SceneJect.Common;
 using Common.Logging;
 using UnityEngine;
 using GladNet.Engine.Common;
-using Booma.Entity.Identity;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	[Injectee]
 	public class ClaimSessionResponseHandler : ResponsePayloadHandlerComponent<InstanceClientPeer, ClaimSessionResponsePayload>

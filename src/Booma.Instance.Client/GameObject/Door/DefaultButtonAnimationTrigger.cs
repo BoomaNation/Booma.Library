@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.Anim
+namespace Booma
 {
 	/// <summary>
 	/// Enumeration of default animation states for buttons.

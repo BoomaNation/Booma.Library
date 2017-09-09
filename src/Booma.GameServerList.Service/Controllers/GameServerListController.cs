@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using HaloLive.Models.NameResolution;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GaiaOnline
+namespace Booma
 {
 	[Route("api/gameserver")]
 	public class GameServerListController : Controller

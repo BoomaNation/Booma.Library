@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GaiaOnline;
+using Booma;
 using HaloLive.Network.Common;
 
-namespace GaiaOnline.GameServerList.Service.Migrations
+namespace Booma
 {
     [DbContext(typeof(GameServerListDbContext))]
     partial class GameServerListDbContextModelSnapshot : ModelSnapshot

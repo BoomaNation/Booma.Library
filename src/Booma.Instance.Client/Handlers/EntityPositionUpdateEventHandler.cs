@@ -1,17 +1,15 @@
-﻿using Booma.Client.Network.Common;
-using Booma.Payloads.Instance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Message;
-using Booma.Instance.Common;
+using Booma;
 using SceneJect.Common;
 using Common.Logging;
 using UnityEngine;
 #pragma warning disable 649
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	//TODO: Generalize for all entities. Not just players.
 	[Injectee]

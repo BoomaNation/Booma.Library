@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GaiaOnline
+namespace Booma
 {
 	//TODO: Refactor into writable and readonly interface
 	public interface IGameSessionRepository : IReadOnlyGameSessionRepository

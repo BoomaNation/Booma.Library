@@ -3,7 +3,7 @@ using HaloLive.Models.NameResolution;
 using HaloLive.Network.Common;
 using Newtonsoft.Json;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Data model that represents information about a gameserver.

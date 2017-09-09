@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Identity
+namespace Booma
 {
 	//Format: 0xSSEE XXXX IIII IIII
 	//[IIII IIII] unsigned 32bit unique identifier.

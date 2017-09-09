@@ -9,7 +9,7 @@ using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	[Serializable]
 	public class EntityStateUnityEvent : UnityEvent<byte> { }

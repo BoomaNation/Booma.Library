@@ -5,7 +5,7 @@ using System.Text;
 using Common.Logging;
 using Common.Logging.Simple;
 
-namespace Booma.Client.Logging
+namespace Booma
 {
 	/// <summary>
 	/// Simple Unity3D logger that logs through the <see cref="UnityEngine.Debug"/>

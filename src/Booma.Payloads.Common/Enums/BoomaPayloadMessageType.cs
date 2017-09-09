@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Common
+namespace Booma
 {
 	/// <summary>
 	/// Enumeration of valid Booma message types.

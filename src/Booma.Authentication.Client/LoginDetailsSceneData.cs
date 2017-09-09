@@ -6,7 +6,7 @@ using HaloLive.Models.Authentication;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Client
+namespace Booma
 {
 	/// <summary>
 	/// Encapsulates the required login-data and lives in a Unity3D scene.

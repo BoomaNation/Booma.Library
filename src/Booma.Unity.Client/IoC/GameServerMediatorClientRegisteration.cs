@@ -7,7 +7,7 @@ using SceneJect.Common;
 using TypeSafe.Http.Net;
 using UnityEngine;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// IoC registeration component for the <see cref="IGameServerMediatorService"/>.

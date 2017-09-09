@@ -1,4 +1,4 @@
-﻿namespace GaiaOnline
+﻿namespace Booma
 {
 	public enum ServerEntryResponseCode
 	{

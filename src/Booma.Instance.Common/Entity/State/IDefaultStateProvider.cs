@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	/// <summary>
 	/// Service that indicates a default state.

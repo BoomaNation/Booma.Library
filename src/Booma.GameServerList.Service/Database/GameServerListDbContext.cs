@@ -6,7 +6,7 @@ using HaloLive.Network.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// The <see cref="DbContext"/> that contains the <see cref="GameServerListEntryModel"/> table.

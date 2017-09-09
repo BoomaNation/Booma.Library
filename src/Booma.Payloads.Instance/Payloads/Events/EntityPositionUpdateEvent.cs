@@ -1,13 +1,10 @@
-﻿using Booma.Entity.Identity;
-using Booma.Payloads.Common;
-using Booma.Payloads.Surrogates.Unity;
-using GladNet.Payload;
+﻿using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// An event that contains information about a position update for an entity.

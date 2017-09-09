@@ -1,10 +1,10 @@
-﻿using Booma.Entity.Identity;
+﻿using Booma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	public interface IUnlockable
 	{

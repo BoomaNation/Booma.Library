@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GaiaOnline
+namespace Booma
 {
 	[Route("api/[controller]")]
 	public sealed class GatewayController : Controller

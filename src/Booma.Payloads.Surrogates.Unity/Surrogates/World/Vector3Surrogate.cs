@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Surrogates.Unity
+namespace Booma
 {
 	/// <summary>
 	/// Surrogate for the Unity3D Vector3 type.

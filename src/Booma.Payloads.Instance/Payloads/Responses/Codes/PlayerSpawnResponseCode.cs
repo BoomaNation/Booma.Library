@@ -1,9 +1,8 @@
-﻿using Booma.Payloads.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// Indicates the response result.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Stats.Common
+namespace Booma
 {
 	//It's like a value that comes with a unit. The unit being the TStatType and the StatType.
 	/// <summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using JetBrains.Annotations;
 using TypeSafe.Http.Net;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public interface IGameServerSessionService
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Stats.Common
+namespace Booma
 {
 	/// <summary>
 	/// Provides clean and simple way to create and initialize the immutable stats container.

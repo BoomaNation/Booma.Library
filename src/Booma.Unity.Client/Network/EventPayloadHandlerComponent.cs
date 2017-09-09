@@ -11,7 +11,7 @@ using System.Text;
 using UnityEngine;
 using JetBrains.Annotations;
 
-namespace Booma.Client.Network.Common
+namespace Booma
 {
 	/// <summary>
 	/// Scene-based <see cref="IEventMessageHandler{TPeerType}"/>

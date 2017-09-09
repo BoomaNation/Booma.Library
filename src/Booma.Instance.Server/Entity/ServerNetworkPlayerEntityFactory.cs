@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Booma.Instance.Common;
+using Booma;
 using JetBrains.Annotations;
 using SceneJect.Common;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Server implementation of the <see cref="NetworkPlayerEntityFactory"/> that extends

@@ -8,11 +8,11 @@ using GladNet.Common;
 using GladNet.Message;
 using GladNet.Payload;
 using SceneJect.Common;
-using Booma.Instance.Common;
+using Booma;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Base class for any message broadcasting component.

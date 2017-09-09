@@ -5,7 +5,7 @@ using System.Threading;
 using HaloLive.Models;
 using Newtonsoft.Json;
 
-namespace GaiaOnline
+namespace Booma
 {
 	[JsonObject]
 	public sealed class SessionClaimInquiryResponse : IResponseModel<SessionClaimInquiryResponseCode>, ISucceedable

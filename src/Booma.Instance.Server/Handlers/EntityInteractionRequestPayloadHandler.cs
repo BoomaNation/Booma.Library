@@ -1,16 +1,13 @@
-﻿using Booma.Payloads.Instance;
-using Booma.Server.Network.Unity.Common;
-using SceneJect.Common;
+﻿using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Message;
 using Common.Logging;
-using Booma.Instance.Common;
-using Booma.Instance.NetworkObject;
+using Booma;
 
-namespace Booma.Instance.Server.Handlers
+namespace Booma
 {
 	[Injectee]
 	public class EntityInteractionRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, EntityInteractionRequestPayload>

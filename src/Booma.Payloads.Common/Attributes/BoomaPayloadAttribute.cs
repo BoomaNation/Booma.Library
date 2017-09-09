@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Common
+namespace Booma
 {
 	/// <summary>
 	/// Simplified <see cref="Attribute"/> of the <see cref="GladNetSerializationIncludeAttribute"/> which reduces the

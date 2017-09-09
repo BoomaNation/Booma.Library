@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public class DatabaseGameServerListRepository : IGameServerListRepository
 	{

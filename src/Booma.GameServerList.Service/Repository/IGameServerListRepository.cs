@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HaloLive.Network.Common;
 
-namespace GaiaOnline
+namespace Booma
 {
 	//TODO: Should probably expand this to dev vs test vs public servers
 	public interface IGameServerListRepository

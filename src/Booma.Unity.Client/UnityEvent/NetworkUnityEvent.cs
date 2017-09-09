@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine.Events;
 
-namespace Booma.Client.Network.Common
+namespace Booma
 {
 	/// <summary>
 	/// Serialization hack for UnityEvent.

@@ -7,7 +7,7 @@ using HaloLive.Models.Authentication;
 using SceneJect.Common;
 using UnityEngine;
 
-namespace Booma.Client
+namespace Booma
 {
 	//TODO: Turn this into a generic scene data passing module
 	public sealed class UserDetailsLocationRegisterationModule : NonBehaviourDependency

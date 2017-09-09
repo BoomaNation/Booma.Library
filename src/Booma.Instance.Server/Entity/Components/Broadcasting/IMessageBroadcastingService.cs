@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using GladNet.Payload;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Contract for all services that offer event <see cref="PacketPayload"/> broadcasting services.

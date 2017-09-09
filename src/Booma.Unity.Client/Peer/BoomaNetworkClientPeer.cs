@@ -11,7 +11,7 @@ using GladNet.Message;
 using GladNet.Lidgren.Client.Unity;
 using GladNet.Payload;
 
-namespace Booma.Client.Network.Common
+namespace Booma
 {
 	/// <summary>
 	/// Network client component for Booma clients that abstracts the generic parameters required by

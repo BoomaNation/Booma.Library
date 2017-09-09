@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Enumeration of all response codes for the game server list request.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Common
+namespace Booma
 {
 	public interface ISpawnPointStrategy
 	{

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public sealed class GameSessionDatabaseContext : DbContext
 	{

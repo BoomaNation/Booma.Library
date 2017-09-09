@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace GaiaOnline
+namespace Booma
 {
 	//TODO: Document
 	[Table("GameSessions")]

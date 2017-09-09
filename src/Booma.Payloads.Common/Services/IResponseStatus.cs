@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Common
+namespace Booma
 {
 	/// <summary>
 	/// Contract for an object that can provide a <see cref="TResponseCodeType"/> code.

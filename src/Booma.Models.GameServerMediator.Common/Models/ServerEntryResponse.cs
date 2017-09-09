@@ -3,7 +3,7 @@ using HaloLive.Models;
 using HaloLive.Models.NameResolution;
 using Newtonsoft.Json;
 
-namespace GaiaOnline
+namespace Booma
 {
 	[JsonObject]
 	public sealed class ServerEntryResponse : IResponseModel<ServerEntryResponseCode>, ISucceedable

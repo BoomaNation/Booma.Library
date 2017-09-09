@@ -1,17 +1,14 @@
-﻿using Booma.Client.Network.Common;
-using Booma.Payloads.Instance;
-using SceneJect.Common;
+﻿using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GladNet.Message;
 using Common.Logging;
-using Booma.Instance.Common;
-using Booma.Instance.NetworkObject;
+using Booma;
 #pragma warning disable 649
 
-namespace Booma.Instance.Client.Handlers
+namespace Booma
 {
 	[Injectee]
 	public class EntityStateChangedEventHandler : EventPayloadHandlerComponent<InstanceClientPeer, EntityStateChangedEvent>

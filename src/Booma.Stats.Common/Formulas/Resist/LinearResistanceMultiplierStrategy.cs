@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Stats.Common
+namespace Booma
 {
 	//The reason this is in Common and not Server is because we may want to show the effect of resistances on the client some day
 	/// <summary>

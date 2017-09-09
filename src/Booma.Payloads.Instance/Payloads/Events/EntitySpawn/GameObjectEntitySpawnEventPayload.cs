@@ -1,14 +1,11 @@
-﻿using Booma.Payloads.Common;
-using GladNet.Payload;
+﻿using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using Booma.Entity.Identity;
-using Booma.Payloads.Surrogates.Unity;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// An event that contains information about an entity that should be spawned.

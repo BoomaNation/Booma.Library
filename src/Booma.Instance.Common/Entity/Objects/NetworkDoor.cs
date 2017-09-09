@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
+using Booma;
 using SceneJect.Common;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	/// <summary>
 	/// Base Type for any Door networked <see cref="GameObject"/>.

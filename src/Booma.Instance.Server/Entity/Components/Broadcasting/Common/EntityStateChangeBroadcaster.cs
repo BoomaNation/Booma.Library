@@ -1,16 +1,13 @@
-﻿using Booma.Entity.Identity;
-using Booma.Instance.Common;
-using Booma.Payloads.Instance;
-using GladNet.Common;
+﻿using GladNet.Common;
 using SceneJect.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Instance.NetworkObject;
+using Booma;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	[Injectee]
 	public class EntityStateChangeBroadcaster : NetworkMessageBroadcaster, IEntityStateListener

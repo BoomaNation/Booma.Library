@@ -1,10 +1,10 @@
-﻿using Booma.Stats.Common;
+﻿using Booma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Combat.Formula.Server
+namespace Booma
 {
 	//Values from http://www.freewebs.com/azurepso/psostatistics.htm
 	/// <summary>

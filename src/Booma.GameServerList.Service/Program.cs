@@ -7,7 +7,7 @@ using HaloLive.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
-namespace GaiaOnline.GameServerList.Service
+namespace Booma
 {
 	public class Program
 	{

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Common
+namespace Booma
 {
 	/// <summary>
 	/// Network tag/component that indicates network ownership.

@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GaiaOnline;
+using Booma;
 
-namespace GaiaOnline.GameServerMediator.Service.Migrations
+namespace Booma
 {
 	[DbContext(typeof(GameSessionDatabaseContext))]
 	partial class GameSessionDatabaseContextModelSnapshot : ModelSnapshot

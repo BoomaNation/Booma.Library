@@ -6,13 +6,12 @@ using GladNet.Engine.Common;
 using GladNet.Engine.Server;
 using GladNet.Serializer;
 using GladNet.Message;
-using Booma.Payloads.Instance;
-using Booma.Server.Network.Unity.Common;
+using Booma;
 using SceneJect.Common;
 using GladNet.Message.Handlers;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Server-base for the Booma instance server.

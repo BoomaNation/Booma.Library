@@ -1,4 +1,4 @@
-﻿using Booma.Instance.Common;
+﻿using Booma;
 using GladNet.Message;
 using GladNet.Message.Handlers;
 using SceneJect.Common;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	public class InstanceClientSessionRequestHandlerRegisteration : NonBehaviourDependency
 	{

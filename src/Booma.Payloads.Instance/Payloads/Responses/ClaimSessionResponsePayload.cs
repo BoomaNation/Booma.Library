@@ -1,14 +1,11 @@
-﻿using Booma.Entity.Identity;
-using Booma.Payloads.Common;
-using Booma.Payloads.Surrogates.Unity;
-using GladNet.Payload;
+﻿using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// Response sent by server as a response to <see cref="BoomaPayloadMessageType.ClaimSessionRequest"/>.

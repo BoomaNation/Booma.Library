@@ -1,4 +1,4 @@
-﻿using Booma.Payloads.Instance;
+﻿using Booma;
 using GladNet.Common;
 using SceneJect.Common;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Client
+namespace Booma
 {
 	[Injectee]
 	public class PlayerNetworkTransform : NetworkMessageSender

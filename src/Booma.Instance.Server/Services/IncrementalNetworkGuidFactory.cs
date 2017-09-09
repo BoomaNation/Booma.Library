@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Booma.Entity.Identity;
+using Booma;
 using System.Threading;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Simple incremental network GUID factory.

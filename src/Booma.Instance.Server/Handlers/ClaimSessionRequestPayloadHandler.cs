@@ -1,23 +1,18 @@
-﻿using Booma.Payloads.Instance;
-using Booma.Server.Network.Unity.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GladNet.Message;
 using SceneJect.Common;
-using Booma.Instance.Common;
 using GladNet.Engine.Common;
-using Booma.Payloads.Surrogates.Unity;
 using GladNet.Common;
 using UnityEngine;
-using Booma.Entity.Identity;
-using Booma.Instance.NetworkObject;
+using Booma;
 using GladNet.Engine.Server;
 using Unitysync.Async;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Abstract implementation for the logic 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public sealed class DatabaseGameSessionRepository : IGameSessionRepository
 	{

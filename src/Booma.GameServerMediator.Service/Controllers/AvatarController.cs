@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace GaiaOnline
+namespace Booma
 {
 	[Route("api/[controller]")]
 	public sealed class AvatarController : Controller

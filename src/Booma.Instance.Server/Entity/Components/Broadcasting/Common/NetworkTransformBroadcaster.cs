@@ -1,6 +1,4 @@
-﻿using Booma.Entity.Identity;
-using Booma.Instance.Common;
-using Booma.Payloads.Instance;
+﻿using Booma;
 using GladNet.Common;
 using GladNet.Engine.Common;
 using SceneJect.Common;
@@ -11,7 +9,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	/// <summary>
 	/// Component that broadcasts its transform information.

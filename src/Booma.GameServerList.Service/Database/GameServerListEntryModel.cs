@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HaloLive.Network.Common;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Data model that represents an entry for a game server.

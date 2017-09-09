@@ -1,10 +1,10 @@
-﻿using Booma.Stats.Common;
+﻿using Booma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Combat.Formula.Server
+namespace Booma
 {
 	/// <summary>
 	/// A <see cref="IStatProvider{TStatType}"/> that computes and provides a value for the minimum bound ATP

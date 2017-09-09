@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GaiaOnline.GameServerList.Service.Migrations
+namespace Booma
 {
     public partial class InitialMigration : Migration
     {

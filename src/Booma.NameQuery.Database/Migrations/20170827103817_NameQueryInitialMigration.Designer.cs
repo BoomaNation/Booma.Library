@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GaiaOnline;
+using Booma;
 
-namespace GaiaOnline.NameQuery.Database.Migrations
+namespace Booma
 {
     [DbContext(typeof(GaiaNameQueryDatabaseContext))]
     [Migration("20170827103817_NameQueryInitialMigration")]

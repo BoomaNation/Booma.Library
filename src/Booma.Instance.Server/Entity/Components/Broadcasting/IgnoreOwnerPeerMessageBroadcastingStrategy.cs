@@ -8,10 +8,9 @@ using GladNet.Payload;
 using UnityEngine;
 using GladNet.Engine.Common;
 using SceneJect.Common;
-using Booma.Entity.Identity;
-using Booma.Instance.Common;
+using Booma;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	[Injectee]
 	public class IgnoreOwnerPeerMessageBroadcastingStrategy : MonoBehaviour, IMessageBroadcastingService

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Client.Network.Common
+namespace Booma
 {
 	/// <summary>
 	/// Encapsulates the details required for a peer to connect to a remote host.

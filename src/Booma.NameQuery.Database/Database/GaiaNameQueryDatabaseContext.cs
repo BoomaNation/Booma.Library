@@ -4,7 +4,7 @@ using System.Text;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Name query/entry database context.

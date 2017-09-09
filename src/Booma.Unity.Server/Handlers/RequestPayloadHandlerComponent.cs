@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Server.Network.Unity.Common
+namespace Booma
 {
 	/// <summary>
 	/// Scene-based <see cref="IRequestMessageHandler{TPeerType}"/>

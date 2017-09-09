@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Generic.Math;
 
-namespace Booma.Stats.Common
+namespace Booma
 {
 	/// <summary>
 	/// Base-class type for Immutable stats container types.

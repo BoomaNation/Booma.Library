@@ -1,4 +1,4 @@
-﻿using Booma.Client.Logging;
+﻿using Booma;
 using Common.Logging;
 using SceneJect.Common;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Client.Common.IoCModules
+namespace Booma
 {
 	/// <summary>
 	/// Registeration component for <see cref="UnityLoggingService"/>

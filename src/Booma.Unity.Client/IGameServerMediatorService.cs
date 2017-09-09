@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TypeSafe.Http.Net;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Client that provides acess to the mediator service for a gameserver

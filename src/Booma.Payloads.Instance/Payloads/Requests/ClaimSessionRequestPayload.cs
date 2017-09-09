@@ -1,11 +1,10 @@
-﻿using Booma.Payloads.Common;
-using GladNet.Payload;
+﻿using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// Payload sent by players who want to spawn in an instance.

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace GaiaOnline
+namespace Booma
 {
 	/// <summary>
 	/// Model represents a Gaia Online avatar entry.

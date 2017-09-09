@@ -11,7 +11,7 @@ using GladNet.Serializer;
 using GladNet.Message;
 using SceneJect.Common;
 
-namespace Booma.Server.Network.Unity.Common
+namespace Booma
 {
 	/// <summary>
 	/// Base Booma server application Type.

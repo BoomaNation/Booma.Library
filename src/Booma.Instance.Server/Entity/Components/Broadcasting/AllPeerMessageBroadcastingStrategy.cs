@@ -9,7 +9,7 @@ using SceneJect.Common;
 using UnityEngine;
 using GladNet.Engine.Common;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	[Injectee]
 	public class AllPeerMessageBroadcastingStrategy : MonoBehaviour, IMessageBroadcastingService

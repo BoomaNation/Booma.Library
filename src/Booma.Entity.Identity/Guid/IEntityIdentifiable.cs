@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Identity
+namespace Booma
 {
 	/// <summary>
 	/// Contract for types that can indentify a Entity.

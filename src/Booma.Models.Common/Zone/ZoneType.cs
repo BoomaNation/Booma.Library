@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GaiaOnline
+namespace Booma
 {
 	public enum ZoneType
 	{

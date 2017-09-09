@@ -1,11 +1,11 @@
-﻿using Booma.Instance.Common;
+﻿using Booma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Booma.Instance.Server
+namespace Booma
 {
 	public class RoundRobinEntitySpawnLocationProvider : MonoBehaviour, ISpawnPointStrategy
 	{

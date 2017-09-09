@@ -1,12 +1,10 @@
-﻿using Booma.Payloads.Common;
-using Booma.Payloads.Surrogates.Unity;
-using GladNet.Payload;
+﻿using GladNet.Payload;
 using GladNet.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Booma.Payloads.Instance
+namespace Booma
 {
 	/// <summary>
 	/// Payload sent by players who want to move to a new position.

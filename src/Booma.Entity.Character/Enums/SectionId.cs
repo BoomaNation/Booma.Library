@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Character
+namespace Booma
 {
 	/// <summary>
 	/// Enumeration of all section IDs.

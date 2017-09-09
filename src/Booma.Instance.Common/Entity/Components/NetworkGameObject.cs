@@ -9,7 +9,7 @@ using Generic.Math;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace Booma.Instance.NetworkObject
+namespace Booma
 {
 	public abstract class NetworkGameObject<TNetworkStateType> : SerializedMonoBehaviour, IEntityStateListener
 		where TNetworkStateType : struct, IConvertible

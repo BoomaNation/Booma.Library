@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace Booma.Entity.Character
+namespace Booma
 {
 	/// <summary>
 	/// Strategy for computing the section ID for a given character.
