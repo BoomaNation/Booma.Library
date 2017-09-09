@@ -29,7 +29,6 @@
     <ProjectReference Include="..\Booma.Database.Common\Booma.Database.Common.csproj" />
     <ProjectReference Include="..\Booma.Models.GameServerMediator.Common\Booma.Models.GameServerMediator.Common.csproj" />
     <ProjectReference Include="..\Booma.Models.GameServerMediator.Server\Booma.Models.GameServerMediator.Server.csproj" />
-    <ProjectReference Include="..\Booma.NameQuery.Database\Booma.NameQuery.Database.csproj" />
     <ProjectReference Include="..\Booma.Models.NameQuery\Booma.Models.NameQuery.csproj" />
   </ItemGroup>
 
