@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFrameworks>net46;netstandard1.3</TargetFrameworks>
     <Authors>https://github.com/HelloKitty</Authors>
     <Company>https://github.com/HelloKitty</Company>
     <Product></Product>
@@ -13,9 +13,5 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags></PackageTags>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="fasterflect" Version="2.1.3" />
-  </ItemGroup>
 
 </Project>
