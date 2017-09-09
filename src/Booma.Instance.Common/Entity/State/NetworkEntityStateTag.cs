@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Fasterflect;
 using Generic.Math;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
@@ -24,6 +25,34 @@ namespace Booma
 		IDefaultStateProvider<TStateType>
 		where TStateType : struct, IConvertible
 	{
+
+#if !DEPLOY
+		[Button("Init")]
+		private void InitializationButton()
+		{
+			int index = 0;
+			//Initialization for all entity state tags would be to clear the state
+			//change event and rig it up to initialize itself with the dispatchers to
+			//the object itself and a broadcast component if one exists
+			gameObject.GetComponents(typeof(IEntityStateListener))
+				.Cast<IEntityStateListener>()
+				.ToList()
+				.ForEach(listener =>
+				{
+					if(OnStateChanged.GetPersistentEventCount() <= index)
+						//We must call this internal method to expand the persistent listener collection before
+						//attempting to hack register a new one
+						OnStateChanged.CallMethod("AddPersistentListener", Flags.InstanceAnyVisibility);
+
+					//We can't easily register new persistent methods so this hack allows us to contrary to Unity
+					//allows us to do.
+					OnStateChanged.CallMethod("RegisterPersistentListener", Flags.InstanceAnyVisibility,
+						index, listener, typeof(IEntityStateListener).Method(nameof(IEntityStateListener.OnEntityStateChanged)));
+					index++;
+				});
+		}
+#endif
+
 		/// <summary>
 		/// Event that is invoked when the state changes.
 		/// </summary>
@@ -68,9 +97,11 @@ namespace Booma
 
 		private void Awake()
 		{
+#if !DEPLOY
 			//This is used to warn users that they may not have properly setup state broadcasts.
 			if(OnStateChanged == null || OnStateChanged.GetPersistentEventCount() == 0)
 				Debug.LogWarning($"{name} object's {GetType().FullName} does not contain any listeners for its state change.");
+#endif
 
 			//Set the default state.
 			state = GenericMath<TStateType, byte>.Convert(defaultState);
