@@ -9,7 +9,7 @@ namespace Booma
 	/// (The generic tries to constaint to Enums. No language support.)
 	/// </summary>
 	/// <typeparam name="TResponseCodeType">Status type.</typeparam>
-	public interface IResponseStatus<TResponseCodeType>
+	public interface IResponseStatus<out TResponseCodeType>
 		where TResponseCodeType : struct, IConvertible, IComparable, IFormattable
 	{
 		/// <summary>

@@ -42,18 +42,29 @@ namespace Booma
 		/// <summary>
 		/// Creates a new <see cref="BoomaPayloadMessageType.ClaimSessionResponse"/> payload.
 		/// </summary>
-		public ClaimSessionResponsePayload(PlayerSpawnResponseCode code, Vector3Surrogate position, QuaternionSurrogate rotation, NetworkEntityGuid entityGuid)
+		public ClaimSessionResponsePayload(Vector3Surrogate position, QuaternionSurrogate rotation, NetworkEntityGuid entityGuid)
 		{
 			if (position == null) throw new ArgumentNullException(nameof(position));
 			if (rotation == null) throw new ArgumentNullException(nameof(rotation));
 			if (entityGuid == null) throw new ArgumentNullException(nameof(entityGuid));
-			if (!Enum.IsDefined(typeof(PlayerSpawnResponseCode), code)) throw new InvalidEnumArgumentException(nameof(code), (int) code, typeof(PlayerSpawnResponseCode));
 
-			ResponseCode = code;
+			ResponseCode = PlayerSpawnResponseCode.Success;
 			EntityGuid = entityGuid;
 			Position = position;
 			Rotation = rotation;
 		}
+
+		/// <summary>
+		/// Creates a new <see cref="BoomaPayloadMessageType.ClaimSessionResponse"/> payload.
+		/// </summary>
+		public ClaimSessionResponsePayload(PlayerSpawnResponseCode code)
+		{
+			if(!Enum.IsDefined(typeof(PlayerSpawnResponseCode), code)) throw new InvalidEnumArgumentException(nameof(code), (int)code, typeof(PlayerSpawnResponseCode));
+			if(code == PlayerSpawnResponseCode.Success) throw new ArgumentException("Cannot provide sucess code for failed response constructor.", nameof(code));
+
+			ResponseCode = code;
+		}
+
 
 		/// <summary>
 		/// Protected serializer ctor
