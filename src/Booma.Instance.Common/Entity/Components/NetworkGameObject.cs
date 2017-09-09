@@ -14,18 +14,26 @@ namespace Booma
 	public abstract class NetworkGameObject<TNetworkStateType> : SerializedMonoBehaviour, IEntityStateListener
 		where TNetworkStateType : struct, IConvertible
 	{
+#if !DEPLOY
+		[Button("Init")]
+		private void InitializationButton()
+		{
+			//Initialization would be to try to initialize the StateContainer if it's null
+			if(StateContainer == null)
+				StateContainer = GetComponent(typeof(IEntityStateContainer<TNetworkStateType>))
+					as IEntityStateContainer<TNetworkStateType>;
+		}
+#endif
+
 		//TODO: Find a way to make this serializable and generic
 		//We can't make this generic or it won't work
 		[NotNull]
+		[Required("Network objects require a reference to a component that contains their corresponding state.", InfoMessageType.Error)]
 		[OdinSerialize]
-		[SerializeField]
 		protected IEntityStateContainer<TNetworkStateType> StateContainer;
 
 		protected virtual void Start()
 		{
-			if(StateContainer == null)
-				throw new InvalidOperationException($"Service {nameof(IEntityStateContainer<TNetworkStateType>)} is null and unavailable.");
-
 			OnStart(StateContainer.State);
 		}
 

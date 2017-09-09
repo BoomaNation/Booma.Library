@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace Booma
 {
-	[RequireComponent(typeof(DoorEntityStateTag))] //require this state tag
 	public class ServerNetworkDoor : NetworkDoor, IUnlockable
 	{
 		/// <inheritdoc />

@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace Booma
 {
-	[RequireComponent(typeof(ButtonEntityStateTag))] //require the state tag
 	public class ServerNetworkButton : NetworkButton
 	{
 		void Update()
