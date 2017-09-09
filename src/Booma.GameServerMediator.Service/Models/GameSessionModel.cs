@@ -13,27 +13,28 @@ namespace Booma
 	public class GameSessionModel
 	{
 		/// <summary>
-		/// This is the primary key that is mapped to <see cref="GaiaNameEntryModel"/>'s UserId key.
-		/// It's a unique key that is manually generated.
+		/// The unique primary key that can reference the character this session is for.
 		/// </summary>
 		[Key]
 		[Required]
-		[ForeignKey(nameof(User))]
-		public int UserId { get; private set; }
+		//[ForeignKey(nameof(User))]
+		public int CharacterId { get; private set; }
 
-		//TODO: Determine if lazy loading is better than immediate loading
 		/// <summary>
-		/// The foreign table entry for the user associated with the session.
+		/// Unique GUID for the session.
 		/// </summary>
-		[Required]
-		public virtual GaiaNameEntryModel User { get; private set; }
-
 		[Required]
 		public Guid SessionGuid { get; private set; }
 
+		/// <summary>
+		/// The IP the session was created for.
+		/// </summary>
 		[Required]
 		public string SessionIp { get; private set; }
 
+		/// <summary>
+		/// The time that the session was created.
+		/// </summary>
 		[Required]
 		[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 		public DateTime SessionCreationTime { get; private set; }
@@ -43,7 +44,7 @@ namespace Booma
 			if(sessionIp == null) throw new ArgumentNullException(nameof(sessionIp));
 			if(userId <= 0) throw new ArgumentOutOfRangeException(nameof(userId));
 
-			UserId = userId;
+			CharacterId = userId;
 			SessionGuid = sessionGuid;
 			SessionIp = sessionIp;
 		}

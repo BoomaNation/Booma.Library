@@ -36,9 +36,7 @@ namespace Booma
 
 			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
 
-			services.AddDbContext<GaiaNameQueryDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddDbContext<GameSessionDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
-			services.AddTransient<IReadonlyGaiaNameRepository, DbContextBasedGaiaNameRepository>();
 			services.AddTransient<IGameSessionRepository, DatabaseGameSessionRepository>();
 		}
 

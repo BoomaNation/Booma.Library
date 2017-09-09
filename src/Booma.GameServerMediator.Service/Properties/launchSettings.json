@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GaiaOnline.GameServerMediator.Service": {
+    "Booma.GameServerMediator.Service": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

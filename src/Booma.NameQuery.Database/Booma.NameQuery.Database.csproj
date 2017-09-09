@@ -9,4 +9,9 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

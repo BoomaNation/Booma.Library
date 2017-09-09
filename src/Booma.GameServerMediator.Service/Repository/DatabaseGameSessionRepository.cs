@@ -21,7 +21,7 @@ namespace Booma
 		/// <inheritdoc />
 		public async Task<bool> HasSession(int userId)
 		{
-			return await GameSessionContext.GameSessions.AnyAsync(s => s.UserId == userId);
+			return await GameSessionContext.GameSessions.AnyAsync(s => s.CharacterId == userId);
 		}
 
 		/// <inheritdoc />
@@ -44,7 +44,7 @@ namespace Booma
 		public async Task<GameSessionModel> GetSessionById(int userId)
 		{
 			//See above comments
-			return await GameSessionContext.GameSessions.FirstAsync(s => s.UserId == userId);
+			return await GameSessionContext.GameSessions.FirstAsync(s => s.CharacterId == userId);
 		}
 
 		/// <inheritdoc />
