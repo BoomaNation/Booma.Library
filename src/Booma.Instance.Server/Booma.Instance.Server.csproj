@@ -53,6 +53,7 @@
       <Project>{5A959423-5523-4FF5-9667-963BF97F2879}</Project>
       <Name>Booma.Instance.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Booma.Models.GameServerMediator.Server\Booma.Models.GameServerMediator.Server.csproj" />
     <ProjectReference Include="..\Booma.Payloads.Instance\Booma.Payloads.Instance.csproj">
       <Project>{04423310-B1DD-4883-8634-6B2B00534EDD}</Project>
       <Name>Booma.Payloads.Instance</Name>
