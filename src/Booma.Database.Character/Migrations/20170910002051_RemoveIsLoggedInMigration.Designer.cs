@@ -8,9 +8,10 @@ using Booma;
 namespace Booma.Database.Character.Migrations
 {
     [DbContext(typeof(CharacterDatabaseContext))]
-    partial class CharacterDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20170910002051_RemoveIsLoggedInMigration")]
+    partial class RemoveIsLoggedInMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");

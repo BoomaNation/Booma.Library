@@ -44,10 +44,6 @@ namespace Booma
 		[StringLength(15, MinimumLength = 7)] //IP constraints
 		public string CreationIp { get; private set; }
 
-		[Required]
-		[DefaultValue(false)]
-		public bool isLoggedIn { get; private set; }
-
 		public CharacterDatabaseModel(int accountId, string characterName, string creationIp)
 		{
 			if(string.IsNullOrWhiteSpace(characterName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(characterName));

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Booma
 {
 	//TODO: Document
-	[Table("GameSessions")]
+	[Table("character_sessions")]
 	public class GameSessionModel
 	{
 		/// <summary>
@@ -17,8 +18,13 @@ namespace Booma
 		/// </summary>
 		[Key]
 		[Required]
-		//[ForeignKey(nameof(User))]
+		[ForeignKey(nameof(Character))]
 		public int CharacterId { get; private set; }
+
+		/// <summary>
+		/// The parent character table reference.
+		/// </summary>
+		public virtual CharacterDatabaseModel Character { get; private set; }
 
 		/// <summary>
 		/// Unique GUID for the session.
@@ -29,7 +35,7 @@ namespace Booma
 		/// <summary>
 		/// The IP the session was created for.
 		/// </summary>
-		[Required]
+		[StringLength(15, MinimumLength = 7)] //IP constraints
 		public string SessionIp { get; private set; }
 
 		/// <summary>
@@ -39,12 +45,21 @@ namespace Booma
 		[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 		public DateTime SessionCreationTime { get; private set; }
 
-		public GameSessionModel(int userId, Guid sessionGuid, string sessionIp)
+		/// <summary>
+		/// Indicates if the session is claimed or live.
+		/// This means essentially that the character is logged in.
+		/// </summary>
+		[Required]
+		[Column("claimed")]
+		[DefaultValue(false)]
+		public bool isSessionClaimed { get; set; } //public for mutability
+
+		public GameSessionModel(int characterId, Guid sessionGuid, string sessionIp)
 		{
 			if(sessionIp == null) throw new ArgumentNullException(nameof(sessionIp));
-			if(userId <= 0) throw new ArgumentOutOfRangeException(nameof(userId));
+			if(characterId < 0) throw new ArgumentOutOfRangeException(nameof(characterId));
 
-			CharacterId = userId;
+			CharacterId = characterId;
 			SessionGuid = sessionGuid;
 			SessionIp = sessionIp;
 		}
