@@ -28,12 +28,12 @@ namespace Booma
 
 		}
 
-//#if DEBUG || DEBUGBUILD
+#if DEBUG || DEBUGBUILD
 		/// <inheritdoc />
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseMySql("Server=localhost;Database=Boomacharacters;Uid=root;Pwd=test;");
+			optionsBuilder.UseMySql("Server=localhost;Database=Boomagameserver;Uid=root;Pwd=test;");
 		}
-//#endif
+#endif
 	}
 }
