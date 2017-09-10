@@ -58,11 +58,11 @@ namespace Booma
 
 		//TODO: We should authorize instance servers trying to claim sessions
 		[HttpPost("validate")]
-		public async Task<JsonResult> TryClaimSession([FromBody] SessionClaimInquiryRequest sessionInquiryRequest, [FromServices] IGameSessionRepository gameSessionRepository)
+		public async Task<JsonResult> TryClaimSession([FromBody] ServerSessionClaimRequest sessionInquiryRequest, [FromServices] IGameSessionRepository gameSessionRepository)
 		{
 			//TODO: The session could be removed? We may do that when they log out. Or if they transfer.
 			if(!await gameSessionRepository.HasSession(sessionInquiryRequest.SessionGuid))
-				return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.FailedNoSessionRegistered));
+				return Json(new ServerSessionClaimResponse(ServerSessionClaimResponseCode.FailedNoSessionRegistered));
 
 			//Could be a race condition here in the future when the session logic is fully implemented
 			//We need to verify for the requesting gameserver that the IP matches
@@ -71,15 +71,15 @@ namespace Booma
 			//This could happen if a malicious user was trying to claim random sessions.
 			//This doesn't exactly prevent someone from stealing known sessions on the same network though.
 			if(ip != sessionInquiryRequest.IpAddress)
-				return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.FailedSessionIsForDifferentIp));
+				return Json(new ServerSessionClaimResponse(ServerSessionClaimResponseCode.FailedSessionIsForDifferentIp));
 			
 			//At this point we need to try to claim the session
 			if(await gameSessionRepository.TryClaimSession(sessionInquiryRequest.SessionGuid))
 				//TODO: There is a lot more stuff we NEED to do in the future. We need to validate that this is the server the session was created on, that they aren't logged in and etc.
-				return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.Success));
+				return Json(new ServerSessionClaimResponse(ServerSessionClaimResponseCode.Success));
 
 			//TODO: We should add more information and logging
-			return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.FailedGeneralServerError));
+			return Json(new ServerSessionClaimResponse(ServerSessionClaimResponseCode.FailedGeneralServerError));
 		}
 	}
 }

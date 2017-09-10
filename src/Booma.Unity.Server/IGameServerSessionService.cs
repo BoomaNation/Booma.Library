@@ -17,6 +17,6 @@ namespace Booma
 		/// <param name="inquiry">The inquiry.</param>
 		/// <returns>The result of the inquiry.</returns>
 		[Post("/api/validate")]
-		Task<SessionClaimInquiryResponse> InquireOnSessionDetails([JsonBody] SessionClaimInquiryRequest inquiry);
+		Task<ServerSessionClaimRequest> TryClaimSession([JsonBody] ServerSessionClaimRequest inquiry);
 	}
 }

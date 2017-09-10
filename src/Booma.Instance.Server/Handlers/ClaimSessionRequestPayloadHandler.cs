@@ -38,7 +38,7 @@ namespace Booma
 		/// <typeparam name="TPeer">The peer type.</typeparam>
 		/// <param name="response"></param>
 		/// <param name="peer">The peer.</param>
-		protected virtual void OnSessionClaimResponse<TPeer>(SessionClaimInquiryResponse response, TPeer peer)
+		protected virtual void OnSessionClaimResponse<TPeer>(ServerSessionClaimResponse response, TPeer peer)
 			where TPeer : INetPeer, IResponsePayloadSender
 		{
 			//If the session inquiry failed then we should fail the session claim request.
@@ -73,6 +73,6 @@ namespace Booma
 		/// </summary>
 		/// <param name="sessionGuid">The session GUID.</param>
 		/// <returns></returns>
-		protected abstract Task<SessionClaimInquiryResponse> TryClaimSession(Guid sessionGuid);
+		protected abstract Task<ServerSessionClaimResponse> TryClaimSession(Guid sessionGuid);
 	}
 }
