@@ -28,7 +28,7 @@ namespace Booma
 
 		protected sealed override void OnIncomingHandlableMessage(IRequestMessage message, ClaimSessionRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
-			TryClaimSession(payload.SessionClaimGuid)
+			TryClaimSession(payload.SessionClaimGuid, peer.PeerDetails.RemoteIP.ToString())
 				.UnityAsyncContinueWith(this, g => OnSessionClaimResponse(g, peer));
 		}
 
@@ -73,6 +73,6 @@ namespace Booma
 		/// </summary>
 		/// <param name="sessionGuid">The session GUID.</param>
 		/// <returns></returns>
-		protected abstract Task<ServerSessionClaimResponse> TryClaimSession(Guid sessionGuid);
+		protected abstract Task<ServerSessionClaimResponse> TryClaimSession(Guid sessionGuid, string ip);
 	}
 }
