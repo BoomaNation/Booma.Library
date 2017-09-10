@@ -35,5 +35,21 @@ namespace Booma
 		/// <param name="userId">The user id.</param>
 		/// <returns>The session model.</returns>
 		Task<GameSessionModel> GetSessionById(int userId);
+
+		/// <summary>
+		/// Indicates if the <see cref="GameSessionModel"/> associated with a specified guid
+		/// has been claimed.
+		/// </summary>
+		/// <param name="sessionGuid">The session guid to use for lookup.</param>
+		/// <returns>The session model.</returns>
+		Task<bool> isSessionClaimed(Guid sessionGuid);
+
+		/// <summary>
+		/// Indicates if the <see cref="GameSessionModel"/> associated with a specified user id
+		/// has been claimed.
+		/// </summary>
+		/// <param name="userId">The user id.</param>
+		/// <returns>The session model.</returns>
+		Task<bool> isSessionClaimed(int userId);
 	}
 }

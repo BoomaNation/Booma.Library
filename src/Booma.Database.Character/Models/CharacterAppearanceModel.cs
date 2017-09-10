@@ -36,7 +36,7 @@ namespace Booma
 		/// The character's class.
 		/// </summary>
 		[Required]
-		[Column("class")]
+		[Column("Class")]
 		[Range(0, int.MaxValue)] //TODO: Can we constrain this better?
 		public CharacterClassRace CharacterClass { get; private set; }
 

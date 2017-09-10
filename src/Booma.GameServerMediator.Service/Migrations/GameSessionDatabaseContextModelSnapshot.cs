@@ -28,7 +28,7 @@ namespace Booma.GameServerMediator.Service.Migrations
                         .HasMaxLength(15);
 
                     b.Property<bool>("isSessionClaimed")
-                        .HasColumnName("claimed");
+                        .HasColumnName("IsClaimed");
 
                     b.HasKey("CharacterId");
 

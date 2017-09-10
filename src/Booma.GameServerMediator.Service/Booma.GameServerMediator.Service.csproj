@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HaloLive.Hosting.Authorization.Server" Version="2.0.1" />
     <PackageReference Include="HaloLive.Hosting.Server" Version="2.0.1" />
     <PackageReference Include="HaloLive.Models.NameResolution.Server" Version="2.0.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -26,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Booma.Database.Character\Booma.Database.Character.csproj" />
     <ProjectReference Include="..\Booma.Database.Common\Booma.Database.Common.csproj" />
     <ProjectReference Include="..\Booma.Models.GameServerMediator.Common\Booma.Models.GameServerMediator.Common.csproj" />
     <ProjectReference Include="..\Booma.Models.GameServerMediator.Server\Booma.Models.GameServerMediator.Server.csproj" />

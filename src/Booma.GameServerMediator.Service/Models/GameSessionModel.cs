@@ -50,7 +50,7 @@ namespace Booma
 		/// This means essentially that the character is logged in.
 		/// </summary>
 		[Required]
-		[Column("claimed")]
+		[Column("IsClaimed")]
 		[DefaultValue(false)]
 		public bool isSessionClaimed { get; set; } //public for mutability
 

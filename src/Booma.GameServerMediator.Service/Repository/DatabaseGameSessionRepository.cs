@@ -48,6 +48,36 @@ namespace Booma
 		}
 
 		/// <inheritdoc />
+		public async Task<bool> isSessionClaimed(Guid sessionGuid)
+		{
+			//TODO: There is a potential race here
+			if(!await HasSession(sessionGuid))
+				return false;
+
+			GameSessionModel session = await GetSessionByGuid(sessionGuid);
+
+			if(session == null)
+				return false;
+
+			return session.isSessionClaimed;
+		}
+
+		/// <inheritdoc />
+		public async Task<bool> isSessionClaimed(int userId)
+		{
+			//TODO: There is a potential race here
+			if(!await HasSession(userId))
+				return false;
+
+			GameSessionModel session = await GetSessionById(userId);
+
+			if(session == null)
+				return false;
+
+			return session.isSessionClaimed;
+		}
+
+		/// <inheritdoc />
 		public async Task<SessionCreationResult> TryCreateSession(int userId, string ipAddress)
 		{
 			if(await HasSession(userId))
@@ -74,6 +104,39 @@ namespace Booma
 				return new SessionCreationResult();
 
 			return new SessionCreationResult(sessionGuid);
+		}
+
+		/// <inheritdoc />
+		public async Task<bool> TryClaimSession(Guid sessionGuid)
+		{
+			//Check if there is a session in the database first.
+			if(!await HasSession(sessionGuid))
+				return false;
+
+			GameSessionModel session = await GetSessionByGuid(sessionGuid);
+
+			if(session == null)
+				return false;
+
+			//if it is already claimed we should indicate that the session claiming failed.
+			if(session.isSessionClaimed)
+				return false;
+
+			//This will claim it once the database saves
+			session.isSessionClaimed = true;
+
+			//At this point we should try to claim it
+			int rowAmountChanged = 0;
+			try
+			{
+				rowAmountChanged = await GameSessionContext.SaveChangesAsync();
+			}
+			catch(Exception e) //likely a session was made, due to a race condition, and as a result of our concurrency approach it will throw
+			{
+				//TODO: Log the message, but it's very likely to be MySqlException with duplicate insert error code
+			}
+
+			return rowAmountChanged != 0;
 		}
 	}
 }
