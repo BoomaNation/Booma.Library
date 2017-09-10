@@ -11,6 +11,9 @@ namespace Booma
 	[Injectee]
 	public sealed class ServerMediatorClaimSessionRequestPayloadHandler : ClaimSessionRequestPayloadHandler
 	{
+		/// <summary>
+		/// The service that can allow the server to try to claim the session.
+		/// </summary>
 		[Inject]
 		private IGameServerSessionService SessionService { get; }
 

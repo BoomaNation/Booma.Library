@@ -41,6 +41,8 @@ namespace Booma
 		protected virtual void OnSessionClaimResponse<TPeer>(ServerSessionClaimResponse response, TPeer peer)
 			where TPeer : INetPeer, IResponsePayloadSender
 		{
+			//TODO: Logging
+			//TODO: Should we disconnect them? Should we just prevent them from sending more requests?
 			//If the session inquiry failed then we should fail the session claim request.
 			if(!response.isSuccessful)
 			{

@@ -13,19 +13,19 @@ namespace Booma
 	public class PlayerMoveRequestPayloadHandler : RequestPayloadHandlerComponent<InstanceClientSession, PlayerMoveRequestPayload>
 	{
 		[Inject]
-		private readonly IConnectionToGuidLookupService guidLookupService;
+		private IConnectionToGuidLookupService GuidLookupService { get; }
 
 		[Inject]
-		private readonly NetworkEntityCollection entityCollection;
+		private NetworkEntityCollection EntityCollection { get; }
 
 		protected override void OnIncomingHandlableMessage(IRequestMessage message, PlayerMoveRequestPayload payload, IMessageParameters parameters, InstanceClientSession peer)
 		{
-			NetworkEntityGuid guid = guidLookupService.Lookup(peer.PeerDetails.ConnectionID);
+			NetworkEntityGuid guid = GuidLookupService.Lookup(peer.PeerDetails.ConnectionID);
 
 			if (guid == null)
 				throw new InvalidOperationException($"Couldn't find GUID for Connection ID: {peer.PeerDetails.ConnectionID}.");
 
-			entityCollection[guid].WorldObject.transform.position = payload.Position.ToVector3();
+			EntityCollection[guid].WorldObject.transform.position = payload.Position.ToVector3();
 		}
 	}
 }
