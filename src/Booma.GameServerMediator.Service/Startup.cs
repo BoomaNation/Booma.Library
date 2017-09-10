@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HaloLive.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,7 @@ namespace Booma
 
 			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
 
+			services.AddHaloLiveAuthorization();
 			services.AddDbContext<GameSessionDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddTransient<IGameSessionRepository, DatabaseGameSessionRepository>();
 		}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HaloLive.Hosting;
 using HaloLive.Models.NameResolution;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -10,12 +11,17 @@ using Microsoft.AspNetCore.Mvc;
 namespace Booma
 {
 	[Route("api/[controller]")]
-	public sealed class GatewayController : Controller
+	public sealed class GatewayController : AuthorizationReadyController
 	{
 		//they send an OAuth token, or they should, but right now we actually don't.
 		//So we pretend we do and just send information in the token
-		//TODO: When we switch to OAuth enable
-		//[Authorize]
+		/// <inheritdoc />
+		public GatewayController([FromServices] IClaimsPrincipalReader haloLiveUserManager) 
+			: base(haloLiveUserManager)
+		{
+
+		}
+
 		/// <summary>
 		/// Action that users call to try to enter into the gameserver. They may call this after selecting something from the gameserver list.
 		/// It will attempt to find where they are in the world and create a session on that zone/sub server. This session creation is what grants them
@@ -23,20 +29,18 @@ namespace Booma
 		/// </summary>
 		/// <param name="gameSessionRepository">The game session repository service.</param>
 		/// <returns></returns>
+		[Authorize]
 		[HttpPost("enter")]
 		public async Task<JsonResult> TryEnterGameServer([FromServices] IGameSessionRepository gameSessionRepository)
 		{
 			if(!ModelState.IsValid)
 				return Json(new ServerEntryResponse(ServerEntryResponseCode.FailedConnectionActivelyRefused));
 
-			//TODO: Once this is OAuth2 we can't just parse the token like this
-			int? potentialId = TryGetUserId(Request);
-
-			if(!potentialId.HasValue)
-				return Json(new ServerEntryResponse(ServerEntryResponseCode.FailedConnectionActivelyRefused));
-
-			int userId = potentialId.Value;
+			int userId = int.Parse(HaloLiveUserManager.GetUserId(User)); //TODO: Should we try parse? Or change the signature for this?
 	
+			//If there is a session and we're already logged in reject the requesting user
+			//It is possible for there to be an existing session yet not logged in
+			//that would mean an existing session was unclaimined and hasn't been cleaned up yet or someone is connecting in the middle of the session transfer
 			bool hasSessionAlready = await gameSessionRepository.HasSession(userId);
 
 			if(hasSessionAlready)
@@ -52,9 +56,9 @@ namespace Booma
 			return Json(new ServerEntryResponse(result.SessionGuid, new ResolvedEndpoint("127.0.0.1", 8051))); //TODO: Obviously we want to look in the DB and provide a real token.
 		}
 
-		//TODO: We should use OAuth to authenticate requests. We MUST make sure they are from actual servers.
+		//TODO: We should authorize instance servers trying to claim sessions
 		[HttpPost("validate")]
-		public async Task<JsonResult> InquireOnSessionDetails([FromBody] SessionClaimInquiryRequest sessionInquiryRequest, [FromServices] IReadOnlyGameSessionRepository gameSessionRepository)
+		public async Task<JsonResult> TryClaimSession([FromBody] SessionClaimInquiryRequest sessionInquiryRequest, [FromServices] IGameSessionRepository gameSessionRepository)
 		{
 			//TODO: The session could be removed? We may do that when they log out. Or if they transfer.
 			if(!await gameSessionRepository.HasSession(sessionInquiryRequest.SessionGuid))
@@ -68,28 +72,14 @@ namespace Booma
 			//This doesn't exactly prevent someone from stealing known sessions on the same network though.
 			if(ip != sessionInquiryRequest.IpAddress)
 				return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.FailedSessionIsForDifferentIp));
+			
+			//At this point we need to try to claim the session
+			if(await gameSessionRepository.TryClaimSession(sessionInquiryRequest.SessionGuid))
+				//TODO: There is a lot more stuff we NEED to do in the future. We need to validate that this is the server the session was created on, that they aren't logged in and etc.
+				return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.Success));
 
-			//TODO: There is a lot more stuff we NEED to do in the future. We need to validate that this is the server the session was created on, that they aren't logged in and etc.
-			return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.Success));
-		}
-
-		//TODO: Once we use OAuth we won't need this
-		public int? TryGetUserId(HttpRequest request)
-		{
-			//TODO: When we enable actual OAuth we won't need to manually read this
-			if(!Request.Headers.ContainsKey("Authorization"))
-				return null;
-
-			string token = Request.Headers["Authorization"].FirstOrDefault();
-
-			if(String.IsNullOrWhiteSpace(token))
-				return null;
-
-			int id;
-			if(!int.TryParse(token, out id))
-				return null;
-
-			return id;
+			//TODO: We should add more information and logging
+			return Json(new SessionClaimInquiryResponse(SessionClaimInquiryResponseCode.FailedGeneralServerError));
 		}
 	}
 }
