@@ -20,7 +20,7 @@ namespace Booma.Database.Character.Migrations
                     b.Property<int>("CharacterId");
 
                     b.Property<int>("CharacterClass")
-                        .HasColumnName("class");
+                        .HasColumnName("Class");
 
                     b.Property<int>("SectionId");
 
@@ -48,6 +48,8 @@ namespace Booma.Database.Character.Migrations
                         .ValueGeneratedOnAddOrUpdate();
 
                     b.HasKey("CharacterId");
+
+                    b.HasAlternateKey("CharacterName");
 
                     b.ToTable("characters");
                 });

@@ -21,6 +21,7 @@ namespace Booma
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int CharacterId { get; private set; }
 
+		//This is not unique since you canhave multiple characters
 		/// <summary>
 		/// Key for the account associated with the character.
 		/// </summary>
@@ -28,6 +29,7 @@ namespace Booma
 		[Range(0, int.MaxValue)]
 		public int AccountId { get; private set; }
 
+		//this should be unique, only 1 characters with 1 name
 		//TODO: How long should a character name be?
 		/// <summary>
 		/// The character's name.

@@ -13,7 +13,7 @@ namespace Booma
 		//TODO: Handle HTTPS cert issue
 		public override void Register(IServiceRegister register)
 		{
-			register.RegisterInstance(TypeSafeHttpBuilder<IGameServerSessionService>.Create()
+			register.RegisterAsImplementedInterfaces(TypeSafeHttpBuilder<IGameServerSessionService>.Create()
 				.RegisterDefaultSerializers()
 				.RegisterJsonNetSerializer()
 				.RegisterDotNetHttpClient(@"http://localhost:5003")

@@ -28,6 +28,12 @@ namespace Booma
 
 		}
 
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<CharacterDatabaseModel>()
+				.HasAlternateKey(c => c.CharacterName);
+		}
+
 #if DEBUG || DEBUGBUILD
 		/// <inheritdoc />
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
