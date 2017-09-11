@@ -42,9 +42,4 @@ namespace Booma
 			
 		}
 	}
-
-	public enum CharacterNameValidationResponseCode
-	{
-		Success = 0,	
-	}
 }
