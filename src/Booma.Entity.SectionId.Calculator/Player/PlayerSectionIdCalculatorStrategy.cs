@@ -19,7 +19,7 @@ namespace Booma
 		{
 			if (string.IsNullOrEmpty(inputName)) throw new ArgumentException("Value cannot be null or empty.", nameof(inputName));
 			if(!Enum.IsDefined(typeof(CharacterClassRace), classRace)) throw new ArgumentOutOfRangeException(nameof(classRace), "Value should be defined in the CharacterClassRace enum.");
-			if(!CharacterNameValidator.isNameValid(inputName)) throw new ArgumentException("Provided name must contain only letters or digits", nameof(inputName));
+			if(!CharacterNameValidator.isNameValidCharacters(inputName)) throw new ArgumentException("Provided name must contain only letters or digits", nameof(inputName));
 			
 
 			//Sum the ASCII values modulo 10 + the class offset

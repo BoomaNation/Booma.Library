@@ -49,7 +49,7 @@ namespace Booma
 		public CharacterDatabaseModel(int accountId, string characterName, string creationIp)
 		{
 			if(string.IsNullOrWhiteSpace(characterName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(characterName));
-			if(!CharacterNameValidator.isNameValid(characterName)) throw new ArgumentException($"Provided Name: {characterName} must contain only letters or digits.", nameof(characterName));
+			if(!CharacterNameValidator.isNameValidCharacters(characterName)) throw new ArgumentException($"Provided Name: {characterName} must contain only letters or digits.", nameof(characterName));
 			if(string.IsNullOrWhiteSpace(creationIp)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(creationIp));
 
 			//TODO: Should we validate it's an IpAddress?

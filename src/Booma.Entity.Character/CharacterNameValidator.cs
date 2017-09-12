@@ -14,7 +14,7 @@ namespace Booma
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public static bool isNameValid(string name)
+		public static bool isNameValidCharacters(string name)
 		{
 			if(string.IsNullOrWhiteSpace(name))
 				return false;
@@ -25,6 +25,20 @@ namespace Booma
 				return false;
 
 			return true;
+		}
+
+		/// <summary>
+		/// Indicates if provided character name is of valid length.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static bool isNameValidLength(string name)
+		{
+			if(string.IsNullOrWhiteSpace(name))
+				return false;
+
+			//We support only 3-20 character names at the moment.
+			return name.Length < 3 || name.Length > 20;
 		}
 	}
 }

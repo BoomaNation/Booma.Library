@@ -79,6 +79,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booma.Models.Common", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booma.Database.Character", "src\Booma.Database.Character\Booma.Database.Character.csproj", "{D937C6F1-1ADF-4608-910B-1AF0611AA29D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booma.Models.Character", "src\Booma.Models.Character\Booma.Models.Character.csproj", "{CAB12741-477D-4040-BF27-B4C76C55FC07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -205,6 +207,10 @@ Global
 		{D937C6F1-1ADF-4608-910B-1AF0611AA29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D937C6F1-1ADF-4608-910B-1AF0611AA29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D937C6F1-1ADF-4608-910B-1AF0611AA29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB12741-477D-4040-BF27-B4C76C55FC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB12741-477D-4040-BF27-B4C76C55FC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB12741-477D-4040-BF27-B4C76C55FC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB12741-477D-4040-BF27-B4C76C55FC07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -246,6 +252,7 @@ Global
 		{983C1BB7-C67D-4BEE-9C41-D71E185FB313} = {08C1B122-1C01-4DAD-866E-E7752C08A4B2}
 		{12DD012D-FC12-4FC6-82D8-AA2086570385} = {A1B00673-EBC3-418C-BD04-E1D90E26D2FD}
 		{D937C6F1-1ADF-4608-910B-1AF0611AA29D} = {08C1B122-1C01-4DAD-866E-E7752C08A4B2}
+		{CAB12741-477D-4040-BF27-B4C76C55FC07} = {A1B00673-EBC3-418C-BD04-E1D90E26D2FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECF14B91-951E-4C3F-BEC9-BC0901103C4E}

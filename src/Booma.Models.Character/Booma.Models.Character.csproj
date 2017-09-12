@@ -16,8 +16,6 @@
 
   <ItemGroup>
     <PackageReference Include="HaloLive.Models.Common" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Models.NameResolution.Common" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Network.Common" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
