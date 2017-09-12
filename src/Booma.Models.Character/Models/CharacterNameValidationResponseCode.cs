@@ -21,5 +21,10 @@
 		/// Means the name was an invalid length.
 		/// </summary>
 		NameIsInvalidLength = 3,
+
+		/// <summary>
+		/// Indicates a server error.
+		/// </summary>
+		GeneralServerError = 4,
 	}
 }
