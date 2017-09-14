@@ -46,6 +46,38 @@ namespace Booma
 			return Json(new CharacterListResponse(characterIds));
 		}
 
+		[Authorize] //We must authorize to prevent users from creating characters for other accounts and to identify WHO is creating a character
+		[HttpPost("create")]
+		public async Task<JsonResult> CreateCharacter([FromBody] CharacterCreationRequest request, [FromServices] ICharacterRepository characterRepository)
+		{
+			if(characterRepository == null) throw new ArgumentNullException(nameof(characterRepository));
+
+			//TODO: Return error
+			if(!ModelState.IsValid)
+				return Json(new CharacterCreationResponse(CharacterCreationResponseCode.GeneralServerError));
+
+			//The account id should be in the JWT/claim sent. It's required to load the characters from the database
+			//that are associated with the account.
+			int accountId = HaloLiveUserManager.GetUserIdInt(User);
+
+			//TODO: We should check banned names list
+			//We must check the name first because there could be a duplicate
+			bool nameIsTaken = await characterRepository.DoesNameExist(request.CharacterName);
+
+			if(nameIsTaken)
+				return Json(new CharacterCreationResponse(CharacterCreationResponseCode.NameInvalid));
+
+			//TODO: Enforce a maximum account of characters per account
+			CharacterCreationResult result = await characterRepository.TryCreateNewCharacter(new CharacterCreationInformation(request.CharacterName, request.CharacterClass));
+
+			//This means that the character was created and was assigned a section id
+			if(result.IsSuccessful)
+				return Json(new CharacterCreationResponse(result.CharacterSectionId));
+
+			//We don't know what went wrong here, something did. This could be due to a race condition. It should so rarely occur that it is most likely just a major server
+			//issue instead.
+			return Json(new CharacterCreationResponse(CharacterCreationResponseCode.GeneralServerError));
+		}
 		
 		//This method doesn't require authorize because the name availability isn't secret and doesn't depend on identity.
 		/// <summary>
