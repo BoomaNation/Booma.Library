@@ -85,16 +85,16 @@
       <HintPath>..\..\packages\GladNet.Serializer.Protobuf.3.0.18\lib\net35\GladNet.Serializer.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="HaloLive.Models.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HaloLive.Models.Common.2.0.1\lib\net45\HaloLive.Models.Common.dll</HintPath>
+      <HintPath>..\..\packages\HaloLive.Models.Common.2.0.5\lib\net45\HaloLive.Models.Common.dll</HintPath>
     </Reference>
     <Reference Include="HaloLive.Models.NameResolution.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HaloLive.Models.NameResolution.Common.2.0.1\lib\net45\HaloLive.Models.NameResolution.Common.dll</HintPath>
+      <HintPath>..\..\packages\HaloLive.Models.NameResolution.Common.2.0.5\lib\net45\HaloLive.Models.NameResolution.Common.dll</HintPath>
     </Reference>
     <Reference Include="HaloLive.NameResolution.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HaloLive.NameResolution.Client.2.0.1\lib\net45\HaloLive.NameResolution.Client.dll</HintPath>
+      <HintPath>..\..\packages\HaloLive.NameResolution.Client.2.0.5\lib\net45\HaloLive.NameResolution.Client.dll</HintPath>
     </Reference>
     <Reference Include="HaloLive.Network.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HaloLive.Network.Common.2.0.1\lib\net45\HaloLive.Network.Common.dll</HintPath>
+      <HintPath>..\..\packages\HaloLive.Network.Common.2.0.5\lib\net45\HaloLive.Network.Common.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>

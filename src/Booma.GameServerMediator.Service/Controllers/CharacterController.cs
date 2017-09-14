@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using HaloLive.Hosting;
+using HaloLive.Hosting.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +21,31 @@ namespace Booma
 		{
 
 		}
+
+		/// <summary>
+		/// Loads and returns the character list for the authorized user.
+		/// If the user isn't authorized then we both don't know who they're interested in nor
+		/// would we provided the result if we did.
+		/// </summary>
+		/// <returns>Returns the character list if authorized.</returns>
+		[Authorize] //We must authorize to protect user's privacies.
+		[HttpGet("list")]
+		public async Task<JsonResult> GetCharacterList([FromServices] IReadonlyCharacterRepository characterRepository)
+		{
+			if(characterRepository == null) throw new ArgumentNullException(nameof(characterRepository));
+
+			//The account id should be in the JWT/claim sent. It's required to load the characters from the database
+			//that are associated with the account.
+			int accountId = HaloLiveUserManager.GetUserIdInt(User);
+
+			//We don't load additional uneeded information. The Ids are enough for the client to load their names, profiles and appearance if required.
+			int[] characterIds = (await characterRepository.LoadAssociatedCharacterIds(accountId)).ToArray();
+			characterIds = characterIds != null ? characterIds : Enumerable.Empty<int>().ToArray();
+
+			//We don't need to do anything fancy. The ID of the characters is TRULY enough for the client to then request and piece together all the other missing content
+			return Json(new CharacterListResponse(characterIds));
+		}
+
 		
 		//This method doesn't require authorize because the name availability isn't secret and doesn't depend on identity.
 		/// <summary>
@@ -27,7 +54,7 @@ namespace Booma
 		/// </summary>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		[HttpPost("check")]
+		[HttpGet("namecheck")]
 		public async Task<JsonResult> CheckCharacterNameAvailability([FromBody] CharacterNameValidationRequest request, [FromServices] IReadonlyCharacterRepository characterRepository)
 		{
 			if(!ModelState.IsValid)

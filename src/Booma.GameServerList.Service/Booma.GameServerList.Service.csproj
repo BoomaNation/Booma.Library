@@ -11,8 +11,8 @@
     <None Remove="wwwroot\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="HaloLive.Hosting.Server" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Network.Common" Version="2.0.1" />
+    <PackageReference Include="HaloLive.Hosting.Server" Version="2.0.5" />
+    <PackageReference Include="HaloLive.Network.Common" Version="2.0.5" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />

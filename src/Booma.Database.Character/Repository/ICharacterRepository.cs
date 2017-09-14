@@ -18,5 +18,13 @@ namespace Booma
 		/// <param name="characterName">The character name.</param>
 		/// <returns>True if there is an entry with that name.</returns>
 		Task<bool> DoesNameExist(string characterName);
+
+		/// <summary>
+		/// Loads all the associated character's Ids that are
+		/// associated with the provided <see cref="accountId"/>.
+		/// </summary>
+		/// <param name="accountId">The account id to load characters for.</param>
+		/// <returns>Collection of all character Id's that account is associated with.</returns>
+		Task<IEnumerable<int>> LoadAssociatedCharacterIds(int accountId);
 	}
 }
