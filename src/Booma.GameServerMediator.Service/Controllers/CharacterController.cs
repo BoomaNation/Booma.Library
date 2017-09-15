@@ -91,7 +91,8 @@ namespace Booma
 				return Json(new CharacterCreationResponse(CharacterCreationResponseCode.NameInvalid));
 
 			//TODO: Enforce a maximum account of characters per account
-			CharacterCreationResult result = await characterRepository.TryCreateNewCharacter(new CharacterCreationInformation(request.CharacterName, request.CharacterClass));
+			CharacterCreationResult result = await characterRepository.TryCreateNewCharacter(accountId, Request.HttpContext.Connection.RemoteIpAddress.ToString(), 
+				new CharacterCreationInformation(request.CharacterName, request.CharacterClass));
 
 			//This means that the character was created and was assigned a section id
 			if(result.IsSuccessful)

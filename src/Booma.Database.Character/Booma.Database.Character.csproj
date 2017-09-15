@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Booma.Entity.Character\Booma.Entity.Character.csproj" />
+    <ProjectReference Include="..\Booma.Entity.SectionId.Calculator\Booma.Entity.SectionId.Calculator.csproj" />
   </ItemGroup>
 
 </Project>
