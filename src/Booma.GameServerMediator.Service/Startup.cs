@@ -40,6 +40,12 @@ namespace Booma
 			services.AddHaloLiveAuthorization();
 			services.AddDbContext<GameSessionDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
 			services.AddTransient<IGameSessionRepository, DatabaseGameSessionRepository>();
+
+			services.AddDbContext<CharacterDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
+			services.AddTransient<ICharacterRepository, DatabaseCharacterRepository>();
+			services.AddTransient<IReadonlyCharacterRepository, DatabaseCharacterRepository>();
+
+			services.AddSingleton<ISectionIdCalculatorStrategy>(new PlayerSectionIdCalculatorStrategy());
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
