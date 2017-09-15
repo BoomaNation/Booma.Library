@@ -25,6 +25,14 @@ namespace Booma
 		Task<bool> DoesNameExist(string characterName);
 
 		/// <summary>
+		/// Loads the character's named based on the provided id.
+		/// If no name was loaded it returns a null name.
+		/// </summary>
+		/// <param name="id">The character id to check.</param>
+		/// <returns>The character's name or null if no character was found.</returns>
+		Task<string> GetCharacterName(int id);
+
+		/// <summary>
 		/// Loads all the associated character's Ids that are
 		/// associated with the provided <see cref="accountId"/>.
 		/// </summary>

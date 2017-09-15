@@ -23,6 +23,29 @@ namespace Booma
 		}
 
 		/// <summary>
+		/// Queries for the name of a character based on the provided <see cref="id"/>.
+		/// </summary>
+		/// <param name="id">The character id of the character.</param>
+		/// <param name="characterRepository">Character repository service.</param>
+		/// <returns>A <see cref="NameQueryResponse"/> or 422 code if invalid.</returns>
+		[HttpGet("name/{id}")]
+		public async Task<IActionResult> NameQuery(int id, [FromServices] IReadonlyCharacterRepository characterRepository)
+		{
+			if(characterRepository == null) throw new ArgumentNullException(nameof(characterRepository));
+
+			if(id < 0)
+				return StatusCode(422); //Unprocessable Entity
+
+			string name = await characterRepository.GetCharacterName(id);
+
+			//We should assume it's unknown. There could be other issues but the user does not need to know this.
+			if(string.IsNullOrWhiteSpace(name))
+				return Json(new NameQueryResponse(NameQueryResponseCode.UnknownUserId));
+
+			return Json(new NameQueryResponse(name));
+		}
+
+		/// <summary>
 		/// Loads and returns the character list for the authorized user.
 		/// If the user isn't authorized then we both don't know who they're interested in nor
 		/// would we provided the result if we did.
@@ -40,7 +63,7 @@ namespace Booma
 
 			//We don't load additional uneeded information. The Ids are enough for the client to load their names, profiles and appearance if required.
 			int[] characterIds = (await characterRepository.LoadAssociatedCharacterIds(accountId)).ToArray();
-			characterIds = characterIds != null ? characterIds : Enumerable.Empty<int>().ToArray();
+			characterIds = characterIds ?? Enumerable.Empty<int>().ToArray();
 
 			//We don't need to do anything fancy. The ID of the characters is TRULY enough for the client to then request and piece together all the other missing content
 			return Json(new CharacterListResponse(characterIds));
