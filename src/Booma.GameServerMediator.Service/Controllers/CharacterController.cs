@@ -16,7 +16,7 @@ namespace Booma
 	[Route("api/[controller]")]
 	public class CharacterController : AuthorizationReadyController
 	{
-		protected CharacterController([FromServices] IClaimsPrincipalReader haloLiveUserManager) 
+		public CharacterController([FromServices] IClaimsPrincipalReader haloLiveUserManager) 
 			: base(haloLiveUserManager)
 		{
 
